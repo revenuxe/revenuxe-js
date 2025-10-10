@@ -36,7 +36,9 @@ const Hero = () => {
           </h1>
           
           {/* Brand Name */}
-          
+          <p className="text-primary text-xl sm:text-2xl md:text-3xl uppercase tracking-[0.3em] font-bold">
+            ARROWMIND
+          </p>
           
           {/* Description */}
           <p className="text-muted-foreground text-base sm:text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
