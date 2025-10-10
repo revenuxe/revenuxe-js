@@ -1,18 +1,16 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
-
 const Hero = () => {
-  return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+  return <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Gradient Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-[hsl(0,30%,8%)]" />
       
       {/* Animated Grid Background */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute inset-0" style={{
-          backgroundImage: 'linear-gradient(hsl(var(--primary)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--primary)) 1px, transparent 1px)',
-          backgroundSize: '50px 50px'
-        }} />
+        backgroundImage: 'linear-gradient(hsl(var(--primary)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--primary)) 1px, transparent 1px)',
+        backgroundSize: '50px 50px'
+      }} />
       </div>
       
       {/* Floating Shapes */}
@@ -25,9 +23,7 @@ const Hero = () => {
         <div className="max-w-6xl mx-auto text-center space-y-8 animate-fade-in px-4">
           {/* Small Badge */}
           <div className="inline-block">
-            <span className="px-4 py-2 bg-primary/10 border border-primary/20 rounded-full text-primary text-sm font-medium">
-              Powered by Artificial Intelligence
-            </span>
+            
           </div>
           
           {/* Main Heading - Responsive */}
@@ -51,18 +47,11 @@ const Hero = () => {
           
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
-            <Button 
-              size="lg" 
-              className="bg-primary hover:bg-primary/90 text-primary-foreground px-10 py-6 text-lg font-semibold group shadow-lg shadow-primary/20"
-            >
+            <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground px-10 py-6 text-lg font-semibold group shadow-lg shadow-primary/20">
               GET STARTED
               <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
             </Button>
-            <Button 
-              size="lg" 
-              variant="outline"
-              className="border-2 border-primary/30 hover:bg-primary/10 px-10 py-6 text-lg font-semibold"
-            >
+            <Button size="lg" variant="outline" className="border-2 border-primary/30 hover:bg-primary/10 px-10 py-6 text-lg font-semibold">
               VIEW SERVICES
             </Button>
           </div>
@@ -72,8 +61,6 @@ const Hero = () => {
       {/* Decorative Elements */}
       <div className="absolute top-20 left-10 text-primary text-6xl opacity-20 hidden md:block">+</div>
       <div className="absolute bottom-20 right-10 text-primary text-6xl opacity-20 hidden md:block">+</div>
-    </section>
-  );
+    </section>;
 };
-
 export default Hero;
