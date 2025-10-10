@@ -9,15 +9,15 @@ const Hero = () => {
       
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 py-20">
-        <div className="max-w-5xl mx-auto text-center space-y-8 animate-fade-in">
-          {/* Main Brand Name */}
-          <h1 className="text-7xl md:text-8xl lg:text-9xl font-bold leading-tight tracking-tight">
-            <span className="text-foreground">ARROWMIND</span>
+        <div className="max-w-5xl mx-auto text-center space-y-6 animate-fade-in px-4">
+          {/* Main Heading - Responsive */}
+          <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-bold leading-tight tracking-tight break-words">
+            <span className="text-foreground">AI MARKETING AGENCY</span>
           </h1>
           
-          {/* Tagline */}
-          <p className="text-primary text-xl md:text-2xl uppercase tracking-wider font-medium">
-            AI MARKETING AGENCY
+          {/* Brand Name */}
+          <p className="text-primary text-lg sm:text-xl md:text-2xl uppercase tracking-wider font-medium">
+            ARROWMIND
           </p>
           
           {/* CTA Button */}
