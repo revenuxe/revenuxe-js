@@ -7,7 +7,7 @@ import {
   Layers,
   ArrowRight,
 } from "lucide-react";
-import { Link } from "react-router-dom"; // or next/link
+import { Link } from "react-router-dom";
 
 const Services = () => {
   const services = [
@@ -63,7 +63,7 @@ const Services = () => {
 
   return (
     <section className="py-24 relative overflow-hidden">
-      {/* Background */}
+      {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div
           className="absolute inset-0"
@@ -96,15 +96,23 @@ const Services = () => {
               className="group relative bg-card border border-border rounded-2xl p-8 hover:border-primary/60 transition-all duration-300 hover:shadow-2xl hover:shadow-primary/10 hover:scale-[1.03]"
             >
               <div className="text-primary mb-4">{service.icon}</div>
-              <h3 className="text-2xl font-bold text-foreground mb-4 group-hover:text-primary transition-colors flex items-center justify-between">
-                {service.title}
+
+              {/* Title & Arrow Button (fixed shape + alignment) */}
+              <div className="flex items-center justify-between mb-4">
+                <h3 className="text-2xl font-bold text-foreground group-hover:text-primary transition-colors">
+                  {service.title}
+                </h3>
                 <Link
                   to={service.link}
-                  className="w-20 h-20 flex items-center justify-center rounded-full bg-primary text-primary-foreground shadow-lg hover:bg-primary/90 transition-all duration-300"
+                  className="min-w-[80px] min-h-[80px] max-w-[80px] max-h-[80px] rounded-full bg-primary flex items-center justify-center text-primary-foreground shadow-lg hover:bg-primary/90 transition-all duration-300"
+                  style={{
+                    flexShrink: 0,
+                    aspectRatio: "1 / 1",
+                  }}
                 >
                   <ArrowRight className="w-10 h-10" />
                 </Link>
-              </h3>
+              </div>
 
               <p className="text-muted-foreground leading-relaxed mb-3">
                 {service.description}
@@ -126,4 +134,3 @@ const Services = () => {
 };
 
 export default Services;
-
