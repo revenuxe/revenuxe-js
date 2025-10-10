@@ -16,7 +16,7 @@ import {
   Cpu,
   ArrowRight,
 } from "lucide-react";
-import { Link } from "react-router-dom"; // use `next/link` for Next.js
+import { Link } from "react-router-dom"; // or `next/link` for Next.js
 
 const Services = () => {
   const services = [
@@ -126,38 +126,38 @@ const Services = () => {
           {services.map((service, index) => (
             <div
               key={index}
-              className="group relative bg-card border border-border rounded-2xl p-8 hover:border-primary/50 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-primary/10"
+              className="group relative bg-card border border-border rounded-2xl p-8 hover:border-primary/50 transition-all duration-300 hover:scale-[1.03] hover:shadow-2xl hover:shadow-primary/10"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               {/* Hover gradient */}
               <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity" />
 
-              <div className="relative z-10 space-y-5">
-                <div className="text-primary transform transition-transform">
-                  {service.icon}
+              <div className="relative z-10 flex flex-col h-full justify-between space-y-5">
+                <div>
+                  <div className="text-primary mb-4">{service.icon}</div>
+                  <h3 className="text-xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
+                    {service.title}
+                  </h3>
+                  <p className="text-muted-foreground leading-relaxed">
+                    {service.description}
+                  </p>
+
+                  {service.subservices && (
+                    <ul className="text-sm text-muted-foreground space-y-1 mt-3">
+                      {service.subservices.map((sub, i) => (
+                        <li key={i}>• {sub}</li>
+                      ))}
+                    </ul>
+                  )}
                 </div>
-                <h3 className="text-xl font-bold text-foreground transition-colors group-hover:text-primary">
-                  {service.title}
-                </h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  {service.description}
-                </p>
 
-                {service.subservices && (
-                  <ul className="text-sm text-muted-foreground space-y-1 mt-3">
-                    {service.subservices.map((sub, i) => (
-                      <li key={i}>• {sub}</li>
-                    ))}
-                  </ul>
-                )}
-
-                {/* Large Always-Visible Arrow Button */}
-                <div className="flex justify-end pt-6">
+                {/* Circular arrow aligned with text area */}
+                <div className="flex justify-end mt-4">
                   <Link
                     to={service.link}
-                    className="flex items-center justify-center w-20 h-20 bg-primary text-primary-foreground rounded-full shadow-lg hover:shadow-xl hover:bg-primary/90 transition-all duration-300"
+                    className="flex items-center justify-center w-16 h-16 bg-primary text-primary-foreground rounded-full shadow-md hover:shadow-lg hover:bg-primary/90 transition-all duration-300"
                   >
-                    <ArrowRight className="w-10 h-10" />
+                    <ArrowRight className="w-8 h-8" />
                   </Link>
                 </div>
               </div>
@@ -173,6 +173,3 @@ const Services = () => {
 };
 
 export default Services;
-
-
-
