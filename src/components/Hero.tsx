@@ -7,35 +7,71 @@ const Hero = () => {
       {/* Gradient Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-[hsl(0,30%,8%)]" />
       
+      {/* Animated Grid Background */}
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute inset-0" style={{
+          backgroundImage: 'linear-gradient(hsl(var(--primary)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--primary)) 1px, transparent 1px)',
+          backgroundSize: '50px 50px'
+        }} />
+      </div>
+      
+      {/* Floating Shapes */}
+      <div className="absolute top-20 left-10 w-32 h-32 border-2 border-primary/20 rounded-full animate-pulse" />
+      <div className="absolute bottom-20 right-20 w-24 h-24 border-2 border-primary/30 rotate-45" />
+      <div className="absolute top-1/3 right-10 w-16 h-16 bg-primary/10 rounded-lg animate-pulse" />
+      
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 py-20">
-        <div className="max-w-5xl mx-auto text-center space-y-6 animate-fade-in px-4">
+        <div className="max-w-6xl mx-auto text-center space-y-8 animate-fade-in px-4">
+          {/* Small Badge */}
+          <div className="inline-block">
+            <span className="px-4 py-2 bg-primary/10 border border-primary/20 rounded-full text-primary text-sm font-medium">
+              Powered by Artificial Intelligence
+            </span>
+          </div>
+          
           {/* Main Heading - Responsive */}
-          <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-bold leading-tight tracking-tight break-words">
-            <span className="text-foreground">AI MARKETING AGENCY</span>
+          <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-extrabold leading-tight tracking-tight break-words">
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-foreground via-primary to-foreground">
+              AI MARKETING
+            </span>
+            <br />
+            <span className="text-foreground">AGENCY</span>
           </h1>
           
           {/* Brand Name */}
-          <p className="text-primary text-lg sm:text-xl md:text-2xl uppercase tracking-wider font-medium">
+          <p className="text-primary text-xl sm:text-2xl md:text-3xl uppercase tracking-[0.3em] font-bold">
             ARROWMIND
           </p>
           
-          {/* CTA Button */}
-          <div className="pt-8">
+          {/* Description */}
+          <p className="text-muted-foreground text-base sm:text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
+            Transform your business with cutting-edge AI-powered marketing strategies that drive real results
+          </p>
+          
+          {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
             <Button 
               size="lg" 
-              className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-6 text-lg group"
+              className="bg-primary hover:bg-primary/90 text-primary-foreground px-10 py-6 text-lg font-semibold group shadow-lg shadow-primary/20"
             >
               GET STARTED
               <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
+            </Button>
+            <Button 
+              size="lg" 
+              variant="outline"
+              className="border-2 border-primary/30 hover:bg-primary/10 px-10 py-6 text-lg font-semibold"
+            >
+              VIEW SERVICES
             </Button>
           </div>
         </div>
       </div>
       
       {/* Decorative Elements */}
-      <div className="absolute top-20 left-10 text-primary text-6xl opacity-20">+</div>
-      <div className="absolute bottom-20 right-10 text-primary text-6xl opacity-20">+</div>
+      <div className="absolute top-20 left-10 text-primary text-6xl opacity-20 hidden md:block">+</div>
+      <div className="absolute bottom-20 right-10 text-primary text-6xl opacity-20 hidden md:block">+</div>
     </section>
   );
 };
