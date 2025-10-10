@@ -10,23 +10,14 @@ const Hero = () => {
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 py-20">
         <div className="max-w-5xl mx-auto text-center space-y-8 animate-fade-in">
-          {/* Tagline */}
-          <p className="text-muted-foreground text-sm md:text-base uppercase tracking-wider">
-            Digital Marketing for Growing Businesses
-          </p>
-          
-          {/* Main Heading */}
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold leading-tight">
-            <span className="text-foreground">AGENCY </span>
-            <span className="text-primary">ARROWMIND</span>
-            <span className="text-foreground"> SPECIALIZES IN </span>
-            <span className="text-primary">MARKETING</span>
-            <span className="text-foreground"> FOR SMALL AND MEDIUM BUSINESSES</span>
+          {/* Main Brand Name */}
+          <h1 className="text-7xl md:text-8xl lg:text-9xl font-bold leading-tight tracking-tight">
+            <span className="text-foreground">ARROWMIND</span>
           </h1>
           
-          {/* Subtitle */}
-          <p className="text-muted-foreground text-lg md:text-xl max-w-2xl mx-auto">
-            Our marketing agency takes responsibility for the process of attracting customers
+          {/* Tagline */}
+          <p className="text-primary text-xl md:text-2xl uppercase tracking-wider font-medium">
+            AI MARKETING AGENCY
           </p>
           
           {/* CTA Button */}
