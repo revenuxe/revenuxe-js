@@ -14,7 +14,9 @@ import {
   Workflow,
   Globe,
   Cpu,
+  ArrowRight,
 } from "lucide-react";
+import { Link } from "react-router-dom"; // use `next/link` if you're using Next.js
 
 const Services = () => {
   const services = [
@@ -24,6 +26,7 @@ const Services = () => {
       description:
         "Modern, scalable websites and web apps that blend performance with creativity.",
       subservices: ["Next.js", "WordPress", "Odoo", "Shopify", "Custom SaaS"],
+      link: "/services/web-development",
     },
     {
       icon: <Bot className="w-12 h-12" />,
@@ -35,6 +38,7 @@ const Services = () => {
         "AI-Personalized UX",
         "Dynamic Content Generation",
       ],
+      link: "/services/ai-websites",
     },
     {
       icon: <BrainCircuit className="w-12 h-12" />,
@@ -47,6 +51,7 @@ const Services = () => {
         "Generative Brand Ads",
         "AI Social Creatives",
       ],
+      link: "/services/ai-media",
     },
     {
       icon: <Layers className="w-12 h-12" />,
@@ -59,6 +64,7 @@ const Services = () => {
         "Custom CRM Platforms",
         "Data-Driven Portals",
       ],
+      link: "/services/vibe-coding",
     },
     {
       icon: <Search className="w-12 h-12" />,
@@ -71,6 +77,7 @@ const Services = () => {
         "On-Page Optimization",
         "Link Building",
       ],
+      link: "/services/seo",
     },
     {
       icon: <Share2 className="w-12 h-12" />,
@@ -83,93 +90,7 @@ const Services = () => {
         "Performance Ads",
         "Influencer Collabs",
       ],
-    },
-    {
-      icon: <TrendingUp className="w-12 h-12" />,
-      title: "Digital Marketing",
-      description:
-        "Full-funnel marketing strategy combining performance, analytics, and conversion design.",
-      subservices: ["PPC Campaigns", "Funnel Optimization", "Retargeting Ads"],
-    },
-    {
-      icon: <Smartphone className="w-12 h-12" />,
-      title: "Mobile Marketing",
-      description:
-        "Reach your audience wherever they are through optimized mobile campaigns and apps.",
-      subservices: [
-        "Mobile Ads",
-        "App Store Optimization",
-        "Responsive UI Design",
-      ],
-    },
-    {
-      icon: <Mail className="w-12 h-12" />,
-      title: "Email & Automation",
-      description:
-        "Automate communication with high-converting, behavior-driven email flows.",
-      subservices: [
-        "Drip Campaigns",
-        "Transactional Emails",
-        "Customer Retention Flows",
-      ],
-    },
-    {
-      icon: <Palette className="w-12 h-12" />,
-      title: "Brand Strategy & Design",
-      description:
-        "Craft a powerful brand story and cohesive visual identity that connects and converts.",
-      subservices: ["Logo Design", "Brand Guidelines", "Messaging Frameworks"],
-    },
-    {
-      icon: <BarChart3 className="w-12 h-12" />,
-      title: "Analytics & Insights",
-      description:
-        "Turn marketing data into business intelligence with deep insight and forecasting.",
-      subservices: [
-        "Google Analytics 4",
-        "Heatmap Analysis",
-        "AI Trend Prediction",
-      ],
-    },
-    {
-      icon: <Video className="w-12 h-12" />,
-      title: "Content & Video Production",
-      description:
-        "Professional video and creative content that inspires, engages, and converts.",
-      subservices: ["Product Videos", "Reels & Shorts", "Ad Films", "Motion Graphics"],
-    },
-    {
-      icon: <Workflow className="w-12 h-12" />,
-      title: "Automation Systems",
-      description:
-        "Streamline business workflows with no-code and AI-driven automation tools.",
-      subservices: [
-        "Zapier / Make Integrations",
-        "CRM Automations",
-        "AI Workflow Bots",
-      ],
-    },
-    {
-      icon: <Globe className="w-12 h-12" />,
-      title: "Global Campaigns",
-      description:
-        "Launch and scale your brand across regions with localized multilingual strategies.",
-      subservices: [
-        "Geo-Targeted Ads",
-        "Language Localization",
-        "Cultural Adaptation",
-      ],
-    },
-    {
-      icon: <Cpu className="w-12 h-12" />,
-      title: "AI Marketing Intelligence",
-      description:
-        "Predict trends, monitor competition, and make smarter ad decisions with AI insights.",
-      subservices: [
-        "Predictive Analytics",
-        "Ad Spend Optimization",
-        "Competitor Tracking",
-      ],
+      link: "/services/social-media",
     },
   ];
 
@@ -201,14 +122,16 @@ const Services = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
             <div
               key={index}
-              className="group relative bg-card border border-border rounded-lg p-8 hover:border-primary/50 transition-all duration-300 hover:shadow-xl hover:shadow-primary/5 animate-fade-in"
+              className="group relative bg-card border border-border rounded-2xl p-8 hover:border-primary/50 transition-all duration-300 hover:shadow-xl hover:shadow-primary/10 animate-fade-in overflow-hidden"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-lg" />
+              {/* Hover gradient */}
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl" />
+
               <div className="relative z-10 space-y-4">
                 <div className="text-primary transform group-hover:scale-110 transition-transform">
                   {service.icon}
@@ -219,6 +142,7 @@ const Services = () => {
                 <p className="text-muted-foreground leading-relaxed">
                   {service.description}
                 </p>
+
                 {service.subservices && (
                   <ul className="text-sm text-muted-foreground space-y-1 mt-3">
                     {service.subservices.map((sub, i) => (
@@ -227,7 +151,17 @@ const Services = () => {
                   </ul>
                 )}
               </div>
-              <div className="absolute top-0 right-0 w-16 h-16 border-t-2 border-r-2 border-primary/20 rounded-tr-lg opacity-0 group-hover:opacity-100 transition-opacity" />
+
+              {/* Circle Arrow Button */}
+              <Link
+                to={service.link}
+                className="absolute bottom-6 right-6 z-20 flex items-center justify-center w-14 h-14 bg-primary text-primary-foreground rounded-full transition-all duration-300 transform scale-0 group-hover:scale-100 group-hover:translate-x-0 shadow-lg hover:scale-110"
+              >
+                <ArrowRight className="w-7 h-7" />
+              </Link>
+
+              {/* Corner Decoration */}
+              <div className="absolute top-0 right-0 w-16 h-16 border-t-2 border-r-2 border-primary/20 rounded-tr-2xl opacity-0 group-hover:opacity-100 transition-opacity" />
             </div>
           ))}
         </div>
@@ -237,4 +171,5 @@ const Services = () => {
 };
 
 export default Services;
+
 
