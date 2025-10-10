@@ -16,7 +16,7 @@ import {
   Cpu,
   ArrowRight,
 } from "lucide-react";
-import { Link } from "react-router-dom"; // use `next/link` if you're using Next.js
+import { Link } from "react-router-dom"; // use `next/link` for Next.js
 
 const Services = () => {
   const services = [
@@ -60,7 +60,7 @@ const Services = () => {
         "Next-gen interactive webapps built with immersive UI/UX and adaptive intelligence.",
       subservices: [
         "Realtime Dashboards",
-        "AI-Based Automation Tools",
+        "AI Automation Tools",
         "Custom CRM Platforms",
         "Data-Driven Portals",
       ],
@@ -126,17 +126,17 @@ const Services = () => {
           {services.map((service, index) => (
             <div
               key={index}
-              className="group relative bg-card border border-border rounded-2xl p-8 hover:border-primary/50 transition-all duration-300 hover:shadow-xl hover:shadow-primary/10 animate-fade-in overflow-hidden"
+              className="group relative bg-card border border-border rounded-2xl p-8 hover:border-primary/50 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-primary/10"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               {/* Hover gradient */}
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl" />
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity" />
 
-              <div className="relative z-10 space-y-4">
-                <div className="text-primary transform group-hover:scale-110 transition-transform">
+              <div className="relative z-10 space-y-5">
+                <div className="text-primary transform transition-transform">
                   {service.icon}
                 </div>
-                <h3 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors">
+                <h3 className="text-xl font-bold text-foreground transition-colors group-hover:text-primary">
                   {service.title}
                 </h3>
                 <p className="text-muted-foreground leading-relaxed">
@@ -150,15 +150,17 @@ const Services = () => {
                     ))}
                   </ul>
                 )}
-              </div>
 
-              {/* Circle Arrow Button */}
-              <Link
-                to={service.link}
-                className="absolute bottom-6 right-6 z-20 flex items-center justify-center w-14 h-14 bg-primary text-primary-foreground rounded-full transition-all duration-300 transform scale-0 group-hover:scale-100 group-hover:translate-x-0 shadow-lg hover:scale-110"
-              >
-                <ArrowRight className="w-7 h-7" />
-              </Link>
+                {/* Large Always-Visible Arrow Button */}
+                <div className="flex justify-end pt-6">
+                  <Link
+                    to={service.link}
+                    className="flex items-center justify-center w-20 h-20 bg-primary text-primary-foreground rounded-full shadow-lg hover:shadow-xl hover:bg-primary/90 transition-all duration-300"
+                  >
+                    <ArrowRight className="w-10 h-10" />
+                  </Link>
+                </div>
+              </div>
 
               {/* Corner Decoration */}
               <div className="absolute top-0 right-0 w-16 h-16 border-t-2 border-r-2 border-primary/20 rounded-tr-2xl opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -171,5 +173,6 @@ const Services = () => {
 };
 
 export default Services;
+
 
 
