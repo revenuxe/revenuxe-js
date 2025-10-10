@@ -1,20 +1,20 @@
 const Stats = () => {
   const stats = [
     {
-      value: "$105K",
-      label: "Record Client Revenue",
+      value: "10+",
+      label: "Brands Launched",
     },
     {
-      value: "~30",
-      label: "Clients in Progress",
+      value: "3+",
+      label: "Years of Growth & Innovation",
     },
     {
-      value: "$300K",
-      label: "Ad Spend Per Year",
+      value: "30+",
+      label: "Projects Completed",
     },
     {
-      value: "24",
-      label: "Months in Business",
+      value: "5",
+      label: "Active Clients",
     },
   ];
 
