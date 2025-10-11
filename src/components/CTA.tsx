@@ -52,7 +52,7 @@ const CTA = () => {
           {/* Trust Indicators */}
           <div className="pt-12 flex flex-wrap justify-center gap-8 text-center">
             <div>
-              <div className="text-3xl md:text-4xl font-bold text-primary">30+</div>
+              <div className="text-3xl md:text-4xl font-bold text-primary">500+</div>
               <div className="text-sm text-muted-foreground">Projects Completed</div>
             </div>
             <div className="w-px bg-border" />
