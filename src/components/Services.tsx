@@ -28,7 +28,8 @@ const Services = () => {
         {
           icon: <Share2 className="w-10 h-10" />,
           title: "Social Media Marketing",
-          description: "Grow your brand presence and engagement with creative campaigns.",
+          description:
+            "Grow your brand presence and engagement with creative campaigns.",
           subservices: ["Instagram Growth", "LinkedIn Strategy", "Ad Campaigns"],
           link: "/services/social-media",
         },
@@ -42,14 +43,16 @@ const Services = () => {
         {
           icon: <Mail className="w-10 h-10" />,
           title: "Email Marketing",
-          description: "Engage your audience with personalized email campaigns.",
+          description:
+            "Engage your audience with personalized email campaigns.",
           subservices: ["Automation", "Newsletters", "Lead Nurturing"],
           link: "/services/email-marketing",
         },
         {
           icon: <Video className="w-10 h-10" />,
           title: "Content Marketing",
-          description: "Create compelling content that drives engagement and conversions.",
+          description:
+            "Create compelling content that drives engagement and conversions.",
           subservices: ["Blog Writing", "Video Content", "Infographics"],
           link: "/services/content-marketing",
         },
@@ -62,56 +65,132 @@ const Services = () => {
         {
           icon: <Code className="w-10 h-10" />,
           title: "Custom Web Development",
-          description: "Tailored websites and web applications built to your specifications.",
+          description:
+            "Tailored websites and web applications built to your specifications.",
           subservices: ["React & Next.js", "Full-Stack Apps", "API Integration"],
           link: "/services/web-development",
         },
         {
           icon: <ShoppingCart className="w-10 h-10" />,
           title: "E-Commerce Solutions",
-          description: "Complete online store setup with payment integration.",
+          description:
+            "Complete online store setup with seamless payment integration.",
           subservices: ["Shopify", "WooCommerce", "Custom Stores"],
           link: "/services/ecommerce",
         },
         {
           icon: <Smartphone className="w-10 h-10" />,
           title: "Mobile-First Design",
-          description: "Responsive designs that look perfect on all devices.",
-          subservices: ["PWA Development", "App-Like Experience", "Touch Optimization"],
+          description:
+            "Responsive designs that look perfect on all devices.",
+          subservices: [
+            "PWA Development",
+            "App-Like Experience",
+            "Touch Optimization",
+          ],
           link: "/services/mobile-design",
         },
         {
           icon: <Globe className="w-10 h-10" />,
           title: "Landing Pages",
-          description: "High-converting landing pages optimized for campaigns.",
-          subservices: ["A/B Testing", "Conversion Optimization", "Fast Loading"],
+          description:
+            "High-converting landing pages optimized for campaigns.",
+          subservices: [
+            "A/B Testing",
+            "Conversion Optimization",
+            "Fast Loading",
+          ],
           link: "/services/landing-pages",
         },
       ],
     },
     {
       category: "SEO & Analytics",
-      description: "Boost your visibility and track your success",
+      description:
+        "Boost your visibility, automate SEO with AI, and track your success in real time",
       services: [
         {
           icon: <Search className="w-10 h-10" />,
           title: "SEO Optimization",
-          description: "Boost your organic reach with smart, scalable SEO strategies.",
-          subservices: ["Local SEO", "Technical SEO", "Link Building"],
+          description:
+            "Boost your organic reach with smart, scalable SEO strategies.",
+          subservices: [
+            "On-Page Optimization",
+            "Technical SEO",
+            "Local SEO",
+            "Link Building",
+            "Schema & Structured Data",
+          ],
           link: "/services/seo",
+        },
+        {
+          icon: <BrainCircuit className="w-10 h-10" />,
+          title: "AI Blog & Content SEO",
+          description:
+            "Generate SEO-optimized blogs and articles automatically using AI.",
+          subservices: [
+            "AI Blog Writing",
+            "Keyword Clustering",
+            "Content Strategy Automation",
+            "Topic Research",
+            "Meta Optimization",
+          ],
+          link: "/services/ai-seo-content",
+        },
+        {
+          icon: <Zap className="w-10 h-10" />,
+          title: "AI SEO Automation",
+          description:
+            "Automate audits, keyword tracking, and reporting with intelligent AI tools.",
+          subservices: [
+            "Automated SEO Audits",
+            "Rank Tracking Automation",
+            "Competitor Analysis AI",
+            "SERP Insights",
+            "Predictive SEO Growth",
+          ],
+          link: "/services/ai-seo-automation",
         },
         {
           icon: <BarChart3 className="w-10 h-10" />,
           title: "Analytics & Tracking",
-          description: "Comprehensive data analysis to understand your audience.",
-          subservices: ["Google Analytics", "Conversion Tracking", "Custom Reports"],
+          description:
+            "Comprehensive data analysis to understand your audience and ROI.",
+          subservices: [
+            "Google Analytics 4",
+            "Conversion Tracking",
+            "Event & Funnel Analysis",
+            "Custom Dashboards",
+            "Attribution Modeling",
+          ],
           link: "/services/analytics",
+        },
+        {
+          icon: <Target className="w-10 h-10" />,
+          title: "Voice & Visual Search SEO",
+          description:
+            "Optimize for the future of search using voice, image, and AI queries.",
+          subservices: [
+            "Voice Search Optimization",
+            "Image SEO",
+            "AI Answer Snippets",
+            "Multilingual Optimization",
+            "Mobile Indexing",
+          ],
+          link: "/services/voice-visual-seo",
         },
         {
           icon: <TrendingUp className="w-10 h-10" />,
           title: "Growth Marketing",
-          description: "Strategic growth hacking to scale your business rapidly.",
-          subservices: ["User Acquisition", "Retention Strategy", "Viral Marketing"],
+          description:
+            "Strategic growth hacking to scale your brand visibility and traffic.",
+          subservices: [
+            "User Acquisition",
+            "Retention Strategy",
+            "A/B Testing",
+            "Conversion Optimization",
+            "Organic Growth Tactics",
+          ],
           link: "/services/growth-marketing",
         },
       ],
@@ -123,29 +202,49 @@ const Services = () => {
         {
           icon: <Bot className="w-10 h-10" />,
           title: "AI Chatbots",
-          description: "Intelligent chatbots that enhance customer experience 24/7.",
-          subservices: ["Customer Support", "Lead Generation", "Multi-Language"],
+          description:
+            "Intelligent chatbots that enhance customer experience 24/7.",
+          subservices: [
+            "Customer Support",
+            "Lead Generation",
+            "Multi-Language",
+          ],
           link: "/services/ai-chatbots",
         },
         {
           icon: <BrainCircuit className="w-10 h-10" />,
           title: "AI Content Generation",
-          description: "Create engaging content at scale with AI technology.",
-          subservices: ["Blog Posts", "Product Descriptions", "Social Media Copy"],
+          description:
+            "Create engaging content at scale with AI technology.",
+          subservices: [
+            "Blog Posts",
+            "Product Descriptions",
+            "Social Media Copy",
+          ],
           link: "/services/ai-content",
         },
         {
           icon: <Palette className="w-10 h-10" />,
           title: "AI Design Studio",
-          description: "Generate stunning visuals and designs with AI creativity.",
-          subservices: ["Image Generation", "Brand Assets", "Ad Creatives"],
+          description:
+            "Generate stunning visuals and designs with AI creativity.",
+          subservices: [
+            "Image Generation",
+            "Brand Assets",
+            "Ad Creatives",
+          ],
           link: "/services/ai-design",
         },
         {
           icon: <Zap className="w-10 h-10" />,
           title: "AI Automation",
-          description: "Automate workflows and processes with intelligent systems.",
-          subservices: ["Task Automation", "Smart Workflows", "Predictive Analytics"],
+          description:
+            "Automate workflows and processes with intelligent systems.",
+          subservices: [
+            "Task Automation",
+            "Smart Workflows",
+            "Predictive Analytics",
+          ],
           link: "/services/ai-automation",
         },
       ],
@@ -212,19 +311,19 @@ const Services = () => {
                     </p>
 
                     {service.subservices && (
-                      <ul className="text-xs text-muted-foreground space-y-1 mb-4">
+                      <ul className="text-xs text-muted-foreground space-y-1 mb-6">
                         {service.subservices.map((sub, i) => (
                           <li key={i}>• {sub}</li>
                         ))}
                       </ul>
                     )}
 
+                    {/* Circular Arrow Button */}
                     <Link
                       to={service.link}
-                      className="inline-flex items-center gap-2 text-primary text-sm font-semibold hover:gap-3 transition-all duration-300"
+                      className="absolute bottom-6 right-6 w-12 h-12 rounded-full bg-primary text-background flex items-center justify-center transition-transform duration-300 hover:scale-110"
                     >
-                      Learn More
-                      <ArrowRight className="w-4 h-4" />
+                      <ArrowRight className="w-6 h-6" />
                     </Link>
                   </div>
                 ))}
@@ -238,3 +337,4 @@ const Services = () => {
 };
 
 export default Services;
+
