@@ -1,10 +1,19 @@
 import { Instagram, Linkedin, Mail } from "lucide-react";
+import { ContactForm } from "./ContactForm";
 
 const Footer = () => {
   return (
     <footer id="contact" className="bg-background border-t border-border py-12">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
+          {/* Contact Form Section */}
+          <div className="mb-12 p-8 bg-card rounded-lg border">
+            <h3 className="text-2xl font-bold mb-6 text-center">Get In Touch</h3>
+            <div className="max-w-2xl mx-auto">
+              <ContactForm variant="compact" />
+            </div>
+          </div>
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Brand */}
             <div>

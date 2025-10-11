@@ -1,0 +1,352 @@
+import { useEffect, useState } from "react";
+import { supabase } from "@/integrations/supabase/client";
+import { useToast } from "@/hooks/use-toast";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Label } from "@/components/ui/label";
+import { Switch } from "@/components/ui/switch";
+import { Card } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Plus, Edit, Trash2 } from "lucide-react";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+
+interface CaseStudy {
+  id: string;
+  title: string;
+  client_name: string;
+  industry: string;
+  challenge: string;
+  solution: string;
+  results: string;
+  image_url: string | null;
+  featured: boolean;
+}
+
+export const CaseStudiesManager = () => {
+  const { toast } = useToast();
+  const [caseStudies, setCaseStudies] = useState<CaseStudy[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [dialogOpen, setDialogOpen] = useState(false);
+  const [editingId, setEditingId] = useState<string | null>(null);
+  const [formData, setFormData] = useState({
+    title: "",
+    client_name: "",
+    industry: "",
+    challenge: "",
+    solution: "",
+    results: "",
+    image_url: "",
+    featured: false,
+  });
+
+  useEffect(() => {
+    fetchCaseStudies();
+  }, []);
+
+  const fetchCaseStudies = async () => {
+    try {
+      const { data, error } = await supabase
+        .from("case_studies")
+        .select("*")
+        .order("created_at", { ascending: false });
+
+      if (error) throw error;
+      setCaseStudies(data || []);
+    } catch (error) {
+      console.error("Error fetching case studies:", error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    try {
+      if (editingId) {
+        const { error } = await supabase
+          .from("case_studies")
+          .update(formData)
+          .eq("id", editingId);
+
+        if (error) throw error;
+
+        toast({
+          title: "Success",
+          description: "Case study updated successfully",
+        });
+      } else {
+        const { error } = await supabase.from("case_studies").insert([formData]);
+
+        if (error) throw error;
+
+        toast({
+          title: "Success",
+          description: "Case study created successfully",
+        });
+      }
+
+      setDialogOpen(false);
+      resetForm();
+      fetchCaseStudies();
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "Failed to save case study",
+        variant: "destructive",
+      });
+    }
+  };
+
+  const handleEdit = (caseStudy: CaseStudy) => {
+    setEditingId(caseStudy.id);
+    setFormData({
+      title: caseStudy.title,
+      client_name: caseStudy.client_name,
+      industry: caseStudy.industry,
+      challenge: caseStudy.challenge,
+      solution: caseStudy.solution,
+      results: caseStudy.results,
+      image_url: caseStudy.image_url || "",
+      featured: caseStudy.featured,
+    });
+    setDialogOpen(true);
+  };
+
+  const handleDelete = async (id: string) => {
+    if (!confirm("Are you sure you want to delete this case study?")) return;
+
+    try {
+      const { error } = await supabase.from("case_studies").delete().eq("id", id);
+
+      if (error) throw error;
+
+      toast({
+        title: "Success",
+        description: "Case study deleted successfully",
+      });
+
+      fetchCaseStudies();
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "Failed to delete case study",
+        variant: "destructive",
+      });
+    }
+  };
+
+  const resetForm = () => {
+    setEditingId(null);
+    setFormData({
+      title: "",
+      client_name: "",
+      industry: "",
+      challenge: "",
+      solution: "",
+      results: "",
+      image_url: "",
+      featured: false,
+    });
+  };
+
+  return (
+    <div className="space-y-4">
+      <div className="flex items-center justify-between">
+        <h2 className="text-2xl font-bold">Case Studies</h2>
+        <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
+          <DialogTrigger asChild>
+            <Button onClick={resetForm}>
+              <Plus className="h-4 w-4 mr-2" />
+              Add Case Study
+            </Button>
+          </DialogTrigger>
+          <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
+            <DialogHeader>
+              <DialogTitle>
+                {editingId ? "Edit Case Study" : "Create Case Study"}
+              </DialogTitle>
+            </DialogHeader>
+            <form onSubmit={handleSubmit} className="space-y-4">
+              <div>
+                <Label htmlFor="title">Title</Label>
+                <Input
+                  id="title"
+                  value={formData.title}
+                  onChange={(e) =>
+                    setFormData((prev) => ({ ...prev, title: e.target.value }))
+                  }
+                  required
+                />
+              </div>
+
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <Label htmlFor="client_name">Client Name</Label>
+                  <Input
+                    id="client_name"
+                    value={formData.client_name}
+                    onChange={(e) =>
+                      setFormData((prev) => ({ ...prev, client_name: e.target.value }))
+                    }
+                    required
+                  />
+                </div>
+                <div>
+                  <Label htmlFor="industry">Industry</Label>
+                  <Input
+                    id="industry"
+                    value={formData.industry}
+                    onChange={(e) =>
+                      setFormData((prev) => ({ ...prev, industry: e.target.value }))
+                    }
+                    required
+                  />
+                </div>
+              </div>
+
+              <div>
+                <Label htmlFor="challenge">Challenge</Label>
+                <Textarea
+                  id="challenge"
+                  value={formData.challenge}
+                  onChange={(e) =>
+                    setFormData((prev) => ({ ...prev, challenge: e.target.value }))
+                  }
+                  required
+                  rows={3}
+                />
+              </div>
+
+              <div>
+                <Label htmlFor="solution">Solution</Label>
+                <Textarea
+                  id="solution"
+                  value={formData.solution}
+                  onChange={(e) =>
+                    setFormData((prev) => ({ ...prev, solution: e.target.value }))
+                  }
+                  required
+                  rows={3}
+                />
+              </div>
+
+              <div>
+                <Label htmlFor="results">Results</Label>
+                <Textarea
+                  id="results"
+                  value={formData.results}
+                  onChange={(e) =>
+                    setFormData((prev) => ({ ...prev, results: e.target.value }))
+                  }
+                  required
+                  rows={3}
+                />
+              </div>
+
+              <div>
+                <Label htmlFor="image_url">Image URL</Label>
+                <Input
+                  id="image_url"
+                  value={formData.image_url}
+                  onChange={(e) =>
+                    setFormData((prev) => ({ ...prev, image_url: e.target.value }))
+                  }
+                  placeholder="https://..."
+                />
+              </div>
+
+              <div className="flex items-center space-x-2">
+                <Switch
+                  id="featured"
+                  checked={formData.featured}
+                  onCheckedChange={(checked) =>
+                    setFormData((prev) => ({ ...prev, featured: checked }))
+                  }
+                />
+                <Label htmlFor="featured">Featured on website</Label>
+              </div>
+
+              <div className="flex gap-2 justify-end">
+                <Button
+                  type="button"
+                  variant="outline"
+                  onClick={() => setDialogOpen(false)}
+                >
+                  Cancel
+                </Button>
+                <Button type="submit">
+                  {editingId ? "Update" : "Create"}
+                </Button>
+              </div>
+            </form>
+          </DialogContent>
+        </Dialog>
+      </div>
+
+      {loading ? (
+        <div className="text-center py-8">Loading...</div>
+      ) : (
+        <div className="grid gap-4">
+          {caseStudies.length === 0 ? (
+            <Card className="p-8 text-center text-muted-foreground">
+              No case studies yet. Create your first one!
+            </Card>
+          ) : (
+            caseStudies.map((study) => (
+              <Card key={study.id} className="p-6">
+                <div className="flex items-start justify-between">
+                  <div className="flex-1">
+                    <div className="flex items-center gap-2 mb-2">
+                      <h3 className="text-xl font-bold">{study.title}</h3>
+                      {study.featured && (
+                        <Badge className="bg-primary">Featured</Badge>
+                      )}
+                    </div>
+                    <p className="text-sm text-muted-foreground mb-4">
+                      {study.client_name} • {study.industry}
+                    </p>
+                    <div className="space-y-2 text-sm">
+                      <p>
+                        <strong>Challenge:</strong> {study.challenge}
+                      </p>
+                      <p>
+                        <strong>Solution:</strong> {study.solution}
+                      </p>
+                      <p>
+                        <strong>Results:</strong> {study.results}
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex gap-2">
+                    <Button
+                      variant="ghost"
+                      size="sm"
+                      onClick={() => handleEdit(study)}
+                    >
+                      <Edit className="h-4 w-4" />
+                    </Button>
+                    <Button
+                      variant="ghost"
+                      size="sm"
+                      onClick={() => handleDelete(study.id)}
+                    >
+                      <Trash2 className="h-4 w-4 text-destructive" />
+                    </Button>
+                  </div>
+                </div>
+              </Card>
+            ))
+          )}
+        </div>
+      )}
+    </div>
+  );
+};

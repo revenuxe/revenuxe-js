@@ -11,7 +11,7 @@ const Navigation = () => {
     { label: "About", href: "#about" },
     { label: "Services", href: "#services" },
     { label: "Projects", href: "#projects" },
-    { label: "Contact", href: "#contact" },
+    { label: "Contact", href: "/contact" },
   ];
 
   return (
@@ -35,8 +35,8 @@ const Navigation = () => {
                 {item.label}
               </a>
             ))}
-            <Button variant="default" className="bg-primary hover:bg-primary/90">
-              Contact Us
+            <Button variant="default" className="bg-primary hover:bg-primary/90" asChild>
+              <a href="/contact">Contact Us</a>
             </Button>
           </div>
           
@@ -58,8 +58,8 @@ const Navigation = () => {
                     {item.label}
                   </a>
                 ))}
-                <Button variant="default" className="bg-primary hover:bg-primary/90 w-full">
-                  Contact Us
+                <Button variant="default" className="bg-primary hover:bg-primary/90 w-full" asChild>
+                  <a href="/contact">Contact Us</a>
                 </Button>
               </div>
             </SheetContent>
