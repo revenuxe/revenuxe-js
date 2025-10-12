@@ -5,12 +5,13 @@ import {
   SheetContent,
   SheetTrigger,
 } from "@/components/ui/sheet";
+import logo from "@/assets/arrowmind-logo.webp";
 
 const Navigation = () => {
   const navItems = [
     { label: "About", href: "/about" },
-    { label: "Services", href: "#services" },
-    { label: "Projects", href: "#projects" },
+    { label: "Services", href: "/services" },
+    { label: "Case Studies", href: "/case-studies" },
     { label: "Contact", href: "/contact" },
   ];
 
@@ -19,9 +20,12 @@ const Navigation = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <a href="/" className="text-2xl md:text-3xl font-bold">
-            <span className="text-foreground">ARROW</span>
-            <span className="text-primary">MIND</span>
+          <a href="/" className="flex items-center gap-3">
+            <img src={logo} alt="Arrowmind Logo" className="h-10 md:h-12 w-auto" />
+            <span className="text-xl md:text-2xl font-bold">
+              <span className="text-foreground">ARROW</span>
+              <span className="text-primary">MIND</span>
+            </span>
           </a>
           
           {/* Desktop Navigation */}

@@ -1,5 +1,6 @@
 import { Instagram, Linkedin, Mail } from "lucide-react";
 import { ContactForm } from "./ContactForm";
+import logo from "@/assets/arrowmind-logo.webp";
 
 const Footer = () => {
   return (
@@ -17,10 +18,13 @@ const Footer = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Brand */}
             <div>
-              <h3 className="text-2xl font-bold mb-4">
-                <span className="text-foreground">ARROW</span>
-                <span className="text-primary">MIND</span>
-              </h3>
+              <div className="flex items-center gap-3 mb-4">
+                <img src={logo} alt="Arrowmind Logo" className="h-10 w-auto" />
+                <h3 className="text-2xl font-bold">
+                  <span className="text-foreground">ARROW</span>
+                  <span className="text-primary">MIND</span>
+                </h3>
+              </div>
               <p className="text-muted-foreground">
                 Digital marketing agency specializing in growth strategies for small and medium businesses.
               </p>
@@ -77,7 +81,7 @@ const Footer = () => {
                   <Linkedin className="h-6 w-6" />
                 </a>
                 <a
-                  href="mailto:contact@arrowmind.agency"
+                  href="mailto:founder@arrowmind.in"
                   className="text-muted-foreground hover:text-primary transition-colors"
                   aria-label="Email"
                 >

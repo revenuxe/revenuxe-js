@@ -9,9 +9,10 @@ import { Loader2 } from "lucide-react";
 
 interface ContactFormProps {
   variant?: "default" | "compact";
+  onSuccess?: () => void;
 }
 
-export const ContactForm = ({ variant = "default" }: ContactFormProps) => {
+export const ContactForm = ({ variant = "default", onSuccess }: ContactFormProps) => {
   const { toast } = useToast();
   const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
@@ -54,6 +55,8 @@ export const ContactForm = ({ variant = "default" }: ContactFormProps) => {
         service: "",
         message: "",
       });
+      
+      onSuccess?.();
     } catch (error) {
       console.error("Error submitting form:", error);
       toast({

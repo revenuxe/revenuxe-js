@@ -1,6 +1,10 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Sparkles } from "lucide-react";
+import { GetStartedDialog } from "./GetStartedDialog";
+
 const CTA = () => {
+  const [dialogOpen, setDialogOpen] = useState(false);
   return <section className="py-24 relative overflow-hidden">
       {/* Animated Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-background to-primary/10" />
@@ -40,14 +44,20 @@ const CTA = () => {
           
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-6">
-            <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground px-12 py-7 text-lg font-bold group shadow-2xl shadow-primary/30">
+            <Button 
+              size="lg" 
+              className="bg-primary hover:bg-primary/90 text-primary-foreground px-12 py-7 text-lg font-bold group shadow-2xl shadow-primary/30"
+              onClick={() => setDialogOpen(true)}
+            >
               START YOUR PROJECT
               <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
             </Button>
-            <Button size="lg" variant="outline" className="border-2 border-primary/30 hover:bg-primary/10 px-12 py-7 text-lg font-bold">
-              SCHEDULE A CALL
+            <Button size="lg" variant="outline" className="border-2 border-primary/30 hover:bg-primary/10 px-12 py-7 text-lg font-bold" asChild>
+              <a href="/contact">SCHEDULE A CALL</a>
             </Button>
           </div>
+          
+          <GetStartedDialog open={dialogOpen} onOpenChange={setDialogOpen} />
           
           {/* Trust Indicators */}
           <div className="pt-12 flex flex-wrap justify-center gap-8 text-center">
