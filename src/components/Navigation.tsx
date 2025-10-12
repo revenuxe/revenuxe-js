@@ -8,7 +8,7 @@ import {
 
 const Navigation = () => {
   const navItems = [
-    { label: "About", href: "#about" },
+    { label: "About", href: "/about" },
     { label: "Services", href: "#services" },
     { label: "Projects", href: "#projects" },
     { label: "Contact", href: "/contact" },

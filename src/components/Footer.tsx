@@ -36,13 +36,23 @@ const Footer = () => {
                   </a>
                 </li>
                 <li>
-                  <a href="#about" className="text-muted-foreground hover:text-primary transition-colors">
+                  <a href="/about" className="text-muted-foreground hover:text-primary transition-colors">
                     About Us
                   </a>
                 </li>
                 <li>
-                  <a href="#contact" className="text-muted-foreground hover:text-primary transition-colors">
+                  <a href="/contact" className="text-muted-foreground hover:text-primary transition-colors">
                     Contact
+                  </a>
+                </li>
+                <li>
+                  <a href="/terms" className="text-muted-foreground hover:text-primary transition-colors">
+                    Terms & Conditions
+                  </a>
+                </li>
+                <li>
+                  <a href="/privacy" className="text-muted-foreground hover:text-primary transition-colors">
+                    Privacy Policy
                   </a>
                 </li>
               </ul>
