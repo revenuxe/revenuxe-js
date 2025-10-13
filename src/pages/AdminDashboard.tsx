@@ -4,9 +4,10 @@ import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { LogOut, Users, FileText, BarChart3 } from "lucide-react";
+import { LogOut, Users, FileText, BarChart3, BookOpen } from "lucide-react";
 import { LeadsTable } from "@/components/admin/LeadsTable";
 import { CaseStudiesManager } from "@/components/admin/CaseStudiesManager";
+import { ArticlesManager } from "@/components/admin/ArticlesManager";
 import { DashboardStats } from "@/components/admin/DashboardStats";
 
 const AdminDashboard = () => {
@@ -91,7 +92,7 @@ const AdminDashboard = () => {
       {/* Main Content */}
       <main className="container mx-auto px-4 py-8">
         <Tabs defaultValue="overview" className="space-y-6">
-          <TabsList className="grid w-full grid-cols-3 lg:w-auto">
+          <TabsList className="grid w-full grid-cols-4 lg:w-auto">
             <TabsTrigger value="overview" className="gap-2">
               <BarChart3 className="h-4 w-4" />
               Overview
@@ -103,6 +104,10 @@ const AdminDashboard = () => {
             <TabsTrigger value="case-studies" className="gap-2">
               <FileText className="h-4 w-4" />
               Case Studies
+            </TabsTrigger>
+            <TabsTrigger value="articles" className="gap-2">
+              <BookOpen className="h-4 w-4" />
+              Articles
             </TabsTrigger>
           </TabsList>
 
@@ -116,6 +121,10 @@ const AdminDashboard = () => {
 
           <TabsContent value="case-studies">
             <CaseStudiesManager />
+          </TabsContent>
+
+          <TabsContent value="articles">
+            <ArticlesManager />
           </TabsContent>
         </Tabs>
       </main>
