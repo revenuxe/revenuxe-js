@@ -7,6 +7,7 @@ import Index from "./pages/Index";
 import Contact from "./pages/Contact";
 import Services from "./pages/Services";
 import ServiceDetail from "./pages/ServiceDetail";
+import SubServiceDetail from "./pages/SubServiceDetail";
 import CaseStudies from "./pages/CaseStudies";
 import Articles from "./pages/Articles";
 import ArticleDetail from "./pages/ArticleDetail";

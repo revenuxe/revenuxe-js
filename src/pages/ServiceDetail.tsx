@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -12,10 +12,10 @@ const serviceData: Record<string, any> = {
     subtitle: "Build a powerful brand presence across all social platforms",
     description: "Transform your social media channels into powerful business assets. We create engaging content, build communities, and drive measurable results across Facebook, Instagram, LinkedIn, Twitter, and TikTok.",
     features: [
-      { title: "Strategic Content Planning", description: "Customized content calendars aligned with your brand voice and business objectives." },
-      { title: "Platform Optimization", description: "Optimize profiles and content for each platform's unique algorithm and audience behavior." },
-      { title: "Community Management", description: "Build lasting relationships through timely engagement and community-building strategies." },
-      { title: "Paid Social Campaigns", description: "Targeted ad campaigns that reach your ideal customers with the right message." },
+      { title: "Strategic Content Planning", description: "Customized content calendars aligned with your brand voice and business objectives.", link: "/sub-services/content-planning" },
+      { title: "Platform Optimization", description: "Optimize profiles and content for each platform's unique algorithm and audience behavior.", link: "/sub-services/platform-optimization" },
+      { title: "Community Management", description: "Build lasting relationships through timely engagement and community-building strategies.", link: "/sub-services/community-management" },
+      { title: "Paid Social Campaigns", description: "Targeted ad campaigns that reach your ideal customers with the right message.", link: "/sub-services/paid-social" },
     ],
     benefits: ["Increase brand awareness", "Drive website traffic", "Build authentic engagement", "Generate qualified leads", "Improve customer retention", "Gain market insights"],
     process: [
@@ -30,12 +30,12 @@ const serviceData: Record<string, any> = {
     subtitle: "Data-Driven Results That Matter",
     description: "Maximize ROI with targeted campaigns across Google Ads, Meta Ads, and AI-powered platforms. Every rupee invested delivers measurable returns through our data-driven approach.",
     features: [
-      { title: "Google Ads Excellence", description: "Master Search, Display, Shopping, and YouTube advertising. Leverage Smart Bidding, responsive search ads, and Performance Max campaigns across Google's entire ecosystem for maximum visibility and conversions." },
-      { title: "Meta Ads Mastery (Facebook & Instagram)", description: "Reach billions with precision targeting on Facebook and Instagram. Utilize Advantage+ campaigns, dynamic product ads, and advanced audience segmentation for exceptional B2C results." },
-      { title: "AI-Powered Advertising", description: "Harness AI for campaign optimization, creative generation, and predictive analytics. Automatically test thousands of variations, identify winning patterns, and scale what works for a competitive edge." },
-      { title: "Video Advertising Excellence", description: "Captivate audiences with compelling video campaigns across YouTube, Instagram Reels, Facebook Stories, and TikTok. Full-service from concept to production to optimization." },
-      { title: "Advanced Retargeting", description: "Re-engage potential customers with smart retargeting. Dynamic product ads, sequential messaging, and behavior-based triggers to convert interested users." },
-      { title: "Conversion Rate Optimization", description: "Improve landing pages and user journeys through A/B testing, heatmap analysis, and touchpoint optimization for maximum ROI." },
+      { title: "Google Ads Excellence", description: "Master Search, Display, Shopping, and YouTube advertising. Leverage Smart Bidding, responsive search ads, and Performance Max campaigns across Google's entire ecosystem for maximum visibility and conversions.", link: "/sub-services/google-ads" },
+      { title: "Meta Ads Mastery (Facebook & Instagram)", description: "Reach billions with precision targeting on Facebook and Instagram. Utilize Advantage+ campaigns, dynamic product ads, and advanced audience segmentation for exceptional B2C results.", link: "/sub-services/meta-ads" },
+      { title: "AI-Powered Advertising", description: "Harness AI for campaign optimization, creative generation, and predictive analytics. Automatically test thousands of variations, identify winning patterns, and scale what works for a competitive edge.", link: "/sub-services/ai-advertising" },
+      { title: "Video Advertising Excellence", description: "Captivate audiences with compelling video campaigns across YouTube, Instagram Reels, Facebook Stories, and TikTok. Full-service from concept to production to optimization.", link: "/sub-services/video-advertising" },
+      { title: "Advanced Retargeting", description: "Re-engage potential customers with smart retargeting. Dynamic product ads, sequential messaging, and behavior-based triggers to convert interested users.", link: "/sub-services/retargeting" },
+      { title: "Conversion Rate Optimization", description: "Improve landing pages and user journeys through A/B testing, heatmap analysis, and touchpoint optimization for maximum ROI.", link: "/sub-services/conversion-optimization" },
     ],
     benefits: ["Lower CPA through AI optimization", "Higher ROAS with multi-platform strategies", "Real-time performance tracking", "Scalable growth with automation", "Advanced audience insights", "Reduced manual optimization"],
     process: [
@@ -50,10 +50,10 @@ const serviceData: Record<string, any> = {
     subtitle: "Dominate search rankings and drive organic traffic",
     description: "Comprehensive SEO strategies that help you rank higher on Google, attract qualified traffic, and establish brand authority for long-term sustainable growth.",
     features: [
-      { title: "Technical SEO Excellence", description: "Optimize structure, speed, and crawlability for search engines." },
-      { title: "Keyword Strategy", description: "Identify high-value keywords and create content that ranks and converts." },
-      { title: "On-Page Optimization", description: "Perfect every element from meta tags to internal linking." },
-      { title: "Quality Link Building", description: "Build authoritative backlinks through strategic outreach and digital PR." },
+      { title: "Technical SEO Excellence", description: "Optimize structure, speed, and crawlability for search engines.", link: "/sub-services/technical-seo" },
+      { title: "Keyword Strategy", description: "Identify high-value keywords and create content that ranks and converts.", link: "/sub-services/keyword-strategy" },
+      { title: "On-Page Optimization", description: "Perfect every element from meta tags to internal linking.", link: "/sub-services/on-page-seo" },
+      { title: "Quality Link Building", description: "Build authoritative backlinks through strategic outreach and digital PR.", link: "/sub-services/link-building" },
     ],
     benefits: ["Increase organic visibility", "Drive qualified traffic", "Build brand authority", "Reduce paid ad dependency", "Improve user experience", "Higher organic conversions"],
     process: [
@@ -118,9 +118,16 @@ const ServiceDetail = () => {
             <h2 className="text-4xl font-bold text-center mb-12">What We <span className="text-primary">Offer</span></h2>
             <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
               {service.features?.map((f: any, i: number) => (
-                <div key={i} className="bg-card border rounded-lg p-6 hover:border-primary/50 transition">
-                  <h3 className="text-2xl font-bold mb-3">{f.title}</h3>
-                  <p className="text-muted-foreground">{f.description}</p>
+                <div key={i} className="bg-card border rounded-lg p-6 hover:border-primary/50 transition relative group">
+                  <h3 className="text-2xl font-bold mb-3 pr-16">{f.title}</h3>
+                  <p className="text-muted-foreground mb-4">{f.description}</p>
+                  {f.link && (
+                    <Link to={f.link} className="absolute top-6 right-6">
+                      <div className="w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center hover:scale-110 transition-transform shadow-lg">
+                        <ArrowRight className="w-5 h-5" />
+                      </div>
+                    </Link>
+                  )}
                 </div>
               ))}
             </div>
