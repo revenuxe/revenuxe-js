@@ -66,12 +66,66 @@ const serviceData: Record<string, any> = {
 };
 
 const additionalServices = {
-  "email-marketing": { title: "Email Marketing", subtitle: "Engage and convert with personalized campaigns" },
-  "content-marketing": { title: "Content Marketing", subtitle: "Create compelling content" },
-  "web-development": { title: "Custom Web Development", subtitle: "Build modern web applications" },
-  "ecommerce": { title: "E-Commerce Solutions", subtitle: "Complete online store setup" },
-  "mobile-design": { title: "Mobile-First Design", subtitle: "Responsive designs" },
-  "landing-pages": { title: "Landing Pages", subtitle: "High-converting pages" },
+  "email-marketing": { 
+    title: "Email Marketing", 
+    subtitle: "Engage and convert with personalized campaigns",
+    features: [
+      { title: "Email Campaign Strategy", description: "Develop targeted campaigns that nurture leads and drive conversions.", link: "/sub-services/email-campaigns" },
+      { title: "Marketing Automation", description: "Automate workflows for welcome series, abandoned carts, and re-engagement.", link: "/sub-services/marketing-automation" },
+      { title: "List Segmentation", description: "Segment audiences for personalized messaging that increases engagement.", link: "/sub-services/list-segmentation" },
+      { title: "Email Design & Copywriting", description: "Create beautiful, mobile-responsive emails with compelling copy.", link: "/sub-services/email-design" },
+    ],
+  },
+  "content-marketing": { 
+    title: "Content Marketing", 
+    subtitle: "Create compelling content that attracts and converts",
+    features: [
+      { title: "Content Strategy Development", description: "Build comprehensive content strategies aligned with business goals.", link: "/sub-services/content-strategy" },
+      { title: "Blog & Article Writing", description: "Create SEO-optimized articles that establish thought leadership.", link: "/sub-services/blog-writing" },
+      { title: "Video Content Production", description: "Produce engaging videos for social media, websites, and campaigns.", link: "/sub-services/video-production" },
+      { title: "Infographic Design", description: "Transform complex data into shareable visual content.", link: "/sub-services/infographic-design" },
+    ],
+  },
+  "web-development": { 
+    title: "Custom Web Development", 
+    subtitle: "Build modern, high-performance web applications",
+    features: [
+      { title: "Custom Website Development", description: "Build tailored websites with cutting-edge technologies and frameworks.", link: "/sub-services/custom-websites" },
+      { title: "Web Application Development", description: "Create powerful web apps with advanced functionality and integrations.", link: "/sub-services/web-apps" },
+      { title: "CMS Integration", description: "Implement content management systems for easy content updates.", link: "/sub-services/cms-integration" },
+      { title: "API Development & Integration", description: "Build and connect APIs for seamless data flow and functionality.", link: "/sub-services/api-development" },
+    ],
+  },
+  "ecommerce": { 
+    title: "E-Commerce Solutions", 
+    subtitle: "Complete online store setup and optimization",
+    features: [
+      { title: "E-Commerce Platform Setup", description: "Launch full-featured online stores on Shopify, WooCommerce, or custom platforms.", link: "/sub-services/ecommerce-setup" },
+      { title: "Payment Gateway Integration", description: "Integrate secure payment solutions with multiple payment options.", link: "/sub-services/payment-integration" },
+      { title: "Product Catalog Management", description: "Organize and optimize product listings for maximum conversions.", link: "/sub-services/catalog-management" },
+      { title: "Cart Optimization", description: "Reduce abandonment and increase conversions with optimized checkout flows.", link: "/sub-services/cart-optimization" },
+    ],
+  },
+  "mobile-design": { 
+    title: "Mobile-First Design", 
+    subtitle: "Responsive designs that work flawlessly on all devices",
+    features: [
+      { title: "Responsive Web Design", description: "Create fluid designs that adapt perfectly to any screen size.", link: "/sub-services/responsive-design" },
+      { title: "Mobile UX Optimization", description: "Optimize user experiences specifically for mobile interactions.", link: "/sub-services/mobile-ux" },
+      { title: "Progressive Web Apps", description: "Build PWAs that combine the best of web and mobile apps.", link: "/sub-services/pwa-development" },
+      { title: "Mobile Performance", description: "Ensure lightning-fast load times and smooth interactions on mobile.", link: "/sub-services/mobile-performance" },
+    ],
+  },
+  "landing-pages": { 
+    title: "Landing Pages", 
+    subtitle: "High-converting pages that turn visitors into customers",
+    features: [
+      { title: "Conversion-Focused Design", description: "Design landing pages optimized for maximum conversion rates.", link: "/sub-services/conversion-design" },
+      { title: "A/B Testing Setup", description: "Test variations to continuously improve performance and conversions.", link: "/sub-services/ab-testing" },
+      { title: "Lead Capture Forms", description: "Create optimized forms that increase lead generation.", link: "/sub-services/lead-forms" },
+      { title: "Landing Page Analytics", description: "Track and analyze visitor behavior to optimize performance.", link: "/sub-services/landing-analytics" },
+    ],
+  },
 };
 
 const ServiceDetail = () => {
