@@ -132,8 +132,11 @@ const ServiceDetail = () => {
   const { slug } = useParams();
   const [dialogOpen, setDialogOpen] = useState(false);
   
-  const service = serviceData[slug || ""] || {
-    ...additionalServices[slug || ""],
+  const foundService = serviceData[slug || ""] || additionalServices[slug || ""];
+  
+  const service = foundService || {
+    title: "Service Not Found",
+    subtitle: "Coming soon",
     description: "Expert solutions tailored to your business needs with proven results.",
     features: [
       { title: "Expert Strategy", description: "Customized approach for your unique requirements." },
@@ -149,6 +152,22 @@ const ServiceDetail = () => {
       { step: "Optimization", description: "Continuously improve performance." },
     ],
   };
+  
+  // Add default values for missing properties
+  if (!service.description) {
+    service.description = "Expert solutions tailored to your business needs with proven results.";
+  }
+  if (!service.benefits) {
+    service.benefits = ["Achieve objectives faster", "Improve efficiency", "Maximize ROI", "Stay competitive", "Expert insights", "Scale effectively"];
+  }
+  if (!service.process) {
+    service.process = [
+      { step: "Discovery", description: "Learn about your business and goals." },
+      { step: "Strategy", description: "Develop comprehensive plan." },
+      { step: "Execution", description: "Implement with precision." },
+      { step: "Optimization", description: "Continuously improve performance." },
+    ];
+  }
 
   return (
     <div className="min-h-screen bg-background">
