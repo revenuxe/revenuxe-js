@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Check } from "lucide-react";
 import { useState } from "react";
 import { GetStartedDialog } from "@/components/GetStartedDialog";
+import { SEO } from "@/components/SEO";
 
 const serviceData: Record<string, any> = {
   "social-media": {
@@ -126,6 +127,38 @@ const additionalServices = {
       { title: "Landing Page Analytics", description: "Track and analyze visitor behavior to optimize performance.", link: "/sub-services/landing-analytics" },
     ],
   },
+  "ai-chatbots": {
+    title: "AI Chatbots & Automation",
+    subtitle: "Intelligent conversational AI that engages and converts 24/7",
+    features: [
+      { title: "Custom AI Chatbot Development", description: "Build intelligent chatbots powered by GPT and advanced AI for natural conversations.", link: "/sub-services/custom-chatbot" },
+      { title: "WhatsApp Business Automation", description: "Automate customer interactions on WhatsApp with AI-powered responses.", link: "/sub-services/whatsapp-automation" },
+      { title: "Lead Qualification Bots", description: "Automatically qualify leads and route to sales team based on AI analysis.", link: "/sub-services/lead-qualification-bot" },
+      { title: "Customer Support Automation", description: "Provide instant 24/7 support with AI chatbots that learn from interactions.", link: "/sub-services/support-automation" },
+      { title: "Conversational Commerce", description: "Enable shopping and transactions through natural chat interfaces.", link: "/sub-services/conversational-commerce" },
+      { title: "Multi-Channel Bot Deployment", description: "Deploy chatbots across website, WhatsApp, Facebook Messenger, and more.", link: "/sub-services/multichannel-bots" },
+    ],
+  },
+  "branding": {
+    title: "Brand Identity & Design",
+    subtitle: "Create memorable brands that resonate with your audience",
+    features: [
+      { title: "Brand Strategy & Positioning", description: "Define your brand identity, values, and unique market positioning.", link: "/sub-services/brand-strategy" },
+      { title: "Logo & Visual Identity", description: "Design distinctive logos and visual systems that represent your brand.", link: "/sub-services/logo-design" },
+      { title: "Brand Guidelines", description: "Create comprehensive brand guidelines for consistent application.", link: "/sub-services/brand-guidelines" },
+      { title: "Rebranding Services", description: "Refresh and modernize existing brands for new market opportunities.", link: "/sub-services/rebranding" },
+    ],
+  },
+  "analytics": {
+    title: "Analytics & Data Intelligence",
+    subtitle: "Turn data into actionable insights that drive growth",
+    features: [
+      { title: "Google Analytics Setup & Optimization", description: "Implement advanced tracking and custom reporting for complete insights.", link: "/sub-services/google-analytics" },
+      { title: "Conversion Tracking", description: "Track every customer action and attribute revenue to marketing channels.", link: "/sub-services/conversion-tracking" },
+      { title: "Custom Dashboards", description: "Build real-time dashboards that visualize key metrics and KPIs.", link: "/sub-services/custom-dashboards" },
+      { title: "Marketing Attribution", description: "Understand which channels and campaigns drive conversions and revenue.", link: "/sub-services/marketing-attribution" },
+    ],
+  },
 };
 
 const ServiceDetail = () => {
@@ -171,6 +204,11 @@ const ServiceDetail = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO 
+        title={`${service.title} Services | Arrowmind`}
+        description={service.description}
+        canonicalUrl={`https://arrowmind.in/services/${slug}`}
+      />
       <Navigation />
       <main className="pt-20">
         <section className="py-20 bg-gradient-to-br from-background via-background to-primary/5">

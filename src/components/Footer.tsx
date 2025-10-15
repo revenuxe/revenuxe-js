@@ -1,4 +1,4 @@
-import { Instagram, Linkedin, Mail } from "lucide-react";
+import { Linkedin } from "lucide-react";
 import { ContactForm } from "./ContactForm";
 import logo from "@/assets/arrowmind-logo.webp";
 
@@ -77,25 +77,13 @@ const Footer = () => {
               <h4 className="text-lg font-semibold mb-4 text-foreground">Connect</h4>
               <div className="flex space-x-4">
                 <a
-                  href="#"
+                  href="https://www.linkedin.com/company/arrowmind-agency/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-muted-foreground hover:text-primary transition-colors"
-                  aria-label="Instagram"
-                >
-                  <Instagram className="h-6 w-6" />
-                </a>
-                <a
-                  href="#"
-                  className="text-muted-foreground hover:text-primary transition-colors"
-                  aria-label="LinkedIn"
+                  aria-label="Follow us on LinkedIn"
                 >
                   <Linkedin className="h-6 w-6" />
-                </a>
-                <a
-                  href="mailto:founder@arrowmind.in"
-                  className="text-muted-foreground hover:text-primary transition-colors"
-                  aria-label="Email"
-                >
-                  <Mail className="h-6 w-6" />
                 </a>
               </div>
             </div>
