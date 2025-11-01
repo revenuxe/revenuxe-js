@@ -1,15 +1,16 @@
-import { useEffect } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { ArrowRight, Target, Users, Zap } from "lucide-react";
+import { SEO } from "@/components/SEO";
 
 const AboutUs = () => {
-  useEffect(() => {
-    document.title = "About Us - ArrowMind Digital Marketing";
-  }, []);
-
   return (
     <div className="min-h-screen bg-background">
+      <SEO 
+        title="About Us - Leading AI Digital Marketing Agency | Arrowmind"
+        description="Learn about Arrowmind's mission to empower businesses with innovative digital marketing solutions. Discover our values, expertise, and commitment to driving measurable growth."
+        keywords="about Arrowmind, digital marketing agency story, our mission, our values, marketing team, digital marketing experts"
+      />
       <Navigation />
       
       {/* Hero Section */}

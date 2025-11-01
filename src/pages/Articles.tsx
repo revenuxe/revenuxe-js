@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Calendar, User } from "lucide-react";
+import { SEO } from "@/components/SEO";
 
 interface Article {
   id: string;
@@ -46,6 +47,11 @@ const Articles = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO 
+        title="Digital Marketing Articles & Insights | Arrowmind Blog"
+        description="Read the latest articles on digital marketing trends, SEO strategies, web development, performance marketing, and AI-powered marketing solutions from industry experts."
+        keywords="digital marketing articles, SEO blog, marketing insights, web development tips, performance marketing guide, AI marketing trends"
+      />
       <Navigation />
       <main className="pt-20">
         <section className="py-20 px-4">

@@ -15,7 +15,7 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             {/* Brand */}
             <div>
               <div className="flex items-center gap-3 mb-4">
@@ -72,7 +72,44 @@ const Footer = () => {
               </ul>
             </div>
             
-            {/* Contact */}
+            {/* We Serve in India */}
+            <div>
+              <h4 className="text-lg font-semibold mb-4 text-foreground">We Serve in India</h4>
+              <ul className="space-y-2">
+                <li>
+                  <a href="/bangalore" className="text-muted-foreground hover:text-primary transition-colors">
+                    Bangalore
+                  </a>
+                </li>
+                <li>
+                  <a href="/hyderabad" className="text-muted-foreground hover:text-primary transition-colors">
+                    Hyderabad
+                  </a>
+                </li>
+                <li>
+                  <a href="/chennai" className="text-muted-foreground hover:text-primary transition-colors">
+                    Chennai
+                  </a>
+                </li>
+                <li>
+                  <a href="/mumbai" className="text-muted-foreground hover:text-primary transition-colors">
+                    Mumbai
+                  </a>
+                </li>
+                <li>
+                  <a href="/pune" className="text-muted-foreground hover:text-primary transition-colors">
+                    Pune
+                  </a>
+                </li>
+                <li>
+                  <a href="/delhi" className="text-muted-foreground hover:text-primary transition-colors">
+                    Delhi
+                  </a>
+                </li>
+              </ul>
+            </div>
+            
+            {/* Connect */}
             <div>
               <h4 className="text-lg font-semibold mb-4 text-foreground">Connect</h4>
               <div className="flex space-x-4">

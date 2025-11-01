@@ -2,10 +2,16 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { ContactForm } from "@/components/ContactForm";
 import { Mail, Phone, MapPin } from "lucide-react";
+import { SEO } from "@/components/SEO";
 
 const Contact = () => {
   return (
     <div className="min-h-screen bg-background">
+      <SEO 
+        title="Contact Us - Get In Touch | Arrowmind Digital Marketing"
+        description="Contact Arrowmind for professional digital marketing services. We're here to help transform your business with expert SEO, web development, and performance marketing solutions."
+        keywords="contact digital marketing agency, get in touch, digital marketing consultation, Arrowmind contact, marketing inquiry"
+      />
       <Navigation />
       
       <main className="pt-20">

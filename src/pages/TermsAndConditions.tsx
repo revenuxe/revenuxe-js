@@ -1,14 +1,15 @@
-import { useEffect } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import { SEO } from "@/components/SEO";
 
 const TermsAndConditions = () => {
-  useEffect(() => {
-    document.title = "Terms and Conditions - ArrowMind Digital Marketing";
-  }, []);
-
   return (
     <div className="min-h-screen bg-background">
+      <SEO 
+        title="Terms and Conditions | Arrowmind Digital Marketing Agency"
+        description="Read Arrowmind's terms and conditions for our digital marketing services. Understand our service agreements, client responsibilities, and business policies."
+        keywords="terms and conditions, service agreement, digital marketing terms, Arrowmind terms, business policies"
+      />
       <Navigation />
       <main className="container mx-auto px-4 pt-24 pb-16">
         <article className="max-w-4xl mx-auto prose prose-lg">

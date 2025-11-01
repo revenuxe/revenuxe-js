@@ -1,14 +1,15 @@
-import { useEffect } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import { SEO } from "@/components/SEO";
 
 const PrivacyPolicy = () => {
-  useEffect(() => {
-    document.title = "Privacy Policy - ArrowMind Digital Marketing";
-  }, []);
-
   return (
     <div className="min-h-screen bg-background">
+      <SEO 
+        title="Privacy Policy | Arrowmind Digital Marketing Agency"
+        description="Learn how Arrowmind protects your privacy and handles your data. Read our comprehensive privacy policy covering data collection, usage, and your rights."
+        keywords="privacy policy, data protection, privacy practices, GDPR compliance, data security, Arrowmind privacy"
+      />
       <Navigation />
       <main className="container mx-auto px-4 pt-24 pb-16">
         <article className="max-w-4xl mx-auto prose prose-lg">
