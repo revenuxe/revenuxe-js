@@ -26,6 +26,7 @@ interface CaseStudy {
   solution: string;
   results: string;
   image_url: string | null;
+  website_url: string | null;
   featured: boolean;
 }
 
@@ -43,6 +44,7 @@ export const CaseStudiesManager = () => {
     solution: "",
     results: "",
     image_url: "",
+    website_url: "",
     featured: false,
   });
   const [uploading, setUploading] = useState(false);
@@ -116,6 +118,7 @@ export const CaseStudiesManager = () => {
       solution: caseStudy.solution,
       results: caseStudy.results,
       image_url: caseStudy.image_url || "",
+      website_url: caseStudy.website_url || "",
       featured: caseStudy.featured,
     });
     setDialogOpen(true);
@@ -191,6 +194,7 @@ export const CaseStudiesManager = () => {
       solution: "",
       results: "",
       image_url: "",
+      website_url: "",
       featured: false,
     });
   };
@@ -330,6 +334,19 @@ export const CaseStudiesManager = () => {
                 </div>
               </div>
 
+              <div>
+                <Label htmlFor="website_url">Website URL (optional)</Label>
+                <Input
+                  id="website_url"
+                  placeholder="https://example.com"
+                  type="url"
+                  value={formData.website_url}
+                  onChange={(e) =>
+                    setFormData((prev) => ({ ...prev, website_url: e.target.value }))
+                  }
+                />
+              </div>
+
               <div className="flex items-center space-x-2">
                 <Switch
                   id="featured"
@@ -379,6 +396,19 @@ export const CaseStudiesManager = () => {
                     </div>
                     <p className="text-sm text-muted-foreground mb-4">
                       {study.client_name} • {study.industry}
+                      {study.website_url && (
+                        <>
+                          {" • "}
+                          <a
+                            href={study.website_url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-primary hover:underline"
+                          >
+                            Visit Website
+                          </a>
+                        </>
+                      )}
                     </p>
                     <div className="space-y-2 text-sm">
                       <p>

@@ -69,6 +69,7 @@ export type Database = {
           solution: string
           title: string
           updated_at: string | null
+          website_url: string | null
         }
         Insert: {
           challenge: string
@@ -82,6 +83,7 @@ export type Database = {
           solution: string
           title: string
           updated_at?: string | null
+          website_url?: string | null
         }
         Update: {
           challenge?: string
@@ -95,6 +97,7 @@ export type Database = {
           solution?: string
           title?: string
           updated_at?: string | null
+          website_url?: string | null
         }
         Relationships: []
       }
