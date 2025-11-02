@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useParams, useLocation } from "react-router-dom";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import Services from "@/components/Services";
@@ -65,9 +65,11 @@ const cityData: Record<string, {
 };
 
 const CityPage = () => {
-  const { city } = useParams<{ city: string }>();
+  const location = useLocation();
   const [dialogOpen, setDialogOpen] = useState(false);
   
+  // Extract city from pathname (e.g., /bangalore -> bangalore)
+  const city = location.pathname.split('/')[1];
   const cityInfo = city ? cityData[city.toLowerCase()] : null;
   
   if (!cityInfo) {
