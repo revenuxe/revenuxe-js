@@ -87,7 +87,7 @@ const CityPage = () => {
       <Navigation />
       
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24 md:pt-32">
         {/* Background Elements */}
         <div className="absolute inset-0 bg-gradient-to-br from-background via-primary/5 to-background" />
         
@@ -104,26 +104,26 @@ const CityPage = () => {
         </div>
 
         {/* Content */}
-        <div className="relative z-10 container mx-auto px-4 text-center">
-          <div className="max-w-4xl mx-auto space-y-8 animate-fade-in">
-            <div className="space-y-4">
-              <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight">
+        <div className="relative z-10 container mx-auto px-4 text-center py-12">
+          <div className="max-w-4xl mx-auto space-y-10 animate-fade-in">
+            <div className="space-y-6">
+              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight">
                 <span className="block text-foreground">AI MARKETING AGENCY</span>
               </h1>
               
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
                 <span className="text-foreground">IN </span>
                 <span className="bg-gradient-to-r from-primary via-primary-variant to-primary bg-clip-text text-transparent">
                   {cityInfo.name.toUpperCase()}
                 </span>
               </h2>
               
-              <p className="text-2xl md:text-3xl font-semibold text-primary">
+              <p className="text-xl md:text-2xl lg:text-3xl font-semibold text-primary mt-4">
                 {cityInfo.tagline}
               </p>
             </div>
 
-            <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+            <p className="text-base md:text-lg lg:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed pt-4">
               {cityInfo.description}
             </p>
 
