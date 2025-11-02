@@ -1,18 +1,18 @@
 import { Lightbulb, Target, Rocket, LineChart } from "lucide-react";
 
-const Process = () => {
+const Process = ({ cityName }: { cityName?: string }) => {
   const steps = [
     {
       icon: <Lightbulb className="w-10 h-10" />,
       number: "01",
       title: "Discovery",
-      description: "We analyze your business, audience, and competition to create a tailored strategy that delivers results."
+      description: `We analyze your business, audience, and competition${cityName ? ` in ${cityName}` : ''} to create a tailored strategy that delivers results.`
     },
     {
       icon: <Target className="w-10 h-10" />,
       number: "02",
       title: "Strategy",
-      description: "Our experts develop a comprehensive marketing plan with clear objectives and measurable KPIs."
+      description: `Our experts develop a comprehensive marketing plan${cityName ? ` for ${cityName} market` : ''} with clear objectives and measurable KPIs.`
     },
     {
       icon: <Rocket className="w-10 h-10" />,

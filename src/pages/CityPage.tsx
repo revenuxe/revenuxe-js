@@ -108,18 +108,19 @@ const CityPage = () => {
           <div className="max-w-4xl mx-auto space-y-8 animate-fade-in">
             <div className="space-y-4">
               <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight">
-                <span className="block text-foreground mb-2">AI MARKETING AGENCY</span>
-                <span className="block">
-                  <span className="text-foreground">IN </span>
-                  <span className="bg-gradient-to-r from-primary via-primary-variant to-primary bg-clip-text text-transparent">
-                    {cityInfo.name.toUpperCase()}
-                  </span>
-                </span>
+                <span className="block text-foreground">AI MARKETING AGENCY</span>
               </h1>
               
-              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-primary">
-                {cityInfo.tagline}
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold">
+                <span className="text-foreground">IN </span>
+                <span className="bg-gradient-to-r from-primary via-primary-variant to-primary bg-clip-text text-transparent">
+                  {cityInfo.name.toUpperCase()}
+                </span>
               </h2>
+              
+              <p className="text-2xl md:text-3xl font-semibold text-primary">
+                {cityInfo.tagline}
+              </p>
             </div>
 
             <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
@@ -155,9 +156,24 @@ const CityPage = () => {
       </section>
 
       <Stats />
-      <Services />
-      <Process />
-      <WhyChooseUs />
+      
+      {/* City-Specific Services Section */}
+      <section className="py-20 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+              Digital Marketing Services in {cityInfo.name}
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              Comprehensive AI-powered marketing solutions tailored for {cityInfo.name} businesses
+            </p>
+          </div>
+        </div>
+      </section>
+      
+      <Services cityName={cityInfo.name} />
+      <Process cityName={cityInfo.name} />
+      <WhyChooseUs cityName={cityInfo.name} />
       <Testimonials />
       <CTA />
       <Footer />

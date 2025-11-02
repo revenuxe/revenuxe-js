@@ -1,15 +1,15 @@
-const WhyChooseUs = () => {
+const WhyChooseUs = ({ cityName }: { cityName?: string }) => {
   const benefits = [
     {
-      title: "Flexibility and client-oriented approach",
+      title: `Flexibility and client-oriented approach${cityName ? ` for ${cityName} businesses` : ''}`,
       highlight: "CLIENT-ORIENTED",
     },
     {
-      title: "Work with multi-channel advertising campaigns",
+      title: `Work with multi-channel advertising campaigns${cityName ? ` in ${cityName}` : ''}`,
       highlight: "MULTI-CHANNEL",
     },
     {
-      title: "Guaranteed lead generation during test campaign period",
+      title: `Guaranteed lead generation during test campaign period${cityName ? ` in ${cityName}` : ''}`,
       highlight: "GUARANTEED LEADS",
     },
     {

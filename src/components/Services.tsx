@@ -19,7 +19,7 @@ import {
 } from "lucide-react";
 import { Link } from "react-router-dom";
 
-const Services = () => {
+const Services = ({ cityName }: { cityName?: string }) => {
   const serviceCategories = [
     {
       category: "Marketing Services",
@@ -268,14 +268,15 @@ const Services = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-20 space-y-4">
           <span className="text-primary text-sm font-bold uppercase tracking-wider">
-            Our Services
+            Our Services{cityName ? ` in ${cityName}` : ''}
           </span>
           <h2 className="text-4xl md:text-6xl font-bold">
             What We <span className="text-primary">Offer</span>
+            {cityName && <span className="text-foreground"> in {cityName}</span>}
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             Complete digital & AI-driven marketing solutions designed to scale
-            your brand.
+            your brand{cityName ? ` in ${cityName}` : ''}.
           </p>
         </div>
 
