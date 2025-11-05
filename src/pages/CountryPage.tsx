@@ -18,41 +18,72 @@ const countryData: Record<string, {
   description: string;
   keywords: string;
   metaDescription: string;
+  cities: Array<{ name: string; slug: string }>;
 }> = {
   singapore: {
     name: "Singapore",
     tagline: "Elevate Your Brand with AI-Powered Marketing in Singapore",
     description: "Transform your business with cutting-edge digital marketing strategies tailored for Singapore's dynamic market. Our AI-powered solutions help you dominate search rankings and drive exponential growth in the Lion City.",
     keywords: "digital marketing Singapore, AI marketing Singapore, SEO Singapore, growth marketing Singapore",
-    metaDescription: "Leading AI-powered digital marketing agency in Singapore. Transform your business with data-driven strategies, advanced SEO, and growth marketing solutions."
+    metaDescription: "Leading AI-powered digital marketing agency in Singapore. Transform your business with data-driven strategies, advanced SEO, and growth marketing solutions.",
+    cities: [
+      { name: "Central Singapore", slug: "central-singapore" },
+      { name: "Jurong", slug: "jurong" },
+      { name: "Woodlands", slug: "woodlands" }
+    ]
   },
   usa: {
     name: "USA",
     tagline: "Scale Your Business with AI-Driven Marketing in the USA",
     description: "Partner with a leading digital marketing agency serving businesses across the United States. Our AI-powered strategies deliver measurable results and sustainable growth in America's competitive market.",
     keywords: "digital marketing USA, AI marketing America, SEO USA, growth marketing United States",
-    metaDescription: "Top AI-powered digital marketing agency serving the USA. Drive growth with advanced SEO, content marketing, and data-driven strategies across America."
+    metaDescription: "Top AI-powered digital marketing agency serving the USA. Drive growth with advanced SEO, content marketing, and data-driven strategies across America.",
+    cities: [
+      { name: "Chicago", slug: "chicago" },
+      { name: "New York", slug: "new-york" },
+      { name: "Los Angeles", slug: "los-angeles" },
+      { name: "Miami", slug: "miami" },
+      { name: "San Francisco", slug: "san-francisco" },
+      { name: "Seattle", slug: "seattle" }
+    ]
   },
   uae: {
     name: "UAE",
     tagline: "Accelerate Your Growth with AI Marketing in the UAE",
     description: "Empower your business with innovative digital marketing solutions designed for the UAE market. Our AI-driven approach ensures your brand stands out in Dubai, Abu Dhabi, and beyond.",
     keywords: "digital marketing UAE, AI marketing Dubai, SEO UAE, growth marketing Middle East",
-    metaDescription: "Premier AI-powered digital marketing agency in UAE. Transform your business with cutting-edge strategies tailored for Dubai, Abu Dhabi, and the Middle East."
+    metaDescription: "Premier AI-powered digital marketing agency in UAE. Transform your business with cutting-edge strategies tailored for Dubai, Abu Dhabi, and the Middle East.",
+    cities: [
+      { name: "Dubai", slug: "dubai" },
+      { name: "Abu Dhabi", slug: "abu-dhabi" },
+      { name: "Sharjah", slug: "sharjah" }
+    ]
   },
   indonesia: {
     name: "Indonesia",
     tagline: "Drive Digital Success with AI Marketing in Indonesia",
     description: "Unlock your business potential with tailored digital marketing strategies for Indonesia's vibrant market. Our AI-powered solutions help you connect with millions of Indonesian consumers.",
     keywords: "digital marketing Indonesia, AI marketing Indonesia, SEO Indonesia, growth marketing Jakarta",
-    metaDescription: "Leading AI-powered digital marketing agency in Indonesia. Grow your business with localized strategies and advanced SEO solutions for the Indonesian market."
+    metaDescription: "Leading AI-powered digital marketing agency in Indonesia. Grow your business with localized strategies and advanced SEO solutions for the Indonesian market.",
+    cities: [
+      { name: "Jakarta", slug: "jakarta" },
+      { name: "Surabaya", slug: "surabaya" },
+      { name: "Bali", slug: "bali" },
+      { name: "Bandung", slug: "bandung" }
+    ]
   },
   australia: {
     name: "Australia",
     tagline: "Amplify Your Brand with AI Marketing in Australia",
     description: "Partner with Australia's trusted digital marketing experts. Our AI-driven strategies help businesses across Sydney, Melbourne, and beyond achieve remarkable growth and market dominance.",
     keywords: "digital marketing Australia, AI marketing Sydney, SEO Australia, growth marketing Melbourne",
-    metaDescription: "Top-rated AI-powered digital marketing agency in Australia. Scale your business with innovative strategies across Sydney, Melbourne, and all major Australian cities."
+    metaDescription: "Top-rated AI-powered digital marketing agency in Australia. Scale your business with innovative strategies across Sydney, Melbourne, and all major Australian cities.",
+    cities: [
+      { name: "Sydney", slug: "sydney" },
+      { name: "Melbourne", slug: "melbourne" },
+      { name: "Brisbane", slug: "brisbane" },
+      { name: "Perth", slug: "perth" }
+    ]
   }
 };
 
@@ -146,6 +177,34 @@ const CountryPage = () => {
       <Services />
       <Process />
       <WhyChooseUs cityName={country.name} />
+      
+      {/* Cities Section */}
+      <section className="py-20 bg-muted/30">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold mb-4">
+              Cities We Serve in {country.name}
+            </h2>
+            <p className="text-muted-foreground text-lg">
+              Delivering exceptional digital marketing solutions across major cities
+            </p>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 max-w-6xl mx-auto">
+            {country.cities.map((city) => (
+              <a
+                key={city.slug}
+                href={`/country/${countrySlug}/${city.slug}`}
+                className="p-6 bg-card border border-border rounded-lg hover:border-primary transition-all hover:shadow-lg text-center group"
+              >
+                <p className="font-semibold group-hover:text-primary transition-colors">
+                  {city.name}
+                </p>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+      
       <Testimonials />
       <CTA />
       <Footer />
