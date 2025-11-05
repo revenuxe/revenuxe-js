@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Check } from "lucide-react";
 import { useState } from "react";
 import { GetStartedDialog } from "@/components/GetStartedDialog";
+import FAQ from "@/components/FAQ";
 
 const subServiceData: Record<string, any> = {
   // Performance Marketing Sub-Services
@@ -1616,6 +1617,31 @@ const SubServiceDetail = () => {
             </div>
           </section>
         )}
+
+        <FAQ 
+          items={[
+            {
+              question: `How does ${service.title} work?`,
+              answer: `${service.title} combines strategic planning, expert implementation, and continuous optimization to deliver measurable results. We start by understanding your business goals, then develop a customized approach using proven methodologies and cutting-edge tools.`
+            },
+            {
+              question: "What results can I expect?",
+              answer: `Results vary based on your industry, current situation, and goals. However, most clients see initial improvements within 4-8 weeks, with significant progress by month 3. We provide transparent reporting and regular updates on all key performance metrics.`
+            },
+            {
+              question: "How long does implementation take?",
+              answer: "Initial setup typically takes 1-2 weeks, followed by an optimization phase where we refine and improve performance based on data. Full implementation is usually complete within 30 days, with ongoing optimization continuing thereafter."
+            },
+            {
+              question: "Do you provide ongoing support?",
+              answer: "Absolutely! We provide continuous monitoring, optimization, and support to ensure sustained success. You'll have a dedicated account manager and regular strategy sessions to review performance and plan improvements."
+            },
+            {
+              question: "What makes this service different?",
+              answer: "Our approach combines AI-powered automation with human expertise, data-driven decision making with creative strategy, and proven best practices with innovative techniques. We focus on measurable ROI and long-term sustainable growth."
+            }
+          ]}
+        />
 
         <section className="py-20 bg-gradient-to-br from-primary/10 to-background">
           <div className="container mx-auto px-4 text-center">

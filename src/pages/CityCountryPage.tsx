@@ -10,7 +10,10 @@ import Footer from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { GetStartedDialog } from "@/components/GetStartedDialog";
+import { ArrowRight } from "lucide-react";
 import { useState } from "react";
+import FAQ from "@/components/FAQ";
+import { getCityFAQs } from "@/data/faqData";
 
 const cityData: Record<string, {
   name: string;
@@ -221,61 +224,73 @@ const CityCountryPage = () => {
       <Navigation />
       
       {/* Hero Section */}
-      <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24 md:pt-32">
         {/* Background Elements */}
-        <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-primary/5" />
-        <div className="absolute inset-0 bg-grid-white/[0.02] bg-[size:50px_50px]" />
+        <div className="absolute inset-0 bg-gradient-to-br from-background via-primary/5 to-background" />
         
-        {/* Animated gradient orbs */}
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-secondary/20 rounded-full blur-3xl animate-pulse delay-1000" />
+        <div className="absolute inset-0 bg-grid-pattern opacity-5" />
         
+        <div className="absolute top-20 left-10 w-72 h-72 bg-primary/20 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-primary-variant/20 rounded-full blur-3xl animate-pulse delay-1000" />
+        
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-primary rounded-full animate-float" />
+          <div className="absolute top-1/3 right-1/3 w-3 h-3 bg-primary-variant rounded-full animate-float-delayed" />
+          <div className="absolute bottom-1/4 left-1/3 w-2 h-2 bg-primary rounded-full animate-float" />
+          <div className="absolute bottom-1/3 right-1/4 w-3 h-3 bg-primary-variant rounded-full animate-float-delayed" />
+        </div>
+
         {/* Content */}
-        <div className="relative z-10 container mx-auto px-4 text-center">
-          <div className="max-w-4xl mx-auto space-y-8">
+        <div className="relative z-10 container mx-auto px-4 text-center py-12">
+          <div className="max-w-4xl mx-auto space-y-10 animate-fade-in">
             <div className="inline-block px-4 py-2 bg-primary/10 border border-primary/20 rounded-full text-sm font-medium text-primary mb-4">
               Serving {city.name}, {city.country}
             </div>
             
-            <h1 className="text-5xl md:text-7xl font-bold tracking-tight">
-              <span className="block mb-4 text-foreground">AI MARKETING AGENCY</span>
-              <span className="block">
-                <span className="text-foreground">ARROW</span>
-                <span className="text-primary">MIND</span>
-              </span>
-            </h1>
-            
-            <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              {city.tagline}
-            </p>
-            
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            <div className="space-y-6">
+              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight">
+                <span className="block text-foreground">AI MARKETING AGENCY</span>
+              </h1>
+              
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
+                <span className="text-foreground">IN </span>
+                <span className="bg-gradient-to-r from-primary via-primary-variant to-primary bg-clip-text text-transparent">
+                  {city.name.toUpperCase()}
+                </span>
+              </h2>
+              
+              <p className="text-xl md:text-2xl lg:text-3xl font-semibold text-primary mt-4">
+                {city.tagline}
+              </p>
+            </div>
+
+            <p className="text-base md:text-lg lg:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed pt-4">
               {city.description}
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-8">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
               <Button 
                 size="lg" 
-                className="text-lg px-8 py-6 rounded-full"
+                className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-6 text-lg font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 group"
                 onClick={() => setDialogOpen(true)}
               >
                 GET STARTED
+                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </Button>
               <Button 
                 size="lg" 
                 variant="outline"
-                className="text-lg px-8 py-6 rounded-full"
-                asChild
+                onClick={() => {
+                  const servicesElement = document.getElementById("services");
+                  servicesElement?.scrollIntoView({ behavior: "smooth" });
+                }}
+                className="px-8 py-6 text-lg font-semibold rounded-full border-2 hover:bg-primary/10 transition-all duration-300"
               >
-                <a href="#services">VIEW SERVICES</a>
+                VIEW SERVICES
               </Button>
             </div>
           </div>
         </div>
-
-        {/* Floating elements */}
-        <div className="absolute top-20 left-10 w-20 h-20 border-2 border-primary/30 rounded-full animate-bounce" />
-        <div className="absolute bottom-20 right-10 w-16 h-16 border-2 border-secondary/30 rotate-45 animate-spin-slow" />
       </section>
 
       <Stats />
@@ -283,6 +298,7 @@ const CityCountryPage = () => {
       <Process />
       <WhyChooseUs cityName={city.name} />
       <Testimonials />
+      <FAQ items={getCityFAQs(city.name)} />
       <CTA />
       <Footer />
 

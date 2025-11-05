@@ -6,6 +6,8 @@ import { ArrowRight, Check } from "lucide-react";
 import { useState } from "react";
 import { GetStartedDialog } from "@/components/GetStartedDialog";
 import { SEO } from "@/components/SEO";
+import FAQ from "@/components/FAQ";
+import { seoServiceFAQs, contentMarketingFAQs, ppcFAQs, socialMediaFAQs } from "@/data/faqData";
 
 const serviceData: Record<string, any> = {
   "social-media": {
@@ -307,6 +309,42 @@ const ServiceDetail = () => {
   
   const foundService = serviceData[slug || ""] || additionalServices[slug || ""];
   
+  // Determine which FAQ set to use based on service slug
+  let faqItems = [];
+  if (slug === "seo") {
+    faqItems = seoServiceFAQs;
+  } else if (slug === "content-marketing") {
+    faqItems = contentMarketingFAQs;
+  } else if (slug === "performance-marketing") {
+    faqItems = ppcFAQs;
+  } else if (slug === "social-media") {
+    faqItems = socialMediaFAQs;
+  } else {
+    // Default FAQs for other services
+    faqItems = [
+      {
+        question: `What is included in ${foundService?.title || "this"} service?`,
+        answer: "Our service includes comprehensive strategy development, implementation, ongoing optimization, and detailed reporting. We customize our approach based on your specific business needs and goals."
+      },
+      {
+        question: "How long does it take to see results?",
+        answer: "Results timelines vary depending on the service and your current situation. We typically see initial improvements within the first month, with significant progress by month 3-6. We provide regular updates and transparent reporting throughout."
+      },
+      {
+        question: "What makes your approach different?",
+        answer: "We combine AI-powered tools with human expertise, data-driven strategies with creative thinking, and proven methodologies with innovative techniques. Our focus is on measurable results and long-term sustainable growth."
+      },
+      {
+        question: "Do you require long-term contracts?",
+        answer: "We offer flexible engagement options including monthly retainers and project-based work. While we recommend at least 3-6 months for optimal results, we don't lock you into rigid long-term contracts."
+      },
+      {
+        question: "How do you measure success?",
+        answer: "We track relevant KPIs specific to your goals - whether that's traffic, leads, conversions, revenue, or brand awareness. You'll receive detailed reports with clear insights and actionable recommendations."
+      }
+    ];
+  }
+  
   const service = foundService || {
     title: "Service Not Found",
     subtitle: "Coming soon",
@@ -413,6 +451,8 @@ const ServiceDetail = () => {
             </div>
           </div>
         </section>
+
+        {faqItems.length > 0 && <FAQ items={faqItems} />}
 
         <section className="py-20 bg-gradient-to-br from-primary/10 to-background">
           <div className="container mx-auto px-4 text-center">

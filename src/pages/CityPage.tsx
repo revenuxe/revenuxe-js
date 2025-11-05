@@ -12,6 +12,8 @@ import { ArrowRight } from "lucide-react";
 import { useState } from "react";
 import { GetStartedDialog } from "@/components/GetStartedDialog";
 import { SEO } from "@/components/SEO";
+import FAQ from "@/components/FAQ";
+import { getCityFAQs } from "@/data/faqData";
 
 const cityData: Record<string, {
   name: string;
@@ -175,6 +177,7 @@ const CityPage = () => {
       <Process cityName={cityInfo.name} />
       <WhyChooseUs cityName={cityInfo.name} />
       <Testimonials />
+      <FAQ items={getCityFAQs(cityInfo.name)} />
       <CTA />
       <Footer />
     </div>

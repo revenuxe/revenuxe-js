@@ -8,6 +8,8 @@ import Testimonials from "@/components/Testimonials";
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
 import { SEO } from "@/components/SEO";
+import FAQ from "@/components/FAQ";
+import { homepageFAQs } from "@/data/faqData";
 
 const Index = () => {
   return (
@@ -20,6 +22,7 @@ const Index = () => {
       <Process />
       <WhyChooseUs />
       <Testimonials />
+      <FAQ items={homepageFAQs} />
       <CTA />
       <Footer />
     </div>
