@@ -19,6 +19,7 @@ import PrivacyPolicy from "./pages/PrivacyPolicy";
 import AboutUs from "./pages/AboutUs";
 import NotFound from "./pages/NotFound";
 import CityPage from "./pages/CityPage";
+import CountryPage from "./pages/CountryPage";
 import ScrollToTop from "./components/ScrollToTop";
 
 const queryClient = new QueryClient();
@@ -51,6 +52,11 @@ const App = () => (
           <Route path="/mumbai" element={<CityPage />} />
           <Route path="/pune" element={<CityPage />} />
           <Route path="/delhi" element={<CityPage />} />
+          <Route path="/country/singapore" element={<CountryPage />} />
+          <Route path="/country/usa" element={<CountryPage />} />
+          <Route path="/country/uae" element={<CountryPage />} />
+          <Route path="/country/indonesia" element={<CountryPage />} />
+          <Route path="/country/australia" element={<CountryPage />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

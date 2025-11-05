@@ -15,7 +15,7 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
             {/* Brand */}
             <div>
               <div className="flex items-center gap-3 mb-4">
@@ -104,6 +104,38 @@ const Footer = () => {
                 <li>
                   <a href="/delhi" className="text-muted-foreground hover:text-primary transition-colors">
                     Delhi
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            {/* International Clients */}
+            <div>
+              <h4 className="text-lg font-semibold mb-4 text-foreground">We Serve International Clients From</h4>
+              <ul className="space-y-2">
+                <li>
+                  <a href="/country/singapore" className="text-muted-foreground hover:text-primary transition-colors">
+                    Singapore
+                  </a>
+                </li>
+                <li>
+                  <a href="/country/usa" className="text-muted-foreground hover:text-primary transition-colors">
+                    USA
+                  </a>
+                </li>
+                <li>
+                  <a href="/country/uae" className="text-muted-foreground hover:text-primary transition-colors">
+                    UAE
+                  </a>
+                </li>
+                <li>
+                  <a href="/country/indonesia" className="text-muted-foreground hover:text-primary transition-colors">
+                    Indonesia
+                  </a>
+                </li>
+                <li>
+                  <a href="/country/australia" className="text-muted-foreground hover:text-primary transition-colors">
+                    Australia
                   </a>
                 </li>
               </ul>
