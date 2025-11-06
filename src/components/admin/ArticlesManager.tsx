@@ -8,7 +8,7 @@ import { Label } from "@/components/ui/label";
 import { Switch } from "@/components/ui/switch";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Plus, Edit, Trash2, Upload } from "lucide-react";
+import { Plus, Edit, Trash2, Upload, Sparkles, Loader2 } from "lucide-react";
 import {
   Dialog,
   DialogContent,
@@ -35,8 +35,10 @@ export const ArticlesManager = () => {
   const [articles, setArticles] = useState<Article[]>([]);
   const [loading, setLoading] = useState(true);
   const [dialogOpen, setDialogOpen] = useState(false);
+  const [aiDialogOpen, setAiDialogOpen] = useState(false);
   const [editingId, setEditingId] = useState<string | null>(null);
   const [uploading, setUploading] = useState(false);
+  const [isGenerating, setIsGenerating] = useState(false);
   const [formData, setFormData] = useState({
     title: "",
     slug: "",
@@ -46,6 +48,11 @@ export const ArticlesManager = () => {
     author: "",
     category: "",
     published: false,
+  });
+  const [aiFormData, setAiFormData] = useState({
+    topic: "",
+    keywords: "",
+    areas: "",
   });
 
   useEffect(() => {
@@ -207,17 +214,146 @@ export const ArticlesManager = () => {
     });
   };
 
+  const handleGenerateWithAI = async () => {
+    if (!aiFormData.topic || !aiFormData.keywords) {
+      toast({
+        title: "Error",
+        description: "Please fill in blog topic and target keywords",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    setIsGenerating(true);
+    try {
+      const { data, error } = await supabase.functions.invoke('generate-blog', {
+        body: {
+          topic: aiFormData.topic,
+          keywords: aiFormData.keywords,
+          areas: aiFormData.areas,
+        }
+      });
+
+      if (error) throw error;
+
+      if (data.error) {
+        toast({
+          title: "Error",
+          description: data.error,
+          variant: "destructive",
+        });
+        return;
+      }
+
+      // Populate the form with generated content
+      setFormData({
+        title: data.title,
+        slug: data.slug,
+        author: "Arrowmind Team",
+        category: data.category,
+        excerpt: data.excerpt,
+        content: data.content,
+        image_url: "",
+        published: false,
+      });
+
+      setAiDialogOpen(false);
+      setDialogOpen(true);
+      toast({
+        title: "Success",
+        description: "Article generated successfully! Review and publish when ready.",
+      });
+    } catch (error: any) {
+      console.error('Error generating article:', error);
+      toast({
+        title: "Error",
+        description: error.message || "Failed to generate article. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsGenerating(false);
+    }
+  };
+
   return (
     <div className="space-y-4">
       <div className="flex items-center justify-between">
         <h2 className="text-2xl font-bold">Articles</h2>
-        <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
-          <DialogTrigger asChild>
-            <Button onClick={resetForm}>
-              <Plus className="h-4 w-4 mr-2" />
-              Add Article
-            </Button>
-          </DialogTrigger>
+        <div className="flex gap-2">
+          <Dialog open={aiDialogOpen} onOpenChange={setAiDialogOpen}>
+            <DialogTrigger asChild>
+              <Button variant="outline">
+                <Sparkles className="h-4 w-4 mr-2" />
+                AI Blog Generator
+              </Button>
+            </DialogTrigger>
+            <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
+              <DialogHeader>
+                <DialogTitle className="flex items-center gap-2">
+                  <Sparkles className="h-5 w-5 text-primary" />
+                  AI Blog Generator
+                </DialogTitle>
+              </DialogHeader>
+              <div className="space-y-4 py-4">
+                <div className="space-y-2">
+                  <Label htmlFor="ai-topic">Blog Topic*</Label>
+                  <Textarea
+                    id="ai-topic"
+                    placeholder="e.g., Complete Guide to Modular Kitchen Design in Bangalore 2025"
+                    value={aiFormData.topic}
+                    onChange={(e) => setAiFormData({ ...aiFormData, topic: e.target.value })}
+                    className="min-h-[80px]"
+                  />
+                </div>
+                <div className="space-y-2">
+                  <Label htmlFor="ai-keywords">Target Keywords*</Label>
+                  <Textarea
+                    id="ai-keywords"
+                    placeholder="e.g., modular kitchen bangalore, kitchen design cost, best kitchen designers"
+                    value={aiFormData.keywords}
+                    onChange={(e) => setAiFormData({ ...aiFormData, keywords: e.target.value })}
+                    className="min-h-[80px]"
+                  />
+                </div>
+                <div className="space-y-2">
+                  <Label htmlFor="ai-areas">Target Bangalore Areas</Label>
+                  <Input
+                    id="ai-areas"
+                    placeholder="Whitefield, HSR Layout, Koramangala"
+                    value={aiFormData.areas}
+                    onChange={(e) => setAiFormData({ ...aiFormData, areas: e.target.value })}
+                  />
+                </div>
+                <Button 
+                  onClick={handleGenerateWithAI} 
+                  className="w-full"
+                  disabled={isGenerating}
+                >
+                  {isGenerating ? (
+                    <>
+                      <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                      Generating SEO Blog...
+                    </>
+                  ) : (
+                    <>
+                      <Sparkles className="mr-2 h-4 w-4" />
+                      Generate SEO Blog with AI
+                    </>
+                  )}
+                </Button>
+                <p className="text-sm text-muted-foreground text-center">
+                  AI will create a 2500+ word SEO-optimized blog with tables, FAQs, and keyword optimization
+                </p>
+              </div>
+            </DialogContent>
+          </Dialog>
+          <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
+            <DialogTrigger asChild>
+              <Button onClick={resetForm}>
+                <Plus className="h-4 w-4 mr-2" />
+                Add Article
+              </Button>
+            </DialogTrigger>
           <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
             <DialogHeader>
               <DialogTitle>
@@ -376,6 +512,7 @@ export const ArticlesManager = () => {
             </form>
           </DialogContent>
         </Dialog>
+        </div>
       </div>
 
       {loading ? (
