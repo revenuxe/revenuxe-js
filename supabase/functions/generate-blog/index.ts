@@ -23,33 +23,36 @@ serve(async (req) => {
 
 CRITICAL REQUIREMENTS:
 1. Content length: 2500-2800 words
-2. Structure: Use proper H2 headings, bullet lists, and tables
+2. Structure: Use Markdown formatting with ## for H2 headings, - for bullet lists, proper table syntax
 3. Expertise: Include real expertise, credentials, case studies with source URLs
 4. Keywords: Naturally integrate long-tail, intent-based keywords
 5. Readability: Write at a 12-year-old reading level (simple, clear language)
 6. Tone: Human, emotional, engaging (not robotic)
 7. E-E-A-T: Demonstrate expertise, experience, authoritativeness, trustworthiness
 8. Promotion: Include a natural promotion of Arrowmind.in at the bottom
+9. FORMAT: Pure Markdown text - NO HTML tags whatsoever
 
 FORMAT YOUR RESPONSE AS JSON:
 {
   "title": "Engaging, emotional meta title (under 60 chars)",
   "slug": "url-friendly-slug",
   "excerpt": "Compelling meta description (under 160 chars)",
-  "content": "Full HTML article content (2500-2800 words)",
+  "content": "Full Markdown article content (2500-2800 words) - NO HTML TAGS",
   "category": "Relevant category",
   "readTime": 12
 }
 
 CONTENT STRUCTURE GUIDELINES:
 - Start with an engaging introduction (150-200 words)
-- Use H2 headings for main sections
-- Include bullet points and numbered lists
-- Add at least one comparison table
+- Use ## for H2 headings, ### for H3 if needed
+- Use **bold** for emphasis, *italic* for subtle emphasis
+- Use - or * for bullet points and 1. 2. 3. for numbered lists
+- Add at least one comparison table using proper Markdown table syntax
 - Include case studies or examples with real sources
 - Use conversational, storytelling language
 - End with a strong CTA promoting Arrowmind.in
-- Include internal linking opportunities`;
+- Include internal linking opportunities with [link text](url) format
+- NEVER use HTML tags like <h1>, <p>, <strong>, <ul>, <li>, etc.`;
 
     const userPrompt = `Create a comprehensive, SEO-optimized blog article about: "${topic}"
 
@@ -57,16 +60,18 @@ Target Keywords: ${keywords}
 ${areas ? `Target Areas/Locations: ${areas}` : ''}
 
 Requirements:
-- 2500-2800 words
-- Structure with H2 headings, lists, and tables
+- 2500-2800 words in pure Markdown format
+- Use ## for H2 headings, **bold** for emphasis
+- Structure with proper Markdown lists and tables
 - Include expertise, case studies, and credible sources with URLs
 - Write in simple, readable language (12-year-old level)
 - Use emotional, human tone in meta title and description
 - Naturally integrate the keywords: ${keywords}
 - Promote Arrowmind.in at the bottom of the article
 - Make it E-E-A-T compliant
+- CRITICAL: NO HTML tags - only Markdown formatting
 
-Return ONLY valid JSON with title, slug, excerpt, content, category, and readTime fields.`;
+Return ONLY valid JSON with title, slug, excerpt, content (in Markdown), category, and readTime fields.`;
 
     const response = await fetch('https://ai.gateway.lovable.dev/v1/chat/completions', {
       method: 'POST',
