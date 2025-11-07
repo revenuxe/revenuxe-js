@@ -53,11 +53,27 @@ const App = () => (
           <Route path="/mumbai" element={<CityPage />} />
           <Route path="/pune" element={<CityPage />} />
           <Route path="/delhi" element={<CityPage />} />
+          <Route path="/ahmedabad" element={<CityPage />} />
+          <Route path="/kolkata" element={<CityPage />} />
+          <Route path="/jaipur" element={<CityPage />} />
+          <Route path="/lucknow" element={<CityPage />} />
+          <Route path="/kochi" element={<CityPage />} />
+          <Route path="/chandigarh" element={<CityPage />} />
+          <Route path="/indore" element={<CityPage />} />
+          <Route path="/nagpur" element={<CityPage />} />
+          <Route path="/visakhapatnam" element={<CityPage />} />
+          <Route path="/coimbatore" element={<CityPage />} />
           <Route path="/country/singapore" element={<CountryPage />} />
           <Route path="/country/usa" element={<CountryPage />} />
           <Route path="/country/uae" element={<CountryPage />} />
           <Route path="/country/indonesia" element={<CountryPage />} />
           <Route path="/country/australia" element={<CountryPage />} />
+          <Route path="/country/uk" element={<CountryPage />} />
+          <Route path="/country/canada" element={<CountryPage />} />
+          <Route path="/country/germany" element={<CountryPage />} />
+          <Route path="/country/france" element={<CountryPage />} />
+          <Route path="/country/japan" element={<CountryPage />} />
+          <Route path="/country/south-korea" element={<CountryPage />} />
           <Route path="/country/:country/:city" element={<CityCountryPage />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />

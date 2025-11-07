@@ -87,6 +87,84 @@ const countryData: Record<string, {
       { name: "Brisbane", slug: "brisbane" },
       { name: "Perth", slug: "perth" }
     ]
+  },
+  uk: {
+    name: "United Kingdom",
+    tagline: "Transform Your Brand with AI Marketing in the UK",
+    description: "Partner with the UK's leading AI-powered digital marketing agency. From London to Manchester, we help British businesses achieve exceptional growth with innovative strategies.",
+    keywords: "digital marketing UK, AI marketing London, SEO United Kingdom, growth marketing Manchester",
+    metaDescription: "Premier AI-powered digital marketing agency in the UK. Drive growth with cutting-edge strategies across London, Manchester, and major British cities.",
+    cities: [
+      { name: "London", slug: "london" },
+      { name: "Manchester", slug: "manchester" },
+      { name: "Birmingham", slug: "birmingham" },
+      { name: "Edinburgh", slug: "edinburgh" }
+    ]
+  },
+  canada: {
+    name: "Canada",
+    tagline: "Elevate Your Business with AI Marketing in Canada",
+    description: "Transform your Canadian business with cutting-edge AI-powered digital marketing. From Toronto to Vancouver, we deliver strategies that drive measurable growth across Canada.",
+    keywords: "digital marketing Canada, AI marketing Toronto, SEO Canada, growth marketing Vancouver",
+    metaDescription: "Leading AI-powered digital marketing agency in Canada. Scale your business with innovative strategies across Toronto, Vancouver, and all major Canadian cities.",
+    cities: [
+      { name: "Toronto", slug: "toronto" },
+      { name: "Vancouver", slug: "vancouver" },
+      { name: "Montreal", slug: "montreal" },
+      { name: "Calgary", slug: "calgary" }
+    ]
+  },
+  germany: {
+    name: "Germany",
+    tagline: "Drive Innovation with AI Marketing in Germany",
+    description: "Partner with Germany's premier AI-powered digital marketing agency. From Berlin to Munich, we help German businesses achieve exceptional growth with data-driven strategies.",
+    keywords: "digital marketing Germany, AI marketing Berlin, SEO Germany, growth marketing Munich",
+    metaDescription: "Top AI-powered digital marketing agency in Germany. Transform your business with cutting-edge strategies across Berlin, Munich, and major German cities.",
+    cities: [
+      { name: "Berlin", slug: "berlin" },
+      { name: "Munich", slug: "munich" },
+      { name: "Frankfurt", slug: "frankfurt" },
+      { name: "Hamburg", slug: "hamburg" }
+    ]
+  },
+  france: {
+    name: "France",
+    tagline: "Amplify Your Presence with AI Marketing in France",
+    description: "Elevate your French business with innovative AI-powered digital marketing solutions. From Paris to Lyon, we deliver strategies that drive remarkable growth across France.",
+    keywords: "digital marketing France, AI marketing Paris, SEO France, growth marketing Lyon",
+    metaDescription: "Premier AI-powered digital marketing agency in France. Scale your business with innovative strategies across Paris, Lyon, and major French cities.",
+    cities: [
+      { name: "Paris", slug: "paris" },
+      { name: "Lyon", slug: "lyon" },
+      { name: "Marseille", slug: "marseille" },
+      { name: "Toulouse", slug: "toulouse" }
+    ]
+  },
+  japan: {
+    name: "Japan",
+    tagline: "Scale Your Business with AI Marketing in Japan",
+    description: "Transform your Japanese business with cutting-edge AI-powered digital marketing. From Tokyo to Osaka, we help businesses achieve exceptional growth in Japan's competitive market.",
+    keywords: "digital marketing Japan, AI marketing Tokyo, SEO Japan, growth marketing Osaka",
+    metaDescription: "Leading AI-powered digital marketing agency in Japan. Drive growth with innovative strategies across Tokyo, Osaka, and major Japanese cities.",
+    cities: [
+      { name: "Tokyo", slug: "tokyo" },
+      { name: "Osaka", slug: "osaka" },
+      { name: "Kyoto", slug: "kyoto" },
+      { name: "Yokohama", slug: "yokohama" }
+    ]
+  },
+  "south-korea": {
+    name: "South Korea",
+    tagline: "Accelerate Growth with AI Marketing in South Korea",
+    description: "Partner with South Korea's innovative AI-powered digital marketing agency. From Seoul to Busan, we deliver cutting-edge strategies that drive exceptional business growth.",
+    keywords: "digital marketing South Korea, AI marketing Seoul, SEO Korea, growth marketing Busan",
+    metaDescription: "Top AI-powered digital marketing agency in South Korea. Transform your business with innovative strategies across Seoul, Busan, and major Korean cities.",
+    cities: [
+      { name: "Seoul", slug: "seoul" },
+      { name: "Busan", slug: "busan" },
+      { name: "Incheon", slug: "incheon" },
+      { name: "Daegu", slug: "daegu" }
+    ]
   }
 };
 
