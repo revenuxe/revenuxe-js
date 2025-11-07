@@ -93,8 +93,8 @@ const ArticleDetail = () => {
     <div className="min-h-screen bg-background">
       <Navigation />
       <main className="pt-20">
-        <article className="py-12 px-4">
-          <div className="container mx-auto max-w-4xl">
+        <article className="py-8 md:py-12 px-0 md:px-4">
+          <div className="container mx-auto max-w-5xl px-4 md:px-6 lg:px-8">
             <Button variant="ghost" asChild className="mb-8">
               <Link to="/articles">
                 <ArrowLeft className="mr-2 h-4 w-4" />
@@ -102,9 +102,9 @@ const ArticleDetail = () => {
               </Link>
             </Button>
 
-            <Card className="overflow-hidden">
+            <Card className="overflow-hidden border-0 md:border shadow-none md:shadow-sm">
               {article.image_url && (
-                <div className="w-full h-96 overflow-hidden">
+                <div className="w-full h-64 md:h-96 overflow-hidden">
                   <img
                     src={article.image_url}
                     alt={article.title}
@@ -113,7 +113,7 @@ const ArticleDetail = () => {
                 </div>
               )}
 
-              <div className="p-8 md:p-12">
+              <div className="p-4 md:p-8 lg:p-12">
                 <Badge className="mb-4">{article.category}</Badge>
                 <h1 className="text-4xl md:text-5xl font-bold mb-6">
                   {article.title}
@@ -136,11 +136,11 @@ const ArticleDetail = () => {
                   </div>
                 </div>
 
-                <div className="prose prose-lg max-w-none">
-                  <p className="text-xl text-muted-foreground mb-8">
+                <div className="prose prose-base md:prose-lg max-w-none">
+                  <p className="text-lg md:text-xl text-muted-foreground mb-6 md:mb-8">
                     {article.excerpt}
                   </p>
-                  <div className="article-content">
+                  <div className="article-content w-full">
                     <ReactMarkdown
                       remarkPlugins={[remarkGfm]}
                       components={{
