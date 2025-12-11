@@ -3,24 +3,24 @@ import { Star, Quote } from "lucide-react";
 const Testimonials = () => {
   const testimonials = [
     {
-      name: "Sarah Johnson",
-      position: "CEO, TechStart Inc",
-      image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop",
-      content: "Arrowmind transformed our digital presence. Their AI-powered strategies increased our conversions by 340% in just 3 months!",
-      rating: 5
-    },
-    {
-      name: "Michael Chen",
-      position: "Founder, GrowthLabs",
+      name: "Rajesh Kumar",
+      position: "CEO, TechVentures Bangalore",
       image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop",
-      content: "The team's expertise in SEO and content marketing is unmatched. We're now ranking #1 for our key industry terms.",
+      content: "Arrowmind's SEO services helped us rank #1 on Google for competitive keywords. Our organic traffic increased by 450% in 6 months, and we're generating 50+ qualified leads monthly!",
       rating: 5
     },
     {
-      name: "Emily Rodriguez",
-      position: "Marketing Director, BrandHub",
-      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop",
-      content: "Professional, creative, and results-driven. Arrowmind is more than an agency - they're true partners in our success.",
+      name: "Priya Sharma",
+      position: "Founder, EcomStore India",
+      image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop",
+      content: "Their Google Ads management is exceptional. We achieved 400% ROI on our PPC campaigns. Best digital marketing agency in India for e-commerce businesses!",
+      rating: 5
+    },
+    {
+      name: "Amit Patel",
+      position: "Marketing Head, SaaS Solutions",
+      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop",
+      content: "From website development to social media marketing, Arrowmind handles everything. Our online presence transformed completely, and sales increased by 300%.",
       rating: 5
     }
   ];
@@ -32,12 +32,15 @@ const Testimonials = () => {
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16 space-y-4">
-          <span className="text-primary text-sm font-bold uppercase tracking-wider">Testimonials</span>
+          <span className="text-primary text-sm font-bold uppercase tracking-wider">Client Success Stories</span>
           <h2 className="text-4xl md:text-6xl font-bold">
-            What Clients <span className="text-primary">Say</span>
+            Trusted by <span className="text-primary">50+ Businesses</span>
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Real stories from businesses that achieved exceptional growth with us
+          <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
+            Real results from real businesses. See how our <strong className="text-foreground">SEO services</strong>, 
+            <strong className="text-foreground"> PPC campaigns</strong>, and 
+            <strong className="text-foreground"> digital marketing strategies</strong> have 
+            helped companies across India achieve exceptional growth.
           </p>
         </div>
 
