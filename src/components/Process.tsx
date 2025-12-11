@@ -5,26 +5,26 @@ const Process = ({ cityName }: { cityName?: string }) => {
     {
       icon: <Lightbulb className="w-10 h-10" />,
       number: "01",
-      title: "Discovery",
-      description: `We analyze your business, audience, and competition${cityName ? ` in ${cityName}` : ''} to create a tailored strategy that delivers results.`
+      title: "Free Website Audit",
+      description: `We conduct comprehensive SEO audits, competitor analysis, and market research${cityName ? ` for ${cityName} businesses` : ''} to identify growth opportunities and quick wins.`
     },
     {
       icon: <Target className="w-10 h-10" />,
       number: "02",
-      title: "Strategy",
-      description: `Our experts develop a comprehensive marketing plan${cityName ? ` for ${cityName} market` : ''} with clear objectives and measurable KPIs.`
+      title: "Custom Strategy Development",
+      description: `Our digital marketing experts create a tailored strategy${cityName ? ` for the ${cityName} market` : ''} combining SEO, PPC, social media, and content marketing for maximum impact.`
     },
     {
       icon: <Rocket className="w-10 h-10" />,
       number: "03",
-      title: "Execution",
-      description: "We implement campaigns across multiple channels with precision and creativity that captures attention."
+      title: "Campaign Execution",
+      description: "We launch and manage high-converting campaigns across Google Ads, Facebook, Instagram, LinkedIn, and organic search channels."
     },
     {
       icon: <LineChart className="w-10 h-10" />,
       number: "04",
-      title: "Optimize",
-      description: "Continuous monitoring and optimization ensure maximum ROI and sustained growth for your business."
+      title: "Track, Optimize & Scale",
+      description: "Continuous monitoring with detailed analytics, A/B testing, and optimization to maximize ROI and scale your business growth."
     }
   ];
 
@@ -36,12 +36,15 @@ const Process = ({ cityName }: { cityName?: string }) => {
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16 space-y-4">
-          <span className="text-primary text-sm font-bold uppercase tracking-wider">Our Process</span>
+          <span className="text-primary text-sm font-bold uppercase tracking-wider">Our Proven Process</span>
           <h2 className="text-4xl md:text-6xl font-bold">
-            How We <span className="text-primary">Work</span>
+            How We <span className="text-primary">Grow Your Business</span>
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            A proven methodology that transforms ideas into measurable success
+          <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
+            A results-driven digital marketing process that has helped 50+ businesses 
+            <strong className="text-foreground"> increase traffic</strong>, 
+            <strong className="text-foreground"> generate leads</strong>, and 
+            <strong className="text-foreground"> boost online sales</strong>.
           </p>
         </div>
 
