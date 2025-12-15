@@ -21,6 +21,7 @@ import NotFound from "./pages/NotFound";
 import CityPage from "./pages/CityPage";
 import CountryPage from "./pages/CountryPage";
 import CityCountryPage from "./pages/CityCountryPage";
+import ROICalculatorPage from "./pages/ROICalculatorPage";
 import ScrollToTop from "./components/ScrollToTop";
 
 const queryClient = new QueryClient();
@@ -45,6 +46,7 @@ const App = () => (
           <Route path="/terms" element={<TermsAndConditions />} />
           <Route path="/privacy" element={<PrivacyPolicy />} />
           <Route path="/about" element={<AboutUs />} />
+          <Route path="/roi-calculator" element={<ROICalculatorPage />} />
           <Route path="/admin/login" element={<AdminLogin />} />
           <Route path="/admin/dashboard" element={<AdminDashboard />} />
           <Route path="/bangalore" element={<CityPage />} />
