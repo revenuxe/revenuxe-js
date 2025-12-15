@@ -1,5 +1,5 @@
 import { useState, useMemo } from "react";
-import { Calculator, TrendingUp, DollarSign, Users, BarChart3, Download } from "lucide-react";
+import { Calculator, TrendingUp, DollarSign, Users, BarChart3, Download, Globe } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -18,6 +18,38 @@ import jsPDF from "jspdf";
 interface ROICalculatorProps {
   serviceType: string;
 }
+
+const countryData: Record<string, { name: string; currency: string; symbol: string; rate: number }> = {
+  IN: { name: "India", currency: "INR", symbol: "₹", rate: 1 },
+  US: { name: "United States", currency: "USD", symbol: "$", rate: 0.012 },
+  GB: { name: "United Kingdom", currency: "GBP", symbol: "£", rate: 0.0095 },
+  EU: { name: "Europe", currency: "EUR", symbol: "€", rate: 0.011 },
+  AE: { name: "UAE", currency: "AED", symbol: "د.إ", rate: 0.044 },
+  SG: { name: "Singapore", currency: "SGD", symbol: "S$", rate: 0.016 },
+  AU: { name: "Australia", currency: "AUD", symbol: "A$", rate: 0.018 },
+  CA: { name: "Canada", currency: "CAD", symbol: "C$", rate: 0.016 },
+  JP: { name: "Japan", currency: "JPY", symbol: "¥", rate: 1.79 },
+  KR: { name: "South Korea", currency: "KRW", symbol: "₩", rate: 16.5 },
+  CN: { name: "China", currency: "CNY", symbol: "¥", rate: 0.087 },
+  MY: { name: "Malaysia", currency: "MYR", symbol: "RM", rate: 0.053 },
+  TH: { name: "Thailand", currency: "THB", symbol: "฿", rate: 0.41 },
+  ID: { name: "Indonesia", currency: "IDR", symbol: "Rp", rate: 189 },
+  PH: { name: "Philippines", currency: "PHP", symbol: "₱", rate: 0.67 },
+  VN: { name: "Vietnam", currency: "VND", symbol: "₫", rate: 295 },
+  BD: { name: "Bangladesh", currency: "BDT", symbol: "৳", rate: 1.31 },
+  PK: { name: "Pakistan", currency: "PKR", symbol: "₨", rate: 3.33 },
+  LK: { name: "Sri Lanka", currency: "LKR", symbol: "Rs", rate: 3.64 },
+  NP: { name: "Nepal", currency: "NPR", symbol: "रू", rate: 1.59 },
+  SA: { name: "Saudi Arabia", currency: "SAR", symbol: "﷼", rate: 0.045 },
+  QA: { name: "Qatar", currency: "QAR", symbol: "﷼", rate: 0.044 },
+  KW: { name: "Kuwait", currency: "KWD", symbol: "د.ك", rate: 0.0037 },
+  ZA: { name: "South Africa", currency: "ZAR", symbol: "R", rate: 0.22 },
+  BR: { name: "Brazil", currency: "BRL", symbol: "R$", rate: 0.059 },
+  MX: { name: "Mexico", currency: "MXN", symbol: "$", rate: 0.21 },
+  DE: { name: "Germany", currency: "EUR", symbol: "€", rate: 0.011 },
+  FR: { name: "France", currency: "EUR", symbol: "€", rate: 0.011 },
+  NZ: { name: "New Zealand", currency: "NZD", symbol: "NZ$", rate: 0.02 },
+};
 
 const industryMultipliers: Record<string, number> = {
   ecommerce: 4.2,
@@ -84,10 +116,17 @@ const serviceMultipliers: Record<string, number> = {
 };
 
 const ROICalculator = ({ serviceType }: ROICalculatorProps) => {
-  const [budget, setBudget] = useState(5000);
+  const [budget, setBudget] = useState(50000);
   const [industry, setIndustry] = useState("ecommerce");
+  const [country, setCountry] = useState("IN");
   const [duration, setDuration] = useState([6]);
   const [showResults, setShowResults] = useState(false);
+
+  const currentCountry = countryData[country];
+
+  const formatCurrency = (amount: number) => {
+    return `${currentCountry.symbol}${amount.toLocaleString()}`;
+  };
 
   const results = useMemo(() => {
     const industryMult = industryMultipliers[industry] || 3.5;
@@ -95,7 +134,7 @@ const ROICalculator = ({ serviceType }: ROICalculatorProps) => {
     const durationMult = 1 + (duration[0] - 3) * 0.15;
     
     const baseROI = budget * industryMult * serviceMult * durationMult * 0.1;
-    const estimatedLeads = Math.round((budget / 100) * industryMult * (duration[0] / 3));
+    const estimatedLeads = Math.round((budget / 1000) * industryMult * (duration[0] / 3));
     const conversionRate = 2.5 + (industryMult - 3) * 0.5;
     const estimatedConversions = Math.round(estimatedLeads * (conversionRate / 100));
     const revenuePerConversion = baseROI / Math.max(estimatedConversions, 1);
@@ -152,20 +191,21 @@ const ROICalculator = ({ serviceType }: ROICalculatorProps) => {
     const inputY = 100;
     doc.text(`Service: ${serviceLabels[serviceType] || serviceType}`, 25, inputY);
     doc.text(`Industry: ${industryLabels[industry]}`, 25, inputY + 10);
-    doc.text(`Monthly Budget: $${budget.toLocaleString()}`, 25, inputY + 20);
-    doc.text(`Campaign Duration: ${duration[0]} months`, 25, inputY + 30);
-    doc.text(`Total Investment: $${(budget * duration[0]).toLocaleString()}`, 25, inputY + 40);
+    doc.text(`Country: ${currentCountry.name}`, 25, inputY + 20);
+    doc.text(`Monthly Budget: ${currentCountry.symbol}${budget.toLocaleString()} ${currentCountry.currency}`, 25, inputY + 30);
+    doc.text(`Campaign Duration: ${duration[0]} months`, 25, inputY + 40);
+    doc.text(`Total Investment: ${currentCountry.symbol}${(budget * duration[0]).toLocaleString()} ${currentCountry.currency}`, 25, inputY + 50);
     
     // Projected Results Section
     doc.setFontSize(16);
     doc.setFont("helvetica", "bold");
-    doc.text("Projected Results", 20, 160);
+    doc.text("Projected Results", 20, 170);
     
     doc.setDrawColor(34, 197, 94);
-    doc.line(20, 163, 85, 163);
+    doc.line(20, 173, 85, 173);
     
     // Results boxes
-    const boxY = 175;
+    const boxY = 185;
     const boxWidth = 80;
     const boxHeight = 35;
     
@@ -175,10 +215,10 @@ const ROICalculator = ({ serviceType }: ROICalculatorProps) => {
     doc.setFontSize(10);
     doc.setTextColor(100, 100, 100);
     doc.text("Estimated Revenue", 25, boxY + 12);
-    doc.setFontSize(18);
+    doc.setFontSize(16);
     doc.setTextColor(34, 197, 94);
     doc.setFont("helvetica", "bold");
-    doc.text(`$${results.estimatedROI.toLocaleString()}`, 25, boxY + 27);
+    doc.text(`${currentCountry.symbol}${results.estimatedROI.toLocaleString()}`, 25, boxY + 27);
     
     // ROI Percentage Box
     doc.setFillColor(239, 246, 255);
@@ -232,7 +272,7 @@ const ROICalculator = ({ serviceType }: ROICalculatorProps) => {
     doc.text("www.arrowmind.in | contact@arrowmind.in", pageWidth / 2, 293, { align: "center" });
     
     // Save PDF
-    doc.save(`ROI-Report-${serviceType}-${new Date().toISOString().split("T")[0]}.pdf`);
+    doc.save(`ROI-Report-${serviceType}-${currentCountry.currency}-${new Date().toISOString().split("T")[0]}.pdf`);
     
     toast({
       title: "Report Downloaded",
@@ -251,14 +291,34 @@ const ROICalculator = ({ serviceType }: ROICalculatorProps) => {
       <CardContent className="space-y-6">
         <div className="space-y-4">
           <div className="space-y-2">
-            <Label htmlFor="budget" className="text-foreground">Monthly Budget ($)</Label>
+            <Label htmlFor="country" className="text-foreground flex items-center gap-2">
+              <Globe className="h-4 w-4" /> Country & Currency
+            </Label>
+            <Select value={country} onValueChange={setCountry}>
+              <SelectTrigger className="bg-background border-border">
+                <SelectValue placeholder="Select country" />
+              </SelectTrigger>
+              <SelectContent className="max-h-[300px]">
+                {Object.entries(countryData).map(([code, data]) => (
+                  <SelectItem key={code} value={code}>
+                    {data.name} ({data.symbol} {data.currency})
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+          </div>
+
+          <div className="space-y-2">
+            <Label htmlFor="budget" className="text-foreground">
+              Monthly Budget ({currentCountry.symbol} {currentCountry.currency})
+            </Label>
             <Input
               id="budget"
               type="number"
               value={budget}
-              onChange={(e) => setBudget(Math.max(500, parseInt(e.target.value) || 500))}
-              min={500}
-              max={100000}
+              onChange={(e) => setBudget(Math.max(1000, parseInt(e.target.value) || 1000))}
+              min={1000}
+              max={10000000}
               className="bg-background border-border"
             />
           </div>
@@ -308,8 +368,8 @@ const ROICalculator = ({ serviceType }: ROICalculatorProps) => {
             <div className="grid grid-cols-2 gap-4">
               <div className="bg-primary/10 rounded-lg p-4 text-center">
                 <DollarSign className="h-6 w-6 text-primary mx-auto mb-2" />
-                <p className="text-2xl font-bold text-primary">
-                  ${results.estimatedROI.toLocaleString()}
+                <p className="text-xl font-bold text-primary">
+                  {formatCurrency(results.estimatedROI)}
                 </p>
                 <p className="text-xs text-muted-foreground">Estimated Revenue</p>
               </div>
