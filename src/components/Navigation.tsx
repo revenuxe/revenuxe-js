@@ -10,6 +10,9 @@ const Navigation = () => {
     label: "Services",
     href: "/services"
   }, {
+    label: "ROI Calculator",
+    href: "/roi-calculator"
+  }, {
     label: "Case Studies",
     href: "/case-studies"
   }, {
