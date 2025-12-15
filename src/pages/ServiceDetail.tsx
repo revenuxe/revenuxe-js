@@ -7,6 +7,7 @@ import { useState } from "react";
 import { GetStartedDialog } from "@/components/GetStartedDialog";
 import { SEO } from "@/components/SEO";
 import FAQ from "@/components/FAQ";
+import ROICalculator from "@/components/ROICalculator";
 import { seoServiceFAQs, contentMarketingFAQs, ppcFAQs, socialMediaFAQs } from "@/data/faqData";
 
 const serviceData: Record<string, any> = {
@@ -541,6 +542,18 @@ const ServiceDetail = () => {
                   <span>{b}</span>
                 </div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="py-20">
+          <div className="container mx-auto px-4">
+            <h2 className="text-4xl font-bold text-center mb-4">Calculate Your <span className="text-primary">ROI</span></h2>
+            <p className="text-muted-foreground text-center mb-12 max-w-2xl mx-auto">
+              Estimate your potential returns based on your budget and industry.
+            </p>
+            <div className="max-w-md mx-auto">
+              <ROICalculator serviceType={slug || "seo"} />
             </div>
           </div>
         </section>
