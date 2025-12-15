@@ -1,25 +1,20 @@
-import { useState } from "react";
-import { GetStartedDialog } from "./GetStartedDialog";
-
 const WhyChooseUs = ({ cityName }: { cityName?: string }) => {
-  const [dialogOpen, setDialogOpen] = useState(false);
-
   const benefits = [
     {
-      title: `Proven SEO strategies that rank websites on Google's first page${cityName ? ` in ${cityName}` : ''}`,
-      highlight: "GOOGLE'S FIRST PAGE",
+      title: `Flexibility and client-oriented approach${cityName ? ` for ${cityName} businesses` : ''}`,
+      highlight: "CLIENT-ORIENTED",
     },
     {
-      title: `Data-driven PPC campaigns with 300%+ ROI on Google Ads & Meta Ads${cityName ? ` for ${cityName} businesses` : ''}`,
-      highlight: "300%+ ROI",
+      title: `Work with multi-channel advertising campaigns${cityName ? ` in ${cityName}` : ''}`,
+      highlight: "MULTI-CHANNEL",
     },
     {
-      title: `Guaranteed lead generation & sales growth within 90 days${cityName ? ` in ${cityName}` : ''}`,
-      highlight: "90 DAYS",
+      title: `Guaranteed lead generation during test campaign period${cityName ? ` in ${cityName}` : ''}`,
+      highlight: "GUARANTEED LEADS",
     },
     {
-      title: "Dedicated account managers & transparent monthly reporting",
-      highlight: "TRANSPARENT REPORTING",
+      title: "Ability to delegate specific business aspects",
+      highlight: "DELEGATION",
     },
   ];
 
@@ -27,24 +22,12 @@ const WhyChooseUs = ({ cityName }: { cityName?: string }) => {
     <section id="about" className="py-20 md:py-32 bg-background">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
-          {/* Section Header - SEO Optimized */}
+          {/* Section Header */}
           <div className="mb-16 animate-fade-in">
-            <span className="text-primary text-sm font-bold uppercase tracking-wider">
-              Why Businesses Choose Us
-            </span>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mt-4">
-              <span className="text-foreground">WHY </span>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold">
+              <span className="text-foreground">WHY CHOOSE </span>
               <span className="text-primary">ARROWMIND</span>
-              <span className="text-foreground"> IS THE BEST</span>
-              <br />
-              <span className="text-foreground">DIGITAL MARKETING AGENCY{cityName ? ` IN ${cityName.toUpperCase()}` : ''}</span>
             </h2>
-            <p className="text-muted-foreground text-lg mt-4 max-w-3xl">
-              We combine <strong className="text-foreground">AI-powered marketing automation</strong>, 
-              <strong className="text-foreground"> advanced SEO techniques</strong>, and 
-              <strong className="text-foreground"> performance marketing expertise</strong> to deliver 
-              exceptional results for businesses of all sizes.
-            </p>
           </div>
           
           {/* Benefits Grid */}
@@ -86,15 +69,10 @@ const WhyChooseUs = ({ cityName }: { cityName?: string }) => {
           
           {/* CTA */}
           <div className="mt-12 animate-fade-in" style={{ animationDelay: "0.4s" }}>
-            <button 
-              className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 rounded-lg font-semibold transition-all"
-              onClick={() => setDialogOpen(true)}
-            >
-              GET YOUR FREE MARKETING AUDIT
+            <button className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 rounded-lg font-semibold transition-all">
+              START COLLABORATION
             </button>
           </div>
-
-          <GetStartedDialog open={dialogOpen} onOpenChange={setDialogOpen} />
         </div>
       </div>
     </section>
