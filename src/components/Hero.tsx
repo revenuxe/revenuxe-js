@@ -2,29 +2,24 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Phone, MessageCircle, Clock, Shield, Wrench } from "lucide-react";
 import { GetStartedDialog } from "./GetStartedDialog";
-
 const Hero = () => {
   const [dialogOpen, setDialogOpen] = useState(false);
-  
   const handleWhatsApp = () => {
     window.open("https://wa.me/919876543210?text=Hi! I need appliance repair service.", "_blank");
   };
-
   const handleCall = () => {
     window.location.href = "tel:+919876543210";
   };
-
-  return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+  return <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Gradient Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-[hsl(0,30%,8%)]" />
       
       {/* Animated Grid Background */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute inset-0" style={{
-          backgroundImage: 'linear-gradient(hsl(var(--primary)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--primary)) 1px, transparent 1px)',
-          backgroundSize: '50px 50px'
-        }} />
+        backgroundImage: 'linear-gradient(hsl(var(--primary)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--primary)) 1px, transparent 1px)',
+        backgroundSize: '50px 50px'
+      }} />
       </div>
       
       {/* Floating Icons */}
@@ -54,9 +49,7 @@ const Hero = () => {
           </h1>
           
           {/* Brand Name */}
-          <p className="text-primary text-xl sm:text-2xl md:text-3xl uppercase tracking-[0.2em] font-bold">
-            ARROWMIND SERVICE CENTER
-          </p>
+          
           
           {/* Description */}
           <p className="text-muted-foreground text-base sm:text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
@@ -64,45 +57,19 @@ const Hero = () => {
           </p>
           
           {/* Trust Badges */}
-          <div className="flex flex-wrap justify-center gap-4 text-sm text-muted-foreground">
-            <div className="flex items-center gap-2 bg-card/50 px-4 py-2 rounded-full border border-border">
-              <Shield className="w-4 h-4 text-primary" />
-              <span>90-Day Warranty</span>
-            </div>
-            <div className="flex items-center gap-2 bg-card/50 px-4 py-2 rounded-full border border-border">
-              <Clock className="w-4 h-4 text-primary" />
-              <span>Same Day Service</span>
-            </div>
-            <div className="flex items-center gap-2 bg-card/50 px-4 py-2 rounded-full border border-border">
-              <Wrench className="w-4 h-4 text-primary" />
-              <span>Certified Technicians</span>
-            </div>
-          </div>
+          
           
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
-            <Button 
-              size="lg" 
-              className="bg-primary hover:bg-primary/90 text-primary-foreground px-10 py-6 text-lg font-semibold group shadow-lg shadow-primary/20 w-full sm:w-auto"
-              onClick={handleCall}
-            >
+            <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground px-10 py-6 text-lg font-semibold group shadow-lg shadow-primary/20 w-full sm:w-auto" onClick={handleCall}>
               <Phone className="mr-2 w-5 h-5" />
               CALL NOW
             </Button>
-            <Button 
-              size="lg" 
-              className="bg-green-600 hover:bg-green-700 text-white px-10 py-6 text-lg font-semibold w-full sm:w-auto"
-              onClick={handleWhatsApp}
-            >
+            <Button size="lg" className="bg-green-600 hover:bg-green-700 text-white px-10 py-6 text-lg font-semibold w-full sm:w-auto" onClick={handleWhatsApp}>
               <MessageCircle className="mr-2 w-5 h-5" />
               WHATSAPP
             </Button>
-            <Button 
-              size="lg" 
-              variant="outline" 
-              className="border-2 border-primary/30 hover:bg-primary/10 px-10 py-6 text-lg font-semibold w-full sm:w-auto"
-              onClick={() => setDialogOpen(true)}
-            >
+            <Button size="lg" variant="outline" className="border-2 border-primary/30 hover:bg-primary/10 px-10 py-6 text-lg font-semibold w-full sm:w-auto" onClick={() => setDialogOpen(true)}>
               GET FREE QUOTE
             </Button>
           </div>
@@ -121,8 +88,6 @@ const Hero = () => {
       {/* Decorative Elements */}
       <div className="absolute top-20 left-10 text-primary text-6xl opacity-20 hidden md:block">+</div>
       <div className="absolute bottom-20 right-10 text-primary text-6xl opacity-20 hidden md:block">+</div>
-    </section>
-  );
+    </section>;
 };
-
 export default Hero;
