@@ -34,10 +34,7 @@ const Hero = () => {
       <div className="relative z-10 container mx-auto px-4 py-20">
         <div className="max-w-6xl mx-auto text-center space-y-8 animate-fade-in px-4">
           {/* Emergency Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 border border-primary/30 rounded-full">
-            <Clock className="w-4 h-4 text-primary" />
-            <span className="text-primary text-sm font-semibold">24/7 Emergency Service Available</span>
-          </div>
+          
           
           {/* Main Heading */}
           <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-extrabold leading-tight tracking-tight">
