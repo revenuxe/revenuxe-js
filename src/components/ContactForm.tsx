@@ -12,6 +12,18 @@ interface ContactFormProps {
   onSuccess?: () => void;
 }
 
+const applianceOptions = [
+  "AC Repair",
+  "Refrigerator Repair",
+  "Washing Machine Repair",
+  "Microwave Repair",
+  "TV Repair",
+  "Dishwasher Repair",
+  "Gas Stove Repair",
+  "Geyser/Water Heater Repair",
+  "Other Appliance"
+];
+
 export const ContactForm = ({ variant = "default", onSuccess }: ContactFormProps) => {
   const { toast } = useToast();
   const [loading, setLoading] = useState(false);
@@ -43,8 +55,8 @@ export const ContactForm = ({ variant = "default", onSuccess }: ContactFormProps
       if (error) throw error;
 
       toast({
-        title: "Success!",
-        description: "We've received your inquiry. We'll get back to you soon!",
+        title: "Booking Received! ✓",
+        description: "We'll call you back within 30 minutes to confirm your appointment.",
       });
 
       setFormData({
@@ -61,7 +73,7 @@ export const ContactForm = ({ variant = "default", onSuccess }: ContactFormProps
       console.error("Error submitting form:", error);
       toast({
         title: "Error",
-        description: "Failed to submit form. Please try again.",
+        description: "Failed to submit form. Please try again or call us directly.",
         variant: "destructive",
       });
     } finally {
@@ -70,7 +82,7 @@ export const ContactForm = ({ variant = "default", onSuccess }: ContactFormProps
   };
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
   ) => {
     setFormData((prev) => ({
       ...prev,
@@ -82,14 +94,14 @@ export const ContactForm = ({ variant = "default", onSuccess }: ContactFormProps
     <form onSubmit={handleSubmit} className="space-y-4">
       <div className={variant === "compact" ? "grid grid-cols-1 md:grid-cols-2 gap-4" : "space-y-4"}>
         <div>
-          <Label htmlFor="name">Name *</Label>
+          <Label htmlFor="name">Your Name *</Label>
           <Input
             id="name"
             name="name"
             value={formData.name}
             onChange={handleChange}
             required
-            placeholder="Your full name"
+            placeholder="Enter your name"
           />
         </div>
 
@@ -107,66 +119,78 @@ export const ContactForm = ({ variant = "default", onSuccess }: ContactFormProps
         </div>
 
         <div>
-          <Label htmlFor="email">Email (Optional)</Label>
-          <Input
-            id="email"
-            name="email"
-            type="email"
-            value={formData.email}
+          <Label htmlFor="service">Appliance Type *</Label>
+          <select
+            id="service"
+            name="service"
+            value={formData.service}
             onChange={handleChange}
-            placeholder="your@email.com"
-          />
+            required
+            className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+          >
+            <option value="">Select Appliance</option>
+            {applianceOptions.map((option) => (
+              <option key={option} value={option}>
+                {option}
+              </option>
+            ))}
+          </select>
         </div>
 
         <div>
-          <Label htmlFor="city">City *</Label>
+          <Label htmlFor="city">Your Area/City *</Label>
           <Input
             id="city"
             name="city"
             value={formData.city}
             onChange={handleChange}
             required
-            placeholder="Your city"
+            placeholder="e.g., Koramangala, Bangalore"
           />
         </div>
 
-        <div className={variant === "compact" ? "md:col-span-2" : ""}>
-          <Label htmlFor="service">Service Interested In *</Label>
-          <Input
-            id="service"
-            name="service"
-            value={formData.service}
-            onChange={handleChange}
-            required
-            placeholder="e.g., Digital Marketing, Web Development, SEO"
-          />
-        </div>
+        {variant === "default" && (
+          <>
+            <div>
+              <Label htmlFor="email">Email (Optional)</Label>
+              <Input
+                id="email"
+                name="email"
+                type="email"
+                value={formData.email}
+                onChange={handleChange}
+                placeholder="your@email.com"
+              />
+            </div>
+            <div>
+              <Label htmlFor="message">Describe the Issue (Optional)</Label>
+              <Textarea
+                id="message"
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
+                placeholder="e.g., AC not cooling, fridge making noise..."
+                rows={3}
+              />
+            </div>
+          </>
+        )}
       </div>
 
-      {variant === "default" && (
-        <div>
-          <Label htmlFor="message">Message (Optional)</Label>
-          <Textarea
-            id="message"
-            name="message"
-            value={formData.message}
-            onChange={handleChange}
-            placeholder="Tell us more about your project..."
-            rows={4}
-          />
-        </div>
-      )}
-
-      <Button type="submit" disabled={loading} className="w-full" size="lg">
+      <Button type="submit" disabled={loading} className="w-full bg-primary hover:bg-primary/90" size="lg">
         {loading ? (
           <>
             <Loader2 className="mr-2 h-4 w-4 animate-spin" />
             Submitting...
           </>
         ) : (
-          "Submit Inquiry"
+          "Book Service Now"
         )}
       </Button>
+      
+      <p className="text-xs text-muted-foreground text-center">
+        By submitting, you agree to receive a callback from our team
+      </p>
     </form>
   );
 };

@@ -1,4 +1,3 @@
-import { useState } from "react";
 import {
   Dialog,
   DialogContent,
@@ -6,7 +5,7 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { ContactForm } from "./ContactForm";
-import { X } from "lucide-react";
+import { X, Clock, Shield } from "lucide-react";
 import { Button } from "./ui/button";
 
 interface GetStartedDialogProps {
@@ -21,7 +20,7 @@ export const GetStartedDialog = ({ open, onOpenChange }: GetStartedDialogProps) 
         <DialogHeader>
           <div className="flex items-center justify-between">
             <DialogTitle className="text-2xl font-bold">
-              Get Started with <span className="text-primary">Arrowmind</span>
+              Book <span className="text-primary">Repair Service</span>
             </DialogTitle>
             <Button
               variant="ghost"
@@ -33,9 +32,26 @@ export const GetStartedDialog = ({ open, onOpenChange }: GetStartedDialogProps) 
             </Button>
           </div>
         </DialogHeader>
-        <div className="mt-4">
+        
+        {/* Trust Badges */}
+        <div className="flex flex-wrap gap-4 py-2 text-sm text-muted-foreground">
+          <div className="flex items-center gap-2">
+            <Clock className="w-4 h-4 text-primary" />
+            <span>Same Day Service</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <Shield className="w-4 h-4 text-primary" />
+            <span>90-Day Warranty</span>
+          </div>
+        </div>
+        
+        <div className="mt-2">
           <ContactForm variant="compact" onSuccess={() => onOpenChange(false)} />
         </div>
+        
+        <p className="text-xs text-muted-foreground text-center mt-4">
+          We'll call you back within 30 minutes to confirm your appointment
+        </p>
       </DialogContent>
     </Dialog>
   );
