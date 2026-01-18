@@ -1,6 +1,6 @@
 import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
-import Services from "@/components/Services";
+import ServicesCarousel from "@/components/ServicesCarousel";
 import Stats from "@/components/Stats";
 import WhyChooseUs from "@/components/WhyChooseUs";
 import Process from "@/components/Process";
@@ -14,11 +14,15 @@ import { homepageFAQs } from "@/data/faqData";
 const Index = () => {
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <SEO />
+      <SEO 
+        title="Arrowmind Service Center | Expert Appliance Repair | AC, Fridge, Washing Machine"
+        description="Fast, reliable appliance repair services. AC repair, refrigerator repair, washing machine repair, TV repair & more. Same-day service, 90-day warranty. Call now!"
+        keywords="appliance repair, AC repair, refrigerator repair, washing machine repair, microwave repair, TV repair, home appliance service, same day repair"
+      />
       <Navigation />
       <Hero />
+      <ServicesCarousel />
       <Stats />
-      <Services />
       <Process />
       <WhyChooseUs />
       <Testimonials />

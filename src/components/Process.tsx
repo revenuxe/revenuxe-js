@@ -1,30 +1,30 @@
-import { Lightbulb, Target, Rocket, LineChart } from "lucide-react";
+import { Phone, ClipboardCheck, Wrench, ThumbsUp } from "lucide-react";
 
-const Process = ({ cityName }: { cityName?: string }) => {
+const Process = () => {
   const steps = [
     {
-      icon: <Lightbulb className="w-10 h-10" />,
+      icon: <Phone className="w-10 h-10" />,
       number: "01",
-      title: "Discovery",
-      description: `We analyze your business, audience, and competition${cityName ? ` in ${cityName}` : ''} to create a tailored strategy that delivers results.`
+      title: "Book Service",
+      description: "Call us or fill the form online. Our team will note your appliance issue and schedule a visit."
     },
     {
-      icon: <Target className="w-10 h-10" />,
+      icon: <ClipboardCheck className="w-10 h-10" />,
       number: "02",
-      title: "Strategy",
-      description: `Our experts develop a comprehensive marketing plan${cityName ? ` for ${cityName} market` : ''} with clear objectives and measurable KPIs.`
+      title: "Free Diagnosis",
+      description: "Our technician visits, inspects the appliance, and provides a transparent quote before any work."
     },
     {
-      icon: <Rocket className="w-10 h-10" />,
+      icon: <Wrench className="w-10 h-10" />,
       number: "03",
-      title: "Execution",
-      description: "We implement campaigns across multiple channels with precision and creativity that captures attention."
+      title: "Expert Repair",
+      description: "Upon approval, we repair your appliance on the spot using genuine parts and proven techniques."
     },
     {
-      icon: <LineChart className="w-10 h-10" />,
+      icon: <ThumbsUp className="w-10 h-10" />,
       number: "04",
-      title: "Optimize",
-      description: "Continuous monitoring and optimization ensure maximum ROI and sustained growth for your business."
+      title: "Quality Check",
+      description: "We test the appliance thoroughly, explain the repair, and provide warranty documentation."
     }
   ];
 
@@ -38,10 +38,10 @@ const Process = ({ cityName }: { cityName?: string }) => {
         <div className="text-center mb-16 space-y-4">
           <span className="text-primary text-sm font-bold uppercase tracking-wider">Our Process</span>
           <h2 className="text-4xl md:text-6xl font-bold">
-            How We <span className="text-primary">Work</span>
+            How It <span className="text-primary">Works</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            A proven methodology that transforms ideas into measurable success
+            Getting your appliance repaired is quick and hassle-free with our simple 4-step process
           </p>
         </div>
 

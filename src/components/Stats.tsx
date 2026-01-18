@@ -1,20 +1,26 @@
+import { CheckCircle2, Users, Clock, Award } from "lucide-react";
+
 const Stats = () => {
   const stats = [
     {
+      icon: <CheckCircle2 className="w-8 h-8" />,
+      value: "50,000+",
+      label: "Repairs Completed",
+    },
+    {
+      icon: <Users className="w-8 h-8" />,
+      value: "25,000+",
+      label: "Happy Customers",
+    },
+    {
+      icon: <Clock className="w-8 h-8" />,
       value: "10+",
-      label: "Brands Launched",
+      label: "Years Experience",
     },
     {
-      value: "3+",
-      label: "Years of Growth & Innovation",
-    },
-    {
-      value: "30+",
-      label: "Projects Completed",
-    },
-    {
-      value: "5",
-      label: "Active Clients",
+      icon: <Award className="w-8 h-8" />,
+      value: "50+",
+      label: "Expert Technicians",
     },
   ];
 
@@ -23,43 +29,42 @@ const Stats = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
-          <div className="mb-16 animate-fade-in">
+          <div className="mb-16 animate-fade-in text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              <span className="text-foreground">WHO WE ARE</span>
+              <span className="text-foreground">TRUSTED </span>
+              <span className="text-primary">SERVICE CENTER</span>
             </h2>
-            <p className="text-lg md:text-xl max-w-3xl">
-              <span className="text-foreground">AGENCY </span>
-              <span className="text-primary">ARROWMIND </span>
-              <span className="text-foreground">SPECIALIZES IN </span>
-              <span className="text-primary">MARKETING </span>
-              <span className="text-foreground">FOR SMALL AND MEDIUM BUSINESSES FOR MORE THAN FOUR YEARS.</span>
+            <p className="text-lg md:text-xl max-w-3xl mx-auto text-muted-foreground">
+              <span className="text-primary font-semibold">Arrowmind Service Center</span> is your trusted partner for all home appliance repairs. We've been serving customers with dedication and expertise for over a decade.
             </p>
           </div>
           
           {/* Stats Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {stats.map((stat, index) => (
               <div
                 key={index}
-                className="border border-border rounded-lg p-8 md:p-12 hover:border-primary transition-all duration-300 animate-fade-in"
+                className="border border-border rounded-lg p-8 md:p-10 hover:border-primary transition-all duration-300 animate-fade-in text-center bg-card/50"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <p className="text-sm text-muted-foreground uppercase tracking-wider mb-4">
-                  {stat.label}
-                </p>
-                <p className="text-5xl md:text-6xl font-bold text-primary">
+                <div className="flex justify-center mb-4 text-primary">
+                  {stat.icon}
+                </div>
+                <p className="text-4xl md:text-5xl font-bold text-primary mb-2">
                   {stat.value}
+                </p>
+                <p className="text-sm text-muted-foreground uppercase tracking-wider">
+                  {stat.label}
                 </p>
               </div>
             ))}
           </div>
           
           {/* Mission Statement */}
-          <div className="mt-16 animate-fade-in" style={{ animationDelay: "0.4s" }}>
-            <p className="text-muted-foreground text-base md:text-lg max-w-3xl">
-              Our mission is to help automate marketing and build a development strategy. 
-              We have proven that when we understand what marketers need for startups and 
-              medium-sized businesses, growth is guaranteed.
+          <div className="mt-16 animate-fade-in text-center" style={{ animationDelay: "0.4s" }}>
+            <p className="text-muted-foreground text-base md:text-lg max-w-3xl mx-auto">
+              We believe every home deserves working appliances. Our mission is to provide fast, 
+              affordable, and reliable repair services that get your life back on track.
             </p>
           </div>
         </div>
