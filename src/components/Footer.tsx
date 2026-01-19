@@ -3,15 +3,6 @@ import { ContactForm } from "./ContactForm";
 import logo from "@/assets/arrowmind-logo.webp";
 
 const Footer = () => {
-  const services = [
-    { name: "AC Repair", link: "/services/ac-repair" },
-    { name: "Refrigerator Repair", link: "/services/refrigerator-repair" },
-    { name: "Washing Machine Repair", link: "/services/washing-machine-repair" },
-    { name: "Microwave Repair", link: "/services/microwave-repair" },
-    { name: "TV Repair", link: "/services/tv-repair" },
-    { name: "Dishwasher Repair", link: "/services/dishwasher-repair" },
-  ];
-
   return (
     <footer id="contact" className="bg-background border-t border-border py-12">
       <div className="container mx-auto px-4">
@@ -25,7 +16,7 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Brand & Contact */}
             <div className="space-y-4">
               <div className="flex items-center gap-3 mb-4">
@@ -56,47 +47,18 @@ const Footer = () => {
               </div>
             </div>
             
-            {/* Services */}
-            <div>
-              <h4 className="text-lg font-semibold mb-4 text-foreground">Our Services</h4>
-              <ul className="space-y-2">
-                {services.map((service) => (
-                  <li key={service.name}>
-                    <a href={service.link} className="text-muted-foreground hover:text-primary transition-colors text-sm">
-                      {service.name}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            
             {/* Quick Links */}
             <div>
               <h4 className="text-lg font-semibold mb-4 text-foreground">Quick Links</h4>
               <ul className="space-y-2">
                 <li>
-                  <a href="/about" className="text-muted-foreground hover:text-primary transition-colors text-sm">
-                    About Us
+                  <a href="/" className="text-muted-foreground hover:text-primary transition-colors text-sm">
+                    Home
                   </a>
                 </li>
                 <li>
-                  <a href="/services" className="text-muted-foreground hover:text-primary transition-colors text-sm">
-                    All Services
-                  </a>
-                </li>
-                <li>
-                  <a href="/contact" className="text-muted-foreground hover:text-primary transition-colors text-sm">
-                    Contact Us
-                  </a>
-                </li>
-                <li>
-                  <a href="/terms" className="text-muted-foreground hover:text-primary transition-colors text-sm">
-                    Terms & Conditions
-                  </a>
-                </li>
-                <li>
-                  <a href="/privacy" className="text-muted-foreground hover:text-primary transition-colors text-sm">
-                    Privacy Policy
+                  <a href="/articles" className="text-muted-foreground hover:text-primary transition-colors text-sm">
+                    Articles
                   </a>
                 </li>
               </ul>
