@@ -29,15 +29,11 @@ const Process = () => {
   ];
 
   return (
-    <section className="py-24 bg-card/30 relative overflow-hidden">
-      {/* Decorative Elements */}
-      <div className="absolute top-20 left-0 w-72 h-72 bg-primary/5 rounded-full blur-3xl" />
-      <div className="absolute bottom-20 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
-      
+    <section className="py-20 bg-background relative overflow-hidden">
       <div className="container mx-auto px-4 relative z-10">
-        <div className="text-center mb-16 space-y-4">
+        <div className="text-center mb-12 space-y-4">
           <span className="text-primary text-sm font-bold uppercase tracking-wider">Our Process</span>
-          <h2 className="text-4xl md:text-6xl font-bold">
+          <h2 className="text-3xl md:text-5xl font-bold text-foreground">
             How It <span className="text-primary">Works</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
@@ -45,7 +41,7 @@ const Process = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
           {steps.map((step, index) => (
             <div
               key={index}
@@ -57,7 +53,7 @@ const Process = () => {
                 <div className="hidden lg:block absolute top-16 left-full w-full h-0.5 bg-gradient-to-r from-primary/50 to-transparent" />
               )}
               
-              <div className="relative bg-card border-2 border-border rounded-xl p-8 hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10 h-full">
+              <div className="relative bg-card border border-border rounded-xl p-6 hover:border-primary hover:shadow-lg transition-all duration-300 h-full">
                 {/* Number Badge */}
                 <div className="absolute -top-4 -right-4 w-12 h-12 bg-primary rounded-full flex items-center justify-center text-primary-foreground font-bold text-lg shadow-lg">
                   {step.number}
