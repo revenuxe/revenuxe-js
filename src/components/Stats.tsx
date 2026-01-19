@@ -25,14 +25,14 @@ const Stats = () => {
   ];
 
   return (
-    <section className="py-20 md:py-32 bg-gradient-to-br from-background to-[hsl(0,30%,8%)] relative">
+    <section className="py-20 bg-card relative">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
           <div className="mb-16 animate-fade-in text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              <span className="text-foreground">TRUSTED </span>
-              <span className="text-primary">SERVICE CENTER</span>
+              <span className="text-foreground">Trusted </span>
+              <span className="text-primary">Service Center</span>
             </h2>
             <p className="text-lg md:text-xl max-w-3xl mx-auto text-muted-foreground">
               <span className="text-primary font-semibold">Arrowmind Service Center</span> is your trusted partner for all home appliance repairs. We've been serving customers with dedication and expertise for over a decade.
@@ -44,7 +44,7 @@ const Stats = () => {
             {stats.map((stat, index) => (
               <div
                 key={index}
-                className="border border-border rounded-lg p-8 md:p-10 hover:border-primary transition-all duration-300 animate-fade-in text-center bg-card/50"
+                className="border border-border rounded-xl p-8 md:p-10 hover:border-primary hover:shadow-lg transition-all duration-300 animate-fade-in text-center bg-background"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <div className="flex justify-center mb-4 text-primary">

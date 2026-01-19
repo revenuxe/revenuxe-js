@@ -47,14 +47,12 @@ const Testimonials = () => {
   ];
 
   return (
-    <section className="py-24 relative overflow-hidden">
-      {/* Background Gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-card/20 to-background" />
-      
+    <section className="py-20 relative overflow-hidden bg-card">
       <div className="container mx-auto px-4 relative z-10">
-        <div className="text-center mb-16 space-y-4">
+      
+        <div className="text-center mb-12 space-y-4">
           <span className="text-primary text-sm font-bold uppercase tracking-wider">Testimonials</span>
-          <h2 className="text-4xl md:text-6xl font-bold">
+          <h2 className="text-3xl md:text-5xl font-bold text-foreground">
             What Customers <span className="text-primary">Say</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
@@ -62,11 +60,11 @@ const Testimonials = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="group relative bg-card border border-border rounded-2xl p-8 hover:border-primary/50 transition-all duration-300 hover:shadow-xl hover:shadow-primary/10 animate-fade-in"
+              className="group relative bg-background border border-border rounded-xl p-6 hover:border-primary/50 transition-all duration-300 hover:shadow-xl animate-fade-in"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               {/* Quote Icon */}

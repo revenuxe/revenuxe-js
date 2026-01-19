@@ -40,15 +40,15 @@ const WhyChooseUs = () => {
   };
 
   return (
-    <section className="py-20 md:py-32 bg-background">
+    <section className="py-20 bg-secondary/30">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
           <div className="mb-16 animate-fade-in text-center">
             <span className="text-primary text-sm font-bold uppercase tracking-wider">Why Choose Us</span>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mt-4">
-              <span className="text-foreground">WHY CHOOSE </span>
-              <span className="text-primary">ARROWMIND</span>
+              <span className="text-foreground">Why Choose </span>
+              <span className="text-primary">Arrowmind</span>
             </h2>
             <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
               We're not just another repair service. Here's what makes us the preferred choice for thousands of customers.
@@ -60,7 +60,7 @@ const WhyChooseUs = () => {
             {benefits.map((benefit, index) => (
               <div
                 key={index}
-                className="relative bg-card border border-border rounded-lg p-8 hover:border-primary transition-all duration-300 group animate-fade-in"
+                className="relative bg-card border border-border rounded-xl p-8 hover:border-primary hover:shadow-lg transition-all duration-300 group animate-fade-in"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 {/* Icon */}
