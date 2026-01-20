@@ -19,10 +19,10 @@ const Navigation = () => {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-card/95 backdrop-blur-md border-b border-border shadow-sm">
-      <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16 md:h-20">
+      <div className="container mx-auto px-4 sm:px-6">
+        <div className="flex items-center justify-between h-18 md:h-20 py-2">
           {/* Logo */}
-          <a href="/" className="flex items-center">
+          <a href="/" className="flex items-center flex-shrink-0">
             <img src={logo} alt="Arrowmind Service Center" className="h-10 md:h-14 w-auto" />
           </a>
           
@@ -61,7 +61,7 @@ const Navigation = () => {
           </div>
           
           {/* Mobile: Call Button + Menu */}
-          <div className="flex md:hidden items-center gap-2">
+          <div className="flex md:hidden items-center gap-4">
             <Button 
               size="sm"
               className="bg-primary hover:bg-primary/90"
