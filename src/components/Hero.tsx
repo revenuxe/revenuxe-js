@@ -46,7 +46,7 @@ const Hero = () => {
           
           
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 pt-4">
+          <div className="flex flex-col sm:flex-row gap-4 pt-8 mt-4">
             <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground px-10 py-6 text-lg font-semibold shadow-lg shadow-primary/30 w-full sm:w-auto" onClick={handleCall}>
               <Phone className="mr-2 w-5 h-5" />
               CALL NOW
