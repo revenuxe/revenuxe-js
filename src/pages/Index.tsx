@@ -1,6 +1,7 @@
 import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
 import ServicesCarousel from "@/components/ServicesCarousel";
+import ServiceCategories from "@/components/ServiceCategories";
 import Testimonials from "@/components/Testimonials";
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
@@ -19,6 +20,7 @@ const Index = () => {
       <Navigation />
       <Hero />
       <ServicesCarousel />
+      <ServiceCategories />
       <Testimonials />
       <FAQ items={homepageFAQs} />
       <CTA />
