@@ -19,14 +19,8 @@ const Footer = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Brand & Contact */}
             <div className="space-y-4">
-              <div className="flex items-center gap-3 mb-4">
-                <img src={logo} alt="Arrowmind Logo" className="h-10 w-auto" />
-                <div>
-                  <h3 className="text-xl font-bold">
-                    <span className="text-background">ARROWMIND</span>
-                  </h3>
-                  <p className="text-xs text-accent">Service Center</p>
-                </div>
+              <div className="mb-4">
+                <img src={logo} alt="Arrowmind Service Center" className="h-12 w-auto brightness-0 invert" />
               </div>
               <p className="text-background/70 text-sm">
                 Your trusted partner for all home appliance repairs. Fast, reliable & affordable service.
