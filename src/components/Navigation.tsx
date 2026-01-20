@@ -22,12 +22,8 @@ const Navigation = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <a href="/" className="flex items-center gap-3">
-            <img src={logo} alt="Arrowmind Logo" className="h-10 md:h-12 w-auto" />
-            <div className="hidden sm:block">
-              <span className="text-foreground font-bold text-lg">ARROWMIND</span>
-              <span className="block text-xs text-primary -mt-1">Service Center</span>
-            </div>
+          <a href="/" className="flex items-center">
+            <img src={logo} alt="Arrowmind Service Center" className="h-10 md:h-14 w-auto" />
           </a>
           
           {/* Desktop Navigation */}
