@@ -3,25 +3,19 @@ import { Button } from "@/components/ui/button";
 import { Phone, MessageCircle, CheckCircle } from "lucide-react";
 import { GetStartedDialog } from "./GetStartedDialog";
 import heroBg from "@/assets/hero-bg.jpg";
-
 const Hero = () => {
   const [dialogOpen, setDialogOpen] = useState(false);
-  
   const handleWhatsApp = () => {
     window.open("https://wa.me/919876543210?text=Hi! I need appliance repair service.", "_blank");
   };
-  
   const handleCall = () => {
     window.location.href = "tel:+919876543210";
   };
-
-  return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+  return <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${heroBg})` }}
-      />
+      <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{
+      backgroundImage: `url(${heroBg})`
+    }} />
       
       {/* Overlay */}
       <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/85 to-background/70" />
@@ -30,10 +24,7 @@ const Hero = () => {
       <div className="relative z-10 container mx-auto px-4 py-20">
         <div className="max-w-3xl space-y-8 animate-fade-in px-4">
           {/* Trust Badge */}
-          <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 rounded-full px-4 py-2">
-            <CheckCircle className="w-4 h-4 text-primary" />
-            <span className="text-sm font-medium text-primary">Trusted by 25,000+ Customers</span>
-          </div>
+          
           
           {/* Main Heading */}
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight tracking-tight">
@@ -52,64 +43,31 @@ const Hero = () => {
           </p>
           
           {/* Feature List */}
-          <div className="flex flex-wrap gap-4 text-sm">
-            <span className="flex items-center gap-2 text-foreground">
-              <CheckCircle className="w-5 h-5 text-primary" />
-              90-Day Warranty
-            </span>
-            <span className="flex items-center gap-2 text-foreground">
-              <CheckCircle className="w-5 h-5 text-primary" />
-              Same Day Service
-            </span>
-            <span className="flex items-center gap-2 text-foreground">
-              <CheckCircle className="w-5 h-5 text-primary" />
-              Certified Technicians
-            </span>
-          </div>
+          
           
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 pt-4">
-            <Button 
-              size="lg" 
-              className="bg-primary hover:bg-primary/90 text-primary-foreground px-10 py-6 text-lg font-semibold shadow-lg shadow-primary/30 w-full sm:w-auto"
-              onClick={handleCall}
-            >
+            <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground px-10 py-6 text-lg font-semibold shadow-lg shadow-primary/30 w-full sm:w-auto" onClick={handleCall}>
               <Phone className="mr-2 w-5 h-5" />
               CALL NOW
             </Button>
-            <Button 
-              size="lg" 
-              className="bg-green-600 hover:bg-green-700 text-white px-10 py-6 text-lg font-semibold w-full sm:w-auto"
-              onClick={handleWhatsApp}
-            >
+            <Button size="lg" className="bg-green-600 hover:bg-green-700 text-white px-10 py-6 text-lg font-semibold w-full sm:w-auto" onClick={handleWhatsApp}>
               <MessageCircle className="mr-2 w-5 h-5" />
               WHATSAPP
             </Button>
-            <Button 
-              size="lg" 
-              variant="outline" 
-              className="border-2 border-primary hover:bg-primary/10 px-10 py-6 text-lg font-semibold w-full sm:w-auto"
-              onClick={() => setDialogOpen(true)}
-            >
+            <Button size="lg" variant="outline" className="border-2 border-primary hover:bg-primary/10 px-10 py-6 text-lg font-semibold w-full sm:w-auto" onClick={() => setDialogOpen(true)}>
               GET FREE QUOTE
             </Button>
           </div>
           
           {/* Phone Number Display */}
           <div className="pt-4">
-            <a 
-              href="tel:+919876543210" 
-              className="text-2xl md:text-3xl font-bold text-primary hover:text-primary/80 transition-colors"
-            >
-              📞 +91 98765 43210
-            </a>
+            
           </div>
           
           <GetStartedDialog open={dialogOpen} onOpenChange={setDialogOpen} />
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Hero;
