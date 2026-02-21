@@ -10,196 +10,20 @@ export type Database = {
   // Allows to automatically instantiate createClient with right options
   // instead of createClient<Database, { PostgrestVersion: 'XX' }>(URL, KEY)
   __InternalSupabase: {
-    PostgrestVersion: "13.0.5"
+    PostgrestVersion: "14.1"
   }
   public: {
     Tables: {
-      articles: {
-        Row: {
-          author: string
-          category: string
-          content: string
-          created_at: string
-          excerpt: string
-          id: string
-          image_url: string | null
-          published: boolean
-          slug: string
-          title: string
-          updated_at: string
-        }
-        Insert: {
-          author: string
-          category: string
-          content: string
-          created_at?: string
-          excerpt: string
-          id?: string
-          image_url?: string | null
-          published?: boolean
-          slug: string
-          title: string
-          updated_at?: string
-        }
-        Update: {
-          author?: string
-          category?: string
-          content?: string
-          created_at?: string
-          excerpt?: string
-          id?: string
-          image_url?: string | null
-          published?: boolean
-          slug?: string
-          title?: string
-          updated_at?: string
-        }
-        Relationships: []
-      }
-      case_studies: {
-        Row: {
-          challenge: string
-          client_name: string
-          created_at: string | null
-          featured: boolean | null
-          id: string
-          image_url: string | null
-          industry: string
-          results: string
-          solution: string
-          title: string
-          updated_at: string | null
-          website_url: string | null
-        }
-        Insert: {
-          challenge: string
-          client_name: string
-          created_at?: string | null
-          featured?: boolean | null
-          id?: string
-          image_url?: string | null
-          industry: string
-          results: string
-          solution: string
-          title: string
-          updated_at?: string | null
-          website_url?: string | null
-        }
-        Update: {
-          challenge?: string
-          client_name?: string
-          created_at?: string | null
-          featured?: boolean | null
-          id?: string
-          image_url?: string | null
-          industry?: string
-          results?: string
-          solution?: string
-          title?: string
-          updated_at?: string | null
-          website_url?: string | null
-        }
-        Relationships: []
-      }
-      leads: {
-        Row: {
-          city: string
-          created_at: string | null
-          email: string | null
-          id: string
-          message: string | null
-          name: string
-          phone: string
-          service: string
-          status: string | null
-          updated_at: string | null
-        }
-        Insert: {
-          city: string
-          created_at?: string | null
-          email?: string | null
-          id?: string
-          message?: string | null
-          name: string
-          phone: string
-          service: string
-          status?: string | null
-          updated_at?: string | null
-        }
-        Update: {
-          city?: string
-          created_at?: string | null
-          email?: string | null
-          id?: string
-          message?: string | null
-          name?: string
-          phone?: string
-          service?: string
-          status?: string | null
-          updated_at?: string | null
-        }
-        Relationships: []
-      }
-      profiles: {
-        Row: {
-          created_at: string | null
-          email: string
-          full_name: string | null
-          id: string
-          updated_at: string | null
-        }
-        Insert: {
-          created_at?: string | null
-          email: string
-          full_name?: string | null
-          id: string
-          updated_at?: string | null
-        }
-        Update: {
-          created_at?: string | null
-          email?: string
-          full_name?: string | null
-          id?: string
-          updated_at?: string | null
-        }
-        Relationships: []
-      }
-      user_roles: {
-        Row: {
-          created_at: string | null
-          id: string
-          role: Database["public"]["Enums"]["app_role"]
-          user_id: string
-        }
-        Insert: {
-          created_at?: string | null
-          id?: string
-          role: Database["public"]["Enums"]["app_role"]
-          user_id: string
-        }
-        Update: {
-          created_at?: string | null
-          id?: string
-          role?: Database["public"]["Enums"]["app_role"]
-          user_id?: string
-        }
-        Relationships: []
-      }
+      [_ in never]: never
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
-      has_role: {
-        Args: {
-          _role: Database["public"]["Enums"]["app_role"]
-          _user_id: string
-        }
-        Returns: boolean
-      }
+      [_ in never]: never
     }
     Enums: {
-      app_role: "admin" | "user"
+      [_ in never]: never
     }
     CompositeTypes: {
       [_ in never]: never
@@ -326,8 +150,6 @@ export type CompositeTypes<
 
 export const Constants = {
   public: {
-    Enums: {
-      app_role: ["admin", "user"],
-    },
+    Enums: {},
   },
 } as const
