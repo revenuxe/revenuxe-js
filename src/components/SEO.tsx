@@ -12,7 +12,7 @@ interface SEOProps {
 }
 
 export const SEO = ({
-  title = "Revenuxe™ | #1 AI Digital Marketing Agency India — 10X Your Revenue",
+  title = "Revenuxe | #1 AI Digital Marketing Agency India — 10X Your Revenue",
   description = "Revenuxe is India's top-rated AI-powered digital marketing agency. We deliver guaranteed ROI with expert SEO, Google Ads, Meta Ads, web development & social media marketing. Get a free strategy call today!",
   keywords = "best digital marketing agency India, AI marketing agency, SEO company India, Google Ads management, Meta Ads agency, performance marketing, social media marketing agency, web development company, Revenuxe, digital marketing near me, affordable SEO services",
   canonicalUrl,
