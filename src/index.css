@@ -46,6 +46,10 @@ All colors MUST be HSL.
     /* Custom design tokens */
     --hero-gradient: linear-gradient(135deg, hsl(210, 20%, 98%) 0%, hsl(210, 25%, 94%) 100%);
     --card-gradient: linear-gradient(180deg, hsl(0, 0%, 100%) 0%, hsl(210, 20%, 97%) 100%);
+    
+    /* Brand gradient (from logo) */
+    --brand-gradient: linear-gradient(135deg, hsl(220, 70%, 35%) 0%, hsl(175, 60%, 45%) 100%);
+    --brand-gradient-hover: linear-gradient(135deg, hsl(220, 70%, 30%) 0%, hsl(175, 60%, 40%) 100%);
   }
 }
 

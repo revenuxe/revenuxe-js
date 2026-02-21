@@ -46,7 +46,7 @@ const CTA = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-6">
             <Button 
               size="lg" 
-              className="bg-primary hover:bg-primary/90 text-primary-foreground px-12 py-7 text-lg font-bold group shadow-2xl shadow-primary/30"
+              className="px-12 py-7 text-lg font-bold group shadow-2xl shadow-primary/30"
               onClick={() => setDialogOpen(true)}
             >
               START YOUR PROJECT

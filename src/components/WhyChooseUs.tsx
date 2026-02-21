@@ -69,7 +69,7 @@ const WhyChooseUs = ({ cityName }: { cityName?: string }) => {
           
           {/* CTA */}
           <div className="mt-12 animate-fade-in" style={{ animationDelay: "0.4s" }}>
-            <button className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 rounded-lg font-semibold transition-all">
+            <button className="text-white bg-[image:var(--brand-gradient)] hover:bg-[image:var(--brand-gradient-hover)] px-8 py-4 rounded-lg font-semibold transition-all shadow-lg shadow-primary/20">
               START COLLABORATION
             </button>
           </div>
