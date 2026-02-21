@@ -76,15 +76,20 @@ const CaseStudyDetail = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEO
-        title={`${caseStudy.title} - Case Study | ArrowMind`}
+        title={`${caseStudy.title} - Case Study | Revenuxe`}
         description={`${caseStudy.challenge.substring(0, 150)}...`}
         keywords={`case study, ${caseStudy.industry}, ${caseStudy.client_name}, digital marketing success`}
       />
       <Navigation />
       <main className="pt-20">
-        {/* Hero Section */}
-        <section className="py-12 bg-gradient-to-br from-background via-background to-primary/5">
-          <div className="container mx-auto px-4">
+        {/* Hero Section with consistent background */}
+        <section className="relative py-12 overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-secondary" />
+          <div className="absolute inset-0 opacity-10">
+            <div className="absolute inset-0" style={{ backgroundImage: 'linear-gradient(hsl(var(--primary)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--primary)) 1px, transparent 1px)', backgroundSize: '50px 50px' }} />
+          </div>
+          <div className="absolute top-10 left-10 w-24 h-24 border-2 border-primary/20 rounded-full animate-pulse" />
+          <div className="relative z-10 container mx-auto px-4">
             <Link to="/case-studies" className="inline-flex items-center text-primary hover:underline mb-6">
               <ArrowLeft className="mr-2 h-4 w-4" />
               Back to Case Studies

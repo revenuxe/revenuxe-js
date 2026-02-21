@@ -1,4 +1,5 @@
 import { useParams } from "react-router-dom";
+import PageHero from "@/components/PageHero";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -1559,19 +1560,15 @@ const SubServiceDetail = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
-      <main className="pt-20">
-        <section className="py-20 bg-gradient-to-br from-background via-primary/5 to-background">
-          <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto text-center space-y-6">
-              <h1 className="text-4xl md:text-6xl font-bold">{service.title}</h1>
-              <p className="text-xl md:text-2xl text-primary font-semibold">{service.subtitle}</p>
-              <p className="text-muted-foreground text-lg">{service.description}</p>
-              <Button size="lg" className="mt-6" onClick={() => setDialogOpen(true)}>
-                Get Started <ArrowRight className="ml-2" />
-              </Button>
-            </div>
-          </div>
-        </section>
+      <main>
+        <PageHero
+          title={service.title}
+          subtitle={service.subtitle}
+        >
+          <Button size="lg" className="mt-6" onClick={() => setDialogOpen(true)}>
+            Get Started <ArrowRight className="ml-2" />
+          </Button>
+        </PageHero>
 
         <section className="py-20">
           <div className="container mx-auto px-4">

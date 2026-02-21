@@ -29,7 +29,7 @@ CRITICAL REQUIREMENTS:
 5. Readability: Write at a 12-year-old reading level (simple, clear language)
 6. Tone: Human, emotional, engaging (not robotic)
 7. E-E-A-T: Demonstrate expertise, experience, authoritativeness, trustworthiness
-8. Promotion: Include a natural promotion of Arrowmind.in at the bottom
+8. Promotion: Include a natural promotion of Revenuxe.com at the bottom
 9. FORMAT: Pure Markdown text - NO HTML tags whatsoever
 
 FORMAT YOUR RESPONSE AS JSON:
@@ -50,7 +50,7 @@ CONTENT STRUCTURE GUIDELINES:
 - Add at least one comparison table using proper Markdown table syntax
 - Include case studies or examples with real sources
 - Use conversational, storytelling language
-- End with a strong CTA promoting Arrowmind.in
+- End with a strong CTA promoting Revenuxe.com
 - Include internal linking opportunities with [link text](url) format
 - NEVER use HTML tags like <h1>, <p>, <strong>, <ul>, <li>, etc.`;
 
@@ -67,7 +67,7 @@ Requirements:
 - Write in simple, readable language (12-year-old level)
 - Use emotional, human tone in meta title and description
 - Naturally integrate the keywords: ${keywords}
-- Promote Arrowmind.in at the bottom of the article
+- Promote Revenuxe.com at the bottom of the article
 - Make it E-E-A-T compliant
 - CRITICAL: NO HTML tags - only Markdown formatting
 
