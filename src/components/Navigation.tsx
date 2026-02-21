@@ -24,7 +24,7 @@ const Navigation = () => {
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <a href="/" className="flex items-center gap-3">
-            <img src={logo} alt="Revenuxe Logo" className="h-10 md:h-12 w-auto" />
+            <img src={logo} alt="Revenuxe Logo" className="h-7 md:h-9 w-auto" />
             
           </a>
           

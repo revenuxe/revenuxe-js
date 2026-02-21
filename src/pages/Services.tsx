@@ -1,5 +1,6 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import PageHero from "@/components/PageHero";
 import ServicesSection from "@/components/Services";
 import { SEO } from "@/components/SEO";
 
@@ -12,7 +13,12 @@ const Services = () => {
         keywords="digital marketing services, SEO optimization, web development services, performance marketing, social media management, content marketing, Google Ads, Meta Ads"
       />
       <Navigation />
-      <main className="pt-20">
+      <PageHero
+        title="Our"
+        highlight="Services"
+        subtitle="Comprehensive digital marketing solutions powered by AI to grow your business"
+      />
+      <main>
         <ServicesSection />
       </main>
       <Footer />

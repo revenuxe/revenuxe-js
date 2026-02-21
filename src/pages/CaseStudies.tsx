@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import PageHero from "@/components/PageHero";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { supabase } from "@/integrations/supabase/client";
@@ -54,20 +55,12 @@ const CaseStudies = () => {
         keywords="case studies, client success stories, digital marketing results, portfolio, business transformation"
       />
       <Navigation />
-      <main className="pt-20">
-        {/* Hero Section */}
-        <section className="py-20 bg-gradient-to-br from-background via-background to-primary/5">
-          <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto text-center space-y-4">
-              <h1 className="text-5xl md:text-7xl font-bold">
-                Our <span className="text-primary">Case Studies</span>
-              </h1>
-              <p className="text-muted-foreground text-xl">
-                Real results from real clients. Discover how we've helped businesses transform their digital presence.
-              </p>
-            </div>
-          </div>
-        </section>
+      <main>
+        <PageHero
+          title="Our"
+          highlight="Case Studies"
+          subtitle="Real results from real clients. Discover how we've helped businesses transform their digital presence."
+        />
 
         {/* Case Studies Grid */}
         <section className="py-16">

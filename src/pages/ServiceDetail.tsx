@@ -1,4 +1,5 @@
 import { useParams, Link } from "react-router-dom";
+import PageHero from "@/components/PageHero";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -492,24 +493,20 @@ const ServiceDetail = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEO 
-        title={`${service.title} Services | Arrowmind`}
+        title={`${service.title} Services | Revenuxe`}
         description={service.description}
-        canonicalUrl={`https://arrowmind.in/services/${slug}`}
+        canonicalUrl={`https://revenuxe.com/services/${slug}`}
       />
       <Navigation />
-      <main className="pt-20">
-        <section className="py-20 bg-gradient-to-br from-background via-background to-primary/5">
-          <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto text-center space-y-6">
-              <h1 className="text-5xl md:text-7xl font-bold">{service.title}</h1>
-              <p className="text-2xl text-primary font-semibold">{service.subtitle}</p>
-              <p className="text-muted-foreground text-lg">{service.description}</p>
-              <Button size="lg" className="mt-6" onClick={() => setDialogOpen(true)}>
-                Get Started <ArrowRight className="ml-2" />
-              </Button>
-            </div>
-          </div>
-        </section>
+      <PageHero
+        title={service.title}
+        subtitle={service.subtitle}
+      >
+        <Button size="lg" className="mt-6" onClick={() => setDialogOpen(true)}>
+          Get Started <ArrowRight className="ml-2" />
+        </Button>
+      </PageHero>
+      <main>
 
         <section className="py-20">
           <div className="container mx-auto px-4">
