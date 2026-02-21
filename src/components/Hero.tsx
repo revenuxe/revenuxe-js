@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { GetStartedDialog } from "./GetStartedDialog";
+import googleTrustedBadge from "@/assets/google-trusted-badge.webp";
 
 const Hero = () => {
   const [dialogOpen, setDialogOpen] = useState(false);
@@ -26,8 +27,13 @@ const Hero = () => {
       <div className="relative z-10 container mx-auto px-4 py-20">
         <div className="max-w-6xl mx-auto text-center space-y-8 animate-fade-in px-4">
           {/* Small Badge */}
-          <div className="inline-block">
-            
+          {/* Google Trusted Badge */}
+          <div className="flex justify-center">
+            <img 
+              src={googleTrustedBadge} 
+              alt="Google Trusted AI Marketing Platform" 
+              className="h-16 sm:h-20 md:h-24 w-auto object-contain"
+            />
           </div>
           
           {/* Main Heading - Responsive */}
