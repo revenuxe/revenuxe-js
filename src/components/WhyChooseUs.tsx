@@ -31,7 +31,7 @@ const WhyChooseUs = ({ cityName }: { cityName?: string }) => {
           </div>
           
           {/* Benefits Grid */}
-          <div className="grid grid-cols-2 md:grid-cols-2 gap-3 md:gap-6">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6">
             {benefits.map((benefit, index) => (
               <div
                 key={index}
