@@ -53,7 +53,7 @@ const Hero = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
             <Button 
               size="lg" 
-              className="bg-primary hover:bg-primary/90 text-primary-foreground px-10 py-6 text-lg font-semibold group shadow-lg shadow-primary/20"
+              className="px-10 py-6 text-lg font-semibold group shadow-lg shadow-primary/20"
               onClick={() => setDialogOpen(true)}
             >
               GET STARTED
