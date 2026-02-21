@@ -1,5 +1,6 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import PageHero from "@/components/PageHero";
 import ROICalculator from "@/components/ROICalculator";
 import { SEO } from "@/components/SEO";
 import {
@@ -41,23 +42,12 @@ const ROICalculatorPage = () => {
         canonicalUrl="https://revenuxe.com/roi-calculator"
       />
       <Navigation />
-      <main className="pt-20">
-        <section className="py-20 bg-gradient-to-br from-background via-background to-primary/5">
-          <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto text-center space-y-6">
-              <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium">
-                <Calculator className="h-4 w-4" />
-                Free ROI Calculator
-              </div>
-              <h1 className="text-4xl md:text-6xl font-bold">
-                Calculate Your <span className="text-primary">Marketing ROI</span>
-              </h1>
-              <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-                Get instant estimates of your potential returns based on your budget, industry, and campaign duration. Download a professional PDF report to share with stakeholders.
-              </p>
-            </div>
-          </div>
-        </section>
+      <PageHero
+        title="Calculate Your"
+        highlight="Marketing ROI"
+        subtitle="Get instant estimates of your potential returns based on your budget, industry, and campaign duration."
+      />
+      <main>
 
         <section className="py-16">
           <div className="container mx-auto px-4">

@@ -1,5 +1,6 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import PageHero from "@/components/PageHero";
 import { ContactForm } from "@/components/ContactForm";
 import { Mail, Phone, MapPin } from "lucide-react";
 import { SEO } from "@/components/SEO";
@@ -14,20 +15,13 @@ const Contact = () => {
       />
       <Navigation />
       
-      <main className="pt-20">
-        {/* Hero Section */}
-        <section className="py-20 px-4 bg-gradient-to-b from-primary/5 to-background">
-          <div className="container mx-auto max-w-6xl text-center">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 animate-fade-in">
-              Get In Touch With Us
-            </h1>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto animate-fade-in">
-              Ready to transform your digital presence? Let's discuss your project and create something amazing together.
-            </p>
-          </div>
-        </section>
+      <PageHero
+        title="Get In Touch"
+        highlight="With Us"
+        subtitle="Ready to transform your digital presence? Let's discuss your project and create something amazing together."
+      />
 
-        {/* Contact Form & Info Section */}
+      <main>
         <section className="py-20 px-4">
           <div className="container mx-auto max-w-6xl">
             <div className="grid md:grid-cols-2 gap-12">

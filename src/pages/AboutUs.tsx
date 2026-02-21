@@ -1,5 +1,6 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import PageHero from "@/components/PageHero";
 import { ArrowRight, Target, Users, Zap } from "lucide-react";
 import { SEO } from "@/components/SEO";
 
@@ -13,17 +14,11 @@ const AboutUs = () => {
       />
       <Navigation />
       
-      {/* Hero Section */}
-      <section className="pt-32 pb-16 px-4">
-        <div className="container mx-auto max-w-4xl text-center">
-          <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6">
-            About <span className="text-primary">Revenuxe</span>
-          </h1>
-          <p className="text-xl text-muted-foreground">
-            Your Trusted Partner in Digital Excellence
-          </p>
-        </div>
-      </section>
+      <PageHero
+        title="About"
+        highlight="Revenuxe"
+        subtitle="Your Trusted Partner in Digital Excellence"
+      />
 
       {/* Our Story */}
       <section className="py-16 px-4 bg-muted/30">

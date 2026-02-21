@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
+import PageHero from "@/components/PageHero";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Card } from "@/components/ui/card";
@@ -53,17 +54,14 @@ const Articles = () => {
         keywords="digital marketing articles, SEO blog, marketing insights, web development tips, performance marketing guide, AI marketing trends"
       />
       <Navigation />
-      <main className="pt-20">
+      <PageHero
+        title="Latest Articles &"
+        highlight="Insights"
+        subtitle="Stay updated with the latest trends, strategies, and insights in digital marketing"
+      />
+      <main>
         <section className="py-20 px-4">
           <div className="container mx-auto max-w-6xl">
-            <div className="text-center mb-16">
-              <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary via-primary-variant to-primary bg-clip-text text-transparent">
-                Latest Articles & Insights
-              </h1>
-              <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-                Stay updated with the latest trends, strategies, and insights in digital marketing
-              </p>
-            </div>
 
             {loading ? (
               <div className="text-center py-12">
