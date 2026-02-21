@@ -11,31 +11,27 @@ interface SEOProps {
 }
 
 export const SEO = ({
-  title = "AI Digital Marketing Agency | Arrowmind - SEO, Web Development & Performance Marketing",
+  title = "AI Digital Marketing Agency | Revenuxe - SEO, Web Development & Performance Marketing",
   description = "Leading digital marketing agency in India specializing in AI-powered SEO, web development, performance marketing, social media marketing, and content marketing. Drive growth with data-driven strategies.",
   keywords = "digital marketing agency, SEO services, web development, performance marketing, social media marketing, AI marketing, content marketing, Google Ads management, Meta Ads, digital marketing India",
   canonicalUrl,
-  ogImage = "https://storage.googleapis.com/gpt-engineer-file-uploads/z6qqcJ4jUPRJxMSIzgHI8NBwYKG3/social-images/social-1760256500718-Arrowmind image.png",
+  ogImage,
   ogType = "website",
   schemaData,
 }: SEOProps) => {
-  const fullTitle = title.includes("Arrowmind") ? title : `${title} | Arrowmind`;
+  const fullTitle = title.includes("Revenuxe") ? title : `${title} | Revenuxe`;
   const currentUrl = canonicalUrl || (typeof window !== 'undefined' ? window.location.href : '');
 
-  // Default Organization Schema
   const defaultOrganizationSchema = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "name": "Arrowmind",
+    "name": "Revenuxe",
     "description": "Leading AI-powered digital marketing agency specializing in SEO, web development, and performance marketing",
-    "url": "https://arrowmind.in",
-    "logo": "https://storage.googleapis.com/gpt-engineer-file-uploads/z6qqcJ4jUPRJxMSIzgHI8NBwYKG3/uploads/1760256451592-android-chrome-512x512.png",
-    "sameAs": [
-      "https://www.linkedin.com/company/arrowmind-agency/"
-    ],
+    "url": "https://revenuxe.com",
+    "sameAs": [],
     "contactPoint": {
       "@type": "ContactPoint",
-      "email": "founder@arrowmind.in",
+      "email": "info@revenuxe.com",
       "contactType": "Customer Service"
     },
     "areaServed": "IN",
@@ -45,17 +41,15 @@ export const SEO = ({
     }
   };
 
-  // Default LocalBusiness Schema
   const localBusinessSchema = {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
-    "name": "Arrowmind Digital Marketing Agency",
+    "name": "Revenuxe Digital Marketing Agency",
     "description": "Professional digital marketing services including SEO, web development, performance marketing, and AI-powered solutions",
-    "url": "https://arrowmind.in",
+    "url": "https://revenuxe.com",
     "telephone": "+91",
-    "email": "founder@arrowmind.in",
+    "email": "info@revenuxe.com",
     "priceRange": "$$",
-    "image": ogImage,
     "address": {
       "@type": "PostalAddress",
       "addressCountry": "IN"
@@ -74,15 +68,14 @@ export const SEO = ({
     ]
   };
 
-  // WebSite Schema
   const websiteSchema = {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "name": "Arrowmind",
-    "url": "https://arrowmind.in",
+    "name": "Revenuxe",
+    "url": "https://revenuxe.com",
     "potentialAction": {
       "@type": "SearchAction",
-      "target": "https://arrowmind.in/search?q={search_term_string}",
+      "target": "https://revenuxe.com/search?q={search_term_string}",
       "query-input": "required name=search_term_string"
     }
   };
@@ -96,37 +89,31 @@ export const SEO = ({
 
   return (
     <Helmet>
-      {/* Basic Meta Tags */}
       <title>{fullTitle}</title>
       <meta name="description" content={description} />
       <meta name="keywords" content={keywords} />
-      <meta name="author" content="Arrowmind" />
+      <meta name="author" content="Revenuxe" />
       <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
       
-      {/* Canonical URL */}
       {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
       
-      {/* Open Graph Tags */}
       <meta property="og:title" content={fullTitle} />
       <meta property="og:description" content={description} />
       <meta property="og:type" content={ogType} />
       <meta property="og:url" content={currentUrl} />
-      <meta property="og:image" content={ogImage} />
-      <meta property="og:site_name" content="Arrowmind" />
+      {ogImage && <meta property="og:image" content={ogImage} />}
+      <meta property="og:site_name" content="Revenuxe" />
       <meta property="og:locale" content="en_IN" />
       
-      {/* Twitter Card Tags */}
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={fullTitle} />
       <meta name="twitter:description" content={description} />
-      <meta name="twitter:image" content={ogImage} />
+      {ogImage && <meta name="twitter:image" content={ogImage} />}
       
-      {/* Additional SEO Tags */}
       <meta name="language" content="English" />
       <meta name="geo.region" content="IN" />
       <meta name="geo.placename" content="India" />
       
-      {/* Schema.org Structured Data */}
       {schemas.map((schema, index) => (
         <script key={index} type="application/ld+json">
           {JSON.stringify(schema)}

@@ -17,11 +17,11 @@ interface GetStartedDialogProps {
 export const GetStartedDialog = ({ open, onOpenChange }: GetStartedDialogProps) => {
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="max-w-2xl">
+      <DialogContent className="max-w-md mx-4 rounded-2xl p-5 sm:max-w-lg">
         <DialogHeader>
           <div className="flex items-center justify-between">
-            <DialogTitle className="text-2xl font-bold">
-              Get Started with <span className="text-primary">Arrowmind</span>
+            <DialogTitle className="text-xl font-bold">
+              Get Started with <span className="text-primary">Revenuxe</span>
             </DialogTitle>
             <Button
               variant="ghost"
@@ -33,7 +33,7 @@ export const GetStartedDialog = ({ open, onOpenChange }: GetStartedDialogProps) 
             </Button>
           </div>
         </DialogHeader>
-        <div className="mt-4">
+        <div className="mt-2">
           <ContactForm variant="compact" onSuccess={() => onOpenChange(false)} />
         </div>
       </DialogContent>

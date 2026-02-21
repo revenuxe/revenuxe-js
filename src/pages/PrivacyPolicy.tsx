@@ -1,5 +1,6 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import PageHero from "@/components/PageHero";
 import { SEO } from "@/components/SEO";
 
 const PrivacyPolicy = () => {
@@ -11,10 +12,9 @@ const PrivacyPolicy = () => {
         keywords="privacy policy, data protection, privacy practices, GDPR compliance, data security, Revenuxe privacy"
       />
       <Navigation />
-      <main className="container mx-auto px-4 pt-24 pb-16">
+      <PageHero title="Privacy" highlight="Policy" subtitle="Last Updated: January 2024" />
+      <main className="container mx-auto px-4 pb-16">
         <article className="max-w-4xl mx-auto prose prose-lg">
-          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-8">Privacy Policy</h1>
-          <p className="text-muted-foreground mb-8">Last Updated: January 2024</p>
 
           <section className="mb-8">
             <h2 className="text-2xl font-semibold text-foreground mb-4">1. Introduction</h2>

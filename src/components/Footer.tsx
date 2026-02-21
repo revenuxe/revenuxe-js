@@ -142,7 +142,7 @@ const Footer = () => {
               <h4 className="text-lg font-semibold mb-4 text-foreground">Connect</h4>
               <div className="flex space-x-4">
                 <a
-                  href="https://www.linkedin.com/company/arrowmind-agency/"
+                  href="https://www.linkedin.com/company/revenuxe/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-muted-foreground hover:text-primary transition-colors"
