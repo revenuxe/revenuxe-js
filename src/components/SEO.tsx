@@ -8,64 +8,101 @@ interface SEOProps {
   ogImage?: string;
   ogType?: string;
   schemaData?: any;
+  noindex?: boolean;
 }
 
 export const SEO = ({
-  title = "AI Digital Marketing Agency | Revenuxe - SEO, Web Development & Performance Marketing",
-  description = "Leading digital marketing agency in India specializing in AI-powered SEO, web development, performance marketing, social media marketing, and content marketing. Drive growth with data-driven strategies.",
-  keywords = "digital marketing agency, SEO services, web development, performance marketing, social media marketing, AI marketing, content marketing, Google Ads management, Meta Ads, digital marketing India",
+  title = "Revenuxe™ | #1 AI Digital Marketing Agency India — 10X Your Revenue",
+  description = "Revenuxe is India's top-rated AI-powered digital marketing agency. We deliver guaranteed ROI with expert SEO, Google Ads, Meta Ads, web development & social media marketing. Get a free strategy call today!",
+  keywords = "best digital marketing agency India, AI marketing agency, SEO company India, Google Ads management, Meta Ads agency, performance marketing, social media marketing agency, web development company, Revenuxe, digital marketing near me, affordable SEO services",
   canonicalUrl,
   ogImage,
   ogType = "website",
   schemaData,
+  noindex = false,
 }: SEOProps) => {
   const fullTitle = title.includes("Revenuxe") ? title : `${title} | Revenuxe`;
-  const currentUrl = canonicalUrl || (typeof window !== 'undefined' ? window.location.href : '');
+  const currentUrl = canonicalUrl || (typeof window !== 'undefined' ? window.location.href : 'https://revenuxe.com');
 
-  const defaultOrganizationSchema = {
+  const organizationSchema = {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "Revenuxe",
-    "description": "Leading AI-powered digital marketing agency specializing in SEO, web development, and performance marketing",
+    "alternateName": "Revenuxe Digital Marketing Agency",
+    "description": "India's #1 AI-powered digital marketing agency delivering guaranteed ROI through SEO, performance marketing, web development & social media marketing.",
     "url": "https://revenuxe.com",
-    "sameAs": [],
+    "logo": "https://revenuxe.com/favicon.ico",
+    "sameAs": [
+      "https://www.linkedin.com/company/revenuxe/"
+    ],
     "contactPoint": {
       "@type": "ContactPoint",
-      "email": "info@revenuxe.com",
-      "contactType": "Customer Service"
+      "telephone": "+91-9886285028",
+      "email": "revenuxe@gmail.com",
+      "contactType": "Sales",
+      "areaServed": ["IN", "SG", "US", "AE", "AU", "GB", "CA", "DE", "FR", "JP", "KR", "ID"],
+      "availableLanguage": ["English", "Hindi"]
     },
-    "areaServed": "IN",
     "address": {
       "@type": "PostalAddress",
       "addressCountry": "IN"
+    },
+    "founder": {
+      "@type": "Person",
+      "name": "Revenuxe Team"
     }
   };
 
   const localBusinessSchema = {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
-    "name": "Revenuxe Digital Marketing Agency",
-    "description": "Professional digital marketing services including SEO, web development, performance marketing, and AI-powered solutions",
+    "name": "Revenuxe — AI Digital Marketing Agency",
+    "description": "Full-service AI-powered digital marketing agency specializing in SEO, Google Ads, Meta Ads, web development, social media marketing & content marketing with guaranteed ROI.",
     "url": "https://revenuxe.com",
-    "telephone": "+91",
-    "email": "info@revenuxe.com",
+    "telephone": "+91-9886285028",
+    "email": "revenuxe@gmail.com",
     "priceRange": "$$",
+    "image": "https://revenuxe.com/favicon.ico",
     "address": {
       "@type": "PostalAddress",
       "addressCountry": "IN"
     },
-    "areaServed": {
-      "@type": "Country",
-      "name": "India"
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "12.9716",
+      "longitude": "77.5946"
     },
+    "areaServed": [
+      { "@type": "Country", "name": "India" },
+      { "@type": "Country", "name": "Singapore" },
+      { "@type": "Country", "name": "United States" },
+      { "@type": "Country", "name": "United Arab Emirates" },
+      { "@type": "Country", "name": "Australia" }
+    ],
     "serviceType": [
       "SEO Services",
+      "Google Ads Management",
+      "Meta Ads Management",
       "Web Development",
-      "Performance Marketing",
       "Social Media Marketing",
       "Content Marketing",
-      "AI Marketing Solutions"
-    ]
+      "Performance Marketing",
+      "AI Marketing Solutions",
+      "E-Commerce Marketing",
+      "Brand Identity Design"
+    ],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "30",
+      "bestRating": "5"
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "09:00",
+      "closes": "18:00"
+    }
   };
 
   const websiteSchema = {
@@ -73,6 +110,11 @@ export const SEO = ({
     "@type": "WebSite",
     "name": "Revenuxe",
     "url": "https://revenuxe.com",
+    "description": "India's #1 AI-powered digital marketing agency",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Revenuxe"
+    },
     "potentialAction": {
       "@type": "SearchAction",
       "target": "https://revenuxe.com/search?q={search_term_string}",
@@ -80,10 +122,24 @@ export const SEO = ({
     }
   };
 
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://revenuxe.com"
+      }
+    ]
+  };
+
   const schemas = [
-    defaultOrganizationSchema,
+    organizationSchema,
     localBusinessSchema,
     websiteSchema,
+    breadcrumbSchema,
     ...(schemaData ? (Array.isArray(schemaData) ? schemaData : [schemaData]) : [])
   ];
 
@@ -93,10 +149,12 @@ export const SEO = ({
       <meta name="description" content={description} />
       <meta name="keywords" content={keywords} />
       <meta name="author" content="Revenuxe" />
-      <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+      <meta name="robots" content={noindex ? "noindex, nofollow" : "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"} />
+      <meta name="googlebot" content={noindex ? "noindex, nofollow" : "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"} />
       
       {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
       
+      {/* Open Graph */}
       <meta property="og:title" content={fullTitle} />
       <meta property="og:description" content={description} />
       <meta property="og:type" content={ogType} />
@@ -105,15 +163,24 @@ export const SEO = ({
       <meta property="og:site_name" content="Revenuxe" />
       <meta property="og:locale" content="en_IN" />
       
+      {/* Twitter */}
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={fullTitle} />
       <meta name="twitter:description" content={description} />
       {ogImage && <meta name="twitter:image" content={ogImage} />}
+      <meta name="twitter:site" content="@revenuxe" />
       
+      {/* Geo & Language */}
       <meta name="language" content="English" />
       <meta name="geo.region" content="IN" />
       <meta name="geo.placename" content="India" />
+      <meta httpEquiv="content-language" content="en-IN" />
       
+      {/* Mobile */}
+      <meta name="theme-color" content="#0d4f6b" />
+      <meta name="mobile-web-app-capable" content="yes" />
+      
+      {/* Structured Data */}
       {schemas.map((schema, index) => (
         <script key={index} type="application/ld+json">
           {JSON.stringify(schema)}

@@ -9,9 +9,10 @@ const Contact = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEO 
-        title="Contact Us - Get In Touch | Revenuxe Digital Marketing"
-        description="Contact Revenuxe for professional digital marketing services. We're here to help transform your business with expert SEO, web development, and performance marketing solutions."
-        keywords="contact digital marketing agency, get in touch, digital marketing consultation, Revenuxe contact, marketing inquiry"
+        title="Contact Revenuxe — Free Digital Marketing Consultation | Call Now"
+        description="Get a free digital marketing consultation from Revenuxe. Call +91 9886285028 or email revenuxe@gmail.com. Expert SEO, Google Ads, web development & social media marketing services."
+        keywords="contact Revenuxe, free marketing consultation, digital marketing agency contact, hire SEO expert India, marketing agency phone number"
+        canonicalUrl="https://revenuxe.com/contact"
       />
       <Navigation />
       
@@ -41,8 +42,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <h3 className="font-semibold mb-1">Email</h3>
-                      <p className="text-muted-foreground">info@revenuxe.com</p>
-                      <p className="text-muted-foreground">support@revenuxe.com</p>
+                      <p className="text-muted-foreground">revenuxe@gmail.com</p>
                     </div>
                   </div>
 
@@ -52,7 +52,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <h3 className="font-semibold mb-1">Phone</h3>
-                      <p className="text-muted-foreground">+91 XXXXX XXXXX</p>
+                      <p className="text-muted-foreground">+91 9886285028</p>
                       <p className="text-muted-foreground text-sm">Mon-Fri 9am to 6pm IST</p>
                     </div>
                   </div>

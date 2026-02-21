@@ -7,9 +7,11 @@ const PrivacyPolicy = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEO 
-        title="Privacy Policy | Revenuxe Digital Marketing Agency"
-        description="Learn how Revenuxe protects your privacy and handles your data. Read our comprehensive privacy policy covering data collection, usage, and your rights."
-        keywords="privacy policy, data protection, privacy practices, GDPR compliance, data security, Revenuxe privacy"
+        title="Privacy Policy — How Revenuxe Protects Your Data"
+        description="Read Revenuxe's privacy policy. We are committed to protecting your personal information and ensuring GDPR-compliant data handling across all our digital marketing services."
+        keywords="Revenuxe privacy policy, data protection, GDPR compliance, marketing agency privacy"
+        canonicalUrl="https://revenuxe.com/privacy"
+        noindex={true}
       />
       <Navigation />
       <PageHero title="Privacy" highlight="Policy" subtitle="Last Updated: January 2024" />
@@ -129,7 +131,7 @@ const PrivacyPolicy = () => {
             <p className="text-foreground/80">
               If you have questions about this Privacy Policy or wish to exercise your rights, please contact us at:
               <br />
-              Email: admin@revenuxe.com
+              Email: revenuxe@gmail.com | Phone: +91 9886285028
             </p>
           </section>
         </article>

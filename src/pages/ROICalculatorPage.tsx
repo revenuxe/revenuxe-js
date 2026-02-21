@@ -37,8 +37,9 @@ const ROICalculatorPage = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEO
-        title="ROI Calculator | Estimate Your Digital Marketing Returns | Revenuxe"
-        description="Calculate your potential return on investment for digital marketing services. Get instant estimates based on your budget, industry, and campaign duration."
+        title="Free Marketing ROI Calculator — Estimate Your Returns | Revenuxe"
+        description="Calculate your potential digital marketing ROI instantly with Revenuxe's free calculator. Get data-driven projections for SEO, Google Ads, social media & more. Download PDF reports!"
+        keywords="marketing ROI calculator, digital marketing ROI, SEO ROI estimate, Google Ads ROI, free marketing calculator, Revenuxe ROI tool"
         canonicalUrl="https://revenuxe.com/roi-calculator"
       />
       <Navigation />

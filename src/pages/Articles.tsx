@@ -49,9 +49,10 @@ const Articles = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEO 
-        title="Digital Marketing Articles & Insights | Revenuxe Blog"
-        description="Read the latest articles on digital marketing trends, SEO strategies, web development, performance marketing, and AI-powered marketing solutions from industry experts."
-        keywords="digital marketing articles, SEO blog, marketing insights, web development tips, performance marketing guide, AI marketing trends"
+        title="Marketing Blog — SEO Tips, Growth Hacks & Industry Insights | Revenuxe"
+        description="Read expert digital marketing articles from Revenuxe. Get actionable SEO tips, Google Ads strategies, social media hacks & AI marketing insights to grow your business faster."
+        keywords="digital marketing blog, SEO tips 2026, Google Ads strategy, social media marketing tips, AI marketing insights, Revenuxe blog, marketing growth hacks"
+        canonicalUrl="https://revenuxe.com/articles"
       />
       <Navigation />
       <PageHero
