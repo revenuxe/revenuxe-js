@@ -19,20 +19,26 @@ const Hero = () => {
       </div>
       
       {/* Floating Shapes */}
-      <div className="absolute top-20 left-10 w-32 h-32 border-2 border-primary/20 rounded-full animate-pulse" />
+      <div className="absolute top-16 left-4 sm:top-20 sm:left-10 w-28 h-28 sm:w-32 sm:h-32 border-2 border-primary/20 rounded-full animate-pulse flex items-center justify-center md:block">
+        {/* Badge inside circle on mobile */}
+        <img 
+          src={googleTrustedBadge} 
+          alt="Google Trusted AI Marketing Platform" 
+          className="h-20 w-auto object-contain drop-shadow-lg md:hidden"
+        />
+      </div>
       <div className="absolute bottom-20 right-20 w-24 h-24 border-2 border-primary/30 rotate-45" />
       <div className="absolute top-1/3 right-10 w-16 h-16 bg-primary/10 rounded-lg animate-pulse" />
       
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 py-20">
         <div className="max-w-6xl mx-auto text-center space-y-8 animate-fade-in px-4">
-          {/* Small Badge */}
-          {/* Google Trusted Badge */}
-          <div className="flex justify-end pr-2 sm:pr-4">
+          {/* Google Trusted Badge - desktop only, right aligned */}
+          <div className="hidden md:flex justify-end pr-4">
             <img 
               src={googleTrustedBadge} 
               alt="Google Trusted AI Marketing Platform" 
-              className="h-20 sm:h-24 md:h-28 lg:h-32 w-auto object-contain"
+              className="h-28 lg:h-32 w-auto object-contain"
             />
           </div>
           
