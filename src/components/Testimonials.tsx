@@ -6,7 +6,7 @@ const Testimonials = () => {
       name: "Sarah Johnson",
       position: "CEO, TechStart Inc",
       image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop",
-      content: "Arrowmind transformed our digital presence. Their AI-powered strategies increased our conversions by 340% in just 3 months!",
+      content: "Revenuxe transformed our digital presence. Their AI-powered strategies increased our conversions by 340% in just 3 months!",
       rating: 5
     },
     {
@@ -20,7 +20,7 @@ const Testimonials = () => {
       name: "Emily Rodriguez",
       position: "Marketing Director, BrandHub",
       image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop",
-      content: "Professional, creative, and results-driven. Arrowmind is more than an agency - they're true partners in our success.",
+      content: "Professional, creative, and results-driven. Revenuxe is more than an agency - they're true partners in our success.",
       rating: 5
     }
   ];

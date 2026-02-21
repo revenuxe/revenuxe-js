@@ -36,9 +36,9 @@ const ROICalculatorPage = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEO
-        title="ROI Calculator | Estimate Your Digital Marketing Returns | Arrowmind"
+        title="ROI Calculator | Estimate Your Digital Marketing Returns | Revenuxe"
         description="Calculate your potential return on investment for digital marketing services. Get instant estimates based on your budget, industry, and campaign duration."
-        canonicalUrl="https://arrowmind.in/roi-calculator"
+        canonicalUrl="https://revenuxe.com/roi-calculator"
       />
       <Navigation />
       <main className="pt-20">

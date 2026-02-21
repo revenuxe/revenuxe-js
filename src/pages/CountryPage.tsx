@@ -190,7 +190,7 @@ const CountryPage = () => {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <SEO 
-        title={`AI-Powered Digital Marketing Agency in ${country.name} | Arrowmind`}
+        title={`AI-Powered Digital Marketing Agency in ${country.name} | Revenuxe`}
         description={country.metaDescription}
         keywords={country.keywords}
       />

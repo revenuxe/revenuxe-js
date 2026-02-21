@@ -164,7 +164,7 @@ const ROICalculator = ({ serviceType }: ROICalculatorProps) => {
     
     doc.setFontSize(12);
     doc.setFont("helvetica", "normal");
-    doc.text("Arrowmind Digital Marketing", pageWidth / 2, 38, { align: "center" });
+    doc.text("Revenuxe Digital Marketing", pageWidth / 2, 38, { align: "center" });
     
     // Reset colors
     doc.setTextColor(30, 41, 59);
@@ -269,7 +269,7 @@ const ROICalculator = ({ serviceType }: ROICalculatorProps) => {
     doc.setTextColor(255, 255, 255);
     doc.setFontSize(10);
     doc.setFont("helvetica", "normal");
-    doc.text("www.arrowmind.in | contact@arrowmind.in", pageWidth / 2, 293, { align: "center" });
+    doc.text("www.revenuxe.com | contact@revenuxe.com", pageWidth / 2, 293, { align: "center" });
     
     // Save PDF
     doc.save(`ROI-Report-${serviceType}-${currentCountry.currency}-${new Date().toISOString().split("T")[0]}.pdf`);

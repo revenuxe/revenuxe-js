@@ -8,9 +8,9 @@ const Contact = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEO 
-        title="Contact Us - Get In Touch | Arrowmind Digital Marketing"
-        description="Contact Arrowmind for professional digital marketing services. We're here to help transform your business with expert SEO, web development, and performance marketing solutions."
-        keywords="contact digital marketing agency, get in touch, digital marketing consultation, Arrowmind contact, marketing inquiry"
+        title="Contact Us - Get In Touch | Revenuxe Digital Marketing"
+        description="Contact Revenuxe for professional digital marketing services. We're here to help transform your business with expert SEO, web development, and performance marketing solutions."
+        keywords="contact digital marketing agency, get in touch, digital marketing consultation, Revenuxe contact, marketing inquiry"
       />
       <Navigation />
       
@@ -47,8 +47,8 @@ const Contact = () => {
                     </div>
                     <div>
                       <h3 className="font-semibold mb-1">Email</h3>
-                      <p className="text-muted-foreground">info@arrowmind.in</p>
-                      <p className="text-muted-foreground">support@arrowmind.in</p>
+                      <p className="text-muted-foreground">info@revenuxe.com</p>
+                      <p className="text-muted-foreground">support@revenuxe.com</p>
                     </div>
                   </div>
 
