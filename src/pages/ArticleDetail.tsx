@@ -36,14 +36,14 @@ const ArticleDetail = () => {
   const fetchArticle = async () => {
     try {
       const { data, error } = await supabase
-        .from("articles")
+        .from("articles" as any)
         .select("*")
         .eq("slug", slug)
         .eq("published", true)
         .single();
 
       if (error) throw error;
-      setArticle(data);
+      setArticle(data as any);
     } catch (error) {
       console.error("Error fetching article:", error);
     } finally {

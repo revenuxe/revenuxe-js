@@ -33,13 +33,13 @@ const CaseStudyDetail = () => {
   const fetchCaseStudy = async () => {
     try {
       const { data, error } = await supabase
-        .from("case_studies")
+        .from("case_studies" as any)
         .select("*")
         .eq("id", id)
         .single();
 
       if (error) throw error;
-      setCaseStudy(data);
+      setCaseStudy(data as any);
     } catch (error) {
       console.error("Error fetching case study:", error);
     } finally {

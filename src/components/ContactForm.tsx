@@ -29,7 +29,7 @@ export const ContactForm = ({ variant = "default", onSuccess }: ContactFormProps
     setLoading(true);
 
     try {
-      const { error } = await supabase.from("leads").insert([
+      const { error } = await supabase.from("leads" as any).insert([
         {
           name: formData.name,
           phone: formData.phone,

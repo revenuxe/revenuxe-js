@@ -32,13 +32,13 @@ const CaseStudies = () => {
   const fetchCaseStudies = async () => {
     try {
       const { data, error } = await supabase
-        .from("case_studies")
+        .from("case_studies" as any)
         .select("*")
         .eq("featured", true)
         .order("created_at", { ascending: false });
 
       if (error) throw error;
-      setCaseStudies(data || []);
+      setCaseStudies((data as any) || []);
     } catch (error) {
       console.error("Error fetching case studies:", error);
     } finally {

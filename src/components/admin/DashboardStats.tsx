@@ -19,14 +19,14 @@ export const DashboardStats = () => {
     try {
       const [leadsResponse, newLeadsResponse, caseStudiesResponse, convertedResponse] =
         await Promise.all([
-          supabase.from("leads").select("*", { count: "exact", head: true }),
+          supabase.from("leads" as any).select("*", { count: "exact", head: true }),
           supabase
-            .from("leads")
+            .from("leads" as any)
             .select("*", { count: "exact", head: true })
             .eq("status", "new"),
-          supabase.from("case_studies").select("*", { count: "exact", head: true }),
+          supabase.from("case_studies" as any).select("*", { count: "exact", head: true }),
           supabase
-            .from("leads")
+            .from("leads" as any)
             .select("*", { count: "exact", head: true })
             .eq("status", "converted"),
         ]);

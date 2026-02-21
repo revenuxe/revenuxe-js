@@ -56,12 +56,12 @@ export const CaseStudiesManager = () => {
   const fetchCaseStudies = async () => {
     try {
       const { data, error } = await supabase
-        .from("case_studies")
+        .from("case_studies" as any)
         .select("*")
         .order("created_at", { ascending: false });
 
       if (error) throw error;
-      setCaseStudies(data || []);
+      setCaseStudies((data as any) || []);
     } catch (error) {
       console.error("Error fetching case studies:", error);
     } finally {
@@ -75,8 +75,8 @@ export const CaseStudiesManager = () => {
     try {
       if (editingId) {
         const { error } = await supabase
-          .from("case_studies")
-          .update(formData)
+          .from("case_studies" as any)
+          .update(formData as any)
           .eq("id", editingId);
 
         if (error) throw error;
@@ -86,7 +86,7 @@ export const CaseStudiesManager = () => {
           description: "Case study updated successfully",
         });
       } else {
-        const { error } = await supabase.from("case_studies").insert([formData]);
+        const { error } = await supabase.from("case_studies" as any).insert([formData] as any);
 
         if (error) throw error;
 
@@ -128,7 +128,7 @@ export const CaseStudiesManager = () => {
     if (!confirm("Are you sure you want to delete this case study?")) return;
 
     try {
-      const { error } = await supabase.from("case_studies").delete().eq("id", id);
+      const { error } = await supabase.from("case_studies" as any).delete().eq("id", id);
 
       if (error) throw error;
 

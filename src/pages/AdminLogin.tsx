@@ -28,7 +28,7 @@ const AdminLogin = () => {
 
       // Check if user has admin role
       const { data: roleData, error: roleError } = await supabase
-        .from("user_roles")
+        .from("user_roles" as any)
         .select("role")
         .eq("user_id", data.user.id)
         .eq("role", "admin")
@@ -77,7 +77,7 @@ const AdminLogin = () => {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
-                placeholder="admin@arrowmind.in"
+                placeholder="admin@revenuxe.com"
                 autoComplete="email"
               />
             </div>
