@@ -45,12 +45,12 @@ export const LeadsTable = () => {
   const fetchLeads = async () => {
     try {
       const { data, error } = await supabase
-        .from("leads")
+        .from("leads" as any)
         .select("*")
         .order("created_at", { ascending: false });
 
       if (error) throw error;
-      setLeads(data || []);
+      setLeads((data as any) || []);
     } catch (error) {
       console.error("Error fetching leads:", error);
       toast({
@@ -66,8 +66,8 @@ export const LeadsTable = () => {
   const updateLeadStatus = async (id: string, status: string) => {
     try {
       const { error } = await supabase
-        .from("leads")
-        .update({ status })
+        .from("leads" as any)
+        .update({ status } as any)
         .eq("id", id);
 
       if (error) throw error;
@@ -93,7 +93,7 @@ export const LeadsTable = () => {
     if (!confirm("Are you sure you want to delete this lead?")) return;
 
     try {
-      const { error } = await supabase.from("leads").delete().eq("id", id);
+      const { error } = await supabase.from("leads" as any).delete().eq("id", id);
 
       if (error) throw error;
 

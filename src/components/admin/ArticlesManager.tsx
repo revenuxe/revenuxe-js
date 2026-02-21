@@ -62,12 +62,12 @@ export const ArticlesManager = () => {
   const fetchArticles = async () => {
     try {
       const { data, error } = await supabase
-        .from("articles")
+        .from("articles" as any)
         .select("*")
         .order("created_at", { ascending: false });
 
       if (error) throw error;
-      setArticles(data || []);
+      setArticles((data as any) || []);
     } catch (error) {
       console.error("Error fetching articles:", error);
     } finally {
@@ -127,8 +127,8 @@ export const ArticlesManager = () => {
     try {
       if (editingId) {
         const { error } = await supabase
-          .from("articles")
-          .update({ ...formData, slug })
+          .from("articles" as any)
+          .update({ ...formData, slug } as any)
           .eq("id", editingId);
 
         if (error) throw error;
@@ -139,8 +139,8 @@ export const ArticlesManager = () => {
         });
       } else {
         const { error } = await supabase
-          .from("articles")
-          .insert([{ ...formData, slug }]);
+          .from("articles" as any)
+          .insert([{ ...formData, slug }] as any);
 
         if (error) throw error;
 
@@ -181,7 +181,7 @@ export const ArticlesManager = () => {
     if (!confirm("Are you sure you want to delete this article?")) return;
 
     try {
-      const { error } = await supabase.from("articles").delete().eq("id", id);
+      const { error } = await supabase.from("articles" as any).delete().eq("id", id);
 
       if (error) throw error;
 
@@ -249,7 +249,7 @@ export const ArticlesManager = () => {
       setFormData({
         title: data.title,
         slug: data.slug,
-        author: "Arrowmind Team",
+        author: "Revenuxe Team",
         category: data.category,
         excerpt: data.excerpt,
         content: data.content,

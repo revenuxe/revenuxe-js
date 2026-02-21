@@ -31,7 +31,7 @@ const AdminDashboard = () => {
 
       // Check admin role
       const { data: roleData, error: roleError } = await supabase
-        .from("user_roles")
+        .from("user_roles" as any)
         .select("role")
         .eq("user_id", currentUser.id)
         .eq("role", "admin")
