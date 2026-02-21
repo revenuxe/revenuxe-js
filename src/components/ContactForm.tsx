@@ -102,7 +102,7 @@ export const ContactForm = ({ variant = "default", onSuccess }: ContactFormProps
             value={formData.phone}
             onChange={handleChange}
             required
-            placeholder="+91 XXXXX XXXXX"
+            placeholder="+91 9886285028"
           />
         </div>
 

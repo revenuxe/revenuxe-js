@@ -7,9 +7,11 @@ const TermsAndConditions = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEO 
-        title="Terms and Conditions | Revenuxe Digital Marketing Agency"
-        description="Read Revenuxe's terms and conditions for our digital marketing services. Understand our service agreements, client responsibilities, and business policies."
-        keywords="terms and conditions, service agreement, digital marketing terms, Revenuxe terms, business policies"
+        title="Terms & Conditions — Revenuxe Service Agreement"
+        description="Read Revenuxe's terms and conditions for digital marketing services. Understand our service agreements, payment terms, client responsibilities, and business policies."
+        keywords="Revenuxe terms and conditions, service agreement, digital marketing terms"
+        canonicalUrl="https://revenuxe.com/terms"
+        noindex={true}
       />
       <Navigation />
       <PageHero title="Terms &" highlight="Conditions" subtitle="Last Updated: January 2024" />
@@ -102,7 +104,7 @@ const TermsAndConditions = () => {
           <section className="mb-8">
             <h2 className="text-2xl font-semibold text-foreground mb-4">10. Contact Information</h2>
             <p className="text-foreground/80">
-              For questions about these Terms and Conditions, please contact us at admin@revenuxe.com
+              For questions about these Terms and Conditions, please contact us at revenuxe@gmail.com or call +91 9886285028
             </p>
           </section>
         </article>

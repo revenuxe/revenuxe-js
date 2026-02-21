@@ -8,9 +8,10 @@ const AboutUs = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEO 
-        title="About Us - Leading AI Digital Marketing Agency | Revenuxe"
-        description="Learn about Revenuxe's mission to empower businesses with innovative digital marketing solutions. Discover our values, expertise, and commitment to driving measurable growth."
-        keywords="about Revenuxe, digital marketing agency story, our mission, our values, marketing team, digital marketing experts"
+        title="About Revenuxe — India's Most Trusted AI Marketing Agency"
+        description="Revenuxe is a results-driven AI digital marketing agency trusted by 30+ businesses across India. Learn about our mission, values, and commitment to 10X your revenue growth."
+        keywords="about Revenuxe, AI marketing agency India, trusted digital marketing company, marketing agency mission, best marketing team India"
+        canonicalUrl="https://revenuxe.com/about"
       />
       <Navigation />
       

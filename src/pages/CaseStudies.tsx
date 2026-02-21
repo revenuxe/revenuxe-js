@@ -50,9 +50,10 @@ const CaseStudies = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEO
-        title="Case Studies - Real Client Success Stories | Revenuxe"
-        description="Explore our portfolio of successful digital marketing case studies. See how we've helped businesses achieve remarkable results through strategic solutions."
-        keywords="case studies, client success stories, digital marketing results, portfolio, business transformation"
+        title="Client Success Stories & Case Studies — Real Results | Revenuxe"
+        description="See how Revenuxe helped businesses achieve 200%+ ROI, 3X traffic growth & record-breaking conversions. Real case studies with proven digital marketing results."
+        keywords="digital marketing case studies, client success stories, marketing ROI results, SEO case study, Google Ads success, Revenuxe portfolio"
+        canonicalUrl="https://revenuxe.com/case-studies"
       />
       <Navigation />
       <main>
