@@ -151,10 +151,10 @@ const CityPage = () => {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <SEO
-        title={`AI Digital Marketing Agency in ${cityInfo.name} | Arrowmind`}
+        title={`AI Digital Marketing Agency in ${cityInfo.name} | Revenuxe`}
         description={cityInfo.metaDescription}
         keywords={cityInfo.keywords}
-        canonicalUrl={`https://arrowmind.in/${city?.toLowerCase()}`}
+        canonicalUrl={`https://revenuxe.com/${city?.toLowerCase()}`}
       />
       <Navigation />
       
