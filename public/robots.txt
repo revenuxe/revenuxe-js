@@ -1,13 +1,15 @@
+# Revenuxe — robots.txt
+# https://revenuxe.com
+
 # Allow all search engines
 User-agent: *
 Allow: /
-
-# Disallow admin pages
 Disallow: /admin
 Disallow: /admin-login
+Disallow: /admin/*
 
-# Sitemap location
-Sitemap: https://arrowmind.in/sitemap.xml
+# Sitemap
+Sitemap: https://revenuxe.com/sitemap.xml
 
 # Crawl-delay for aggressive bots
 User-agent: AhrefsBot
@@ -17,4 +19,10 @@ User-agent: MJ12bot
 Crawl-delay: 10
 
 User-agent: DotBot
+Crawl-delay: 10
+
+User-agent: SemrushBot
+Crawl-delay: 10
+
+User-agent: BLEXBot
 Crawl-delay: 10
