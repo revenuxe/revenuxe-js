@@ -31,21 +31,21 @@ const WhyChooseUs = ({ cityName }: { cityName?: string }) => {
           </div>
           
           {/* Benefits Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-2 gap-3 md:gap-6">
             {benefits.map((benefit, index) => (
               <div
                 key={index}
-                className="relative bg-card border border-border rounded-lg p-8 md:p-10 hover:border-primary transition-all duration-300 group animate-fade-in"
+                className="relative bg-card border border-border rounded-lg p-4 md:p-8 lg:p-10 hover:border-primary transition-all duration-300 group animate-fade-in"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 {/* Decorative Plus */}
-                <div className="absolute top-6 right-6 text-primary text-3xl opacity-50 group-hover:opacity-100 transition-opacity">
+                <div className="absolute top-3 right-3 md:top-6 md:right-6 text-primary text-xl md:text-3xl opacity-50 group-hover:opacity-100 transition-opacity">
                   +
                 </div>
                 
                 {/* Content */}
                 <div className="space-y-4">
-                  <p className="text-lg md:text-xl">
+                  <p className="text-sm md:text-lg lg:text-xl leading-snug">
                     {benefit.title.split(benefit.highlight.toLowerCase()).map((part, i, arr) => (
                       <span key={i}>
                         {part}
@@ -60,7 +60,7 @@ const WhyChooseUs = ({ cityName }: { cityName?: string }) => {
                 </div>
                 
                 {/* Small branding */}
-                <div className="absolute bottom-6 right-6 text-xs text-muted-foreground opacity-50">
+                <div className="absolute bottom-3 right-3 md:bottom-6 md:right-6 text-[10px] md:text-xs text-muted-foreground opacity-50">
                   revenuxe+
                 </div>
               </div>
