@@ -19,7 +19,7 @@ const Stats = () => {
   ];
 
   return (
-    <section className="py-20 md:py-32 bg-gradient-to-br from-background to-secondary relative">
+    <section className="py-20 md:py-32 bg-gradient-to-br from-background to-[hsl(0,30%,8%)] relative">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
@@ -28,8 +28,8 @@ const Stats = () => {
               <span className="text-foreground">WHO WE ARE</span>
             </h2>
             <p className="text-lg md:text-xl max-w-3xl">
-               <span className="text-foreground">AGENCY </span>
-               <span className="text-primary">REVENUXE </span>
+              <span className="text-foreground">AGENCY </span>
+              <span className="text-primary">ARROWMIND </span>
               <span className="text-foreground">SPECIALIZES IN </span>
               <span className="text-primary">MARKETING </span>
               <span className="text-foreground">FOR SMALL AND MEDIUM BUSINESSES FOR MORE THAN FOUR YEARS.</span>

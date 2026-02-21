@@ -48,7 +48,7 @@ const Articles = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEO 
-        title="Digital Marketing Articles & Insights | Revenuxe Blog"
+        title="Digital Marketing Articles & Insights | Arrowmind Blog"
         description="Read the latest articles on digital marketing trends, SEO strategies, web development, performance marketing, and AI-powered marketing solutions from industry experts."
         keywords="digital marketing articles, SEO blog, marketing insights, web development tips, performance marketing guide, AI marketing trends"
       />

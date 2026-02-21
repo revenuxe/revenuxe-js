@@ -7,9 +7,9 @@ const AboutUs = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEO 
-        title="About Us - Leading AI Digital Marketing Agency | Revenuxe"
-        description="Learn about Revenuxe's mission to empower businesses with innovative digital marketing solutions. Discover our values, expertise, and commitment to driving measurable growth."
-        keywords="about Revenuxe, digital marketing agency story, our mission, our values, marketing team, digital marketing experts"
+        title="About Us - Leading AI Digital Marketing Agency | Arrowmind"
+        description="Learn about Arrowmind's mission to empower businesses with innovative digital marketing solutions. Discover our values, expertise, and commitment to driving measurable growth."
+        keywords="about Arrowmind, digital marketing agency story, our mission, our values, marketing team, digital marketing experts"
       />
       <Navigation />
       
@@ -17,7 +17,7 @@ const AboutUs = () => {
       <section className="pt-32 pb-16 px-4">
         <div className="container mx-auto max-w-4xl text-center">
           <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6">
-            About <span className="text-primary">Revenuxe</span>
+            About <span className="text-primary">ArrowMind</span>
           </h1>
           <p className="text-xl text-muted-foreground">
             Your Trusted Partner in Digital Excellence
@@ -31,9 +31,9 @@ const AboutUs = () => {
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-8">Our Story</h2>
           <div className="prose prose-lg max-w-none">
             <p className="text-foreground/80 mb-4">
-              Revenuxe was founded with a simple yet powerful vision: to help businesses navigate the complex 
+              ArrowMind was founded with a simple yet powerful vision: to help businesses navigate the complex 
               world of digital marketing with precision and creativity. Like an arrow hitting its target, we focus 
-              on delivering revenue-driven results that matter to your business.
+              on delivering results that matter to your business.
             </p>
             <p className="text-foreground/80 mb-4">
               In today's fast-paced digital landscape, businesses need more than just a presence online—they need 

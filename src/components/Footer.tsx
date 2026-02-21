@@ -1,6 +1,6 @@
 import { Linkedin } from "lucide-react";
 import { ContactForm } from "./ContactForm";
-import logo from "@/assets/revenuxe-logo.webp";
+import logo from "@/assets/arrowmind-logo.webp";
 
 const Footer = () => {
   return (
@@ -19,10 +19,14 @@ const Footer = () => {
             {/* Brand */}
             <div>
               <div className="flex items-center gap-3 mb-4">
-                <img src={logo} alt="Revenuxe Logo" className="h-10 w-auto" />
+                <img src={logo} alt="Arrowmind Logo" className="h-10 w-auto" />
+                <h3 className="text-2xl font-bold">
+                  <span className="text-foreground">ARROW</span>
+                  <span className="text-primary">MIND</span>
+                </h3>
               </div>
               <p className="text-muted-foreground">
-                AI-powered digital marketing agency specializing in growth strategies for small and medium businesses.
+                Digital marketing agency specializing in growth strategies for small and medium businesses.
               </p>
             </div>
             
@@ -156,7 +160,7 @@ const Footer = () => {
           
           {/* Copyright */}
           <div className="mt-12 pt-8 border-t border-border text-center text-muted-foreground text-sm">
-            <p>&copy; {new Date().getFullYear()} Revenuxe. All rights reserved.</p>
+            <p>&copy; {new Date().getFullYear()} Arrowmind. All rights reserved.</p>
           </div>
         </div>
       </div>

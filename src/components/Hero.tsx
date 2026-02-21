@@ -7,7 +7,7 @@ const Hero = () => {
   const [dialogOpen, setDialogOpen] = useState(false);
   return <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Gradient Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-secondary" />
+      <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-[hsl(0,30%,8%)]" />
       
       {/* Animated Grid Background */}
       <div className="absolute inset-0 opacity-10">
@@ -41,7 +41,7 @@ const Hero = () => {
           
           {/* Brand Name */}
           <p className="text-primary text-xl sm:text-2xl md:text-3xl uppercase tracking-[0.3em] font-bold">
-            REVENUXE
+            ARROWMIND
           </p>
           
           {/* Description */}

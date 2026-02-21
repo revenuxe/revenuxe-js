@@ -26,7 +26,7 @@ const WhyChooseUs = ({ cityName }: { cityName?: string }) => {
           <div className="mb-16 animate-fade-in">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold">
               <span className="text-foreground">WHY CHOOSE </span>
-              <span className="text-primary">REVENUXE</span>
+              <span className="text-primary">ARROWMIND</span>
             </h2>
           </div>
           
@@ -61,7 +61,7 @@ const WhyChooseUs = ({ cityName }: { cityName?: string }) => {
                 
                 {/* Small branding */}
                 <div className="absolute bottom-6 right-6 text-xs text-muted-foreground opacity-50">
-                  revenuxe+
+                  arrowmind+
                 </div>
               </div>
             ))}

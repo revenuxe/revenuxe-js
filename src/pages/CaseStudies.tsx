@@ -49,7 +49,7 @@ const CaseStudies = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEO
-        title="Case Studies - Real Client Success Stories | Revenuxe"
+        title="Case Studies - Real Client Success Stories | ArrowMind"
         description="Explore our portfolio of successful digital marketing case studies. See how we've helped businesses achieve remarkable results through strategic solutions."
         keywords="case studies, client success stories, digital marketing results, portfolio, business transformation"
       />
