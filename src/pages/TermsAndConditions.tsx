@@ -6,9 +6,9 @@ const TermsAndConditions = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEO 
-        title="Terms and Conditions | Arrowmind Digital Marketing Agency"
-        description="Read Arrowmind's terms and conditions for our digital marketing services. Understand our service agreements, client responsibilities, and business policies."
-        keywords="terms and conditions, service agreement, digital marketing terms, Arrowmind terms, business policies"
+        title="Terms and Conditions | Revenuxe Digital Marketing Agency"
+        description="Read Revenuxe's terms and conditions for our digital marketing services. Understand our service agreements, client responsibilities, and business policies."
+        keywords="terms and conditions, service agreement, digital marketing terms, Revenuxe terms, business policies"
       />
       <Navigation />
       <main className="container mx-auto px-4 pt-24 pb-16">
@@ -19,7 +19,7 @@ const TermsAndConditions = () => {
           <section className="mb-8">
             <h2 className="text-2xl font-semibold text-foreground mb-4">1. Acceptance of Terms</h2>
             <p className="text-foreground/80">
-              By accessing and using ArrowMind's services, you accept and agree to be bound by these Terms and Conditions. 
+              By accessing and using Revenuxe's services, you accept and agree to be bound by these Terms and Conditions. 
               If you do not agree with any part of these terms, please do not use our services.
             </p>
           </section>
@@ -27,7 +27,7 @@ const TermsAndConditions = () => {
           <section className="mb-8">
             <h2 className="text-2xl font-semibold text-foreground mb-4">2. Services Description</h2>
             <p className="text-foreground/80">
-              ArrowMind provides digital marketing services including but not limited to SEO, social media marketing, 
+              Revenuxe provides digital marketing services including but not limited to SEO, social media marketing, 
               content marketing, PPC advertising, and web development. Specific deliverables and timelines will be 
               outlined in individual service agreements.
             </p>
@@ -61,7 +61,7 @@ const TermsAndConditions = () => {
             <h2 className="text-2xl font-semibold text-foreground mb-4">5. Intellectual Property</h2>
             <p className="text-foreground/80">
               Upon full payment, clients receive ownership of custom deliverables created specifically for them. 
-              ArrowMind retains rights to methodologies, templates, and pre-existing materials. We reserve the right 
+              Revenuxe retains rights to methodologies, templates, and pre-existing materials. We reserve the right 
               to showcase completed work in our portfolio unless otherwise agreed.
             </p>
           </section>
@@ -77,7 +77,7 @@ const TermsAndConditions = () => {
           <section className="mb-8">
             <h2 className="text-2xl font-semibold text-foreground mb-4">7. Limitation of Liability</h2>
             <p className="text-foreground/80">
-              ArrowMind shall not be liable for indirect, incidental, or consequential damages. Our total liability 
+              Revenuxe shall not be liable for indirect, incidental, or consequential damages. Our total liability 
               shall not exceed the total fees paid for the specific service in question. We do not guarantee specific 
               results from marketing campaigns as outcomes depend on various external factors.
             </p>
@@ -94,7 +94,7 @@ const TermsAndConditions = () => {
           <section className="mb-8">
             <h2 className="text-2xl font-semibold text-foreground mb-4">9. Changes to Terms</h2>
             <p className="text-foreground/80">
-              ArrowMind reserves the right to modify these terms at any time. Continued use of our services after 
+              Revenuxe reserves the right to modify these terms at any time. Continued use of our services after 
               changes constitutes acceptance of the modified terms.
             </p>
           </section>
@@ -102,7 +102,7 @@ const TermsAndConditions = () => {
           <section className="mb-8">
             <h2 className="text-2xl font-semibold text-foreground mb-4">10. Contact Information</h2>
             <p className="text-foreground/80">
-              For questions about these Terms and Conditions, please contact us at Admin@arrowmind.in
+              For questions about these Terms and Conditions, please contact us at admin@revenuxe.com
             </p>
           </section>
         </article>

@@ -6,9 +6,9 @@ const PrivacyPolicy = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEO 
-        title="Privacy Policy | Arrowmind Digital Marketing Agency"
-        description="Learn how Arrowmind protects your privacy and handles your data. Read our comprehensive privacy policy covering data collection, usage, and your rights."
-        keywords="privacy policy, data protection, privacy practices, GDPR compliance, data security, Arrowmind privacy"
+        title="Privacy Policy | Revenuxe Digital Marketing Agency"
+        description="Learn how Revenuxe protects your privacy and handles your data. Read our comprehensive privacy policy covering data collection, usage, and your rights."
+        keywords="privacy policy, data protection, privacy practices, GDPR compliance, data security, Revenuxe privacy"
       />
       <Navigation />
       <main className="container mx-auto px-4 pt-24 pb-16">
@@ -19,7 +19,7 @@ const PrivacyPolicy = () => {
           <section className="mb-8">
             <h2 className="text-2xl font-semibold text-foreground mb-4">1. Introduction</h2>
             <p className="text-foreground/80">
-              At ArrowMind, we respect your privacy and are committed to protecting your personal information. 
+              At Revenuxe, we respect your privacy and are committed to protecting your personal information. 
               This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you 
               visit our website or use our services.
             </p>
@@ -129,7 +129,7 @@ const PrivacyPolicy = () => {
             <p className="text-foreground/80">
               If you have questions about this Privacy Policy or wish to exercise your rights, please contact us at:
               <br />
-              Email: Admin@arrowmind.in
+              Email: admin@revenuxe.com
             </p>
           </section>
         </article>

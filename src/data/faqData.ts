@@ -8,8 +8,8 @@ export const homepageFAQs = [
     answer: "Results vary depending on the service. SEO typically shows significant improvements in 3-6 months, while paid advertising can generate leads within days. Content marketing and social media grow progressively over 2-4 months. We provide regular reports and track KPIs to demonstrate measurable progress from day one."
   },
   {
-    question: "What makes Arrowmind different from other digital marketing agencies?",
-    answer: "Arrowmind stands out through our AI-driven approach, combining cutting-edge technology with human expertise. We offer transparent pricing, dedicated account managers, data-driven strategies, and proven results across industries. Our focus on ROI and measurable outcomes ensures every marketing dollar is optimized for maximum impact."
+    question: "What makes Revenuxe different from other digital marketing agencies?",
+    answer: "Revenuxe stands out through our AI-driven approach, combining cutting-edge technology with human expertise. We offer transparent pricing, dedicated account managers, data-driven strategies, and proven results across industries. Our focus on ROI and measurable outcomes ensures every marketing dollar is optimized for maximum impact."
   },
   {
     question: "Do you work with small businesses or only large enterprises?",
