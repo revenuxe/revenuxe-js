@@ -32,17 +32,15 @@ const Hero = () => {
           
           {/* Main Heading - Responsive */}
           <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-extrabold leading-tight tracking-tight break-words">
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-[hsl(225,70%,40%)] via-[hsl(200,75%,45%)] to-[hsl(170,70%,50%)]">
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-foreground via-primary to-foreground">
               AI MARKETING
             </span>
             <br />
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-[hsl(225,70%,40%)] via-[hsl(200,75%,45%)] to-[hsl(170,70%,50%)]">
-              AGENCY
-            </span>
+            <span className="text-foreground">AGENCY</span>
           </h1>
           
           {/* Brand Name */}
-          <p className="text-xl sm:text-2xl md:text-3xl uppercase tracking-[0.3em] font-bold bg-clip-text text-transparent bg-gradient-to-r from-[hsl(225,70%,40%)] to-[hsl(170,70%,50%)]">
+          <p className="text-primary text-xl sm:text-2xl md:text-3xl uppercase tracking-[0.3em] font-bold">
             REVENUXE
           </p>
           
