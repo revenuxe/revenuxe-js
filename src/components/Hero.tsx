@@ -28,11 +28,11 @@ const Hero = () => {
         <div className="max-w-6xl mx-auto text-center space-y-8 animate-fade-in px-4">
           {/* Small Badge */}
           {/* Google Trusted Badge */}
-          <div className="flex justify-center">
+          <div className="flex justify-start pl-2 sm:pl-4">
             <img 
               src={googleTrustedBadge} 
               alt="Google Trusted AI Marketing Platform" 
-              className="h-16 sm:h-20 md:h-24 w-auto object-contain"
+              className="h-14 sm:h-18 md:h-22 lg:h-24 w-auto object-contain"
             />
           </div>
           
