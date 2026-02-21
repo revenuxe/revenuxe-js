@@ -37,17 +37,17 @@ const Stats = () => {
           </div>
           
           {/* Stats Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6">
             {stats.map((stat, index) => (
               <div
                 key={index}
-                className="border border-border rounded-lg p-8 md:p-12 hover:border-primary transition-all duration-300 animate-fade-in"
+                className="border border-border rounded-lg p-4 md:p-8 lg:p-12 hover:border-primary transition-all duration-300 animate-fade-in"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <p className="text-sm text-muted-foreground uppercase tracking-wider mb-4">
+                <p className="text-xs md:text-sm text-muted-foreground uppercase tracking-wider mb-2 md:mb-4">
                   {stat.label}
                 </p>
-                <p className="text-5xl md:text-6xl font-bold text-primary">
+                <p className="text-3xl md:text-5xl lg:text-6xl font-bold text-primary">
                   {stat.value}
                 </p>
               </div>

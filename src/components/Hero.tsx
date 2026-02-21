@@ -32,7 +32,7 @@ const Hero = () => {
             <img 
               src={googleTrustedBadge} 
               alt="Google Trusted AI Marketing Platform" 
-              className="h-14 sm:h-18 md:h-22 lg:h-24 w-auto object-contain"
+              className="h-20 sm:h-24 md:h-28 lg:h-32 w-auto object-contain"
             />
           </div>
           
