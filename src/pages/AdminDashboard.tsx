@@ -9,6 +9,7 @@ import { LeadsTable } from "@/components/admin/LeadsTable";
 import { CaseStudiesManager } from "@/components/admin/CaseStudiesManager";
 import { ArticlesManager } from "@/components/admin/ArticlesManager";
 import { DashboardStats } from "@/components/admin/DashboardStats";
+import { SEO } from "@/components/SEO";
 
 const AdminDashboard = () => {
   const navigate = useNavigate();
@@ -75,6 +76,7 @@ const AdminDashboard = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO title="Admin Dashboard — Revenuxe" description="Revenuxe admin dashboard." noindex={true} />
       {/* Header */}
       <header className="border-b bg-card">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
