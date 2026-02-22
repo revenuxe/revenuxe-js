@@ -24,8 +24,10 @@ import {
   Link2,
 } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useState, useMemo } from "react";
 
 const Services = ({ cityName }: { cityName?: string }) => {
+  const [searchQuery, setSearchQuery] = useState("");
   const serviceCategories = [
     {
       category: "AI-Powered Solutions",
@@ -325,6 +327,22 @@ const Services = ({ cityName }: { cityName?: string }) => {
     },
   ];
 
+  const filteredCategories = useMemo(() => {
+    if (!searchQuery.trim()) return serviceCategories;
+    const q = searchQuery.toLowerCase();
+    return serviceCategories
+      .map((cat) => ({
+        ...cat,
+        services: cat.services.filter(
+          (s) =>
+            s.title.toLowerCase().includes(q) ||
+            s.description.toLowerCase().includes(q) ||
+            s.subservices?.some((sub) => sub.toLowerCase().includes(q))
+        ),
+      }))
+      .filter((cat) => cat.services.length > 0);
+  }, [searchQuery, serviceCategories]);
+
   return (
     <section className="py-24 relative overflow-hidden">
       {/* Background Pattern */}
@@ -352,11 +370,27 @@ const Services = ({ cityName }: { cityName?: string }) => {
             Complete digital & AI-driven marketing solutions designed to scale
             your brand{cityName ? ` in ${cityName}` : ''}.
           </p>
+
+          {/* Search Bar */}
+          <div className="max-w-md mx-auto mt-8">
+            <div className="relative">
+              <div className="absolute left-0 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-primary flex items-center justify-center">
+                <Search className="w-5 h-5 text-primary-foreground" />
+              </div>
+              <input
+                type="text"
+                placeholder="Search services..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className="w-full pl-16 pr-4 py-3 rounded-full border border-border bg-card text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all"
+              />
+            </div>
+          </div>
         </div>
 
         {/* Service Categories */}
         <div className="space-y-24">
-          {serviceCategories.map((category, categoryIndex) => (
+          {filteredCategories.map((category, categoryIndex) => (
             <div key={categoryIndex} className="space-y-8">
               {/* Category Header */}
               <div className="text-center space-y-2">
@@ -373,45 +407,46 @@ const Services = ({ cityName }: { cityName?: string }) => {
                 {category.services.map((service, index) => (
                   <div
                     key={index}
-                    className="group relative rounded-2xl p-[2px] hover:scale-[1.03] transition-all duration-300 hover:shadow-2xl hover:shadow-primary/10"
-                    style={{
-                      background: 'linear-gradient(135deg, hsl(220, 70%, 35%), hsl(175, 60%, 45%), hsl(220, 70%, 35%))',
-                      backgroundSize: '200% 200%',
-                      animation: 'gradient-border-spin 4s ease infinite',
-                    }}
+                    className="group relative bg-card border border-border rounded-2xl p-6 hover:border-primary/60 transition-all duration-300 hover:shadow-2xl hover:shadow-primary/10 hover:scale-[1.03]"
                   >
-                    <div className="bg-card rounded-[14px] p-6 h-full relative">
-                      <div className="text-primary mb-4">{service.icon}</div>
+                    <div className="text-primary mb-4">{service.icon}</div>
 
-                      <h4 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors mb-3">
-                        {service.title}
-                      </h4>
+                    <h4 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors mb-3">
+                      {service.title}
+                    </h4>
 
-                      <p className="text-muted-foreground text-sm leading-relaxed mb-4">
-                        {service.description}
-                      </p>
+                    <p className="text-muted-foreground text-sm leading-relaxed mb-4">
+                      {service.description}
+                    </p>
 
-                      {service.subservices && (
-                        <ul className="text-xs text-muted-foreground space-y-1 mb-6">
-                          {service.subservices.map((sub, i) => (
-                            <li key={i}>• {sub}</li>
-                          ))}
-                        </ul>
-                      )}
+                    {service.subservices && (
+                      <ul className="text-xs text-muted-foreground space-y-1 mb-6">
+                        {service.subservices.map((sub, i) => (
+                          <li key={i}>• {sub}</li>
+                        ))}
+                      </ul>
+                    )}
 
-                      {/* Circular Arrow Button */}
-                      <Link
-                        to={service.link}
-                        className="absolute bottom-6 right-6 w-12 h-12 rounded-full bg-primary text-background flex items-center justify-center transition-transform duration-300 hover:scale-110"
-                      >
-                        <ArrowRight className="w-6 h-6" />
-                      </Link>
-                    </div>
+                    {/* Circular Arrow Button */}
+                    <Link
+                      to={service.link}
+                      className="absolute bottom-6 right-6 w-12 h-12 rounded-full bg-primary text-background flex items-center justify-center transition-transform duration-300 hover:scale-110"
+                    >
+                      <ArrowRight className="w-6 h-6" />
+                    </Link>
                   </div>
                 ))}
               </div>
             </div>
           ))}
+
+          {filteredCategories.length === 0 && searchQuery && (
+            <div className="text-center py-16">
+              <Search className="w-16 h-16 text-muted-foreground/30 mx-auto mb-4" />
+              <p className="text-muted-foreground text-lg">No services found for "{searchQuery}"</p>
+              <button onClick={() => setSearchQuery("")} className="text-primary mt-2 hover:underline">Clear search</button>
+            </div>
+          )}
         </div>
       </div>
     </section>
@@ -419,4 +454,3 @@ const Services = ({ cityName }: { cityName?: string }) => {
 };
 
 export default Services;
-
