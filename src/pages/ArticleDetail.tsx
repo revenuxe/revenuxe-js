@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/button";
 import { Calendar, User, ArrowLeft } from "lucide-react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+import { SEO } from "@/components/SEO";
 
 interface Article {
   id: string;
@@ -91,6 +92,24 @@ const ArticleDetail = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title={`${article.title} | Revenuxe Blog`}
+        description={article.excerpt || `Read ${article.title} on the Revenuxe blog. Expert digital marketing insights, tips & strategies.`}
+        keywords={`${article.category}, digital marketing blog, ${article.title.split(' ').slice(0, 3).join(', ')}, Revenuxe`}
+        canonicalUrl={`https://revenuxe.com/articles/${article.slug}`}
+        ogType="article"
+        schemaData={{
+          "@context": "https://schema.org",
+          "@type": "Article",
+          "headline": article.title,
+          "description": article.excerpt,
+          "author": { "@type": "Person", "name": article.author },
+          "publisher": { "@type": "Organization", "name": "Revenuxe" },
+          "datePublished": article.created_at,
+          ...(article.image_url ? { "image": article.image_url } : {}),
+          "mainEntityOfPage": `https://revenuxe.com/articles/${article.slug}`
+        }}
+      />
       <Navigation />
       <main className="pt-20">
         <article className="py-8 md:py-12 px-0 md:px-4">

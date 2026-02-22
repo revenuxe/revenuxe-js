@@ -6,6 +6,7 @@ import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
 import { Loader2, Shield } from "lucide-react";
+import { SEO } from "@/components/SEO";
 
 const AdminLogin = () => {
   const navigate = useNavigate();
@@ -58,6 +59,7 @@ const AdminLogin = () => {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-primary/5 via-background to-secondary/5 px-4">
+      <SEO title="Admin Login — Revenuxe" description="Revenuxe admin login portal." noindex={true} />
       <div className="w-full max-w-md">
         <div className="text-center mb-8">
           <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-4">

@@ -7,6 +7,8 @@ import { ArrowRight, Check } from "lucide-react";
 import { useState } from "react";
 import { GetStartedDialog } from "@/components/GetStartedDialog";
 import FAQ from "@/components/FAQ";
+import { SEO } from "@/components/SEO";
+
 
 const subServiceData: Record<string, any> = {
   // Performance Marketing Sub-Services
@@ -1991,6 +1993,18 @@ const SubServiceDetail = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title={`${service.title} — Sub-Service | Revenuxe`}
+        description={service.description || `Learn about ${service.title} from Revenuxe. AI-powered digital marketing solutions for your business growth.`}
+        canonicalUrl={`https://revenuxe.com/sub-services/${slug}`}
+        schemaData={{
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "name": service.title,
+          "description": service.description,
+          "provider": { "@type": "Organization", "name": "Revenuxe", "url": "https://revenuxe.com" }
+        }}
+      />
       <Navigation />
       <main>
         <PageHero
