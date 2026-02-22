@@ -73,7 +73,7 @@ const Hero = () => {
               <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
             </Button>
             <Button size="lg" variant="outline" className="border-2 border-primary/30 hover:bg-primary/10 px-10 py-6 text-lg font-semibold" asChild>
-              <a href="/services">VIEW SERVICES</a>
+              <a href="/services">EXPLORE SERVICES</a>
             </Button>
           </div>
           
