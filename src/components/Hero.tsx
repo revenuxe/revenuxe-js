@@ -19,11 +19,11 @@ const Hero = () => {
       </div>
       
       {/* Badge on mobile - left aligned */}
-      <div className="absolute top-16 left-4 z-20 md:hidden">
+      <div className="absolute top-20 left-4 z-20 md:hidden">
         <img 
           src={googleTrustedBadge} 
           alt="Google Trusted AI Marketing Platform" 
-          className="h-20 w-auto object-contain"
+          className="h-14 w-auto object-contain"
         />
       </div>
       
@@ -35,11 +35,11 @@ const Hero = () => {
       <div className="relative z-10 container mx-auto px-4 py-20">
         <div className="max-w-6xl mx-auto text-center space-y-8 animate-fade-in px-4">
           {/* Google Trusted Badge - desktop only, right aligned */}
-          <div className="hidden md:flex justify-end pr-4">
+          <div className="hidden md:flex justify-end pr-4 mb-6">
             <img 
               src={googleTrustedBadge} 
               alt="Google Trusted AI Marketing Platform" 
-              className="h-28 lg:h-32 w-auto object-contain"
+              className="h-20 lg:h-24 w-auto object-contain"
             />
           </div>
           

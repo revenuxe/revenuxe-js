@@ -18,6 +18,10 @@ import {
   Palette,
   AppWindow,
   MonitorSmartphone,
+  MessageSquareCode,
+  Database,
+  FileSearch,
+  Link2,
 } from "lucide-react";
 import { Link } from "react-router-dom";
 
@@ -90,6 +94,30 @@ const Services = ({ cityName }: { cityName?: string }) => {
             "Predictive Analytics",
           ],
           link: "/services/ai-automation",
+        },
+        {
+          icon: <MessageSquareCode className="w-10 h-10" />,
+          title: "AI Voice & Video Agents",
+          description:
+            "Deploy intelligent voice and video AI agents for customer interactions and support.",
+          subservices: [
+            "Voice Assistants",
+            "Video AI Support",
+            "Call Center AI",
+          ],
+          link: "/services/ai-voice-video",
+        },
+        {
+          icon: <Database className="w-10 h-10" />,
+          title: "AI Data Intelligence",
+          description:
+            "Transform raw data into actionable business insights with AI-powered analytics.",
+          subservices: [
+            "Data Visualization",
+            "Predictive Modeling",
+            "Business Intelligence",
+          ],
+          link: "/services/ai-data-intelligence",
         },
       ],
     },
@@ -265,6 +293,34 @@ const Services = ({ cityName }: { cityName?: string }) => {
           ],
           link: "/services/growth-marketing",
         },
+        {
+          icon: <FileSearch className="w-10 h-10" />,
+          title: "AI Reputation Management",
+          description:
+            "Monitor, manage, and improve your online reputation with AI-powered tools.",
+          subservices: [
+            "Review Monitoring",
+            "Sentiment Analysis",
+            "Brand Alerts",
+            "Response Automation",
+            "Reputation Scoring",
+          ],
+          link: "/services/ai-reputation",
+        },
+        {
+          icon: <Link2 className="w-10 h-10" />,
+          title: "Programmatic SEO",
+          description:
+            "Scale organic traffic with AI-generated pages targeting thousands of keywords.",
+          subservices: [
+            "Template-Based Pages",
+            "Dynamic Content Generation",
+            "Keyword Clustering at Scale",
+            "Automated Internal Linking",
+            "Landing Page Automation",
+          ],
+          link: "/services/programmatic-seo",
+        },
       ],
     },
   ];
@@ -317,33 +373,40 @@ const Services = ({ cityName }: { cityName?: string }) => {
                 {category.services.map((service, index) => (
                   <div
                     key={index}
-                    className="group relative bg-card border border-border rounded-2xl p-6 hover:border-primary/60 transition-all duration-300 hover:shadow-2xl hover:shadow-primary/10 hover:scale-[1.03]"
+                    className="group relative rounded-2xl p-[2px] hover:scale-[1.03] transition-all duration-300 hover:shadow-2xl hover:shadow-primary/10"
+                    style={{
+                      background: 'linear-gradient(135deg, hsl(220, 70%, 35%), hsl(175, 60%, 45%), hsl(220, 70%, 35%))',
+                      backgroundSize: '200% 200%',
+                      animation: 'gradient-border-spin 4s ease infinite',
+                    }}
                   >
-                    <div className="text-primary mb-4">{service.icon}</div>
+                    <div className="bg-card rounded-[14px] p-6 h-full relative">
+                      <div className="text-primary mb-4">{service.icon}</div>
 
-                    <h4 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors mb-3">
-                      {service.title}
-                    </h4>
+                      <h4 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors mb-3">
+                        {service.title}
+                      </h4>
 
-                    <p className="text-muted-foreground text-sm leading-relaxed mb-4">
-                      {service.description}
-                    </p>
+                      <p className="text-muted-foreground text-sm leading-relaxed mb-4">
+                        {service.description}
+                      </p>
 
-                    {service.subservices && (
-                      <ul className="text-xs text-muted-foreground space-y-1 mb-6">
-                        {service.subservices.map((sub, i) => (
-                          <li key={i}>• {sub}</li>
-                        ))}
-                      </ul>
-                    )}
+                      {service.subservices && (
+                        <ul className="text-xs text-muted-foreground space-y-1 mb-6">
+                          {service.subservices.map((sub, i) => (
+                            <li key={i}>• {sub}</li>
+                          ))}
+                        </ul>
+                      )}
 
-                    {/* Circular Arrow Button */}
-                    <Link
-                      to={service.link}
-                      className="absolute bottom-6 right-6 w-12 h-12 rounded-full bg-primary text-background flex items-center justify-center transition-transform duration-300 hover:scale-110"
-                    >
-                      <ArrowRight className="w-6 h-6" />
-                    </Link>
+                      {/* Circular Arrow Button */}
+                      <Link
+                        to={service.link}
+                        className="absolute bottom-6 right-6 w-12 h-12 rounded-full bg-primary text-background flex items-center justify-center transition-transform duration-300 hover:scale-110"
+                      >
+                        <ArrowRight className="w-6 h-6" />
+                      </Link>
+                    </div>
                   </div>
                 ))}
               </div>
