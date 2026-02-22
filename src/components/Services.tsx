@@ -99,15 +99,15 @@ const Services = ({ cityName }: { cityName?: string }) => {
         },
         {
           icon: <MessageSquareCode className="w-10 h-10" />,
-          title: "AI Voice & Video Agents",
+          title: "AI Social Media Management",
           description:
-            "Deploy intelligent voice and video AI agents for customer interactions and support.",
+            "Automate content scheduling, analytics, and engagement across all social platforms with AI.",
           subservices: [
-            "Voice Assistants",
-            "Video AI Support",
-            "Call Center AI",
+            "AI Content Scheduling",
+            "Smart Analytics",
+            "Auto-Engagement",
           ],
-          link: "/services/ai-voice-video",
+          link: "/services/ai-social-management",
         },
         {
           icon: <Database className="w-10 h-10" />,
