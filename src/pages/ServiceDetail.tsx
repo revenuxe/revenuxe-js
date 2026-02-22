@@ -369,7 +369,7 @@ const additionalServices = {
       { title: "AI-Powered Dashboards", description: "Custom dashboards that surface key metrics, trends, and anomalies automatically using machine learning.", link: "/sub-services/ai-dashboards" },
       { title: "Predictive Business Modeling", description: "Forecast revenue, churn, demand, and market trends with AI models trained on your data.", link: "/sub-services/predictive-modeling" },
       { title: "Customer Data Platform", description: "Unify customer data from all touchpoints for 360-degree views and personalized experiences.", link: "/sub-services/customer-data-platform" },
-      { title: "Automated Reporting", description: "Generate comprehensive reports automatically with AI-written insights and recommendations.", link: "/sub-services/automated-reporting" },
+      { title: "Automated Reporting", description: "Generate comprehensive reports automatically with AI-written insights and recommendations.", link: "/sub-services/ai-automated-reporting" },
     ],
     benefits: ["Data-driven decision making", "Predict trends before competitors", "Unified customer view", "Automated insight generation", "Reduce analysis time by 90%", "Identify hidden opportunities"],
     process: [
@@ -404,7 +404,7 @@ const additionalServices = {
     features: [
       { title: "Template-Based Page Generation", description: "Design dynamic templates that auto-populate with keyword-specific content, data, and structured markup.", link: "/sub-services/template-pages" },
       { title: "Dynamic Content Generation", description: "AI generates unique, relevant content for each page variant ensuring no duplicate content penalties.", link: "/sub-services/dynamic-content" },
-      { title: "Keyword Clustering at Scale", description: "AI identifies and groups thousands of related keywords into targetable clusters for page generation.", link: "/sub-services/keyword-clustering" },
+      { title: "Keyword Clustering at Scale", description: "AI identifies and groups thousands of related keywords into targetable clusters for page generation.", link: "/sub-services/keyword-clustering-scale" },
       { title: "Automated Internal Linking", description: "Smart internal linking algorithms ensure proper link equity distribution across all generated pages.", link: "/sub-services/auto-internal-linking" },
     ],
     benefits: ["Scale to 10,000+ pages", "Target long-tail keywords", "Automated content creation", "Consistent SEO optimization", "Massive organic traffic growth", "Lower cost per page"],
