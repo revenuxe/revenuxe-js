@@ -16,11 +16,83 @@ import {
   Video,
   Zap,
   Palette,
+  AppWindow,
+  MonitorSmartphone,
 } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Services = ({ cityName }: { cityName?: string }) => {
   const serviceCategories = [
+    {
+      category: "AI-Powered Solutions",
+      description: "Cutting-edge AI technology for modern businesses",
+      services: [
+        {
+          icon: <AppWindow className="w-10 h-10" />,
+          title: "Build Web App Using AI",
+          description:
+            "Create powerful web applications rapidly using AI-powered platforms and no-code tools.",
+          subservices: ["Lovable", "Bolt", "Replit", "Cursor AI", "V0 by Vercel", "Firebase Studio"],
+          link: "/services/ai-webapp",
+        },
+        {
+          icon: <MonitorSmartphone className="w-10 h-10" />,
+          title: "Build Website Using AI",
+          description:
+            "Launch stunning websites in hours, not weeks, using AI website builders and CMS platforms.",
+          subservices: ["WordPress + AI", "Framer", "Webflow", "Wix AI", "Hostinger AI", "Durable AI"],
+          link: "/services/ai-website",
+        },
+        {
+          icon: <Bot className="w-10 h-10" />,
+          title: "AI Chatbots",
+          description:
+            "Intelligent chatbots that enhance customer experience 24/7.",
+          subservices: [
+            "Customer Support",
+            "Lead Generation",
+            "Multi-Language",
+          ],
+          link: "/services/ai-chatbots",
+        },
+        {
+          icon: <BrainCircuit className="w-10 h-10" />,
+          title: "AI Content Generation",
+          description:
+            "Create engaging content at scale with AI technology.",
+          subservices: [
+            "Blog Posts",
+            "Product Descriptions",
+            "Social Media Copy",
+          ],
+          link: "/services/ai-content",
+        },
+        {
+          icon: <Palette className="w-10 h-10" />,
+          title: "AI Design Studio",
+          description:
+            "Generate stunning visuals and designs with AI creativity.",
+          subservices: [
+            "Image Generation",
+            "Brand Assets",
+            "Ad Creatives",
+          ],
+          link: "/services/ai-design",
+        },
+        {
+          icon: <Zap className="w-10 h-10" />,
+          title: "AI Automation",
+          description:
+            "Automate workflows and processes with intelligent systems.",
+          subservices: [
+            "Task Automation",
+            "Smart Workflows",
+            "Predictive Analytics",
+          ],
+          link: "/services/ai-automation",
+        },
+      ],
+    },
     {
       category: "Marketing Services",
       description: "Comprehensive marketing solutions to grow your brand",
@@ -192,60 +264,6 @@ const Services = ({ cityName }: { cityName?: string }) => {
             "Organic Growth Tactics",
           ],
           link: "/services/growth-marketing",
-        },
-      ],
-    },
-    {
-      category: "AI-Powered Solutions",
-      description: "Cutting-edge AI technology for modern businesses",
-      services: [
-        {
-          icon: <Bot className="w-10 h-10" />,
-          title: "AI Chatbots",
-          description:
-            "Intelligent chatbots that enhance customer experience 24/7.",
-          subservices: [
-            "Customer Support",
-            "Lead Generation",
-            "Multi-Language",
-          ],
-          link: "/services/ai-chatbots",
-        },
-        {
-          icon: <BrainCircuit className="w-10 h-10" />,
-          title: "AI Content Generation",
-          description:
-            "Create engaging content at scale with AI technology.",
-          subservices: [
-            "Blog Posts",
-            "Product Descriptions",
-            "Social Media Copy",
-          ],
-          link: "/services/ai-content",
-        },
-        {
-          icon: <Palette className="w-10 h-10" />,
-          title: "AI Design Studio",
-          description:
-            "Generate stunning visuals and designs with AI creativity.",
-          subservices: [
-            "Image Generation",
-            "Brand Assets",
-            "Ad Creatives",
-          ],
-          link: "/services/ai-design",
-        },
-        {
-          icon: <Zap className="w-10 h-10" />,
-          title: "AI Automation",
-          description:
-            "Automate workflows and processes with intelligent systems.",
-          subservices: [
-            "Task Automation",
-            "Smart Workflows",
-            "Predictive Analytics",
-          ],
-          link: "/services/ai-automation",
         },
       ],
     },
