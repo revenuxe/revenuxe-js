@@ -9,7 +9,7 @@ interface PageHeroProps {
 
 const PageHero = ({ title, highlight, subtitle, children }: PageHeroProps) => {
   return (
-    <section className="relative py-24 md:py-32 overflow-hidden">
+    <section className="relative pt-32 pb-24 md:py-32 overflow-hidden">
       {/* Gradient Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-secondary" />
 
