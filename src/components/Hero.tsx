@@ -6,84 +6,81 @@ import googleTrustedBadge from "@/assets/google-trusted-badge.webp";
 
 const Hero = () => {
   const [dialogOpen, setDialogOpen] = useState(false);
-  return <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Gradient Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-secondary" />
-      
-      {/* Animated Grid Background */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute inset-0" style={{
-        backgroundImage: 'linear-gradient(hsl(var(--primary)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--primary)) 1px, transparent 1px)',
-        backgroundSize: '50px 50px'
-      }} />
-      </div>
-      
-      {/* Badge on mobile - left aligned */}
-      <div className="absolute top-20 left-4 z-20 md:hidden">
-        <img 
-          src={googleTrustedBadge} 
-          alt="Google Trusted AI Marketing Platform" 
-          className="h-14 w-auto object-contain"
+  return (
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Background with Heizen-style soft radial gradient */}
+      <div
+        className="absolute inset-0"
+        style={{
+          background:
+            "radial-gradient(ellipse 80% 60% at 50% 40%, hsl(var(--primary) / 0.08) 0%, hsl(var(--background)) 70%)",
+        }}
+      />
+
+      {/* Subtle grid lines */}
+      <div className="absolute inset-0 opacity-[0.04]">
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage:
+              "linear-gradient(hsl(var(--primary)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--primary)) 1px, transparent 1px)",
+            backgroundSize: "80px 80px",
+          }}
         />
       </div>
-      
-      {/* Floating Shapes */}
-      <div className="absolute bottom-20 right-20 w-24 h-24 border-2 border-primary/30 rotate-45" />
-      <div className="absolute top-1/3 right-10 w-16 h-16 bg-primary/10 rounded-lg" />
-      
+
+      {/* Badge on mobile - left aligned */}
+      <div className="absolute top-28 left-4 z-20 md:hidden">
+        <img
+          src={googleTrustedBadge}
+          alt="Google Trusted AI Marketing Platform"
+          className="h-12 w-auto object-contain"
+        />
+      </div>
+
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 py-20">
-        <div className="max-w-6xl mx-auto text-center space-y-8 animate-fade-in px-4">
-          {/* Google Trusted Badge - desktop only, right aligned */}
-          <div className="hidden md:flex justify-end pr-4 mb-6">
-            <img 
-              src={googleTrustedBadge} 
-              alt="Google Trusted AI Marketing Platform" 
-              className="h-20 lg:h-24 w-auto object-contain"
+        <div className="max-w-5xl mx-auto text-center space-y-8 animate-fade-in">
+          {/* Google Trusted Badge - desktop only */}
+          <div className="hidden md:flex justify-end pr-4 mb-8">
+            <img
+              src={googleTrustedBadge}
+              alt="Google Trusted AI Marketing Platform"
+              className="h-16 lg:h-20 w-auto object-contain"
             />
           </div>
-          
-          {/* Main Heading - Responsive */}
-          <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-extrabold leading-tight tracking-tight break-words">
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-foreground via-primary to-foreground">
-              AI MARKETING
-            </span>
+
+          {/* Main Heading — Heizen-style with italic accent */}
+          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-[1.1] tracking-tight">
+            <span className="text-foreground">AI Marketing at</span>
             <br />
-            <span className="text-foreground">AGENCY</span>
+            <span className="italic text-primary font-bold">
+              Light Speed
+            </span>
           </h1>
-          
-          {/* Brand Name */}
-          <p className="text-primary text-xl sm:text-2xl md:text-3xl uppercase tracking-[0.3em] font-bold">
-            REVENUXE
+
+          {/* Subtitle */}
+          <p className="text-muted-foreground text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
+            AI + Humans craft marketing strategies that drive 10x growth — faster than any traditional agency
           </p>
-          
-          {/* Description */}
-          <p className="text-muted-foreground text-base sm:text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
-            Transform your business with cutting-edge AI-powered marketing strategies that drive real results
-          </p>
-          
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
-            <Button 
-              size="lg" 
-              className="px-10 py-6 text-lg font-semibold group shadow-lg shadow-primary/20"
+
+          {/* Single CTA */}
+          <div className="pt-4">
+            <Button
+              size="lg"
+              className="px-10 py-6 text-base font-semibold group shadow-lg shadow-primary/20 rounded-full"
               onClick={() => setDialogOpen(true)}
             >
-              GET STARTED
-              <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
-            </Button>
-            <Button size="lg" variant="outline" className="border-2 border-primary/30 hover:bg-primary/10 px-10 py-6 text-lg font-semibold" asChild>
-              <a href="/services">EXPLORE SERVICES</a>
+              Book a Strategy Call
+              <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Button>
           </div>
-          
+
           <GetStartedDialog open={dialogOpen} onOpenChange={setDialogOpen} />
         </div>
       </div>
-      
-      {/* Decorative Elements */}
-      <div className="absolute top-20 left-10 text-primary text-6xl opacity-20 hidden md:block">+</div>
-      <div className="absolute bottom-20 right-10 text-primary text-6xl opacity-20 hidden md:block">+</div>
-    </section>;
+    </section>
+  );
 };
+
 export default Hero;
