@@ -608,6 +608,7 @@ const ServiceDetail = () => {
         title={`${service.title} Services | Revenuxe`}
         description={service.description}
         canonicalUrl={`https://revenuxe.com/services/${slug}`}
+        ogImage="https://revenuxe.com/og-service.png"
       />
       <Navigation />
       <PageHero
