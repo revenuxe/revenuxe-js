@@ -26,7 +26,7 @@ const PageHero = ({ title, highlight, subtitle, children }: PageHeroProps) => {
       </div>
 
       {/* Badge on mobile - left aligned */}
-      <div className="absolute top-6 left-4 z-20 md:hidden">
+      <div className="absolute top-20 left-4 z-20 md:hidden">
         <img 
           src={googleTrustedBadge} 
           alt="Google Trusted AI Marketing Platform" 
