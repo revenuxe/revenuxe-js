@@ -6,7 +6,7 @@ const Testimonials = () => {
       name: "Sarah Johnson",
       position: "CEO, TechStart Inc",
       image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop",
-      content: "Revenuxe transformed our digital presence. Their AI-powered strategies increased our conversions by 340% in just 3 months!",
+      content: "Revenuxe transformed our digital presence. Their AI-powered strategies increased our conversions by 42% in just 3 months!",
       rating: 5
     },
     {
@@ -33,7 +33,7 @@ const Testimonials = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16 space-y-4">
           <span className="text-primary text-sm font-bold uppercase tracking-wider">Testimonials</span>
-          <h2 className="text-4xl md:text-6xl font-bold">
+          <h2 className="text-2xl sm:text-4xl md:text-6xl font-bold">
             What Clients <span className="text-primary">Say</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">

@@ -1,25 +1,27 @@
 const partners = [
-  { name: "Google", logo: "https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" },
-  { name: "Meta", logo: "https://upload.wikimedia.org/wikipedia/commons/7/7b/Meta_Platforms_Inc._logo.svg" },
-  { name: "Shopify", logo: "https://upload.wikimedia.org/wikipedia/commons/0/0e/Shopify_logo_2018.svg" },
-  { name: "HubSpot", logo: "https://upload.wikimedia.org/wikipedia/commons/3/3f/HubSpot_Logo.svg" },
+  { name: "Lovable", logo: "https://asset.brandfetch.io/id20mQyGeY/idafl09fJz.png" },
+  { name: "Bolt.new", logo: "https://asset.brandfetch.io/idW382nFcT/idgrCrOGDa.svg" },
+  { name: "n8n", logo: "https://asset.brandfetch.io/idg9bYMXt2/idD-83csfT.svg" },
+  { name: "Cursor", logo: "https://asset.brandfetch.io/idxEHMvGRF/idjjpN8jHE.svg" },
+  { name: "Supabase", logo: "https://asset.brandfetch.io/idm2jnRNqn/id0mnxrjeD.svg" },
+  { name: "Vercel", logo: "https://asset.brandfetch.io/idMk1oMGKS/id4fovt_AK.svg" },
 ];
 
 const TrustedBy = () => {
   return (
-    <section className="py-12 border-t border-b border-border bg-background">
+    <section className="py-10 border-t border-b border-border bg-background">
       <div className="container mx-auto px-4">
-        <div className="flex flex-col md:flex-row items-center gap-8 md:gap-16">
-          <p className="text-sm font-semibold text-muted-foreground uppercase tracking-widest whitespace-nowrap">
-            Trusted by Growing Brands
+        <div className="flex flex-col md:flex-row items-center gap-6 md:gap-12">
+          <p className="text-xs font-semibold text-muted-foreground uppercase tracking-widest whitespace-nowrap">
+            Platforms We Use
           </p>
-          <div className="flex items-center justify-center gap-10 md:gap-16 flex-wrap opacity-60 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-500">
+          <div className="flex items-center justify-center gap-8 md:gap-12 flex-wrap opacity-50 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-500">
             {partners.map((partner) => (
               <img
                 key={partner.name}
                 src={partner.logo}
-                alt={partner.name}
-                className="h-6 md:h-8 w-auto object-contain"
+                alt={`${partner.name} logo`}
+                className="h-5 md:h-7 w-auto object-contain"
               />
             ))}
           </div>

@@ -10,9 +10,9 @@ const tabs = [
     description:
       "Track every campaign, click, and conversion with AI-powered dashboards that surface insights humans miss.",
     stats: [
-      { label: "Avg. ROI Increase", value: "340%", trend: "+12% this month" },
-      { label: "Campaigns Managed", value: "1,200+", trend: "Active now" },
-      { label: "Data Points Analyzed", value: "50M+", trend: "Per month" },
+      { label: "Avg. ROI Increase", value: "42%", trend: "+5% this month" },
+      { label: "Campaigns Managed", value: "30+", trend: "Active now" },
+      { label: "Data Points Analyzed", value: "500K+", trend: "Per month" },
     ],
     visual: (
       <div className="relative w-full aspect-[16/10] bg-gradient-to-br from-primary/5 to-accent/5 rounded-xl border border-border overflow-hidden p-6">
@@ -50,14 +50,18 @@ const tabs = [
           </div>
         </div>
         {/* Floating card */}
-        <div className="absolute bottom-4 right-4 bg-card border border-border shadow-lg rounded-lg p-3 flex items-center gap-3 animate-float">
+        <div className="absolute bottom-4 right-4 bg-card border border-border shadow-lg rounded-lg p-3 flex items-center gap-3 animate-bounce-slow">
           <div className="w-8 h-8 rounded-full bg-accent/20 flex items-center justify-center">
             <TrendingUp className="w-4 h-4 text-accent" />
           </div>
           <div>
             <p className="text-[10px] text-muted-foreground">Revenue Growth</p>
-            <p className="text-sm font-bold text-foreground">+127%</p>
+            <p className="text-sm font-bold text-foreground">+38%</p>
           </div>
+        </div>
+        {/* Animated scan line */}
+        <div className="absolute inset-0 overflow-hidden rounded-xl pointer-events-none">
+          <div className="absolute left-0 right-0 h-px bg-gradient-to-r from-transparent via-accent/40 to-transparent animate-scan" />
         </div>
       </div>
     ),
@@ -70,9 +74,9 @@ const tabs = [
     description:
       "Automate repetitive tasks, schedule campaigns, and trigger personalized workflows — all powered by AI.",
     stats: [
-      { label: "Hours Saved / Month", value: "200+", trend: "Per client" },
-      { label: "Workflows Active", value: "85", trend: "Running 24/7" },
-      { label: "Response Time", value: "<2s", trend: "AI-powered" },
+      { label: "Hours Saved / Month", value: "40+", trend: "Per client" },
+      { label: "Workflows Active", value: "12", trend: "Running 24/7" },
+      { label: "Response Time", value: "<5s", trend: "AI-powered" },
     ],
     visual: (
       <div className="relative w-full aspect-[16/10] bg-gradient-to-br from-accent/5 to-primary/5 rounded-xl border border-border overflow-hidden p-6">
@@ -115,9 +119,9 @@ const tabs = [
     description:
       "AI analyzes behavior patterns and segments your audience for hyper-targeted campaigns that convert.",
     stats: [
-      { label: "Conversion Lift", value: "2.8x", trend: "vs. manual targeting" },
-      { label: "Segments Created", value: "150+", trend: "Auto-generated" },
-      { label: "Accuracy", value: "96%", trend: "Prediction rate" },
+      { label: "Conversion Lift", value: "1.5x", trend: "vs. manual targeting" },
+      { label: "Segments Created", value: "25+", trend: "Auto-generated" },
+      { label: "Accuracy", value: "82%", trend: "Prediction rate" },
     ],
     visual: (
       <div className="relative w-full aspect-[16/10] bg-gradient-to-br from-primary/5 to-accent/5 rounded-xl border border-border overflow-hidden p-6">
@@ -167,7 +171,7 @@ const DashboardShowcase = () => {
           <span className="text-primary text-sm font-bold uppercase tracking-wider">
             Platform Preview
           </span>
-          <h2 className="text-4xl md:text-6xl font-bold">
+          <h2 className="text-2xl sm:text-4xl md:text-6xl font-bold">
             See AI Marketing <span className="italic text-primary">in Action</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">

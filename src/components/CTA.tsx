@@ -32,7 +32,7 @@ const CTA = () => {
           </div>
           
           {/* Heading */}
-          <h2 className="text-4xl md:text-6xl lg:text-7xl font-extrabold leading-tight">
+          <h2 className="text-2xl sm:text-4xl md:text-6xl lg:text-7xl font-extrabold leading-tight">
             Ready to <span className="text-primary">Transform</span><br />
             Your Business?
           </h2>
