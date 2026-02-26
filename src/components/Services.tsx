@@ -362,7 +362,7 @@ const Services = ({ cityName }: { cityName?: string }) => {
           <span className="text-primary text-sm font-bold uppercase tracking-wider">
             Our Services{cityName ? ` in ${cityName}` : ''}
           </span>
-          <h2 className="text-2xl sm:text-4xl md:text-6xl font-bold">
+          <h2 className="text-4xl md:text-6xl font-bold">
             What We <span className="text-primary">Offer</span>
             {cityName && <span className="text-foreground"> in {cityName}</span>}
           </h2>

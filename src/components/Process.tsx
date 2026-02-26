@@ -37,7 +37,7 @@ const Process = ({ cityName }: { cityName?: string }) => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16 space-y-4">
           <span className="text-primary text-sm font-bold uppercase tracking-wider">Our Process</span>
-          <h2 className="text-2xl sm:text-4xl md:text-6xl font-bold">
+          <h2 className="text-4xl md:text-6xl font-bold">
             How We <span className="text-primary">Work</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">

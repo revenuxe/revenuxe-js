@@ -52,7 +52,7 @@ const PageHero = ({ title, highlight, subtitle, children }: PageHeroProps) => {
               className="h-20 lg:h-24 w-auto object-contain"
             />
           </div>
-          <h1 className="text-2xl sm:text-4xl md:text-6xl lg:text-7xl font-extrabold leading-tight">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold leading-tight">
             {highlight ? (
               <>
                 {title} <span className="text-primary">{highlight}</span>
