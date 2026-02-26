@@ -1,5 +1,8 @@
 import Navigation from "@/components/Navigation";
+import AnnouncementBar from "@/components/AnnouncementBar";
 import Hero from "@/components/Hero";
+import TrustedBy from "@/components/TrustedBy";
+import DashboardShowcase from "@/components/DashboardShowcase";
 import Services from "@/components/Services";
 import Stats from "@/components/Stats";
 import WhyChooseUs from "@/components/WhyChooseUs";
@@ -15,8 +18,11 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <SEO />
+      <AnnouncementBar />
       <Navigation />
       <Hero />
+      <TrustedBy />
+      <DashboardShowcase />
       <Stats />
       <Services />
       <Process />
