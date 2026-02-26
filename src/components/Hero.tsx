@@ -51,7 +51,7 @@ const Hero = () => {
           </div>
 
           {/* Main Heading — Heizen-style with italic accent */}
-          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-[1.1] tracking-tight">
+          <h1 className="text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-bold leading-[1.1] tracking-tight">
             <span className="text-foreground">AI Marketing at</span>
             <br />
             <span className="italic text-primary font-bold">
