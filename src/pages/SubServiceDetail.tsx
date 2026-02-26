@@ -1997,6 +1997,7 @@ const SubServiceDetail = () => {
         title={`${service.title} — Sub-Service | Revenuxe`}
         description={service.description || `Learn about ${service.title} from Revenuxe. AI-powered digital marketing solutions for your business growth.`}
         canonicalUrl={`https://revenuxe.com/sub-services/${slug}`}
+        ogImage="https://revenuxe.com/og-service.png"
         schemaData={{
           "@context": "https://schema.org",
           "@type": "Service",

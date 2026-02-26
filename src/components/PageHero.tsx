@@ -1,3 +1,5 @@
+import googleTrustedBadge from "@/assets/google-trusted-badge.webp";
+
 interface PageHeroProps {
   title: string;
   highlight?: string;
@@ -23,6 +25,15 @@ const PageHero = ({ title, highlight, subtitle, children }: PageHeroProps) => {
         />
       </div>
 
+      {/* Badge on mobile - left aligned */}
+      <div className="absolute top-6 left-4 z-20 md:hidden">
+        <img 
+          src={googleTrustedBadge} 
+          alt="Google Trusted AI Marketing Platform" 
+          className="h-14 w-auto object-contain"
+        />
+      </div>
+
       {/* Floating Shapes */}
       <div className="absolute top-10 left-10 w-24 h-24 border-2 border-primary/20 rounded-full animate-pulse" />
       <div className="absolute bottom-10 right-16 w-16 h-16 border-2 border-primary/30 rotate-45" />
@@ -33,6 +44,14 @@ const PageHero = ({ title, highlight, subtitle, children }: PageHeroProps) => {
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center space-y-4 animate-fade-in">
+          {/* Google Trusted Badge - desktop only */}
+          <div className="hidden md:flex justify-end pr-4 mb-4">
+            <img 
+              src={googleTrustedBadge} 
+              alt="Google Trusted AI Marketing Platform" 
+              className="h-20 lg:h-24 w-auto object-contain"
+            />
+          </div>
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold leading-tight">
             {highlight ? (
               <>
