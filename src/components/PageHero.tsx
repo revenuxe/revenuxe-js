@@ -26,11 +26,11 @@ const PageHero = ({ title, highlight, subtitle, children }: PageHeroProps) => {
       </div>
 
       {/* Badge on mobile - left aligned */}
-      <div className="absolute top-20 left-4 z-20 md:hidden">
+      <div className="absolute top-6 left-4 z-20 md:hidden">
         <img 
           src={googleTrustedBadge} 
           alt="Google Trusted AI Marketing Platform" 
-          className="h-12 w-auto object-contain"
+          className="h-14 w-auto object-contain"
         />
       </div>
 
@@ -45,11 +45,11 @@ const PageHero = ({ title, highlight, subtitle, children }: PageHeroProps) => {
       <div className="relative z-10 container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center space-y-4 animate-fade-in">
           {/* Google Trusted Badge - desktop only */}
-          <div className="hidden md:flex justify-end pr-4 mb-8">
+          <div className="hidden md:flex justify-end pr-4 mb-4">
             <img 
               src={googleTrustedBadge} 
               alt="Google Trusted AI Marketing Platform" 
-              className="h-16 lg:h-20 w-auto object-contain"
+              className="h-20 lg:h-24 w-auto object-contain"
             />
           </div>
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold leading-tight">
