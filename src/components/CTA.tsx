@@ -1,62 +1,83 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Sparkles } from "lucide-react";
 import { GetStartedDialog } from "./GetStartedDialog";
 
 const CTA = () => {
   const [dialogOpen, setDialogOpen] = useState(false);
-
-  return (
-    <section className="py-20 md:py-28 bg-accent/10 relative overflow-hidden">
+  return <section className="py-24 relative overflow-hidden">
+      {/* Animated Background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-background to-primary/10" />
+      
+      {/* Grid Pattern */}
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute inset-0" style={{
+        backgroundImage: 'linear-gradient(hsl(var(--primary)) 2px, transparent 2px), linear-gradient(90deg, hsl(var(--primary)) 2px, transparent 2px)',
+        backgroundSize: '60px 60px'
+      }} />
+      </div>
+      
+      {/* Floating Elements */}
+      <div className="absolute top-10 left-10 w-32 h-32 bg-primary/20 rounded-full blur-3xl animate-pulse" />
+      <div className="absolute bottom-10 right-10 w-40 h-40 bg-primary/20 rounded-full blur-3xl animate-pulse" style={{
+      animationDelay: '1s'
+    }} />
+      
       <div className="container mx-auto px-4 relative z-10">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-start">
-            {/* Left - CTA Text */}
-            <div className="space-y-6">
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight text-foreground">
-                <span className="italic">Find</span> your perfect strategy today. Contact us for expert marketing guidance!
-              </h2>
-
-              <Button
-                size="lg"
-                className="px-10 py-6 text-base font-bold rounded-full group shadow-lg shadow-primary/20"
-                style={{ background: "var(--brand-gradient)" }}
-                onClick={() => setDialogOpen(true)}
-              >
-                Get Started Now
-                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </Button>
-
-              <GetStartedDialog open={dialogOpen} onOpenChange={setDialogOpen} />
+        <div className="max-w-4xl mx-auto text-center space-y-8">
+          {/* Badge */}
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 border border-primary/20 rounded-full text-primary text-sm font-medium">
+            <Sparkles className="w-4 h-4" />
+            <span>Limited Time Offer</span>
+          </div>
+          
+          {/* Heading */}
+          <h2 className="text-4xl md:text-6xl lg:text-7xl font-extrabold leading-tight">
+            Ready to <span className="text-primary">Transform</span><br />
+            Your Business?
+          </h2>
+          
+          {/* Description */}
+          <p className="text-muted-foreground text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
+            Join hundreds of successful businesses that have accelerated their growth with our AI-powered marketing strategies
+          </p>
+          
+          {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-6">
+            <Button 
+              size="lg" 
+              className="px-12 py-7 text-lg font-bold group shadow-2xl shadow-primary/30"
+              onClick={() => setDialogOpen(true)}
+            >
+              START YOUR PROJECT
+              <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
+            </Button>
+            <Button size="lg" variant="outline" className="border-2 border-primary/30 hover:bg-primary/10 px-12 py-7 text-lg font-bold" asChild>
+              <a href="/contact">SCHEDULE A CALL</a>
+            </Button>
+          </div>
+          
+          <GetStartedDialog open={dialogOpen} onOpenChange={setDialogOpen} />
+          
+          {/* Trust Indicators */}
+          <div className="pt-12 flex flex-wrap justify-center gap-8 text-center">
+            <div>
+              <div className="text-3xl md:text-4xl font-bold text-primary">30+</div>
+              <div className="text-sm text-muted-foreground">Projects Completed</div>
             </div>
-
-            {/* Right - Contact Info */}
-            <div className="space-y-8">
-              <div>
-                <h4 className="text-sm font-bold uppercase tracking-wider text-foreground mb-2">Address</h4>
-                <p className="text-muted-foreground text-sm leading-relaxed">
-                  Revenuxe Digital Marketing<br />
-                  Bangalore, India
-                </p>
-              </div>
-              <div>
-                <h4 className="text-sm font-bold uppercase tracking-wider text-foreground mb-2">Phone</h4>
-                <a href="tel:+919886285028" className="text-muted-foreground text-sm hover:text-primary transition-colors">
-                  +91 9886285028
-                </a>
-              </div>
-              <div>
-                <h4 className="text-sm font-bold uppercase tracking-wider text-foreground mb-2">Email</h4>
-                <a href="mailto:revenuxe@gmail.com" className="text-muted-foreground text-sm hover:text-primary transition-colors">
-                  revenuxe@gmail.com
-                </a>
-              </div>
+            <div className="w-px bg-border" />
+            <div>
+              <div className="text-3xl md:text-4xl font-bold text-primary">99%</div>
+              <div className="text-sm text-muted-foreground">Client Satisfaction</div>
+            </div>
+            <div className="w-px bg-border" />
+            <div>
+              <div className="text-3xl md:text-4xl font-bold text-primary">3+ Years</div>
+              <div className="text-sm text-muted-foreground">Industry Experience</div>
             </div>
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default CTA;
