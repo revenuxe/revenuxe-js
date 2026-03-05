@@ -3,11 +3,11 @@ const WhyChooseUs = ({ cityName }: { cityName?: string }) => {
     {
       icon: (
         <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="24" cy="24" r="10" fill="hsl(75, 45%, 72%)" />
-          <circle cx="16" cy="16" r="8" fill="hsl(75, 45%, 72%)" />
-          <circle cx="32" cy="16" r="8" fill="hsl(75, 45%, 72%)" />
-          <circle cx="16" cy="32" r="8" fill="hsl(75, 45%, 72%)" />
-          <circle cx="32" cy="32" r="8" fill="hsl(75, 45%, 72%)" />
+          <circle cx="24" cy="24" r="10" fill="hsl(175, 65%, 42%)" />
+          <circle cx="16" cy="16" r="8" fill="hsl(175, 65%, 42%)" />
+          <circle cx="32" cy="16" r="8" fill="hsl(175, 65%, 42%)" />
+          <circle cx="16" cy="32" r="8" fill="hsl(175, 65%, 42%)" />
+          <circle cx="32" cy="32" r="8" fill="hsl(175, 65%, 42%)" />
         </svg>
       ),
       title: `Maximize Return on Investments${cityName ? ` in ${cityName}` : ""}`,
@@ -15,13 +15,13 @@ const WhyChooseUs = ({ cityName }: { cityName?: string }) => {
     {
       icon: (
         <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="24" cy="14" r="5" fill="hsl(24, 85%, 55%)" />
-          <circle cx="14" cy="24" r="5" fill="hsl(24, 85%, 55%)" />
-          <circle cx="34" cy="24" r="5" fill="hsl(24, 85%, 55%)" />
-          <circle cx="24" cy="34" r="5" fill="hsl(24, 85%, 55%)" />
-          <circle cx="17" cy="17" r="4" fill="hsl(24, 85%, 55%)" />
-          <circle cx="31" cy="17" r="4" fill="hsl(24, 85%, 55%)" />
-          <circle cx="17" cy="31" r="4" fill="hsl(24, 85%, 55%)" />
+          <circle cx="24" cy="14" r="5" fill="hsl(195, 70%, 60%)" />
+          <circle cx="14" cy="24" r="5" fill="hsl(195, 70%, 60%)" />
+          <circle cx="34" cy="24" r="5" fill="hsl(195, 70%, 60%)" />
+          <circle cx="24" cy="34" r="5" fill="hsl(195, 70%, 60%)" />
+          <circle cx="17" cy="17" r="4" fill="hsl(195, 70%, 60%)" />
+          <circle cx="31" cy="17" r="4" fill="hsl(195, 70%, 60%)" />
+          <circle cx="17" cy="31" r="4" fill="hsl(195, 70%, 60%)" />
         </svg>
       ),
       title: "Simplify Marketing Decisions Effectively",
@@ -55,7 +55,7 @@ const WhyChooseUs = ({ cityName }: { cityName?: string }) => {
             {goals.map((goal, index) => (
               <div
                 key={index}
-                className="bg-[hsl(var(--section-dark-card))] rounded-2xl p-8 flex flex-col justify-between min-h-[220px] hover:bg-[hsl(155,25%,28%)] transition-colors"
+                className="bg-[hsl(var(--section-dark-card))] rounded-2xl p-8 flex flex-col justify-between min-h-[220px] hover:bg-[hsl(220,45%,26%)] transition-colors"
               >
                 <div className="mb-8">
                   {goal.icon}

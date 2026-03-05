@@ -23,19 +23,20 @@ const CTA = () => {
           <div className="space-y-6">
             <div>
               <p className="text-sm font-semibold text-foreground uppercase tracking-wider">Phone</p>
-              <a href="tel:+919886285028" className="text-muted-foreground hover:text-primary transition-colors">
+              <a href="tel:+919886285028" className="text-muted-foreground hover:text-accent transition-colors">
                 +91 9886285028
               </a>
             </div>
             <div>
               <p className="text-sm font-semibold text-foreground uppercase tracking-wider">Email</p>
-              <a href="mailto:revenuxe@gmail.com" className="text-muted-foreground hover:text-primary transition-colors">
+              <a href="mailto:revenuxe@gmail.com" className="text-muted-foreground hover:text-accent transition-colors">
                 revenuxe@gmail.com
               </a>
             </div>
             <Button 
               size="lg" 
-              className="bg-accent hover:bg-accent/90 text-accent-foreground rounded-full px-8 py-6 text-base font-semibold"
+              className="rounded-full px-8 py-6 text-base font-semibold text-primary-foreground"
+              style={{ background: "var(--brand-gradient)" }}
               onClick={() => setDialogOpen(true)}
             >
               Get Started Now
