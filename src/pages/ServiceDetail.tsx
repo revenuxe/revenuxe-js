@@ -286,16 +286,7 @@ const ServiceDetail = () => {
         ogImage="https://revenuxe.com/og-service.png"
       />
       <Navigation />
-      <PageHero title={service.title} subtitle={service.subtitle}>
-        <Button
-          size="lg"
-          className="mt-4 rounded-full px-8 py-5 text-sm md:text-base font-semibold text-primary-foreground"
-          style={{ background: "var(--brand-gradient)" }}
-          onClick={() => setDialogOpen(true)}
-        >
-          Get Started <ArrowRight className="ml-2 h-4 w-4" />
-        </Button>
-      </PageHero>
+      <PageHero title={service.title} subtitle={service.subtitle} />
 
       <main>
         {/* Overview */}
