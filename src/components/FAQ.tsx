@@ -18,13 +18,13 @@ interface FAQProps {
 
 const FAQ = ({ items, title = "Frequently Asked Questions", description }: FAQProps) => {
   return (
-    <section className="py-20 bg-muted/30">
+    <section className="py-14 md:py-20 bg-muted/30">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">{title}</h2>
+          <div className="text-center mb-8 md:mb-12">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-bold mb-3">{title}</h2>
             {description && (
-              <p className="text-lg text-muted-foreground">{description}</p>
+              <p className="text-sm md:text-base text-muted-foreground">{description}</p>
             )}
           </div>
 
@@ -35,10 +35,10 @@ const FAQ = ({ items, title = "Frequently Asked Questions", description }: FAQPr
                 value={`item-${index}`}
                 className="bg-card border border-border rounded-lg px-6 shadow-sm hover:shadow-md transition-shadow"
               >
-                <AccordionTrigger className="text-left text-lg font-semibold hover:text-primary py-6">
+                <AccordionTrigger className="text-left text-sm md:text-base font-semibold hover:text-primary py-4 md:py-6">
                   {item.question}
                 </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground leading-relaxed pb-6">
+                <AccordionContent className="text-muted-foreground text-sm leading-relaxed pb-4 md:pb-6">
                   {item.answer}
                 </AccordionContent>
               </AccordionItem>

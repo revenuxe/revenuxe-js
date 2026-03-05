@@ -37,12 +37,11 @@ const WhyChooseUs = ({ cityName }: { cityName?: string }) => {
   ];
 
   return (
-    <section className="py-20 md:py-28 bg-[hsl(var(--section-dark))]">
+    <section className="py-14 md:py-24 bg-[hsl(var(--section-dark))]">
       <div className="container mx-auto px-4">
         <div className="max-w-5xl mx-auto">
-          {/* Header */}
-          <div className="text-center mb-14">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif text-white leading-tight">
+          <div className="text-center mb-10 md:mb-14">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-display text-white leading-tight">
               <span className="italic font-normal">Achieve</span>{" "}
               <span className="font-bold">Your Ambitions</span>
               <br />
@@ -50,17 +49,16 @@ const WhyChooseUs = ({ cityName }: { cityName?: string }) => {
             </h2>
           </div>
 
-          {/* Goals Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-5">
             {goals.map((goal, index) => (
               <div
                 key={index}
-                className="bg-[hsl(var(--section-dark-card))] rounded-2xl p-8 flex flex-col justify-between min-h-[220px] hover:bg-[hsl(220,45%,26%)] transition-colors"
+                className="bg-[hsl(var(--section-dark-card))] rounded-2xl p-6 md:p-8 flex flex-col justify-between min-h-[180px] md:min-h-[220px] hover:bg-[hsl(220,45%,26%)] transition-colors"
               >
-                <div className="mb-8">
+                <div className="mb-6 md:mb-8">
                   {goal.icon}
                 </div>
-                <p className="text-white text-lg font-medium leading-snug">
+                <p className="text-white text-base md:text-lg font-medium leading-snug">
                   {goal.title}
                 </p>
               </div>

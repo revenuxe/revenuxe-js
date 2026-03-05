@@ -7,39 +7,33 @@ const Stats = () => {
   ];
 
   return (
-    <section className="py-20 md:py-28 bg-background">
+    <section className="py-14 md:py-24 bg-background">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
-          {/* Two column layout */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16 items-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 mb-12 items-center">
             <div className="animate-fade-in">
-              <p className="text-lg md:text-xl text-foreground leading-relaxed">
+              <p className="text-base md:text-lg text-foreground leading-relaxed">
                 Together, we make businesses thrive with expert digital marketing strategies
               </p>
-              <p className="text-muted-foreground mt-4 text-sm md:text-base leading-relaxed">
+              <p className="text-muted-foreground mt-3 text-sm leading-relaxed">
                 We unlock growth potential with AI-powered strategies, delivering exceptional results and ensuring client satisfaction in every project.
               </p>
             </div>
             <div className="animate-fade-in" style={{ animationDelay: "0.2s" }}>
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif leading-tight">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-display leading-tight">
                 <span className="font-bold">We Make Businesses</span>{" "}
                 <span className="font-normal">Thrive With Expert Digital Marketing Strategies.</span>
               </h2>
             </div>
           </div>
           
-          {/* Stats Grid */}
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
             {stats.map((stat, index) => (
-              <div
-                key={index}
-                className="animate-fade-in"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <p className={`text-4xl md:text-5xl lg:text-6xl font-serif font-bold ${stat.highlight ? "text-accent" : "text-foreground"}`}>
+              <div key={index} className="animate-fade-in" style={{ animationDelay: `${index * 0.1}s` }}>
+                <p className={`text-3xl sm:text-4xl md:text-5xl font-display font-bold ${stat.highlight ? "text-accent" : "text-foreground"}`}>
                   {stat.value}
                 </p>
-                <p className="text-sm md:text-base text-muted-foreground mt-2">
+                <p className="text-xs md:text-sm text-muted-foreground mt-2">
                   {stat.label}
                 </p>
               </div>

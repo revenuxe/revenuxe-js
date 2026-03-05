@@ -8,8 +8,8 @@ const Footer = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           {/* Contact Form Section */}
-          <div className="mb-12 p-8 bg-card rounded-2xl border border-border">
-            <h3 className="text-2xl font-serif font-bold mb-6 text-center">Get In Touch</h3>
+          <div className="mb-10 md:mb-12 p-5 md:p-8 bg-card rounded-2xl border border-border">
+            <h3 className="text-xl md:text-2xl font-display font-bold mb-4 md:mb-6 text-center">Get In Touch</h3>
             <div className="max-w-2xl mx-auto">
               <ContactForm variant="compact" />
             </div>

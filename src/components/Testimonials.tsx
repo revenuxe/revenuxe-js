@@ -34,57 +34,45 @@ const Testimonials = () => {
   const active = testimonials[activeIndex];
 
   return (
-    <section className="py-24 bg-background">
+    <section className="py-16 md:py-24 bg-background">
       <div className="container mx-auto px-4">
-        {/* Header */}
-        <div className="text-center mb-14">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif leading-tight">
+        <div className="text-center mb-10 md:mb-14">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display leading-tight">
             <span className="italic font-bold">Customer</span>{" "}
             <span className="font-normal">Experiences Real</span>
-            <br />
-            <span className="font-normal">Success Stories with Revenuxe</span>
+            <br className="hidden sm:block" />
+            <span className="font-normal"> Success Stories with Revenuxe</span>
           </h2>
         </div>
 
-        {/* Testimonial with background image */}
-        <div className="relative max-w-6xl mx-auto rounded-3xl overflow-hidden">
+        <div className="relative max-w-6xl mx-auto rounded-2xl md:rounded-3xl overflow-hidden">
           <img 
             src={active.bgImage}
             alt="Team collaboration"
-            className="w-full h-[400px] md:h-[500px] object-cover"
+            className="w-full h-[320px] sm:h-[400px] md:h-[500px] object-cover"
           />
           
-          {/* Floating testimonial card */}
-          <div className="absolute inset-0 flex items-center justify-center p-4">
-            <div className="bg-card/95 backdrop-blur-sm rounded-2xl p-8 max-w-md shadow-2xl">
-              {/* Quote icon + stars */}
-              <div className="flex items-center justify-between mb-4">
+          <div className="absolute inset-0 flex items-center justify-center p-3 md:p-4">
+            <div className="bg-card/95 backdrop-blur-sm rounded-xl md:rounded-2xl p-5 md:p-8 max-w-sm md:max-w-md shadow-2xl">
+              <div className="flex items-center justify-between mb-3 md:mb-4">
                 <div className="flex gap-0.5">
-                  <Quote className="w-8 h-8 text-accent fill-accent" />
-                  <Quote className="w-8 h-8 text-accent fill-accent" />
+                  <Quote className="w-6 h-6 md:w-8 md:h-8 text-accent fill-accent" />
+                  <Quote className="w-6 h-6 md:w-8 md:h-8 text-accent fill-accent" />
                 </div>
                 <div className="flex gap-0.5">
                   {[...Array(active.rating)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 fill-amber-400 text-amber-400" />
+                    <Star key={i} className="w-4 h-4 md:w-5 md:h-5 fill-amber-400 text-amber-400" />
                   ))}
                 </div>
               </div>
-
-              {/* Quote text */}
-              <p className="text-foreground text-lg leading-relaxed mb-6">
+              <p className="text-foreground text-sm md:text-base leading-relaxed mb-4 md:mb-6">
                 "{active.content}"
               </p>
-
-              {/* Author */}
-              <div className="flex items-center gap-4">
-                <img
-                  src={active.image}
-                  alt={active.name}
-                  className="w-12 h-12 rounded-full object-cover"
-                />
+              <div className="flex items-center gap-3 md:gap-4">
+                <img src={active.image} alt={active.name} className="w-10 h-10 md:w-12 md:h-12 rounded-full object-cover" />
                 <div>
-                  <h4 className="font-bold text-primary text-sm">{active.name}</h4>
-                  <p className="text-xs text-muted-foreground">{active.position}</p>
+                  <h4 className="font-bold text-primary text-xs md:text-sm">{active.name}</h4>
+                  <p className="text-[11px] md:text-xs text-muted-foreground">{active.position}</p>
                 </div>
               </div>
             </div>
