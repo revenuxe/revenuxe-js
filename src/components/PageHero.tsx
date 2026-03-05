@@ -7,6 +7,7 @@ interface PageHeroProps {
   title: string;
   highlight?: string;
   subtitle?: string;
+  hideCTA?: boolean;
   children?: React.ReactNode;
 }
 
