@@ -202,6 +202,8 @@ const CityCountryPage = () => {
   const city = cityData[citySlug];
   const [dialogOpen, setDialogOpen] = useState(false);
 
+  const countrySlug = pathParts[pathParts.length - 2];
+
   if (!city) {
     return (
       <div className="min-h-screen bg-background text-foreground">
@@ -221,6 +223,16 @@ const CityCountryPage = () => {
         title={`AI-Powered Digital Marketing Agency in ${city.name}, ${city.country} | Revenuxe`}
         description={city.metaDescription}
         keywords={city.keywords}
+        canonicalUrl={`https://revenuxe.com/country/${countrySlug}/${citySlug}`}
+        schemaData={{
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://revenuxe.com" },
+            { "@type": "ListItem", "position": 2, "name": city.country, "item": `https://revenuxe.com/country/${countrySlug}` },
+            { "@type": "ListItem", "position": 3, "name": city.name, "item": `https://revenuxe.com/country/${countrySlug}/${citySlug}` }
+          ]
+        }}
       />
       <Navigation />
       

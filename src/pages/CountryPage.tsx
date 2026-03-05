@@ -194,6 +194,15 @@ const CountryPage = () => {
         title={`AI-Powered Digital Marketing Agency in ${country.name} | Revenuxe`}
         description={country.metaDescription}
         keywords={country.keywords}
+        canonicalUrl={`https://revenuxe.com/country/${countrySlug}`}
+        schemaData={{
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://revenuxe.com" },
+            { "@type": "ListItem", "position": 2, "name": country.name, "item": `https://revenuxe.com/country/${countrySlug}` }
+          ]
+        }}
       />
       <Navigation />
       

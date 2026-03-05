@@ -14,7 +14,7 @@ import { homepageFAQs } from "@/data/faqData";
 const Index = () => {
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <SEO />
+      <SEO canonicalUrl="https://revenuxe.com" />
       <Navigation />
       <Hero />
       <Stats />
