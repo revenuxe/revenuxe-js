@@ -11,7 +11,7 @@ interface PageHeroProps {
   children?: React.ReactNode;
 }
 
-const PageHero = ({ title, highlight, subtitle, children }: PageHeroProps) => {
+const PageHero = ({ title, highlight, subtitle, hideCTA, children }: PageHeroProps) => {
   const [dialogOpen, setDialogOpen] = useState(false);
 
   return (
