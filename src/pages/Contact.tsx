@@ -20,6 +20,7 @@ const Contact = () => {
         title="Get In Touch"
         highlight="With Us"
         subtitle="Ready to transform your digital presence? Let's discuss your project and create something amazing together."
+        hideCTA
       />
 
       <main>
