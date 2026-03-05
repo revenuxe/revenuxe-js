@@ -7,12 +7,11 @@ const CTA = () => {
   const [dialogOpen, setDialogOpen] = useState(false);
   
   return (
-    <section className="py-20 md:py-28 bg-secondary">
+    <section className="py-14 md:py-24 bg-secondary">
       <div className="container mx-auto px-4">
-        <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-10">
-          {/* Left: heading */}
+        <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-8 md:gap-10">
           <div className="max-w-xl">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif leading-tight">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-display leading-tight">
               <span className="italic font-normal">Find</span>{" "}
               <span className="font-bold">your perfect strategy today.</span>{" "}
               <span className="font-normal">Contact us for expert marketing guidance!</span>

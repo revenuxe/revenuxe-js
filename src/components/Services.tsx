@@ -80,48 +80,41 @@ const Services = ({ cityName }: { cityName?: string }) => {
   };
 
   return (
-    <section id="services" className="py-24 bg-background">
+    <section id="services" className="py-16 md:py-24 bg-background">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           {/* Header */}
-          <div className="flex items-start justify-between mb-16">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif leading-tight max-w-2xl">
+          <div className="flex items-start justify-between mb-10 md:mb-16">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display leading-tight max-w-2xl">
               <span className="font-bold italic">Expert</span>{" "}
               <span className="font-normal">Digital Marketing Solutions{cityName ? ` in ${cityName}` : ""} for Maximum Returns</span>
             </h2>
             <a
               href="/contact"
-              className="hidden md:flex items-center justify-center w-14 h-14 rounded-full border-2 border-foreground text-foreground hover:bg-accent hover:text-accent-foreground hover:border-accent transition-all flex-shrink-0"
+              className="hidden md:flex items-center justify-center w-12 h-12 rounded-full border-2 border-foreground text-foreground hover:bg-accent hover:text-accent-foreground hover:border-accent transition-all flex-shrink-0"
             >
               <ArrowUpRight className="w-5 h-5" />
             </a>
           </div>
 
           {/* Services Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
             {services.map((service, index) => (
               <div
                 key={index}
-                className={`group relative rounded-2xl border p-7 transition-all duration-300 hover:shadow-xl hover:scale-[1.02] ${getCardClasses(service.variant)}`}
+                className={`group relative rounded-2xl border p-5 md:p-7 transition-all duration-300 hover:shadow-xl hover:scale-[1.02] ${getCardClasses(service.variant)}`}
                 style={service.variant === "brand" ? { background: "var(--brand-gradient)" } : undefined}
               >
-                {/* Icon */}
-                <div className={`inline-flex items-center justify-center w-14 h-14 rounded-full mb-6 ${getIconClasses(service.variant)}`}>
+                <div className={`inline-flex items-center justify-center w-11 h-11 md:w-14 md:h-14 rounded-full mb-4 md:mb-6 ${getIconClasses(service.variant)}`}>
                   {service.icon}
                 </div>
-
-                {/* Title */}
-                <h3 className="text-xl font-serif font-bold mb-3">
+                <h3 className="text-lg md:text-xl font-display font-bold mb-2 md:mb-3">
                   {service.title}
                 </h3>
-
-                {/* Description */}
-                <p className={`text-sm leading-relaxed mb-6 ${getTextClasses(service.variant)}`}>
+                <p className={`text-xs md:text-sm leading-relaxed mb-4 md:mb-6 ${getTextClasses(service.variant)}`}>
                   {service.description}
                 </p>
-
-                {/* Learn More link */}
-                <button className={`text-sm font-medium border rounded-full px-5 py-2 transition-colors ${
+                <button className={`text-xs md:text-sm font-medium border rounded-full px-4 md:px-5 py-1.5 md:py-2 transition-colors ${
                   service.variant === "brand"
                     ? "border-white/30 text-primary-foreground hover:bg-white/10"
                     : "border-foreground/20 text-foreground hover:bg-primary hover:text-primary-foreground hover:border-primary"
