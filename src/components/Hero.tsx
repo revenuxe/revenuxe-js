@@ -7,9 +7,8 @@ const Hero = () => {
   const [dialogOpen, setDialogOpen] = useState(false);
   
   return (
-    <section className="relative min-h-screen flex flex-col overflow-hidden">
-      {/* Navy-to-teal gradient hero background */}
-      <div className="relative flex-1 flex items-end bg-secondary pt-20 pb-16 md:pb-0 md:items-center">
+    <section className="relative flex flex-col overflow-hidden">
+      <div className="relative flex items-end bg-secondary pt-24 pb-20 md:pt-32 md:pb-24 lg:pt-40 lg:pb-32">
         {/* Hexagonal pattern overlay */}
         <div className="absolute inset-0 opacity-[0.07]">
           <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
