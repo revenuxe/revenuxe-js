@@ -22,6 +22,7 @@ import CityPage from "./pages/CityPage";
 import CountryPage from "./pages/CountryPage";
 import CityCountryPage from "./pages/CityCountryPage";
 import ROICalculatorPage from "./pages/ROICalculatorPage";
+import BasicPackage from "./pages/BasicPackage";
 import ScrollToTop from "./components/ScrollToTop";
 
 const queryClient = new QueryClient();
@@ -48,6 +49,7 @@ const App = () => (
           <Route path="/privacy" element={<PrivacyPolicy />} />
           <Route path="/about" element={<AboutUs />} />
           <Route path="/roi-calculator" element={<ROICalculatorPage />} />
+          <Route path="/basic-package" element={<BasicPackage />} />
           <Route path="/admin/login" element={<AdminLogin />} />
           <Route path="/admin/dashboard" element={<AdminDashboard />} />
           <Route path="/bangalore" element={<CityPage />} />
