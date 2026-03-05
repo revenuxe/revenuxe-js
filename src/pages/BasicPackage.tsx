@@ -161,12 +161,6 @@ const BasicPackage = () => {
 
           <div className="relative z-10 container mx-auto px-4 py-10 md:py-24">
             <div className="max-w-5xl">
-              {/* Price badge */}
-              <div className="inline-flex items-center gap-2 bg-accent/15 border border-accent/30 rounded-full px-5 py-2 mb-6">
-                <Star className="w-4 h-4 text-accent" />
-                <span className="text-sm font-semibold text-accent">Limited Time Offer</span>
-              </div>
-
               <h1 className="font-display leading-[1.05] tracking-[-0.03em]">
                 <span className="block text-foreground font-bold text-[2.25rem] sm:text-5xl md:text-6xl lg:text-[5.5rem]">
                   Go Live for Just
@@ -417,7 +411,7 @@ const BasicPackage = () => {
       </section>
 
       <Footer />
-      <GetStartedDialog open={dialogOpen} onOpenChange={setDialogOpen} />
+      <GetStartedDialog open={dialogOpen} onOpenChange={setDialogOpen} defaultService="Basic Package - Website + Google Ads (₹24,999)" />
     </div>
   );
 };

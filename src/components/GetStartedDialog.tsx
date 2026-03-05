@@ -12,9 +12,10 @@ import { Button } from "./ui/button";
 interface GetStartedDialogProps {
   open: boolean;
   onOpenChange: (open: boolean) => void;
+  defaultService?: string;
 }
 
-export const GetStartedDialog = ({ open, onOpenChange }: GetStartedDialogProps) => {
+export const GetStartedDialog = ({ open, onOpenChange, defaultService }: GetStartedDialogProps) => {
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="max-w-md mx-4 rounded-2xl p-5 sm:max-w-lg">
@@ -34,7 +35,7 @@ export const GetStartedDialog = ({ open, onOpenChange }: GetStartedDialogProps) 
           </div>
         </DialogHeader>
         <div className="mt-2">
-          <ContactForm variant="compact" onSuccess={() => onOpenChange(false)} />
+          <ContactForm variant="compact" defaultService={defaultService} onSuccess={() => onOpenChange(false)} />
         </div>
       </DialogContent>
     </Dialog>

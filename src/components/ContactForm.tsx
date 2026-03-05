@@ -9,10 +9,11 @@ import { Loader2 } from "lucide-react";
 
 interface ContactFormProps {
   variant?: "default" | "compact";
+  defaultService?: string;
   onSuccess?: () => void;
 }
 
-export const ContactForm = ({ variant = "default", onSuccess }: ContactFormProps) => {
+export const ContactForm = ({ variant = "default", defaultService, onSuccess }: ContactFormProps) => {
   const { toast } = useToast();
   const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
@@ -20,7 +21,7 @@ export const ContactForm = ({ variant = "default", onSuccess }: ContactFormProps
     phone: "",
     email: "",
     city: "",
-    service: "",
+    service: defaultService || "",
     message: "",
   });
 
