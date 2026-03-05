@@ -22,7 +22,15 @@ export const SEO = ({
   noindex = false,
 }: SEOProps) => {
   const fullTitle = title.includes("Revenuxe") ? title : `${title} | Revenuxe`;
-  const currentUrl = canonicalUrl || (typeof window !== 'undefined' ? window.location.href : 'https://revenuxe.com');
+  
+  // Always compute a clean canonical URL (strip query params, hash, trailing slashes)
+  const computeCanonical = () => {
+    if (canonicalUrl) return canonicalUrl;
+    if (typeof window === 'undefined') return 'https://revenuxe.com';
+    const path = window.location.pathname.replace(/\/+$/, '') || '/';
+    return `https://revenuxe.com${path === '/' ? '' : path}`;
+  };
+  const currentUrl = computeCanonical();
 
   const organizationSchema = {
     "@context": "https://schema.org",
@@ -152,7 +160,7 @@ export const SEO = ({
       <meta name="robots" content={noindex ? "noindex, nofollow" : "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"} />
       <meta name="googlebot" content={noindex ? "noindex, nofollow" : "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"} />
       
-      {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
+      <link rel="canonical" href={currentUrl} />
       
       {/* Open Graph */}
       <meta property="og:title" content={fullTitle} />

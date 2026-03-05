@@ -72,36 +72,30 @@ const Footer = () => {
             <div>
               <h4 className="text-lg font-semibold mb-4 text-foreground">We Serve in India</h4>
               <ul className="space-y-2">
-                <li>
-                  <a href="/bangalore" className="text-muted-foreground hover:text-primary transition-colors">
-                    Bangalore
-                  </a>
-                </li>
-                <li>
-                  <a href="/hyderabad" className="text-muted-foreground hover:text-primary transition-colors">
-                    Hyderabad
-                  </a>
-                </li>
-                <li>
-                  <a href="/chennai" className="text-muted-foreground hover:text-primary transition-colors">
-                    Chennai
-                  </a>
-                </li>
-                <li>
-                  <a href="/mumbai" className="text-muted-foreground hover:text-primary transition-colors">
-                    Mumbai
-                  </a>
-                </li>
-                <li>
-                  <a href="/pune" className="text-muted-foreground hover:text-primary transition-colors">
-                    Pune
-                  </a>
-                </li>
-                <li>
-                  <a href="/delhi" className="text-muted-foreground hover:text-primary transition-colors">
-                    Delhi
-                  </a>
-                </li>
+                {[
+                  { name: "Bangalore", slug: "bangalore" },
+                  { name: "Hyderabad", slug: "hyderabad" },
+                  { name: "Chennai", slug: "chennai" },
+                  { name: "Mumbai", slug: "mumbai" },
+                  { name: "Pune", slug: "pune" },
+                  { name: "Delhi", slug: "delhi" },
+                  { name: "Ahmedabad", slug: "ahmedabad" },
+                  { name: "Kolkata", slug: "kolkata" },
+                  { name: "Jaipur", slug: "jaipur" },
+                  { name: "Lucknow", slug: "lucknow" },
+                  { name: "Kochi", slug: "kochi" },
+                  { name: "Chandigarh", slug: "chandigarh" },
+                  { name: "Indore", slug: "indore" },
+                  { name: "Nagpur", slug: "nagpur" },
+                  { name: "Visakhapatnam", slug: "visakhapatnam" },
+                  { name: "Coimbatore", slug: "coimbatore" },
+                ].map((city) => (
+                  <li key={city.slug}>
+                    <a href={`/${city.slug}`} className="text-muted-foreground hover:text-primary transition-colors text-sm">
+                      {city.name}
+                    </a>
+                  </li>
+                ))}
               </ul>
             </div>
 
