@@ -22,6 +22,7 @@ import CityPage from "./pages/CityPage";
 import CountryPage from "./pages/CountryPage";
 import CityCountryPage from "./pages/CityCountryPage";
 import ROICalculatorPage from "./pages/ROICalculatorPage";
+import BasicPackage from "./pages/BasicPackage";
 import ScrollToTop from "./components/ScrollToTop";
 
 const queryClient = new QueryClient();
