@@ -36,6 +36,7 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/contact" element={<Contact />} />
+          {/* Services pages kept for existing links/SEO but removed from nav */}
           <Route path="/services" element={<Services />} />
           <Route path="/services/:slug" element={<ServiceDetail />} />
           <Route path="/sub-services/:slug" element={<SubServiceDetail />} />

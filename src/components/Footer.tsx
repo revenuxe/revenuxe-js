@@ -4,12 +4,12 @@ import logo from "@/assets/revenuxe-logo.webp";
 
 const Footer = () => {
   return (
-    <footer id="contact" className="bg-background border-t border-border py-12">
+    <footer id="contact" className="bg-secondary/60 border-t border-border py-12">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           {/* Contact Form Section */}
-          <div className="mb-12 p-8 bg-card rounded-lg border">
-            <h3 className="text-2xl font-bold mb-6 text-center">Get In Touch</h3>
+          <div className="mb-12 p-8 bg-card rounded-2xl border border-border">
+            <h3 className="text-2xl font-serif font-bold mb-6 text-center">Get In Touch</h3>
             <div className="max-w-2xl mx-auto">
               <ContactForm variant="compact" />
             </div>
@@ -21,56 +21,47 @@ const Footer = () => {
               <div className="flex items-center gap-3 mb-4">
                 <img src={logo} alt="Revenuxe Logo" className="h-10 w-auto" />
               </div>
-              <p className="text-muted-foreground">
-                AI-powered digital marketing agency specializing in growth strategies for small and medium businesses.
+              <p className="text-muted-foreground text-sm">
+                AI-powered digital marketing agency specializing in growth strategies for businesses.
               </p>
+              <div className="flex space-x-4 mt-4">
+                <a
+                  href="https://www.linkedin.com/company/revenuxe/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center w-10 h-10 rounded-full border border-border text-muted-foreground hover:text-primary hover:border-primary transition-colors"
+                  aria-label="Follow us on LinkedIn"
+                >
+                  <Linkedin className="h-4 w-4" />
+                </a>
+              </div>
             </div>
             
             {/* Quick Links */}
             <div>
-              <h4 className="text-lg font-semibold mb-4 text-foreground">Quick Links</h4>
+              <h4 className="text-sm font-semibold mb-4 text-foreground uppercase tracking-wider">Quick Links</h4>
               <ul className="space-y-2">
-                <li>
-                  <a href="#services" className="text-muted-foreground hover:text-primary transition-colors">
-                    Services
-                  </a>
-                </li>
-                <li>
-                  <a href="/about" className="text-muted-foreground hover:text-primary transition-colors">
-                    About Us
-                  </a>
-                </li>
-                <li>
-                  <a href="/case-studies" className="text-muted-foreground hover:text-primary transition-colors">
-                    Case Studies
-                  </a>
-                </li>
-                <li>
-                  <a href="/articles" className="text-muted-foreground hover:text-primary transition-colors">
-                    Articles
-                  </a>
-                </li>
-                <li>
-                  <a href="/contact" className="text-muted-foreground hover:text-primary transition-colors">
-                    Contact
-                  </a>
-                </li>
-                <li>
-                  <a href="/terms" className="text-muted-foreground hover:text-primary transition-colors">
-                    Terms & Conditions
-                  </a>
-                </li>
-                <li>
-                  <a href="/privacy" className="text-muted-foreground hover:text-primary transition-colors">
-                    Privacy Policy
-                  </a>
-                </li>
+                {[
+                  { label: "About Us", href: "/about" },
+                  { label: "Case Studies", href: "/case-studies" },
+                  { label: "Articles", href: "/articles" },
+                  { label: "Contact", href: "/contact" },
+                  { label: "ROI Calculator", href: "/roi-calculator" },
+                  { label: "Terms & Conditions", href: "/terms" },
+                  { label: "Privacy Policy", href: "/privacy" },
+                ].map((link) => (
+                  <li key={link.href}>
+                    <a href={link.href} className="text-muted-foreground hover:text-primary transition-colors text-sm">
+                      {link.label}
+                    </a>
+                  </li>
+                ))}
               </ul>
             </div>
             
             {/* We Serve in India */}
             <div>
-              <h4 className="text-lg font-semibold mb-4 text-foreground">We Serve in India</h4>
+              <h4 className="text-sm font-semibold mb-4 text-foreground uppercase tracking-wider">India</h4>
               <ul className="space-y-2">
                 {[
                   { name: "Bangalore", slug: "bangalore" },
@@ -99,51 +90,46 @@ const Footer = () => {
               </ul>
             </div>
 
-            {/* International Clients */}
+            {/* International */}
             <div>
-              <h4 className="text-lg font-semibold mb-4 text-foreground">We Serve International Clients From</h4>
+              <h4 className="text-sm font-semibold mb-4 text-foreground uppercase tracking-wider">International</h4>
               <ul className="space-y-2">
-                <li>
-                  <a href="/country/singapore" className="text-muted-foreground hover:text-primary transition-colors">
-                    Singapore
-                  </a>
-                </li>
-                <li>
-                  <a href="/country/usa" className="text-muted-foreground hover:text-primary transition-colors">
-                    USA
-                  </a>
-                </li>
-                <li>
-                  <a href="/country/uae" className="text-muted-foreground hover:text-primary transition-colors">
-                    UAE
-                  </a>
-                </li>
-                <li>
-                  <a href="/country/indonesia" className="text-muted-foreground hover:text-primary transition-colors">
-                    Indonesia
-                  </a>
-                </li>
-                <li>
-                  <a href="/country/australia" className="text-muted-foreground hover:text-primary transition-colors">
-                    Australia
-                  </a>
-                </li>
+                {[
+                  { label: "Singapore", href: "/country/singapore" },
+                  { label: "USA", href: "/country/usa" },
+                  { label: "UAE", href: "/country/uae" },
+                  { label: "Indonesia", href: "/country/indonesia" },
+                  { label: "Australia", href: "/country/australia" },
+                  { label: "UK", href: "/country/uk" },
+                  { label: "Canada", href: "/country/canada" },
+                  { label: "Germany", href: "/country/germany" },
+                  { label: "France", href: "/country/france" },
+                  { label: "Japan", href: "/country/japan" },
+                  { label: "South Korea", href: "/country/south-korea" },
+                ].map((link) => (
+                  <li key={link.href}>
+                    <a href={link.href} className="text-muted-foreground hover:text-primary transition-colors text-sm">
+                      {link.label}
+                    </a>
+                  </li>
+                ))}
               </ul>
             </div>
             
-            {/* Connect */}
+            {/* Contact */}
             <div>
-              <h4 className="text-lg font-semibold mb-4 text-foreground">Connect</h4>
-              <div className="flex space-x-4">
-                <a
-                  href="https://www.linkedin.com/company/revenuxe/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-muted-foreground hover:text-primary transition-colors"
-                  aria-label="Follow us on LinkedIn"
-                >
-                  <Linkedin className="h-6 w-6" />
-                </a>
+              <h4 className="text-sm font-semibold mb-4 text-foreground uppercase tracking-wider">Contact</h4>
+              <div className="space-y-3 text-sm text-muted-foreground">
+                <p>
+                  <a href="tel:+919886285028" className="hover:text-primary transition-colors">
+                    +91 9886285028
+                  </a>
+                </p>
+                <p>
+                  <a href="mailto:revenuxe@gmail.com" className="hover:text-primary transition-colors">
+                    revenuxe@gmail.com
+                  </a>
+                </p>
               </div>
             </div>
           </div>
