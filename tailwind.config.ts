@@ -51,10 +51,6 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        lime: {
-          DEFAULT: "hsl(var(--lime))",
-          light: "hsl(var(--lime-light))",
-        },
         "section-dark": {
           DEFAULT: "hsl(var(--section-dark))",
           card: "hsl(var(--section-dark-card))",

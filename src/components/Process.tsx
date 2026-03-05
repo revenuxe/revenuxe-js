@@ -34,7 +34,7 @@ const Process = ({ cityName }: { cityName?: string }) => {
         <div className="text-center mb-16 space-y-4">
           <h2 className="text-4xl md:text-5xl font-serif">
             <span className="font-normal">How We</span>{" "}
-            <span className="font-bold italic">Work</span>
+            <span className="font-bold italic text-accent">Work</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             A proven methodology that transforms ideas into measurable success
@@ -48,12 +48,14 @@ const Process = ({ cityName }: { cityName?: string }) => {
               className="relative group animate-fade-in"
               style={{ animationDelay: `${index * 0.15}s` }}
             >
-              <div className="bg-card border border-border rounded-2xl p-7 hover:border-primary/50 transition-all duration-300 hover:shadow-lg h-full">
-                {/* Number */}
+              <div className="bg-card border border-border rounded-2xl p-7 hover:border-accent/50 transition-all duration-300 hover:shadow-lg h-full">
                 <div className="text-accent font-bold text-sm mb-6">{step.number}</div>
                 
-                <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-secondary text-primary mb-5 group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
-                  {step.icon}
+                <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-secondary text-primary mb-5 group-hover:text-primary-foreground transition-colors"
+                  style={{ transition: "all 0.3s" }}
+                >
+                  <div className="group-hover:hidden">{step.icon}</div>
+                  <div className="hidden group-hover:block text-primary-foreground">{step.icon}</div>
                 </div>
                 
                 <h3 className="text-xl font-serif font-bold text-foreground mb-3">

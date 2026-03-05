@@ -25,7 +25,6 @@ const Navigation = () => {
       <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-16 md:h-20">
-            {/* Logo */}
             <a href="/" className="flex items-center gap-3">
               <img src={logo} alt="Revenuxe Logo" className="h-7 md:h-9 w-auto" />
             </a>
@@ -49,16 +48,16 @@ const Navigation = () => {
               </div>
             </div>
 
-            {/* Desktop CTA */}
+            {/* Desktop CTA - brand gradient circle */}
             <a
               href="/contact"
-              className="hidden md:flex items-center justify-center w-12 h-12 rounded-full bg-accent text-accent-foreground hover:scale-105 transition-transform"
+              className="hidden md:flex items-center justify-center w-12 h-12 rounded-full text-primary-foreground hover:scale-105 transition-transform"
+              style={{ background: "var(--brand-gradient)" }}
               aria-label="Contact Us"
             >
               <ArrowUpRight className="w-5 h-5" />
             </a>
 
-            {/* Mobile Hamburger */}
             <button
               onClick={() => setIsOpen(true)}
               className="md:hidden relative p-2 rounded-lg text-foreground hover:bg-muted transition-colors"
@@ -70,7 +69,7 @@ const Navigation = () => {
         </div>
       </nav>
 
-      {/* Mobile Fullscreen Overlay Menu */}
+      {/* Mobile menu */}
       {isOpen && (
         <div className="fixed inset-0 z-[100] md:hidden">
           <div
@@ -91,7 +90,7 @@ const Navigation = () => {
 
             <div className="flex-1 overflow-y-auto py-4 px-4">
               <div className="space-y-1">
-                {navItems.map((item, index) => (
+                {navItems.map((item) => (
                   <a
                     key={item.label}
                     href={item.href}
@@ -114,7 +113,8 @@ const Navigation = () => {
                 <a
                   href="/contact"
                   onClick={() => setIsOpen(false)}
-                  className="flex items-center justify-center gap-2 w-full py-4 rounded-full bg-accent text-accent-foreground font-semibold text-base transition-all duration-200 hover:opacity-90 active:scale-95"
+                  className="flex items-center justify-center gap-2 w-full py-4 rounded-full text-primary-foreground font-semibold text-base transition-all duration-200 hover:opacity-90 active:scale-95"
+                  style={{ background: "var(--brand-gradient)" }}
                 >
                   Get Free Strategy Call
                   <ArrowRight className="h-4 w-4" />
@@ -126,13 +126,13 @@ const Navigation = () => {
               <p className="text-[11px] uppercase tracking-widest text-muted-foreground font-semibold mb-2">
                 Reach us directly
               </p>
-              <a href="tel:+919886285028" className="flex items-center gap-3 text-sm text-foreground hover:text-primary transition-colors">
+              <a href="tel:+919886285028" className="flex items-center gap-3 text-sm text-foreground hover:text-accent transition-colors">
                 <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-primary/10">
                   <Phone className="h-3.5 w-3.5 text-primary" />
                 </div>
                 +91 9886285028
               </a>
-              <a href="mailto:revenuxe@gmail.com" className="flex items-center gap-3 text-sm text-foreground hover:text-primary transition-colors">
+              <a href="mailto:revenuxe@gmail.com" className="flex items-center gap-3 text-sm text-foreground hover:text-accent transition-colors">
                 <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-accent/10">
                   <Mail className="h-3.5 w-3.5 text-accent" />
                 </div>

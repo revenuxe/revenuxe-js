@@ -8,15 +8,15 @@ const Hero = () => {
   
   return (
     <section className="relative min-h-screen flex flex-col overflow-hidden">
-      {/* Lime/Green curved hero background */}
+      {/* Navy-to-teal gradient hero background */}
       <div className="relative flex-1 flex items-center bg-secondary pt-20">
         {/* Hexagonal pattern overlay */}
-        <div className="absolute inset-0 opacity-[0.08]">
+        <div className="absolute inset-0 opacity-[0.07]">
           <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
             <defs>
               <pattern id="hex" width="56" height="100" patternUnits="userSpaceOnUse" patternTransform="scale(1.5)">
-                <path d="M28 66L0 50L0 16L28 0L56 16L56 50L28 66L28 100" fill="none" stroke="hsl(155, 35%, 18%)" strokeWidth="0.5"/>
-                <path d="M28 0L28 34L0 50L0 84L28 100L56 84L56 50L28 34" fill="none" stroke="hsl(155, 35%, 18%)" strokeWidth="0.5"/>
+                <path d="M28 66L0 50L0 16L28 0L56 16L56 50L28 66L28 100" fill="none" stroke="hsl(220, 65%, 22%)" strokeWidth="0.5"/>
+                <path d="M28 0L28 34L0 50L0 84L28 100L56 84L56 50L28 34" fill="none" stroke="hsl(220, 65%, 22%)" strokeWidth="0.5"/>
               </pattern>
             </defs>
             <rect width="100%" height="100%" fill="url(#hex)"/>
@@ -27,10 +27,10 @@ const Hero = () => {
           <div className="max-w-5xl">
             <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-serif leading-[1.1] tracking-tight">
               <span className="text-foreground font-bold">Your Trusted Partner</span>{" "}
-              <span className="italic font-normal text-foreground/70">in</span>
+              <span className="italic font-normal text-accent">in</span>
               <br />
               <span className="text-foreground font-bold">Digital</span>{" "}
-              <span className="italic font-normal text-foreground/70">Marketing</span>
+              <span className="italic font-normal text-accent">Marketing</span>
             </h1>
           </div>
         </div>
@@ -38,7 +38,7 @@ const Hero = () => {
         {/* Curved bottom edge */}
         <div className="absolute bottom-0 left-0 right-0">
           <svg viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full">
-            <path d="M0 80V0C240 60 480 80 720 80C960 80 1200 60 1440 0V80H0Z" fill="hsl(45, 20%, 96%)"/>
+            <path d="M0 80V0C240 60 480 80 720 80C960 80 1200 60 1440 0V80H0Z" fill="hsl(210, 20%, 97%)"/>
           </svg>
         </div>
       </div>
@@ -55,14 +55,15 @@ const Hero = () => {
             <div className="flex gap-4">
               <Button 
                 size="lg" 
-                className="bg-accent hover:bg-accent/90 text-accent-foreground rounded-full px-8 py-6 text-base font-semibold"
+                className="rounded-full px-8 py-6 text-base font-semibold"
+                style={{ background: "var(--brand-gradient)" }}
                 onClick={() => setDialogOpen(true)}
               >
                 Get Started Now
               </Button>
               <a
                 href="/contact"
-                className="flex items-center justify-center w-14 h-14 rounded-full border-2 border-foreground text-foreground hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all"
+                className="flex items-center justify-center w-14 h-14 rounded-full border-2 border-foreground text-foreground hover:bg-accent hover:text-accent-foreground hover:border-accent transition-all"
               >
                 <ArrowUpRight className="w-5 h-5" />
               </a>

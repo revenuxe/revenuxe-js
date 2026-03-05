@@ -2,57 +2,51 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Design system: Green/Lime/Orange palette inspired by Foundria reference */
+/* Design system: Navy + Teal palette — matched to Revenuxe logo */
 
 @layer base {
   :root {
-    --background: 45 20% 96%;
-    --foreground: 155 35% 18%;
+    --background: 210 20% 97%;
+    --foreground: 220 65% 18%;
 
     --card: 0 0% 100%;
-    --card-foreground: 155 35% 18%;
+    --card-foreground: 220 65% 18%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 155 35% 18%;
+    --popover-foreground: 220 65% 18%;
 
-    --primary: 155 35% 18%;
+    --primary: 220 65% 22%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 75 45% 78%;
-    --secondary-foreground: 155 35% 18%;
+    --secondary: 195 40% 92%;
+    --secondary-foreground: 220 65% 18%;
 
-    --muted: 45 10% 90%;
-    --muted-foreground: 155 15% 45%;
+    --muted: 210 15% 91%;
+    --muted-foreground: 220 20% 46%;
 
-    --accent: 24 85% 55%;
+    --accent: 175 65% 40%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 45 10% 88%;
-    --input: 45 10% 88%;
-    --ring: 155 35% 18%;
+    --border: 210 15% 88%;
+    --input: 210 15% 88%;
+    --ring: 220 65% 22%;
 
     --radius: 0.75rem;
 
-    /* Gradient colors */
-    --gradient-start: 75 45% 78%;
-    --gradient-end: 75 50% 72%;
-    
     /* Custom design tokens */
-    --hero-gradient: linear-gradient(180deg, hsl(75, 45%, 78%) 0%, hsl(75, 50%, 72%) 100%);
-    --card-gradient: linear-gradient(180deg, hsl(0, 0%, 100%) 0%, hsl(45, 20%, 97%) 100%);
+    --hero-gradient: linear-gradient(180deg, hsl(195, 40%, 92%) 0%, hsl(195, 45%, 88%) 100%);
+    --card-gradient: linear-gradient(180deg, hsl(0, 0%, 100%) 0%, hsl(210, 20%, 97%) 100%);
     
-    /* Brand gradient */
-    --brand-gradient: linear-gradient(135deg, hsl(155, 35%, 22%) 0%, hsl(155, 30%, 28%) 100%);
-    --brand-gradient-hover: linear-gradient(135deg, hsl(155, 35%, 16%) 0%, hsl(155, 30%, 22%) 100%);
+    /* Brand gradient (matches logo) */
+    --brand-gradient: linear-gradient(135deg, hsl(220, 70%, 25%) 0%, hsl(175, 65%, 42%) 100%);
+    --brand-gradient-hover: linear-gradient(135deg, hsl(220, 70%, 20%) 0%, hsl(175, 65%, 36%) 100%);
 
     /* Section backgrounds */
-    --section-dark: 155 30% 18%;
-    --section-dark-card: 155 25% 24%;
-    --lime: 75 45% 78%;
-    --lime-light: 75 40% 88%;
+    --section-dark: 220 55% 16%;
+    --section-dark-card: 220 45% 22%;
   }
 }
 

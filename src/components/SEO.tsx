@@ -185,7 +185,7 @@ export const SEO = ({
       <meta httpEquiv="content-language" content="en-IN" />
       
       {/* Mobile */}
-      <meta name="theme-color" content="#2d4a3e" />
+      <meta name="theme-color" content="#1e3a5f" />
       <meta name="mobile-web-app-capable" content="yes" />
       
       {/* Structured Data */}

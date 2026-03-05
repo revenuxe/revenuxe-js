@@ -1,9 +1,9 @@
 const Stats = () => {
   const stats = [
-    { value: "30+", label: "Successful Projects", color: "text-foreground" },
-    { value: "10+", label: "Happy Clients", color: "text-foreground" },
-    { value: "3+", label: "Years of Innovation", color: "text-accent" },
-    { value: "5", label: "Active Partnerships", color: "text-accent" },
+    { value: "30+", label: "Successful Projects", highlight: false },
+    { value: "10+", label: "Happy Clients", highlight: false },
+    { value: "3+", label: "Years of Innovation", highlight: true },
+    { value: "5", label: "Active Partnerships", highlight: true },
   ];
 
   return (
@@ -36,7 +36,7 @@ const Stats = () => {
                 className="animate-fade-in"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <p className={`text-4xl md:text-5xl lg:text-6xl font-serif font-bold ${stat.color}`}>
+                <p className={`text-4xl md:text-5xl lg:text-6xl font-serif font-bold ${stat.highlight ? "text-accent" : "text-foreground"}`}>
                   {stat.value}
                 </p>
                 <p className="text-sm md:text-base text-muted-foreground mt-2">
