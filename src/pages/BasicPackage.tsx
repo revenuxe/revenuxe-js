@@ -417,7 +417,7 @@ const BasicPackage = () => {
       </section>
 
       <Footer />
-      <GetStartedDialog open={dialogOpen} onOpenChange={setDialogOpen} />
+      <GetStartedDialog open={dialogOpen} onOpenChange={setDialogOpen} defaultService="Basic Package - Website + Google Ads (₹24,999)" />
     </div>
   );
 };
