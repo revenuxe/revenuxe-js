@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import {
   AppWindow,
   MonitorSmartphone,
@@ -11,40 +12,46 @@ import {
 const Services = ({ cityName }: { cityName?: string }) => {
   const services = [
     {
-      icon: <AppWindow className="w-8 h-8" />,
+      icon: <AppWindow className="w-7 h-7 md:w-8 md:h-8" />,
       title: "Build Web App Using AI",
       description: "Create powerful web applications rapidly using AI-powered platforms and no-code tools.",
       variant: "default" as const,
+      slug: "ai-webapp",
     },
     {
-      icon: <MonitorSmartphone className="w-8 h-8" />,
+      icon: <MonitorSmartphone className="w-7 h-7 md:w-8 md:h-8" />,
       title: "Build Website Using AI",
       description: "Launch stunning websites in hours, not weeks, using AI website builders.",
       variant: "secondary" as const,
+      slug: "ai-website",
     },
     {
-      icon: <Target className="w-8 h-8" />,
+      icon: <Target className="w-7 h-7 md:w-8 md:h-8" />,
       title: "Performance Marketing",
       description: "Data-driven campaigns that maximize ROI through Google Ads, Meta Ads & more.",
       variant: "brand" as const,
+      slug: "performance-marketing",
     },
     {
-      icon: <Share2 className="w-8 h-8" />,
+      icon: <Share2 className="w-7 h-7 md:w-8 md:h-8" />,
       title: "Social Media Marketing",
       description: "Grow your brand presence and engagement with creative social media campaigns.",
       variant: "secondary" as const,
+      slug: "social-media",
     },
     {
-      icon: <Search className="w-8 h-8" />,
+      icon: <Search className="w-7 h-7 md:w-8 md:h-8" />,
       title: "SEO Optimization",
       description: "Boost your organic reach with smart, scalable SEO strategies that drive traffic.",
       variant: "default" as const,
+      slug: "seo",
     },
     {
-      icon: <Globe className="w-8 h-8" />,
+      icon: <Globe className="w-7 h-7 md:w-8 md:h-8" />,
       title: "Landing Pages",
       description: "High-converting landing pages optimized for campaigns with A/B testing.",
       variant: "default" as const,
+      slug: "landing-pages",
     },
   ];
 
@@ -100,9 +107,10 @@ const Services = ({ cityName }: { cityName?: string }) => {
           {/* Services Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
             {services.map((service, index) => (
-              <div
+              <Link
+                to={`/services/${service.slug}`}
                 key={index}
-                className={`group relative rounded-2xl border p-5 md:p-7 transition-all duration-300 hover:shadow-xl hover:scale-[1.02] ${getCardClasses(service.variant)}`}
+                className={`group relative rounded-2xl border p-5 md:p-7 transition-all duration-300 hover:shadow-xl hover:scale-[1.02] block ${getCardClasses(service.variant)}`}
                 style={service.variant === "brand" ? { background: "var(--brand-gradient)" } : undefined}
               >
                 <div className={`inline-flex items-center justify-center w-11 h-11 md:w-14 md:h-14 rounded-full mb-4 md:mb-6 ${getIconClasses(service.variant)}`}>
@@ -114,14 +122,14 @@ const Services = ({ cityName }: { cityName?: string }) => {
                 <p className={`text-xs md:text-sm leading-relaxed mb-4 md:mb-6 ${getTextClasses(service.variant)}`}>
                   {service.description}
                 </p>
-                <button className={`text-xs md:text-sm font-medium border rounded-full px-4 md:px-5 py-1.5 md:py-2 transition-colors ${
+                <span className={`inline-block text-xs md:text-sm font-medium border rounded-full px-4 md:px-5 py-1.5 md:py-2 transition-colors ${
                   service.variant === "brand"
-                    ? "border-white/30 text-primary-foreground hover:bg-white/10"
-                    : "border-foreground/20 text-foreground hover:bg-primary hover:text-primary-foreground hover:border-primary"
+                    ? "border-white/30 text-primary-foreground group-hover:bg-white/10"
+                    : "border-foreground/20 text-foreground group-hover:bg-primary group-hover:text-primary-foreground group-hover:border-primary"
                 }`}>
                   Learn More
-                </button>
-              </div>
+                </span>
+              </Link>
             ))}
           </div>
         </div>
