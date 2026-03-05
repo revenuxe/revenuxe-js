@@ -49,6 +49,7 @@ const App = () => (
           <Route path="/privacy" element={<PrivacyPolicy />} />
           <Route path="/about" element={<AboutUs />} />
           <Route path="/roi-calculator" element={<ROICalculatorPage />} />
+          <Route path="/basic-package" element={<BasicPackage />} />
           <Route path="/admin/login" element={<AdminLogin />} />
           <Route path="/admin/dashboard" element={<AdminDashboard />} />
           <Route path="/bangalore" element={<CityPage />} />
