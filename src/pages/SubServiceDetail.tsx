@@ -2011,11 +2011,7 @@ const SubServiceDetail = () => {
         <PageHero
           title={service.title}
           subtitle={service.subtitle}
-        >
-          <Button size="lg" className="mt-6" onClick={() => setDialogOpen(true)}>
-            Get Started <ArrowRight className="ml-2" />
-          </Button>
-        </PageHero>
+        />
 
         <section className="py-20">
           <div className="container mx-auto px-4">
