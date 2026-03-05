@@ -163,18 +163,7 @@ const CityPage = () => {
         title={`AI Marketing Agency in`}
         highlight={cityInfo.name}
         subtitle={cityInfo.tagline}
-      >
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
-          <Button size="lg" onClick={() => setDialogOpen(true)} className="px-8 py-6 text-lg font-semibold group">
-            GET STARTED
-            <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-          </Button>
-          <Button size="lg" variant="outline" onClick={() => { document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' }); }} className="px-8 py-6 text-lg font-semibold border-2 hover:bg-primary/10">
-            VIEW SERVICES
-          </Button>
-        </div>
-        <GetStartedDialog open={dialogOpen} onOpenChange={setDialogOpen} />
-      </PageHero>
+      />
 
       <Stats />
       
