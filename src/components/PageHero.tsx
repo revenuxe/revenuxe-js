@@ -7,10 +7,11 @@ interface PageHeroProps {
   title: string;
   highlight?: string;
   subtitle?: string;
+  hideCTA?: boolean;
   children?: React.ReactNode;
 }
 
-const PageHero = ({ title, highlight, subtitle, children }: PageHeroProps) => {
+const PageHero = ({ title, highlight, subtitle, hideCTA, children }: PageHeroProps) => {
   const [dialogOpen, setDialogOpen] = useState(false);
 
   return (
@@ -59,36 +60,50 @@ const PageHero = ({ title, highlight, subtitle, children }: PageHeroProps) => {
       </div>
 
       {/* Below hero - description + CTA */}
-      <div className="bg-background py-10 md:py-16">
-        <div className="container mx-auto px-4">
-          <div className="max-w-5xl flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
-            <div className="max-w-lg">
-              {subtitle && (
-                <p className="text-muted-foreground text-base md:text-lg leading-relaxed">
-                  {subtitle}
-                </p>
-              )}
-              {children}
-            </div>
-            <div className="flex gap-4 items-center">
-              <Button
-                size="lg"
-                className="rounded-full px-8 py-6 text-base font-semibold"
-                style={{ background: "var(--brand-gradient)" }}
-                onClick={() => setDialogOpen(true)}
-              >
-                Get Started Now
-              </Button>
-              <a
-                href="/contact"
-                className="flex items-center justify-center w-14 h-14 rounded-full border-2 border-foreground text-foreground hover:bg-accent hover:text-accent-foreground hover:border-accent transition-all"
-              >
-                <ArrowUpRight className="w-5 h-5" />
-              </a>
+      {!hideCTA && (
+        <div className="bg-background py-10 md:py-16">
+          <div className="container mx-auto px-4">
+            <div className="max-w-5xl flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
+              <div className="max-w-lg">
+                {subtitle && (
+                  <p className="text-muted-foreground text-base md:text-lg leading-relaxed">
+                    {subtitle}
+                  </p>
+                )}
+                {children}
+              </div>
+              <div className="flex gap-4 items-center">
+                <Button
+                  size="lg"
+                  className="rounded-full px-8 py-6 text-base font-semibold"
+                  style={{ background: "var(--brand-gradient)" }}
+                  onClick={() => setDialogOpen(true)}
+                >
+                  Get Started Now
+                </Button>
+                <a
+                  href="/contact"
+                  className="flex items-center justify-center w-14 h-14 rounded-full border-2 border-foreground text-foreground hover:bg-accent hover:text-accent-foreground hover:border-accent transition-all"
+                >
+                  <ArrowUpRight className="w-5 h-5" />
+                </a>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      )}
+      {hideCTA && subtitle && (
+        <div className="bg-background py-10 md:py-16">
+          <div className="container mx-auto px-4">
+            <div className="max-w-5xl">
+              <p className="text-muted-foreground text-base md:text-lg leading-relaxed max-w-lg">
+                {subtitle}
+              </p>
+              {children}
+            </div>
+          </div>
+        </div>
+      )}
 
       <GetStartedDialog open={dialogOpen} onOpenChange={setDialogOpen} />
     </section>
