@@ -24,8 +24,14 @@ import CityCountryPage from "./pages/CityCountryPage";
 import ROICalculatorPage from "./pages/ROICalculatorPage";
 import BasicPackage from "./pages/BasicPackage";
 import ScrollToTop from "./components/ScrollToTop";
+import { useKeepAlive } from "./hooks/useKeepAlive";
 
 const queryClient = new QueryClient();
+
+const AppContent = () => {
+  useKeepAlive();
+  return null;
+};
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
