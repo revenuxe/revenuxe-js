@@ -1,0 +1,33 @@
+import { notFound } from "next/navigation";
+import SpaCityPage from "@/spa-pages/CityPage";
+
+const validCitySlugs = new Set([
+  "bangalore",
+  "hyderabad",
+  "chennai",
+  "mumbai",
+  "pune",
+  "delhi",
+  "ahmedabad",
+  "kolkata",
+  "jaipur",
+  "lucknow",
+  "kochi",
+  "chandigarh",
+  "indore",
+  "nagpur",
+  "visakhapatnam",
+  "coimbatore",
+]);
+
+export default async function CityPage({
+  params,
+}: {
+  params: Promise<{ city: string }> | { city: string };
+}) {
+  const resolved = await params;
+  const city = (resolved.city || "").toLowerCase();
+  if (!validCitySlugs.has(city)) notFound();
+  return <SpaCityPage city={city} />;
+}
+

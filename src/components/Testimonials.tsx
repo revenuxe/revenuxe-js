@@ -1,3 +1,5 @@
+ "use client";
+
 import { Star, Quote } from "lucide-react";
 import { useState } from "react";
 

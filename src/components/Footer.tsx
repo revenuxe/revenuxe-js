@@ -19,7 +19,7 @@ const Footer = () => {
             {/* Brand */}
             <div>
               <div className="flex items-center gap-3 mb-4">
-                <img src={logo} alt="Revenuxe Logo" className="h-10 w-auto" />
+                <img src={logo.src} alt="Revenuxe Logo" className="h-10 w-auto" />
               </div>
               <p className="text-muted-foreground text-sm">
                 AI-powered digital marketing agency specializing in growth strategies for businesses.

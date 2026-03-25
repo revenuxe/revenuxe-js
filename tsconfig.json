@@ -12,6 +12,14 @@
     "skipLibCheck": true,
     "strictNullChecks": false
   },
+  "include": [
+    "next-env.d.ts",
+    "next.config.mjs",
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "app/**/*.ts",
+    "app/**/*.tsx"
+  ],
   "files": [],
   "references": [
     {

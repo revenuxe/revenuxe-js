@@ -1,11 +1,13 @@
+ "use client";
+
 import { useState } from "react";
 import { Menu, X, ArrowRight, Phone, Mail, ChevronRight, ArrowUpRight } from "lucide-react";
 import logo from "@/assets/revenuxe-logo.webp";
-import { useLocation } from "react-router-dom";
+import { usePathname } from "next/navigation";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const location = useLocation();
+  const pathname = usePathname();
 
   const navItems = [
     { label: "Home", href: "/" },
@@ -16,8 +18,8 @@ const Navigation = () => {
   ];
 
   const isActive = (href: string) => {
-    if (href === "/") return location.pathname === "/";
-    return location.pathname.startsWith(href);
+    if (href === "/") return pathname === "/";
+    return pathname?.startsWith(href);
   };
 
   return (
@@ -26,7 +28,7 @@ const Navigation = () => {
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-16 md:h-20">
             <a href="/" className="flex items-center gap-3">
-              <img src={logo} alt="Revenuxe Logo" className="h-7 md:h-9 w-auto" />
+              <img src={logo.src} alt="Revenuxe Logo" className="h-7 md:h-9 w-auto" />
             </a>
 
             {/* Desktop Navigation - pill style */}
@@ -78,7 +80,7 @@ const Navigation = () => {
           />
           <div className="absolute right-0 top-0 bottom-0 w-[85%] max-w-[380px] bg-background shadow-2xl animate-in slide-in-from-right duration-300 flex flex-col">
             <div className="flex items-center justify-between p-5 border-b border-border">
-              <img src={logo} alt="Revenuxe" className="h-7 w-auto" />
+              <img src={logo.src} alt="Revenuxe" className="h-7 w-auto" />
               <button
                 onClick={() => setIsOpen(false)}
                 className="p-2 rounded-full bg-muted hover:bg-destructive/10 hover:text-destructive transition-all"

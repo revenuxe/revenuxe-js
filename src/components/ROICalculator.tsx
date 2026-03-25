@@ -1,3 +1,5 @@
+ "use client";
+
 import { useState, useMemo } from "react";
 import { Calculator, TrendingUp, DollarSign, Users, BarChart3, Download, Globe } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";

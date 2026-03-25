@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import {
   AppWindow,
   MonitorSmartphone,
@@ -108,7 +108,7 @@ const Services = ({ cityName }: { cityName?: string }) => {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
             {services.map((service, index) => (
               <Link
-                to={`/services/${service.slug}`}
+                href={`/services/${service.slug}`}
                 key={index}
                 className={`group relative rounded-2xl border p-5 md:p-7 transition-all duration-300 hover:shadow-xl hover:scale-[1.02] block ${getCardClasses(service.variant)}`}
                 style={service.variant === "brand" ? { background: "var(--brand-gradient)" } : undefined}
