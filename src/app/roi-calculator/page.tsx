@@ -1,6 +1,6 @@
-import SPAClient from "@/app/SPAClient";
+import ROICalculatorPageView from "@/spa-pages/ROICalculatorPage";
 
 export default function ROICalculatorPage() {
-  return <SPAClient />;
+  return <ROICalculatorPageView />;
 }
 

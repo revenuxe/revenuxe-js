@@ -1,6 +1,6 @@
-import SPAClient from "@/app/SPAClient";
+import AdminDashboard from "@/spa-pages/AdminDashboard";
 
 export default function AdminDashboardPage() {
-  return <SPAClient />;
+  return <AdminDashboard />;
 }
 

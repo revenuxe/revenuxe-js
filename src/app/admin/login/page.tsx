@@ -1,6 +1,6 @@
-import SPAClient from "@/app/SPAClient";
+import AdminLogin from "@/spa-pages/AdminLogin";
 
 export default function AdminLoginPage() {
-  return <SPAClient />;
+  return <AdminLogin />;
 }
 
