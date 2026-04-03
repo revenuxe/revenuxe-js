@@ -1,4 +1,5 @@
 import CountryPage from "@/page-views/CountryPage";
+import { fetchPublishedProjects } from "@/lib/projectsServer";
 
 export default async function CountryRoutePage({
   params,
@@ -6,6 +7,7 @@ export default async function CountryRoutePage({
   params: Promise<{ country: string }> | { country: string };
 }) {
   const resolved = await params;
-  return <CountryPage country={resolved.country} />;
+  const recentProjects = await fetchPublishedProjects(8);
+  return <CountryPage country={resolved.country} recentProjects={recentProjects} />;
 }
 

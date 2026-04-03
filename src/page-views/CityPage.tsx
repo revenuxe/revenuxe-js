@@ -10,6 +10,7 @@ import CTA from "@/components/CTA";
 import { SEOHead } from "@/components/SEOHead";
 import FAQ from "@/components/FAQ";
 import { getCityFAQs } from "@/data/faqData";
+import RecentProjects from "@/components/RecentProjects";
 
 const cityData: Record<string, {
   name: string;
@@ -132,7 +133,22 @@ const cityData: Record<string, {
   }
 };
 
-const CityPage = ({ city }: { city?: string }) => {
+type RecentProjectsItem = {
+  id: string;
+  title: string;
+  info?: string | null;
+  logo_url?: string | null;
+  website_url?: string | null;
+  short_description?: string | null;
+};
+
+const CityPage = ({
+  city,
+  recentProjects,
+}: {
+  city?: string;
+  recentProjects: RecentProjectsItem[];
+}) => {
   const cityInfo = city ? cityData[city.toLowerCase()] : null;
   
   if (!cityInfo) {
@@ -156,6 +172,8 @@ const CityPage = ({ city }: { city?: string }) => {
       />
 
       <Stats />
+
+      <RecentProjects projects={recentProjects} />
       
       {/* City-Specific Services Section */}
       <section className="py-20 bg-background">

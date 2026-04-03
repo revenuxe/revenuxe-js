@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import SpaCityPage from "@/page-views/CityPage";
+import { fetchPublishedProjects } from "@/lib/projectsServer";
 
 const validCitySlugs = new Set([
   "bangalore",
@@ -28,6 +29,7 @@ export default async function CityPage({
   const resolved = await params;
   const city = (resolved.city || "").toLowerCase();
   if (!validCitySlugs.has(city)) notFound();
-  return <SpaCityPage city={city} />;
+  const recentProjects = await fetchPublishedProjects(8);
+  return <SpaCityPage city={city} recentProjects={recentProjects} />;
 }
 

@@ -10,6 +10,7 @@ import Footer from "@/components/Footer";
 import { SEOHead } from "@/components/SEOHead";
 import FAQ from "@/components/FAQ";
 import { getCountryFAQs } from "@/data/faqData";
+import RecentProjects from "@/components/RecentProjects";
 
 const countryData: Record<string, {
   name: string;
@@ -164,7 +165,22 @@ const countryData: Record<string, {
   }
 };
 
-const CountryPage = ({ country }: { country?: string }) => {
+type RecentProjectsItem = {
+  id: string;
+  title: string;
+  info?: string | null;
+  logo_url?: string | null;
+  website_url?: string | null;
+  short_description?: string | null;
+};
+
+const CountryPage = ({
+  country,
+  recentProjects,
+}: {
+  country?: string;
+  recentProjects: RecentProjectsItem[];
+}) => {
   const countrySlug = (country || "").toLowerCase();
   const countryInfo = countryData[countrySlug];
 
@@ -206,6 +222,7 @@ const CountryPage = ({ country }: { country?: string }) => {
       />
 
       <Stats />
+      <RecentProjects projects={recentProjects} />
       <Services />
       <Process />
       <WhyChooseUs cityName={countryInfo.name} />
