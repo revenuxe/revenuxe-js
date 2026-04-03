@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import SpaCityPage from "@/spa-pages/CityPage";
+import SpaCityPage from "@/page-views/CityPage";
 
 const validCitySlugs = new Set([
   "bangalore",

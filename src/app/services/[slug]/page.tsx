@@ -1,4 +1,4 @@
-import ServiceDetail from "@/spa-pages/ServiceDetail";
+import ServiceDetail from "@/page-views/ServiceDetail";
 
 export default async function ServiceDetailPage({
   params,

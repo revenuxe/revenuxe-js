@@ -1,3 +1,4 @@
+import Link from "next/link";
 import PageHero from "@/components/PageHero";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
@@ -2085,7 +2086,7 @@ const SubServiceDetail = ({ slug }: { slug?: string }) => {
             <p className="text-muted-foreground text-lg mb-8">Let's discuss how this service can help you achieve your goals.</p>
             <div className="flex gap-4 justify-center">
               <SubServiceDetailDialogLauncher />
-              <Button size="lg" variant="outline" asChild><a href="/contact">Contact Us</a></Button>
+              <Button size="lg" variant="outline" asChild><Link href="/contact">Contact Us</Link></Button>
             </div>
           </div>
         </section>

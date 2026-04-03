@@ -421,7 +421,7 @@ const ServiceDetail = ({ slug }: { slug?: string }) => {
               <div className="flex gap-3">
                 <ServiceDetailDialogLauncher />
                 <Button size="lg" variant="outline" className="rounded-full px-6 md:px-8 py-5 md:py-6 text-sm md:text-base" asChild>
-                  <a href="/contact">Contact Us</a>
+                  <Link href="/contact">Contact Us</Link>
                 </Button>
               </div>
             </div>

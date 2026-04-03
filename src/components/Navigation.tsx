@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Menu, X, ArrowRight, Phone, Mail, ChevronRight, ArrowUpRight } from "lucide-react";
 import logo from "@/assets/revenuxe-logo.webp";
+import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const Navigation = () => {
@@ -14,6 +15,7 @@ const Navigation = () => {
     { label: "About", href: "/about" },
     { label: "ROI Calculator", href: "/roi-calculator" },
     { label: "Case Studies", href: "/case-studies" },
+    { label: "Projects", href: "/projects" },
     { label: "Articles", href: "/articles" },
   ];
 
@@ -27,15 +29,15 @@ const Navigation = () => {
       <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-16 md:h-20">
-            <a href="/" className="flex items-center gap-3">
+            <Link href="/" className="flex items-center gap-3">
               <img src={logo.src} alt="Revenuxe Logo" className="h-7 md:h-9 w-auto" />
-            </a>
+            </Link>
 
             {/* Desktop Navigation - pill style */}
             <div className="hidden md:flex items-center">
               <div className="flex items-center bg-card border border-border rounded-full px-2 py-1.5 gap-1">
                 {navItems.map((item) => (
-                  <a
+                  <Link
                     key={item.label}
                     href={item.href}
                     className={`px-5 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
@@ -45,20 +47,20 @@ const Navigation = () => {
                     }`}
                   >
                     {item.label}
-                  </a>
+                  </Link>
                 ))}
               </div>
             </div>
 
             {/* Desktop CTA - brand gradient circle */}
-            <a
+            <Link
               href="/contact"
               className="hidden md:flex items-center justify-center w-12 h-12 rounded-full text-primary-foreground hover:scale-105 transition-transform"
               style={{ background: "var(--brand-gradient)" }}
               aria-label="Contact Us"
             >
               <ArrowUpRight className="w-5 h-5" />
-            </a>
+            </Link>
 
             <button
               onClick={() => setIsOpen(true)}
@@ -93,7 +95,7 @@ const Navigation = () => {
             <div className="flex-1 overflow-y-auto py-4 px-4">
               <div className="space-y-1">
                 {navItems.map((item) => (
-                  <a
+                  <Link
                     key={item.label}
                     href={item.href}
                     onClick={() => setIsOpen(false)}
@@ -107,12 +109,12 @@ const Navigation = () => {
                       {item.label}
                     </span>
                     <ChevronRight className="h-4 w-4 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all" />
-                  </a>
+                  </Link>
                 ))}
               </div>
 
               <div className="mt-6 px-1">
-                <a
+                <Link
                   href="/contact"
                   onClick={() => setIsOpen(false)}
                   className="flex items-center justify-center gap-2 w-full py-4 rounded-full text-primary-foreground font-semibold text-base transition-all duration-200 hover:opacity-90 active:scale-95"
@@ -120,7 +122,7 @@ const Navigation = () => {
                 >
                   Get Free Strategy Call
                   <ArrowRight className="h-4 w-4" />
-                </a>
+                </Link>
               </div>
             </div>
 

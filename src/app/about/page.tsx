@@ -1,4 +1,4 @@
-import AboutUs from "@/spa-pages/AboutUs";
+import AboutUs from "@/page-views/AboutUs";
 
 export default function AboutPage() {
   return <AboutUs />;

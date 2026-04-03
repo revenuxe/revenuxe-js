@@ -7,17 +7,26 @@ import Process from "@/components/Process";
 import Testimonials from "@/components/Testimonials";
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
-import { SEOHead } from "@/components/SEOHead";
 import FAQ from "@/components/FAQ";
 import { homepageFAQs } from "@/data/faqData";
+import RecentProjects from "@/components/RecentProjects";
 
-const Index = () => {
+type RecentProject = {
+  id: string;
+  title: string;
+  info?: string | null;
+  short_description?: string | null;
+  logo_url?: string | null;
+  website_url?: string | null;
+};
+
+const Index = ({ recentProjects }: { recentProjects: RecentProject[] }) => {
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <SEOHead canonicalUrl="https://revenuxe.com" />
       <Navigation />
       <Hero />
       <Stats />
+      <RecentProjects projects={recentProjects} />
       <Services />
       <WhyChooseUs />
       <Process />

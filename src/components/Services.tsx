@@ -96,12 +96,12 @@ const Services = ({ cityName }: { cityName?: string }) => {
               <span className="font-bold italic">Expert</span>{" "}
               <span className="font-normal">Digital Marketing Solutions{cityName ? ` in ${cityName}` : ""} for Maximum Returns</span>
             </h2>
-            <a
+            <Link
               href="/contact"
               className="hidden md:flex items-center justify-center w-12 h-12 rounded-full border-2 border-foreground text-foreground hover:bg-accent hover:text-accent-foreground hover:border-accent transition-all flex-shrink-0"
             >
               <ArrowUpRight className="w-5 h-5" />
-            </a>
+            </Link>
           </div>
 
           {/* Services Grid */}

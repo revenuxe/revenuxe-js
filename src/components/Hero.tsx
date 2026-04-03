@@ -1,5 +1,6 @@
  "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowUpRight } from "lucide-react";
@@ -28,14 +29,13 @@ const Hero = () => {
           <div className="max-w-5xl">
             <h1 className="font-display leading-[1.05] tracking-[-0.03em]">
               <span className="block text-foreground font-bold text-[2.25rem] sm:text-5xl md:text-6xl lg:text-[5.5rem]">
-                Your Trusted
+                AI
               </span>
               <span className="block text-foreground font-bold text-[2.25rem] sm:text-5xl md:text-6xl lg:text-[5.5rem]">
-                Partner <span className="italic font-normal text-accent">in</span>
+                Digital Marketing
               </span>
-              <span className="block text-[2.25rem] sm:text-5xl md:text-6xl lg:text-[5.5rem]">
-                <span className="text-foreground font-bold">Digital </span>
-                <span className="italic font-normal text-accent">Marketing</span>
+              <span className="block text-foreground font-bold text-[2.25rem] sm:text-5xl md:text-6xl lg:text-[5.5rem]">
+                Agency
               </span>
             </h1>
           </div>
@@ -67,12 +67,12 @@ const Hero = () => {
               >
                 Get Started Now
               </Button>
-              <a
+              <Link
                 href="/contact"
                 className="flex items-center justify-center w-14 h-14 rounded-full border-2 border-foreground text-foreground hover:bg-accent hover:text-accent-foreground hover:border-accent transition-all"
               >
                 <ArrowUpRight className="w-5 h-5" />
-              </a>
+              </Link>
             </div>
           </div>
         </div>

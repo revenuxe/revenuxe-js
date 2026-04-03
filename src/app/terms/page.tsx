@@ -1,4 +1,4 @@
-import TermsAndConditions from "@/spa-pages/TermsAndConditions";
+import TermsAndConditions from "@/page-views/TermsAndConditions";
 
 export default function TermsPage() {
   return <TermsAndConditions />;

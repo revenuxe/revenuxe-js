@@ -1,5 +1,6 @@
  "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowUpRight } from "lucide-react";
@@ -83,12 +84,12 @@ const PageHero = ({ title, highlight, subtitle, hideCTA, children }: PageHeroPro
                 >
                   Get Started Now
                 </Button>
-                <a
+                <Link
                   href="/contact"
                   className="flex items-center justify-center w-14 h-14 rounded-full border-2 border-foreground text-foreground hover:bg-accent hover:text-accent-foreground hover:border-accent transition-all"
                 >
                   <ArrowUpRight className="w-5 h-5" />
-                </a>
+                </Link>
               </div>
             </div>
           </div>

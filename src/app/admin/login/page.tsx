@@ -1,4 +1,4 @@
-import AdminLogin from "@/spa-pages/AdminLogin";
+import AdminLogin from "@/page-views/AdminLogin";
 
 export default function AdminLoginPage() {
   return <AdminLogin />;

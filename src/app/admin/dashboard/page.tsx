@@ -1,4 +1,4 @@
-import AdminDashboard from "@/spa-pages/AdminDashboard";
+import AdminDashboard from "@/page-views/AdminDashboard";
 
 export default function AdminDashboardPage() {
   return <AdminDashboard />;

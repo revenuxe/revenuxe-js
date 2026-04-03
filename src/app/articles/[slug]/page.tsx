@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import { supabaseServer } from "@/integrations/supabase/server";
-import ArticleDetail from "@/spa-pages/ArticleDetail";
+import ArticleDetail from "@/page-views/ArticleDetail";
 
 export const dynamic = "force-dynamic";
 

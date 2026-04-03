@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Linkedin } from "lucide-react";
 import { ContactForm } from "./ContactForm";
 import logo from "@/assets/revenuxe-logo.webp";
@@ -47,13 +48,14 @@ const Footer = () => {
                   { label: "Articles", href: "/articles" },
                   { label: "Contact", href: "/contact" },
                   { label: "ROI Calculator", href: "/roi-calculator" },
+                  { label: "Projects", href: "/projects" },
                   { label: "Terms & Conditions", href: "/terms" },
                   { label: "Privacy Policy", href: "/privacy" },
                 ].map((link) => (
                   <li key={link.href}>
-                    <a href={link.href} className="text-muted-foreground hover:text-primary transition-colors text-sm">
+                    <Link href={link.href} className="text-muted-foreground hover:text-primary transition-colors text-sm">
                       {link.label}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -82,9 +84,9 @@ const Footer = () => {
                   { name: "Coimbatore", slug: "coimbatore" },
                 ].map((city) => (
                   <li key={city.slug}>
-                    <a href={`/${city.slug}`} className="text-muted-foreground hover:text-primary transition-colors text-sm">
+                    <Link href={`/${city.slug}`} className="text-muted-foreground hover:text-primary transition-colors text-sm">
                       {city.name}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -108,9 +110,9 @@ const Footer = () => {
                   { label: "South Korea", href: "/country/south-korea" },
                 ].map((link) => (
                   <li key={link.href}>
-                    <a href={link.href} className="text-muted-foreground hover:text-primary transition-colors text-sm">
+                    <Link href={link.href} className="text-muted-foreground hover:text-primary transition-colors text-sm">
                       {link.label}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>

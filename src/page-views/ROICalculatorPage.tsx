@@ -1,5 +1,6 @@
  "use client";
 
+import Link from "next/link";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import PageHero from "@/components/PageHero";
@@ -135,12 +136,12 @@ const ROICalculatorPage = () => {
             <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
               Turn these projections into reality. Our team will help you achieve and exceed these results.
             </p>
-            <a
+            <Link
               href="/contact"
               className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-3 rounded-lg font-medium hover:bg-primary/90 transition"
             >
               Contact Us Today
-            </a>
+            </Link>
           </div>
         </section>
       </main>

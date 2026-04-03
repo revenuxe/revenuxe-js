@@ -10,6 +10,7 @@ import { LeadsTable } from "@/components/admin/LeadsTable";
 import { CaseStudiesManager } from "@/components/admin/CaseStudiesManager";
 import { ArticlesManager } from "@/components/admin/ArticlesManager";
 import { DashboardStats } from "@/components/admin/DashboardStats";
+import { ProjectsManager } from "@/components/admin/ProjectsManager";
 import { SEOHead } from "@/components/SEOHead";
 import { useRouter } from "next/navigation";
 
@@ -96,7 +97,7 @@ const AdminDashboard = () => {
       {/* Main Content */}
       <main className="container mx-auto px-4 py-8">
         <Tabs defaultValue="overview" className="space-y-6">
-          <TabsList className="grid w-full grid-cols-4 lg:w-auto">
+          <TabsList className="grid w-full grid-cols-5 lg:w-auto">
             <TabsTrigger value="overview" className="gap-2">
               <BarChart3 className="h-4 w-4" />
               Overview
@@ -112,6 +113,10 @@ const AdminDashboard = () => {
             <TabsTrigger value="articles" className="gap-2">
               <BookOpen className="h-4 w-4" />
               Articles
+            </TabsTrigger>
+            <TabsTrigger value="projects" className="gap-2">
+              <FileText className="h-4 w-4" />
+              Projects
             </TabsTrigger>
           </TabsList>
 
@@ -129,6 +134,10 @@ const AdminDashboard = () => {
 
           <TabsContent value="articles">
             <ArticlesManager />
+          </TabsContent>
+
+          <TabsContent value="projects">
+            <ProjectsManager />
           </TabsContent>
         </Tabs>
       </main>

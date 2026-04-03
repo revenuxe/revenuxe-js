@@ -1,4 +1,4 @@
-import Services from "@/spa-pages/Services";
+import Services from "@/page-views/Services";
 
 export default function ServicesPage() {
   return <Services />;

@@ -1,5 +1,5 @@
 import { supabaseServer } from "@/integrations/supabase/server";
-import Articles from "@/spa-pages/Articles";
+import Articles from "@/page-views/Articles";
 
 export const dynamic = "force-dynamic";
 

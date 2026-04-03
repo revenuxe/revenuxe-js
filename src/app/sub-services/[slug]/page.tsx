@@ -1,4 +1,4 @@
-import SubServiceDetail from "@/spa-pages/SubServiceDetail";
+import SubServiceDetail from "@/page-views/SubServiceDetail";
 
 export default async function SubServiceDetailPage({
   params,

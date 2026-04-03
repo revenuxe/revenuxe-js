@@ -1,4 +1,4 @@
-import Contact from "@/spa-pages/Contact";
+import Contact from "@/page-views/Contact";
 
 export default function ContactPage() {
   return <Contact />;

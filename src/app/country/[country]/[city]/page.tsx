@@ -1,4 +1,4 @@
-import CityCountryPage from "@/spa-pages/CityCountryPage";
+import CityCountryPage from "@/page-views/CityCountryPage";
 
 export default async function CityCountryRoutePage({
   params,

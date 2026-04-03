@@ -1,5 +1,6 @@
  "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
@@ -204,12 +205,12 @@ const BasicPackage = () => {
                 >
                   Claim This Offer
                 </Button>
-                <a
+                <Link
                   href="/contact"
                   className="flex items-center justify-center w-14 h-14 rounded-full border-2 border-foreground text-foreground hover:bg-accent hover:text-accent-foreground hover:border-accent transition-all"
                 >
                   <ArrowUpRight className="w-5 h-5" />
-                </a>
+                </Link>
               </div>
             </div>
           </div>
