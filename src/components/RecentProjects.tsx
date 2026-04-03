@@ -45,22 +45,22 @@ export default function RecentProjects({
             </div>
           ) : (
             <Carousel opts={{ align: "start", loop: true }} className="relative">
-              <CarouselContent className="px-0 ml-0">
+              <CarouselContent className="px-1">
                 {list.map((p) => {
                   const description = p.short_description ?? p.info;
                   return (
                     <CarouselItem
                       key={p.id}
-                      className="px-2 basis-[33.333%]"
+                      className="px-2 basis-[85%] sm:basis-[33.333%]"
                     >
                       <a
                         href={p.website_url || "#"}
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label={`Visit ${p.title}`}
-                        className="block h-full"
+                        className="block h-full w-full cursor-pointer"
                       >
-                        <Card className="h-full p-4 rounded-2xl border-border bg-background/60 hover:shadow-xl transition-shadow">
+                        <Card className="h-full w-full p-4 rounded-2xl border-border bg-background/60 hover:shadow-xl transition-shadow">
                           <div className="h-full flex items-center gap-4 text-left">
                             <div className="shrink-0">
                               <img
@@ -85,14 +85,14 @@ export default function RecentProjects({
                   );
                 })}
 
-                <CarouselItem className="px-2 basis-[33.333%]">
-                  <Link href="/projects" className="block h-full">
-                    <Card className="h-full p-4 rounded-2xl border-border bg-background/60 hover:shadow-xl transition-shadow">
+              <CarouselItem className="px-2 basis-[85%] sm:basis-[33.333%]">
+                <Link href="/projects" className="block h-full w-full cursor-pointer">
+                  <Card className="h-full w-full p-4 rounded-2xl border-border bg-background/60 hover:shadow-xl transition-shadow">
                       <div className="h-full flex items-center gap-4 text-left">
-                        <div className="shrink-0">
-                          <div className="h-14 w-14 rounded-2xl flex items-center justify-center border border-border/70 bg-background">
-                            <span className="text-primary text-lg font-bold">+</span>
-                          </div>
+                      <div className="shrink-0">
+                        <div className="h-14 w-14 rounded-2xl flex items-center justify-center border border-border/70 bg-background">
+                          <span className="text-primary text-lg font-bold">+</span>
+                        </div>
                         </div>
                         <div className="min-w-0">
                           <div className="text-sm font-semibold">Show More</div>

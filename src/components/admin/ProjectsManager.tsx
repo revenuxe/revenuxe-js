@@ -31,7 +31,7 @@ export const ProjectsManager = () => {
   // If not, set NEXT_PUBLIC_SUPABASE_PROJECTS_BUCKET accordingly.
   const PROJECTS_BUCKET =
     (process.env.NEXT_PUBLIC_SUPABASE_PROJECTS_BUCKET as string | undefined) ||
-    "projects";
+    "PROJECT_LOGO";
 
   const formatSupabaseError = (error: any) => {
     try {
