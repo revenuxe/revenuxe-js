@@ -34,7 +34,7 @@ const services = [
   { value: "analytics", label: "Analytics & Data" },
 ];
 
-const ROICalculatorPage = () => {
+const ROICalculatorPage = ({ canonicalUrl }: { canonicalUrl: string }) => {
   const [selectedService, setSelectedService] = useState("seo");
 
   return (
@@ -43,7 +43,7 @@ const ROICalculatorPage = () => {
         title="Free Marketing ROI Calculator — Estimate Your Returns | Revenuxe"
         description="Calculate your potential digital marketing ROI instantly with Revenuxe's free calculator. Get data-driven projections for SEO, Google Ads, social media & more. Download PDF reports!"
         keywords="marketing ROI calculator, digital marketing ROI, SEO ROI estimate, Google Ads ROI, free marketing calculator, Revenuxe ROI tool"
-        canonicalUrl="https://revenuxe.com/roi-calculator"
+        canonicalUrl={canonicalUrl}
       />
       <Navigation />
       <PageHero

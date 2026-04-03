@@ -1,6 +1,9 @@
 /** Shared copy for Next.js `metadata` and SEOHead defaults (homepage + fallbacks). */
 
-export const SITE_URL = "https://revenuxe.com";
+/** Default when request headers are unavailable (e.g. static analysis). */
+export const SITE_URL_FALLBACK = "https://revenuxe.com";
+
+export const SITE_URL = SITE_URL_FALLBACK;
 
 // Homepage / global defaults, tuned for AI + SEO intent
 export const defaultSiteTitle =

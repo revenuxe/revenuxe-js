@@ -2,6 +2,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import PageHero from "@/components/PageHero";
 import { SEOHead } from "@/components/SEOHead";
+import { absoluteCanonicalUrl } from "@/lib/seo/canonical";
 import { Card } from "@/components/ui/card";
 
 type Project = {
@@ -13,14 +14,15 @@ type Project = {
   website_url?: string | null;
 };
 
-export default function Projects({ projects }: { projects: Project[] }) {
+export default async function Projects({ projects }: { projects: Project[] }) {
+  const canonicalUrl = await absoluteCanonicalUrl("/projects");
   return (
     <div className="min-h-screen bg-background">
       <SEOHead
         title="Projects — Completed Work by Revenuxe | Revenuxe"
         description="Explore recent and completed AI digital marketing projects. See brand logos, project highlights, and the websites we helped grow."
         keywords="projects, digital marketing projects, AI marketing agency India, SEO case proof, client logos, marketing outcomes, Revenuxe projects"
-        canonicalUrl="https://revenuxe.com/projects"
+        canonicalUrl={canonicalUrl}
       />
 
       <Navigation />

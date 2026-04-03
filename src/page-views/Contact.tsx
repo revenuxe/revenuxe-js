@@ -4,15 +4,17 @@ import PageHero from "@/components/PageHero";
 import { ContactForm } from "@/components/ContactForm";
 import { Mail, Phone, MapPin } from "lucide-react";
 import { SEOHead } from "@/components/SEOHead";
+import { absoluteCanonicalUrl } from "@/lib/seo/canonical";
 
-const Contact = () => {
+const Contact = async () => {
+  const canonicalUrl = await absoluteCanonicalUrl("/contact");
   return (
     <div className="min-h-screen bg-background">
       <SEOHead 
         title="Contact Revenuxe — Free Digital Marketing Consultation | Call Now"
         description="Get a free digital marketing consultation from Revenuxe. Call +91 9886285028 or email revenuxe@gmail.com. Expert SEO, Google Ads, web development & social media marketing services."
         keywords="contact Revenuxe, free marketing consultation, digital marketing agency contact, hire SEO expert India, marketing agency phone number"
-        canonicalUrl="https://revenuxe.com/contact"
+        canonicalUrl={canonicalUrl}
       />
       <Navigation />
       

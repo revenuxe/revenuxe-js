@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Check, ArrowUpRight } from "lucide-react";
 import ServiceDetailDialogLauncher from "@/components/ServiceDetailDialogLauncher";
 import { SEOHead } from "@/components/SEOHead";
+import { absoluteCanonicalUrl, getCanonicalOrigin } from "@/lib/seo/canonical";
 import FAQ from "@/components/FAQ";
 import ROICalculator from "@/components/ROICalculator";
 import { seoServiceFAQs, contentMarketingFAQs, ppcFAQs, socialMediaFAQs } from "@/data/faqData";
@@ -227,7 +228,7 @@ const additionalServices: Record<string, any> = {
   },
 };
 
-const ServiceDetail = ({ slug }: { slug?: string }) => {
+const ServiceDetail = async ({ slug }: { slug?: string }) => {
   const foundService = serviceData[slug || ""] || additionalServices[slug || ""];
 
   let faqItems: any[] = [];
@@ -273,13 +274,16 @@ const ServiceDetail = ({ slug }: { slug?: string }) => {
     { step: "Optimization", description: "Improve." },
   ];
 
+  const origin = await getCanonicalOrigin();
+  const canonicalUrl = await absoluteCanonicalUrl(`/services/${slug || ""}`);
+
   return (
     <div className="min-h-screen bg-background">
       <SEOHead
         title={`${service.title} Services | Revenuxe`}
         description={service.description}
-        canonicalUrl={`https://revenuxe.com/services/${slug || ""}`}
-        ogImage="https://revenuxe.com/og-service.png"
+        canonicalUrl={canonicalUrl}
+        ogImage={`${origin}/og-service.png`}
       />
       <Navigation />
       <PageHero title={service.title} subtitle={service.subtitle} />

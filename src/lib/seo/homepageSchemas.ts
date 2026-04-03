@@ -1,5 +1,7 @@
 /** Default JSON-LD blocks used on the marketing site (homepage + SEOHead defaults). */
 
+import { SITE_URL_FALLBACK } from "@/lib/seo/siteMetadata";
+
 export const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
@@ -111,17 +113,47 @@ export const breadcrumbSchema = {
   ],
 };
 
-export function getDefaultHomepageSchemas(extra?: unknown | unknown[]) {
+export function getDefaultHomepageSchemas(
+  extra?: unknown | unknown[],
+  siteUrl: string = SITE_URL_FALLBACK,
+) {
   const extraList = extra
     ? Array.isArray(extra)
       ? extra
       : [extra]
     : [];
+  const base = siteUrl.replace(/\/$/, "");
   return [
-    organizationSchema,
-    localBusinessSchema,
-    websiteSchema,
-    breadcrumbSchema,
+    {
+      ...organizationSchema,
+      url: base,
+      logo: `${base}/favicon.ico`,
+    },
+    {
+      ...localBusinessSchema,
+      url: base,
+      image: `${base}/favicon.ico`,
+    },
+    {
+      ...websiteSchema,
+      url: base,
+      potentialAction: {
+        "@type": "SearchAction",
+        target: `${base}/search?q={search_term_string}`,
+        "query-input": "required name=search_term_string",
+      },
+    },
+    {
+      ...breadcrumbSchema,
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+          item: base,
+        },
+      ],
+    },
     ...extraList,
   ];
 }

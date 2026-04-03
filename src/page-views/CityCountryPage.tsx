@@ -11,6 +11,7 @@ import { SEOHead } from "@/components/SEOHead";
 import FAQ from "@/components/FAQ";
 import { getCityFAQs } from "@/data/faqData";
 import RecentProjects from "@/components/RecentProjects";
+import { absoluteCanonicalUrl, getCanonicalOrigin } from "@/lib/seo/canonical";
 
 const cityData: Record<string, {
   name: string;
@@ -200,7 +201,7 @@ type RecentProjectsItem = {
   short_description?: string | null;
 };
 
-const CityCountryPage = ({
+const CityCountryPage = async ({
   country,
   city,
   recentProjects,
@@ -226,20 +227,26 @@ const CityCountryPage = ({
     );
   }
 
+  const origin = await getCanonicalOrigin();
+  const canonicalUrl = await absoluteCanonicalUrl(
+    `/country/${countrySlug}/${citySlug}`,
+  );
+  const countryUrl = await absoluteCanonicalUrl(`/country/${countrySlug}`);
+
   return (
     <div className="min-h-screen bg-background text-foreground">
       <SEOHead
         title={`AI-Powered Digital Marketing Agency in ${cityInfo.name}, ${cityInfo.country} | Revenuxe`}
         description={cityInfo.metaDescription}
         keywords={cityInfo.keywords}
-        canonicalUrl={`https://revenuxe.com/country/${countrySlug}/${citySlug}`}
+        canonicalUrl={canonicalUrl}
         schemaData={{
           "@context": "https://schema.org",
           "@type": "BreadcrumbList",
           "itemListElement": [
-            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://revenuxe.com" },
-            { "@type": "ListItem", "position": 2, "name": cityInfo.country, "item": `https://revenuxe.com/country/${countrySlug}` },
-            { "@type": "ListItem", "position": 3, "name": cityInfo.name, "item": `https://revenuxe.com/country/${countrySlug}/${citySlug}` }
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": origin },
+            { "@type": "ListItem", "position": 2, "name": cityInfo.country, "item": countryUrl },
+            { "@type": "ListItem", "position": 3, "name": cityInfo.name, "item": canonicalUrl }
           ]
         }}
       />

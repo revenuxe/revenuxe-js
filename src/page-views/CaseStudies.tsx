@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { SEOHead } from "@/components/SEOHead";
+import { absoluteCanonicalUrl } from "@/lib/seo/canonical";
 
 interface CaseStudy {
   id: string;
@@ -20,14 +21,15 @@ interface CaseStudy {
   featured: boolean;
 }
 
-const CaseStudies = ({ caseStudies }: { caseStudies: CaseStudy[] }) => {
+const CaseStudies = async ({ caseStudies }: { caseStudies: CaseStudy[] }) => {
+  const canonicalUrl = await absoluteCanonicalUrl("/case-studies");
   return (
     <div className="min-h-screen bg-background">
       <SEOHead
         title="Client Success Stories & Case Studies — Real Results | Revenuxe"
         description="See how Revenuxe helped businesses achieve 200%+ ROI, 3X traffic growth & record-breaking conversions. Real case studies with proven digital marketing results."
         keywords="digital marketing case studies, client success stories, marketing ROI results, SEO case study, Google Ads success, Revenuxe portfolio"
-        canonicalUrl="https://revenuxe.com/case-studies"
+        canonicalUrl={canonicalUrl}
       />
       <Navigation />
       <main>

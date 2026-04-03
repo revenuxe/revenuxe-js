@@ -11,6 +11,7 @@ import { SEOHead } from "@/components/SEOHead";
 import FAQ from "@/components/FAQ";
 import { getCityFAQs } from "@/data/faqData";
 import RecentProjects from "@/components/RecentProjects";
+import { absoluteCanonicalUrl } from "@/lib/seo/canonical";
 
 const cityData: Record<string, {
   name: string;
@@ -142,7 +143,7 @@ type RecentProjectsItem = {
   short_description?: string | null;
 };
 
-const CityPage = ({
+const CityPage = async ({
   city,
   recentProjects,
 }: {
@@ -155,13 +156,15 @@ const CityPage = ({
     return null;
   }
 
+  const canonicalUrl = await absoluteCanonicalUrl(`/${city?.toLowerCase() ?? ""}`);
+
   return (
     <div className="min-h-screen bg-background text-foreground">
       <SEOHead
         title={`AI Digital Marketing Agency in ${cityInfo.name} | Revenuxe`}
         description={cityInfo.metaDescription}
         keywords={cityInfo.keywords}
-        canonicalUrl={`https://revenuxe.com/${city?.toLowerCase()}`}
+        canonicalUrl={canonicalUrl}
       />
       <Navigation />
       

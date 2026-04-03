@@ -1,14 +1,18 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 
-import { SEOHead } from "@/components/SEOHead";
+import { absoluteCanonicalUrl } from "@/lib/seo/canonical";
 
-export const metadata: Metadata = {
-  title: "Thank You | Revenuxe",
-  description:
-    "Thanks for contacting Revenuxe. We’ll reach out soon with the next steps for your AI digital marketing goals.",
-  alternates: { canonical: "https://revenuxe.com/thank-you" },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const canonical = await absoluteCanonicalUrl("/thank-you");
+  return {
+    title: "Thank You | Revenuxe",
+    description:
+      "Thanks for contacting Revenuxe. We’ll reach out soon with the next steps for your AI digital marketing goals.",
+    alternates: { canonical },
+    openGraph: { url: canonical },
+  };
+}
 
 const quotes = [
   "Your growth journey just started. We’ll be in touch soon.",
@@ -27,12 +31,6 @@ export default function ThankYouPage() {
   return (
     <div className="min-h-screen bg-background text-foreground flex items-center justify-center px-4 py-16">
       <div className="w-full max-w-3xl rounded-3xl border border-border bg-card/40 shadow-xl p-8 md:p-12">
-        <SEOHead
-          title="Thank You — Revenuxe"
-          description="Thanks for submitting your inquiry. We'll get back to you soon."
-          canonicalUrl="https://revenuxe.com/thank-you"
-        />
-
         <div className="flex flex-col items-center text-center">
           <div className="h-16 w-16 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center">
             <span className="text-primary text-3xl font-bold">✓</span>

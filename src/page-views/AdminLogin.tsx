@@ -10,7 +10,7 @@ import { Loader2, Shield } from "lucide-react";
 import { SEOHead } from "@/components/SEOHead";
 import { useRouter } from "next/navigation";
 
-const AdminLogin = () => {
+const AdminLogin = ({ canonicalUrl }: { canonicalUrl: string }) => {
   const router = useRouter();
   const { toast } = useToast();
   const [loading, setLoading] = useState(false);
@@ -61,7 +61,7 @@ const AdminLogin = () => {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-primary/5 via-background to-secondary/5 px-4">
-      <SEOHead title="Admin Login — Revenuxe" description="Revenuxe admin login portal." noindex={true} canonicalUrl="https://revenuxe.com/admin/login" />
+      <SEOHead title="Admin Login — Revenuxe" description="Revenuxe admin login portal." noindex={true} canonicalUrl={canonicalUrl} />
       <div className="w-full max-w-md">
         <div className="text-center mb-8">
           <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-4">

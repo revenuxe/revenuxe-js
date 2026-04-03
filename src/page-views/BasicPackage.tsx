@@ -119,7 +119,7 @@ const processSteps = [
   }
 ];
 
-const BasicPackage = () => {
+const BasicPackage = ({ canonicalUrl }: { canonicalUrl: string }) => {
   const [dialogOpen, setDialogOpen] = useState(false);
 
   return (
@@ -128,7 +128,7 @@ const BasicPackage = () => {
         title="Website + Google Ads Package at ₹24,999 | Launch Your Business Online | Revenuxe"
         description="Get a professional website and Google Ads setup for just ₹24,999. AI-powered web development, WordPress, Odoo & custom code solutions. Go live in 7 days. Best affordable website design package in India."
         keywords="affordable website design package, website and google ads package, cheap website development India, website design price, best website package India, business website cost, professional website ₹24999, website builder India, wordpress website package, google ads setup India, digital marketing starter pack, small business website package, website development offer, low cost website design, website and advertising package"
-        canonicalUrl="https://revenuxe.com/basic-package"
+        canonicalUrl={canonicalUrl}
         schemaData={{
           "@context": "https://schema.org",
           "@type": "Product",
@@ -140,7 +140,7 @@ const BasicPackage = () => {
             "price": "24999",
             "priceCurrency": "INR",
             "availability": "https://schema.org/InStock",
-            "url": "https://revenuxe.com/basic-package"
+            "url": canonicalUrl
           }
         }}
       />

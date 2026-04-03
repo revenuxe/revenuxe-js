@@ -3,15 +3,17 @@ import Footer from "@/components/Footer";
 import PageHero from "@/components/PageHero";
 import { ArrowRight, Target, Users, Zap } from "lucide-react";
 import { SEOHead } from "@/components/SEOHead";
+import { absoluteCanonicalUrl } from "@/lib/seo/canonical";
 
-const AboutUs = () => {
+const AboutUs = async () => {
+  const canonicalUrl = await absoluteCanonicalUrl("/about");
   return (
     <div className="min-h-screen bg-background">
       <SEOHead 
         title="About Revenuxe — India's Most Trusted AI Marketing Agency"
         description="Revenuxe is a results-driven AI digital marketing agency trusted by 30+ businesses across India. Learn about our mission, values, and commitment to 10X your revenue growth."
         keywords="about Revenuxe, AI marketing agency India, trusted digital marketing company, marketing agency mission, best marketing team India"
-        canonicalUrl="https://revenuxe.com/about"
+        canonicalUrl={canonicalUrl}
       />
       <Navigation />
       

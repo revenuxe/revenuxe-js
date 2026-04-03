@@ -1,7 +1,9 @@
 import { getDefaultHomepageSchemas } from "@/lib/seo/homepageSchemas";
+import { getCanonicalOrigin } from "@/lib/seo/canonical";
 
-export function HomeStructuredData() {
-  const schemas = getDefaultHomepageSchemas();
+export async function HomeStructuredData() {
+  const siteUrl = await getCanonicalOrigin();
+  const schemas = getDefaultHomepageSchemas(undefined, siteUrl);
   return (
     <>
       {schemas.map((schema, index) => (

@@ -2,15 +2,17 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import PageHero from "@/components/PageHero";
 import { SEOHead } from "@/components/SEOHead";
+import { absoluteCanonicalUrl } from "@/lib/seo/canonical";
 
-const PrivacyPolicy = () => {
+const PrivacyPolicy = async () => {
+  const canonicalUrl = await absoluteCanonicalUrl("/privacy");
   return (
     <div className="min-h-screen bg-background">
       <SEOHead 
         title="Privacy Policy — How Revenuxe Protects Your Data"
         description="Read Revenuxe's privacy policy. We are committed to protecting your personal information and ensuring GDPR-compliant data handling across all our digital marketing services."
         keywords="Revenuxe privacy policy, data protection, GDPR compliance, marketing agency privacy"
-        canonicalUrl="https://revenuxe.com/privacy"
+        canonicalUrl={canonicalUrl}
         noindex={true}
       />
       <Navigation />

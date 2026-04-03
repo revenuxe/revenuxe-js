@@ -14,7 +14,7 @@ import { ProjectsManager } from "@/components/admin/ProjectsManager";
 import { SEOHead } from "@/components/SEOHead";
 import { useRouter } from "next/navigation";
 
-const AdminDashboard = () => {
+const AdminDashboard = ({ canonicalUrl }: { canonicalUrl: string }) => {
   const router = useRouter();
   const { toast } = useToast();
   const [loading, setLoading] = useState(true);
@@ -79,7 +79,7 @@ const AdminDashboard = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <SEOHead title="Admin Dashboard — Revenuxe" description="Revenuxe admin dashboard." noindex={true} canonicalUrl="https://revenuxe.com/admin/dashboard" />
+      <SEOHead title="Admin Dashboard — Revenuxe" description="Revenuxe admin dashboard." noindex={true} canonicalUrl={canonicalUrl} />
       {/* Header */}
       <header className="border-b bg-card">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">

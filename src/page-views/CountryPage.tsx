@@ -11,6 +11,7 @@ import { SEOHead } from "@/components/SEOHead";
 import FAQ from "@/components/FAQ";
 import { getCountryFAQs } from "@/data/faqData";
 import RecentProjects from "@/components/RecentProjects";
+import { absoluteCanonicalUrl, getCanonicalOrigin } from "@/lib/seo/canonical";
 
 const countryData: Record<string, {
   name: string;
@@ -174,7 +175,7 @@ type RecentProjectsItem = {
   short_description?: string | null;
 };
 
-const CountryPage = ({
+const CountryPage = async ({
   country,
   recentProjects,
 }: {
@@ -197,19 +198,22 @@ const CountryPage = ({
     );
   }
 
+  const origin = await getCanonicalOrigin();
+  const canonicalUrl = await absoluteCanonicalUrl(`/country/${countrySlug}`);
+
   return (
     <div className="min-h-screen bg-background text-foreground">
       <SEOHead
         title={`AI-Powered Digital Marketing Agency in ${countryInfo.name} | Revenuxe`}
         description={countryInfo.metaDescription}
         keywords={countryInfo.keywords}
-        canonicalUrl={`https://revenuxe.com/country/${countrySlug}`}
+        canonicalUrl={canonicalUrl}
         schemaData={{
           "@context": "https://schema.org",
           "@type": "BreadcrumbList",
           "itemListElement": [
-            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://revenuxe.com" },
-            { "@type": "ListItem", "position": 2, "name": countryInfo.name, "item": `https://revenuxe.com/country/${countrySlug}` }
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": origin },
+            { "@type": "ListItem", "position": 2, "name": countryInfo.name, "item": canonicalUrl }
           ]
         }}
       />

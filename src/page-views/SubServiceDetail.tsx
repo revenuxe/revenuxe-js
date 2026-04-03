@@ -7,6 +7,7 @@ import { Check } from "lucide-react";
 import SubServiceDetailDialogLauncher from "@/components/SubServiceDetailDialogLauncher";
 import FAQ from "@/components/FAQ";
 import { SEOHead } from "@/components/SEOHead";
+import { absoluteCanonicalUrl, getCanonicalOrigin } from "@/lib/seo/canonical";
 
 
 const subServiceData: Record<string, any> = {
@@ -1977,7 +1978,7 @@ const subServiceData: Record<string, any> = {
   },
 };
 
-const SubServiceDetail = ({ slug }: { slug?: string }) => {
+const SubServiceDetail = async ({ slug }: { slug?: string }) => {
   
   const service = subServiceData[slug || ""] || {
     title: "Service Not Found",
@@ -1988,19 +1989,22 @@ const SubServiceDetail = ({ slug }: { slug?: string }) => {
     metrics: [],
   };
 
+  const origin = await getCanonicalOrigin();
+  const canonicalUrl = await absoluteCanonicalUrl(`/sub-services/${slug || ""}`);
+
   return (
     <div className="min-h-screen bg-background">
       <SEOHead
         title={`${service.title} — Sub-Service | Revenuxe`}
         description={service.description || `Learn about ${service.title} from Revenuxe. AI-powered digital marketing solutions for your business growth.`}
-        canonicalUrl={`https://revenuxe.com/sub-services/${slug || ""}`}
-        ogImage="https://revenuxe.com/og-service.png"
+        canonicalUrl={canonicalUrl}
+        ogImage={`${origin}/og-service.png`}
         schemaData={{
           "@context": "https://schema.org",
           "@type": "Service",
           "name": service.title,
           "description": service.description,
-          "provider": { "@type": "Organization", "name": "Revenuxe", "url": "https://revenuxe.com" }
+          "provider": { "@type": "Organization", "name": "Revenuxe", "url": origin }
         }}
       />
       <Navigation />

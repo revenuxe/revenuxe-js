@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { ExternalLink, ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import { SEOHead } from "@/components/SEOHead";
+import { absoluteCanonicalUrl } from "@/lib/seo/canonical";
 
 interface CaseStudy {
   id: string;
@@ -19,13 +20,15 @@ interface CaseStudy {
   featured: boolean;
 }
 
-const CaseStudyDetail = ({ caseStudy }: { caseStudy: CaseStudy }) => {
+const CaseStudyDetail = async ({ caseStudy }: { caseStudy: CaseStudy }) => {
+  const canonicalUrl = await absoluteCanonicalUrl(`/case-studies/${caseStudy.id}`);
   return (
     <div className="min-h-screen bg-background">
       <SEOHead
         title={`${caseStudy.title} - Case Study | Revenuxe`}
         description={`${(caseStudy.challenge || "").substring(0, 150)}...`}
         keywords={`case study, ${caseStudy.industry || "digital marketing"}, ${caseStudy.client_name}, digital marketing success`}
+        canonicalUrl={canonicalUrl}
       />
       <Navigation />
       <main className="pt-20">

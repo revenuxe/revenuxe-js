@@ -6,6 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { Calendar, User } from "lucide-react";
 import Link from "next/link";
 import { SEOHead } from "@/components/SEOHead";
+import { absoluteCanonicalUrl } from "@/lib/seo/canonical";
 
 interface Article {
   id: string;
@@ -19,14 +20,15 @@ interface Article {
   created_at: string;
 }
 
-const Articles = ({ articles }: { articles: Article[] }) => {
+const Articles = async ({ articles }: { articles: Article[] }) => {
+  const canonicalUrl = await absoluteCanonicalUrl("/articles");
   return (
     <div className="min-h-screen bg-background">
       <SEOHead
         title="Marketing Blog — SEO Tips, Growth Hacks & Industry Insights | Revenuxe"
         description="Read expert digital marketing articles from Revenuxe. Get actionable SEO tips, Google Ads strategies, social media hacks & AI marketing insights to grow your business faster."
         keywords="digital marketing blog, SEO tips 2026, Google Ads strategy, social media marketing tips, AI marketing insights, Revenuxe blog, marketing growth hacks"
-        canonicalUrl="https://revenuxe.com/articles"
+        canonicalUrl={canonicalUrl}
       />
       <Navigation />
       <PageHero

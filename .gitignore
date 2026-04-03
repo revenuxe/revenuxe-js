@@ -25,3 +25,6 @@ dist-ssr
 
 # Next.js build output
 .next/
+
+# Sanity local cache/output
+.sanity/

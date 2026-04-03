@@ -8,6 +8,7 @@ import Link from "next/link";
 import { SEOHead } from "@/components/SEOHead";
 import { PortableText } from "@portabletext/react";
 import type { ReactNode } from "react";
+import { absoluteCanonicalUrl, getCanonicalOrigin } from "@/lib/seo/canonical";
 
 interface Article {
   id: string;
@@ -21,7 +22,10 @@ interface Article {
   created_at: string;
 }
 
-const ArticleDetail = ({ article }: { article: Article }) => {
+const ArticleDetail = async ({ article }: { article: Article }) => {
+  const canonicalUrl = await absoluteCanonicalUrl(`/articles/${article.slug}`);
+  const origin = await getCanonicalOrigin();
+
   const portableTextComponents = {
     block: {
       h2: ({ children }: { children: ReactNode }) => (
@@ -78,7 +82,7 @@ const ArticleDetail = ({ article }: { article: Article }) => {
           .split(" ")
           .slice(0, 3)
           .join(", ")}, Revenuxe`}
-        canonicalUrl={`https://revenuxe.com/articles/${article.slug}`}
+        canonicalUrl={canonicalUrl}
         ogType="article"
         schemaData={{
           "@context": "https://schema.org",
@@ -86,10 +90,10 @@ const ArticleDetail = ({ article }: { article: Article }) => {
           "headline": article.title,
           "description": article.excerpt || article.title,
           "author": { "@type": "Person", "name": article.author },
-          "publisher": { "@type": "Organization", "name": "Revenuxe" },
+          "publisher": { "@type": "Organization", "name": "Revenuxe", "url": origin },
           "datePublished": article.created_at,
           ...(article.image_url ? { image: article.image_url } : {}),
-          "mainEntityOfPage": `https://revenuxe.com/articles/${article.slug}`
+          "mainEntityOfPage": canonicalUrl
         }}
       />
       <Navigation />

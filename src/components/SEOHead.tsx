@@ -4,6 +4,7 @@ import {
   defaultSiteDescription,
   defaultSiteKeywords,
   defaultSiteTitle,
+  SITE_URL_FALLBACK,
 } from "@/lib/seo/siteMetadata";
 
 interface SEOHeadProps {
@@ -40,7 +41,7 @@ export const SEOHead = ({
 }: SEOHeadProps) => {
   const fullTitle = title.includes("Revenuxe") ? title : `${title} | Revenuxe`;
 
-  const currentUrl = canonicalUrl ? canonicalUrl : "https://revenuxe.com";
+  const currentUrl = canonicalUrl ?? SITE_URL_FALLBACK;
   const robotsContent = noindex
     ? "noindex, nofollow"
     : "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1";

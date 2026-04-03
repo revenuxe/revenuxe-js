@@ -2,49 +2,52 @@ import type { Metadata } from "next";
 import Index from "@/page-views/Index";
 import { HomeStructuredData } from "@/components/HomeStructuredData";
 import { supabaseServer } from "@/integrations/supabase/server";
+import { getCanonicalOrigin } from "@/lib/seo/canonical";
 import {
   defaultSiteDescription,
   defaultSiteKeywords,
   defaultSiteTitle,
-  SITE_URL,
 } from "@/lib/seo/siteMetadata";
 
 export const dynamic = "force-dynamic";
 
-export const metadata: Metadata = {
-  metadataBase: new URL(SITE_URL),
-  title: defaultSiteTitle,
-  description: defaultSiteDescription,
-  keywords: defaultSiteKeywords.split(", ").filter(Boolean),
-  alternates: {
-    canonical: "/",
-  },
-  openGraph: {
+export async function generateMetadata(): Promise<Metadata> {
+  const origin = await getCanonicalOrigin();
+  return {
+    metadataBase: new URL(origin),
     title: defaultSiteTitle,
     description: defaultSiteDescription,
-    url: SITE_URL,
-    siteName: "Revenuxe",
-    locale: "en_IN",
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: defaultSiteTitle,
-    description: defaultSiteDescription,
-    site: "@revenuxe",
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
+    keywords: defaultSiteKeywords.split(", ").filter(Boolean),
+    alternates: {
+      canonical: "/",
+    },
+    openGraph: {
+      title: defaultSiteTitle,
+      description: defaultSiteDescription,
+      url: origin,
+      siteName: "Revenuxe",
+      locale: "en_IN",
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: defaultSiteTitle,
+      description: defaultSiteDescription,
+      site: "@revenuxe",
+    },
+    robots: {
       index: true,
       follow: true,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-      "max-video-preview": -1,
+      googleBot: {
+        index: true,
+        follow: true,
+        "max-image-preview": "large",
+        "max-snippet": -1,
+        "max-video-preview": -1,
+      },
     },
-  },
-};
+  };
+}
 
 export default async function HomePage() {
   let recentProjects: any[] = [];

@@ -2,15 +2,17 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import PageHero from "@/components/PageHero";
 import { SEOHead } from "@/components/SEOHead";
+import { absoluteCanonicalUrl } from "@/lib/seo/canonical";
 
-const TermsAndConditions = () => {
+const TermsAndConditions = async () => {
+  const canonicalUrl = await absoluteCanonicalUrl("/terms");
   return (
     <div className="min-h-screen bg-background">
       <SEOHead 
         title="Terms & Conditions — Revenuxe Service Agreement"
         description="Read Revenuxe's terms and conditions for digital marketing services. Understand our service agreements, payment terms, client responsibilities, and business policies."
         keywords="Revenuxe terms and conditions, service agreement, digital marketing terms"
-        canonicalUrl="https://revenuxe.com/terms"
+        canonicalUrl={canonicalUrl}
         noindex={true}
       />
       <Navigation />

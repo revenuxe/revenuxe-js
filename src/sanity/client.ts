@@ -1,5 +1,5 @@
 import "server-only";
-import { createClient } from "@sanity/client";
+import { createClient } from "next-sanity";
 
 const projectId = process.env.SANITY_PROJECT_ID;
 const dataset = process.env.SANITY_DATASET || "production";
