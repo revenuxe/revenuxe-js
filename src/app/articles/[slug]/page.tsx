@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
-import { supabaseServer } from "@/integrations/supabase/server";
 import ArticleDetail from "@/page-views/ArticleDetail";
+import { fetchPublishedPostBySlug } from "@/sanity/queries";
 
 export const dynamic = "force-dynamic";
 
@@ -10,16 +10,9 @@ export default async function ArticleDetailPage({
   params: Promise<{ slug: string }> | { slug: string };
 }) {
   const resolved = await params;
+  const article = await fetchPublishedPostBySlug(resolved.slug);
+  if (!article) notFound();
 
-  const { data, error } = await supabaseServer
-    .from("articles")
-    .select("*")
-    .eq("slug", resolved.slug)
-    .eq("published", true)
-    .single();
-
-  if (error || !data) notFound();
-
-  return <ArticleDetail article={data as any} />;
+  return <ArticleDetail article={article as any} />;
 }
 
