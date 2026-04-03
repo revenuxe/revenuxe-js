@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import "@/index.css";
 import { Toaster } from "@/components/ui/toaster";
+import { GlobalLoadingProvider } from "@/components/providers/GlobalLoadingProvider";
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
@@ -26,8 +27,10 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         />
       </head>
       <body>
-        {children}
-        <Toaster />
+        <GlobalLoadingProvider>
+          {children}
+          <Toaster />
+        </GlobalLoadingProvider>
       </body>
     </html>
   );

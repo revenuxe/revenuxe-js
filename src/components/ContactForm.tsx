@@ -8,6 +8,8 @@ import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
 import { Loader2 } from "lucide-react";
+import { useRouter } from "next/navigation";
+import { useGlobalLoading } from "@/components/providers/GlobalLoadingProvider";
 
 interface ContactFormProps {
   variant?: "default" | "compact";
@@ -18,6 +20,8 @@ interface ContactFormProps {
 export const ContactForm = ({ variant = "default", defaultService, onSuccess }: ContactFormProps) => {
   const { toast } = useToast();
   const [loading, setLoading] = useState(false);
+  const router = useRouter();
+  const { startLoading } = useGlobalLoading();
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -60,6 +64,8 @@ export const ContactForm = ({ variant = "default", defaultService, onSuccess }: 
       });
       
       onSuccess?.();
+      startLoading();
+      router.push("/thank-you");
     } catch (error) {
       console.error("Error submitting form:", error);
       toast({
