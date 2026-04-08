@@ -25,6 +25,7 @@ import {
   Layers,
 } from "lucide-react";
 import { GetStartedDialog } from "@/components/GetStartedDialog";
+import logo from "@/assets/revenuxe-logo.webp";
 
 const packageFAQs = [
   {
@@ -182,31 +183,159 @@ const packageBenefits = [
   },
 ];
 
-const BasicPackage = ({ canonicalUrl }: { canonicalUrl: string }) => {
+const BasicPackage = ({
+  canonicalUrl,
+  origin,
+}: {
+  canonicalUrl: string;
+  origin: string;
+}) => {
   const [dialogOpen, setDialogOpen] = useState(false);
+  const packageImage = `${origin}${logo.src}`;
+  const pageTitle =
+    "Affordable Website Design & Google Ads Package in India | Rs. 24,999 | Revenuxe";
+  const pageDescription =
+    "Launch your business online with an affordable website design and Google Ads package for Rs. 24,999. Includes up to 8 pages, SEO-ready copy, conversion tracking, and 30 days of support.";
+  const pageKeywords =
+    "affordable website design India, website and Google Ads package India, website package Rs 24999, small business website design India, Google Ads setup India, affordable business website package, SEO ready website India, website development package India, lead generation website package, Revenuxe basic package";
+  const schemaData = [
+    {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      name: "Basic Website + Google Ads Package",
+      image: [packageImage],
+      description:
+        "Professional website design and Google Ads setup package for businesses looking to establish their online presence quickly and affordably.",
+      brand: { "@type": "Brand", name: "Revenuxe" },
+      category: "Website Design Package",
+      sku: "REV-BASIC-PACKAGE",
+      url: canonicalUrl,
+      offers: {
+        "@type": "Offer",
+        url: canonicalUrl,
+        price: "24999",
+        priceCurrency: "INR",
+        availability: "https://schema.org/InStock",
+        itemCondition: "https://schema.org/NewCondition",
+        seller: {
+          "@type": "Organization",
+          name: "Revenuxe",
+          url: origin,
+        },
+        shippingDetails: {
+          "@type": "OfferShippingDetails",
+          shippingRate: {
+            "@type": "MonetaryAmount",
+            value: "0",
+            currency: "INR",
+          },
+          deliveryTime: {
+            "@type": "ShippingDeliveryTime",
+            handlingTime: {
+              "@type": "QuantitativeValue",
+              minValue: 0,
+              maxValue: 1,
+              unitCode: "DAY",
+            },
+            transitTime: {
+              "@type": "QuantitativeValue",
+              minValue: 5,
+              maxValue: 10,
+              unitCode: "DAY",
+            },
+          },
+          shippingDestination: {
+            "@type": "DefinedRegion",
+            addressCountry: "IN",
+          },
+        },
+        hasMerchantReturnPolicy: {
+          "@type": "MerchantReturnPolicy",
+          applicableCountry: "IN",
+          returnPolicyCategory:
+            "https://schema.org/MerchantReturnFiniteReturnWindow",
+          merchantReturnDays: 7,
+          returnMethod: "https://schema.org/ReturnByMail",
+          returnFees: "https://schema.org/FreeReturn",
+        },
+      },
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      name: "Basic Website + Google Ads Package",
+      serviceType: "Website Design and Google Ads Setup",
+      provider: {
+        "@type": "Organization",
+        name: "Revenuxe",
+        url: origin,
+        image: packageImage,
+      },
+      areaServed: {
+        "@type": "Country",
+        name: "India",
+      },
+      offers: {
+        "@type": "Offer",
+        url: canonicalUrl,
+        price: "24999",
+        priceCurrency: "INR",
+        availability: "https://schema.org/InStock",
+      },
+      description:
+        "Affordable website design package for Indian businesses that includes website development, Google Ads setup, basic SEO, analytics setup, and post-launch support.",
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+          item: origin,
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Basic Package",
+          item: canonicalUrl,
+        },
+      ],
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: packageFAQs.map((item) => ({
+        "@type": "Question",
+        name: item.question,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: item.answer,
+        },
+      })),
+    },
+  ];
 
   return (
     <div className="min-h-screen bg-background text-foreground">
       <SEOHead
-        title="Website + Google Ads Package at Rs. 24,999 | Launch Your Business Online | Revenuxe"
-        description="Get a professional website and Google Ads setup for just Rs. 24,999. AI-powered web development, WordPress, Odoo and custom code solutions. Go live in 7 days. Best affordable website design package in India."
-        keywords="affordable website design package, website and google ads package, cheap website development India, website design price, best website package India, business website cost, professional website Rs 24999, website builder India, wordpress website package, google ads setup India, digital marketing starter pack, small business website package, website development offer, low cost website design, website and advertising package"
+        title={pageTitle}
+        description={pageDescription}
+        keywords={pageKeywords}
         canonicalUrl={canonicalUrl}
-        schemaData={{
-          "@context": "https://schema.org",
-          "@type": "Product",
-          name: "Basic Website + Google Ads Package",
-          description:
-            "Professional website design and Google Ads setup package for businesses looking to establish their online presence quickly and affordably.",
-          brand: { "@type": "Brand", name: "Revenuxe" },
-          offers: {
-            "@type": "Offer",
-            price: "24999",
-            priceCurrency: "INR",
-            availability: "https://schema.org/InStock",
-            url: canonicalUrl,
-          },
-        }}
+        ogImage={packageImage}
+        ogType="product"
+        schemaData={schemaData}
+      >
+        <meta name="twitter:label1" content="Price" />
+        <meta name="twitter:data1" content="Rs. 24,999" />
+        <meta name="twitter:label2" content="Delivery" />
+        <meta name="twitter:data2" content="5-10 business days" />
+        <meta property="og:image:alt" content="Revenuxe Basic Website and Google Ads Package" />
+        <meta property="product:price:amount" content="24999" />
+        <meta property="product:price:currency" content="INR" />
+        <meta property="product:availability" content="in stock" />
       />
       <Navigation />
 
@@ -244,16 +373,19 @@ const BasicPackage = ({ canonicalUrl }: { canonicalUrl: string }) => {
             <div className="max-w-5xl">
               <h1 className="font-display leading-[1.05] tracking-[-0.03em]">
                 <span className="block text-foreground font-bold text-[2.25rem] sm:text-5xl md:text-6xl lg:text-[5.5rem]">
-                  Go Live for Just
+                  Affordable Website Design
                 </span>
                 <span className="block text-[2.25rem] sm:text-5xl md:text-6xl lg:text-[5.5rem]">
-                  <span className="italic font-normal text-accent">Rs. 24,999</span>
+                  <span className="italic font-normal text-accent">
+                    + Google Ads for Rs. 24,999
+                  </span>
                 </span>
               </h1>
 
               <p className="mt-4 text-lg md:text-xl text-muted-foreground max-w-2xl">
-                Professional website + Google Ads, everything you need to launch your
-                business online and start getting customers in under 10 days.
+                Launch a small business website in India with Google Ads setup,
+                SEO-ready content, analytics, and conversion tracking in 5-10 business
+                days.
               </p>
             </div>
           </div>
