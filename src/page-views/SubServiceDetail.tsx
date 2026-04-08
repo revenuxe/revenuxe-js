@@ -8,6 +8,8 @@ import SubServiceDetailDialogLauncher from "@/components/SubServiceDetailDialogL
 import FAQ from "@/components/FAQ";
 import { SEOHead } from "@/components/SEOHead";
 import { absoluteCanonicalUrl, getCanonicalOrigin } from "@/lib/seo/canonical";
+import InternalLinkSection from "@/components/InternalLinkSection";
+import { subServiceRelationships } from "@/lib/internalLinking";
 
 
 const subServiceData: Record<string, any> = {
@@ -1991,6 +1993,8 @@ const SubServiceDetail = async ({ slug }: { slug?: string }) => {
 
   const origin = await getCanonicalOrigin();
   const canonicalUrl = await absoluteCanonicalUrl(`/sub-services/${slug || ""}`);
+  const internalLinks = subServiceRelationships[slug || ""];
+  const parentLinks = internalLinks?.parentService ? [internalLinks.parentService] : [];
 
   return (
     <div className="min-h-screen bg-background">
@@ -2057,6 +2061,35 @@ const SubServiceDetail = async ({ slug }: { slug?: string }) => {
               </div>
             </div>
           </section>
+        )}
+
+        {parentLinks.length > 0 && (
+          <InternalLinkSection
+            eyebrow="Parent Service"
+            title={`See how ${service.title} fits into the wider service strategy`}
+            description="This sub-service is connected to a broader service page, helping users move upward into the main commercial cluster while keeping the site architecture tightly linked."
+            links={parentLinks}
+            muted
+          />
+        )}
+
+        {internalLinks?.siblingSubServices?.length > 0 && (
+          <InternalLinkSection
+            eyebrow="Supporting Sub-Services"
+            title="Explore related supporting solutions"
+            description="These sibling sub-services support the same parent topic and create stronger internal link pathways across closely related implementation pages."
+            links={internalLinks.siblingSubServices}
+          />
+        )}
+
+        {internalLinks?.relatedServices?.length > 0 && (
+          <InternalLinkSection
+            eyebrow="Related Service Pages"
+            title="Related service pages worth reviewing next"
+            description="These service pages connect this sub-service to broader strategy, planning, and conversion-focused growth work across the website."
+            links={internalLinks.relatedServices}
+            muted
+          />
         )}
 
         <FAQ 

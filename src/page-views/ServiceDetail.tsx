@@ -10,6 +10,8 @@ import { absoluteCanonicalUrl, getCanonicalOrigin } from "@/lib/seo/canonical";
 import FAQ from "@/components/FAQ";
 import ROICalculator from "@/components/ROICalculator";
 import { seoServiceFAQs, contentMarketingFAQs, ppcFAQs, socialMediaFAQs } from "@/data/faqData";
+import InternalLinkSection from "@/components/InternalLinkSection";
+import { serviceRelationships } from "@/lib/internalLinking";
 
 const serviceData: Record<string, any> = {
   "social-media": {
@@ -276,6 +278,7 @@ const ServiceDetail = async ({ slug }: { slug?: string }) => {
 
   const origin = await getCanonicalOrigin();
   const canonicalUrl = await absoluteCanonicalUrl(`/services/${slug || ""}`);
+  const internalLinks = serviceRelationships[slug || ""];
 
   return (
     <div className="min-h-screen bg-background">
@@ -405,6 +408,25 @@ const ServiceDetail = async ({ slug }: { slug?: string }) => {
             </div>
           </div>
         </section>
+
+        {internalLinks?.supportingSubServices?.length > 0 && (
+          <InternalLinkSection
+            eyebrow="Supporting Services"
+            title={`Explore supporting solutions for ${service.title}`}
+            description={`Move deeper into the ${service.title.toLowerCase()} cluster with supporting sub-services that strengthen implementation, improve results, and create stronger internal linking between related commercial pages.`}
+            links={internalLinks.supportingSubServices}
+            muted
+          />
+        )}
+
+        {internalLinks?.relatedServices?.length > 0 && (
+          <InternalLinkSection
+            eyebrow="Related Service Pages"
+            title="Related services your team should review next"
+            description="These connected service pages help users compare options, expand their strategy, and move naturally through the site’s main commercial clusters."
+            links={internalLinks.relatedServices}
+          />
+        )}
 
         {/* FAQ */}
         {faqItems.length > 0 && <FAQ items={faqItems} />}

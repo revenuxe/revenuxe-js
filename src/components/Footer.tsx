@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Linkedin } from "lucide-react";
 import { ContactForm } from "./ContactForm";
 import logo from "@/assets/revenuxe-logo.webp";
+import { coreServiceLinks, supportingServiceLinks } from "@/lib/internalLinking";
 
 const Footer = () => {
   return (
@@ -16,7 +17,7 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-6 gap-8">
             {/* Brand */}
             <div>
               <div className="flex items-center gap-3 mb-4">
@@ -55,6 +56,32 @@ const Footer = () => {
                   <li key={link.href}>
                     <Link href={link.href} className="text-muted-foreground hover:text-primary transition-colors text-sm">
                       {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div>
+              <h4 className="text-sm font-semibold mb-4 text-foreground uppercase tracking-wider">Core Services</h4>
+              <ul className="space-y-2">
+                {coreServiceLinks.map((link) => (
+                  <li key={link.href}>
+                    <Link href={link.href} className="text-muted-foreground hover:text-primary transition-colors text-sm">
+                      {link.title}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div>
+              <h4 className="text-sm font-semibold mb-4 text-foreground uppercase tracking-wider">Support Solutions</h4>
+              <ul className="space-y-2">
+                {supportingServiceLinks.map((link) => (
+                  <li key={link.href}>
+                    <Link href={link.href} className="text-muted-foreground hover:text-primary transition-colors text-sm">
+                      {link.title}
                     </Link>
                   </li>
                 ))}
