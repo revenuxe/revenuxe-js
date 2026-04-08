@@ -336,7 +336,7 @@ const BasicPackage = ({
         <meta property="product:price:amount" content="24999" />
         <meta property="product:price:currency" content="INR" />
         <meta property="product:availability" content="in stock" />
-      />
+      </SEOHead>
       <Navigation />
 
       <section className="relative flex flex-col overflow-hidden">
