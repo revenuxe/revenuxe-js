@@ -11,6 +11,7 @@ import { SEOHead } from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
 import {
   ArrowUpRight,
+  ChevronRight,
   Check,
   Zap,
   Globe,
@@ -181,6 +182,75 @@ const packageBenefits = [
     title: "Post-Launch Support",
     desc: "30 days of dedicated support to fix bugs, update content, and optimize performance.",
   },
+];
+
+const jumpLinks = [
+  { href: "#pricing", label: "View Pricing" },
+  { href: "#included", label: "What's Included" },
+  { href: "#faq", label: "Read FAQs" },
+];
+
+const relatedServiceLinks = [
+  {
+    href: "/services/seo",
+    title: "SEO Optimization",
+    description:
+      "Strengthen rankings after launch with technical SEO, keyword strategy, and on-page improvements.",
+  },
+  {
+    href: "/services/performance-marketing",
+    title: "Performance Marketing",
+    description:
+      "Scale beyond the starter package with Google Ads, Meta Ads, retargeting, and conversion-focused growth.",
+  },
+  {
+    href: "/services/landing-pages",
+    title: "Landing Pages",
+    description:
+      "Build campaign-specific landing pages when you want better Quality Score and lower cost per lead.",
+  },
+  {
+    href: "/services/ai-website",
+    title: "Build Website Using AI",
+    description:
+      "Compare this starter package with our faster AI-led website workflows for broader business needs.",
+  },
+];
+
+const supportingRouteLinks = [
+  {
+    href: "/sub-services/google-ads",
+    label: "Google Ads setup services",
+  },
+  {
+    href: "/sub-services/technical-seo",
+    label: "technical SEO services",
+  },
+  {
+    href: "/sub-services/keyword-strategy",
+    label: "keyword strategy",
+  },
+  {
+    href: "/sub-services/conversion-optimization",
+    label: "conversion rate optimization",
+  },
+  {
+    href: "/roi-calculator",
+    label: "ROI calculator",
+  },
+  {
+    href: "/contact",
+    label: "contact our team",
+  },
+];
+
+const cityRouteLinks = [
+  { href: "/bangalore", label: "Bangalore" },
+  { href: "/hyderabad", label: "Hyderabad" },
+  { href: "/mumbai", label: "Mumbai" },
+  { href: "/chennai", label: "Chennai" },
+  { href: "/delhi", label: "Delhi" },
+  { href: "/pune", label: "Pune" },
 ];
 
 const BasicPackage = ({
@@ -371,6 +441,18 @@ const BasicPackage = ({
 
           <div className="relative z-10 container mx-auto px-4 py-10 md:py-24">
             <div className="max-w-5xl">
+              <nav aria-label="Breadcrumb" className="mb-6 flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
+                <Link href="/" className="hover:text-foreground transition-colors">
+                  Home
+                </Link>
+                <ChevronRight className="w-4 h-4" />
+                <Link href="/services" className="hover:text-foreground transition-colors">
+                  Services
+                </Link>
+                <ChevronRight className="w-4 h-4" />
+                <span className="text-foreground">Basic Package</span>
+              </nav>
+
               <h1 className="font-display leading-[1.05] tracking-[-0.03em]">
                 <span className="block text-foreground font-bold text-[2.25rem] sm:text-5xl md:text-6xl lg:text-[5.5rem]">
                   Affordable Website Design
@@ -387,6 +469,18 @@ const BasicPackage = ({
                 SEO-ready content, analytics, and conversion tracking in 5-10 business
                 days.
               </p>
+
+              <div className="mt-6 flex flex-wrap gap-3">
+                {jumpLinks.map((link) => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className="rounded-full border border-border bg-background/70 px-4 py-2 text-sm font-medium text-foreground transition-colors hover:border-accent hover:text-accent"
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+              </div>
             </div>
           </div>
 
@@ -435,7 +529,7 @@ const BasicPackage = ({
         </div>
       </section>
 
-      <section className="py-16 md:py-24 bg-muted/30">
+      <section id="included" className="py-16 md:py-24 bg-muted/30">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
             <div className="mb-12">
@@ -469,6 +563,65 @@ const BasicPackage = ({
       </section>
 
       <section className="py-16 md:py-24">
+        <div className="container mx-auto px-4">
+          <div className="max-w-5xl mx-auto rounded-3xl border border-border bg-card/70 p-6 md:p-10">
+            <div className="max-w-3xl">
+              <span className="text-accent font-semibold text-sm tracking-wider uppercase">
+                Internal SEO Paths
+              </span>
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-2">
+                Explore the services that strengthen this package
+              </h2>
+              <p className="text-muted-foreground text-base md:text-lg mt-4 leading-relaxed">
+                This package works best when paired with{" "}
+                <Link href="/services/seo" className="text-accent hover:underline">
+                  SEO Optimization
+                </Link>
+                ,{" "}
+                <Link
+                  href="/services/performance-marketing"
+                  className="text-accent hover:underline"
+                >
+                  Performance Marketing
+                </Link>
+                , and focused{" "}
+                <Link
+                  href="/services/landing-pages"
+                  className="text-accent hover:underline"
+                >
+                  landing pages
+                </Link>
+                . If you want to compare paid growth potential before launching, use our{" "}
+                <Link href="/roi-calculator" className="text-accent hover:underline">
+                  ROI calculator
+                </Link>
+                . Businesses needing a more scalable stack can also review our{" "}
+                <Link href="/services/ai-website" className="text-accent hover:underline">
+                  AI website development services
+                </Link>
+                .
+              </p>
+              <p className="text-muted-foreground text-base md:text-lg mt-4 leading-relaxed">
+                Supporting routes worth exploring include{" "}
+                {supportingRouteLinks.map((link, index) => (
+                  <span key={link.href}>
+                    <Link href={link.href} className="text-accent hover:underline">
+                      {link.label}
+                    </Link>
+                    {index < supportingRouteLinks.length - 2
+                      ? ", "
+                      : index === supportingRouteLinks.length - 2
+                        ? ", and "
+                        : "."}
+                  </span>
+                ))}
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="pricing" className="py-16 md:py-24">
         <div className="container mx-auto px-4">
           <div className="max-w-xl mx-auto">
             <div className="relative bg-card border-2 border-accent rounded-2xl p-8 md:p-10 text-center overflow-hidden">
@@ -508,6 +661,48 @@ const BasicPackage = ({
                   7-day money-back guarantee - No questions asked
                 </p>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 md:py-24 bg-muted/30">
+        <div className="container mx-auto px-4">
+          <div className="max-w-5xl mx-auto">
+            <div className="mb-12">
+              <span className="text-accent font-semibold text-sm tracking-wider uppercase">
+                Related SEO Routes
+              </span>
+              <h2 className="text-3xl md:text-5xl font-bold text-foreground mt-2">
+                Keep users and crawlers moving deeper into the site
+              </h2>
+              <p className="text-muted-foreground text-lg mt-4 max-w-3xl">
+                These related pages support package intent, paid search intent, and
+                organic growth intent without drifting away from the main conversion
+                journey.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+              {relatedServiceLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="group rounded-2xl border border-border bg-card p-6 transition-all hover:border-accent/50 hover:shadow-lg"
+                >
+                  <div className="flex items-start justify-between gap-4">
+                    <div>
+                      <h3 className="text-xl font-bold text-foreground group-hover:text-accent transition-colors">
+                        {link.title}
+                      </h3>
+                      <p className="text-muted-foreground mt-3 leading-relaxed">
+                        {link.description}
+                      </p>
+                    </div>
+                    <ArrowUpRight className="w-5 h-5 text-accent flex-shrink-0" />
+                  </div>
+                </Link>
+              ))}
             </div>
           </div>
         </div>
@@ -621,9 +816,43 @@ const BasicPackage = ({
         </div>
       </section>
 
+      <section className="py-16 md:py-24">
+        <div className="container mx-auto px-4">
+          <div className="max-w-5xl mx-auto">
+            <div className="mb-10">
+              <span className="text-accent font-semibold text-sm tracking-wider uppercase">
+                City Landing Pages
+              </span>
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-2">
+                Popular local routes for high-intent visitors
+              </h2>
+              <p className="text-muted-foreground text-base md:text-lg mt-4 max-w-3xl">
+                For local search visibility, we connect this package page with our city
+                landing pages so users looking for website design and Google Ads help in
+                major Indian markets can move into a geographically relevant route.
+              </p>
+            </div>
+
+            <div className="flex flex-wrap gap-3">
+              {cityRouteLinks.map((city) => (
+                <Link
+                  key={city.href}
+                  href={city.href}
+                  className="rounded-full border border-border bg-card px-5 py-2.5 text-sm font-medium text-foreground transition-colors hover:border-accent hover:text-accent"
+                >
+                  {city.label} Marketing Page
+                </Link>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       <Stats />
       <Testimonials />
-      <FAQ items={packageFAQs} />
+      <div id="faq">
+        <FAQ items={packageFAQs} />
+      </div>
 
       <section className="py-16 md:py-24 bg-muted/30">
         <div className="container mx-auto px-4">
