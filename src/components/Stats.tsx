@@ -1,7 +1,7 @@
 const Stats = () => {
   const stats = [
     { value: "30+", label: "Successful Projects", highlight: false },
-    { value: "10+", label: "Happy Clients", highlight: false },
+    { value: "30+", label: "Happy Clients", highlight: false },
     { value: "3+", label: "Years of Innovation", highlight: true },
     { value: "5", label: "Active Partnerships", highlight: true },
   ];
