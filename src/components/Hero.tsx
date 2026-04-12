@@ -35,7 +35,7 @@ const Hero = () => {
                 Digital Marketing
               </span>
               <span className="block text-foreground font-bold text-[2.25rem] sm:text-5xl md:text-6xl lg:text-[5.5rem]">
-                Agency
+                Solutions
               </span>
             </h1>
           </div>
