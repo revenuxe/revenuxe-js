@@ -6,6 +6,7 @@ import {
   Share2,
   Search,
   Globe,
+  RefreshCcw,
   ArrowUpRight,
 } from "lucide-react";
 
@@ -52,6 +53,13 @@ const Services = ({ cityName }: { cityName?: string }) => {
       description: "High-converting landing pages optimized for campaigns with A/B testing.",
       variant: "default" as const,
       slug: "landing-pages",
+    },
+    {
+      icon: <RefreshCcw className="w-7 h-7 md:w-8 md:h-8" />,
+      title: "Migration",
+      description: "Migrate React Vite SPA websites and web apps to Next.js for SSR, SEO, and scalable growth.",
+      variant: "secondary" as const,
+      slug: "migration",
     },
   ];
 

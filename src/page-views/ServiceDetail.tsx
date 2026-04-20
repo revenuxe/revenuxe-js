@@ -128,6 +128,36 @@ const serviceData: Record<string, any> = {
       { step: "Launch & Optimize", description: "Go live and continuously improve based on performance data." },
     ],
   },
+  migration: {
+    title: "Turn Your React or No-Code Site into",
+    highlight: "a High-Converting Next.js App",
+    seoTitle: "React Vite SPA to Next.js Migration Services",
+    seoKeywords: "React Vite to Next.js migration, SPA to Next.js migration, no-code website migration to Next.js, Next.js migration service, SSR migration service, website migration for SEO, React migration agency, Vite SPA SEO migration, Next.js SEO migration, website rebuild for long-term growth",
+    subtitle: "Migrate your no-code website or React Vite single-page app to Next.js for SSR, stronger SEO, faster performance, and long-term business growth.",
+    description: "We migrate no-code websites, React Vite websites, and SPA web apps to Next.js so your business gets server-side rendering, cleaner site architecture, better Core Web Vitals, stronger technical SEO, and a more scalable foundation for lead generation, content growth, and conversion optimization.",
+    features: [
+      { title: "SPA to SSR Migration Strategy", description: "Audit your current React Vite SPA, routing, rendering patterns, and content structure to map a safe migration path into modern Next.js.", link: "/services/ai-webapp" },
+      { title: "No-Code Website to Next.js Rebuild", description: "Move from fragile no-code builders into a custom Next.js codebase with reusable components, better flexibility, and long-term ownership.", link: "/services/ai-website" },
+      { title: "SEO-Safe URL & Metadata Migration", description: "Protect rankings with redirect maps, metadata transfer, schema planning, indexation controls, and crawl-ready information architecture.", link: "/sub-services/technical-seo" },
+      { title: "Performance & Core Web Vitals Upgrade", description: "Improve load speed, image delivery, script handling, caching, and page rendering for a faster user experience and better search visibility.", link: "/sub-services/technical-seo" },
+      { title: "Component, CMS & Content Refactoring", description: "Restructure templates, reusable sections, and publishing workflows so marketing teams can scale landing pages and SEO content more efficiently.", link: "/services/landing-pages" },
+      { title: "Conversion Tracking & Launch QA", description: "Reconnect analytics, forms, events, pixels, and conversion flows so the new site goes live without losing data or lead capture performance.", link: "/sub-services/conversion-optimization" },
+    ],
+    benefits: [
+      "Better SEO with server-side rendering and indexable content",
+      "Faster page loads and stronger Core Web Vitals",
+      "Improved crawlability for service pages, blogs, and location pages",
+      "Higher conversion potential with cleaner UX and better page performance",
+      "Future-ready architecture for content growth and feature expansion",
+      "Reduced dependence on limited no-code website builders",
+    ],
+    process: [
+      { step: "Migration Audit", description: "Review your current no-code site or React Vite SPA, page inventory, SEO setup, content, and technical blockers." },
+      { step: "Next.js Architecture Planning", description: "Define routes, rendering strategy, reusable components, CMS approach, and the SSR or hybrid setup your growth goals need." },
+      { step: "Rebuild & Content Transfer", description: "Recreate pages, migrate content, refine keyword targeting, and rebuild templates with a cleaner, conversion-focused frontend." },
+      { step: "QA, Redirects & Launch", description: "Test performance, analytics, forms, redirects, structured data, and deploy the new Next.js website or web app with minimal disruption." },
+    ],
+  },
 };
 
 // Keep additional services for backward compatibility with existing links
@@ -238,6 +268,30 @@ const ServiceDetail = async ({ slug }: { slug?: string }) => {
   else if (slug === "content-marketing") faqItems = contentMarketingFAQs;
   else if (slug === "performance-marketing") faqItems = ppcFAQs;
   else if (slug === "social-media") faqItems = socialMediaFAQs;
+  else if (slug === "migration") {
+    faqItems = [
+      {
+        question: "Why migrate a React Vite SPA to Next.js?",
+        answer: "Migrating from React Vite SPA to Next.js helps businesses improve server-side rendering, technical SEO, page speed, routing flexibility, and long-term scalability. It is especially useful when your current SPA struggles to rank, load quickly, or support content-led growth.",
+      },
+      {
+        question: "Can you migrate a no-code website to Next.js without losing SEO?",
+        answer: "Yes. We plan redirects, preserve high-value URLs where possible, transfer metadata, rebuild structured content, and validate indexation signals so the migration supports SEO instead of resetting it.",
+      },
+      {
+        question: "Will the migrated Next.js website perform better for SEO and conversions?",
+        answer: "In most cases, yes. Next.js gives us better control over SSR, page performance, internal linking, metadata, schema, and conversion-focused layouts, which supports both higher organic traffic potential and better user experience.",
+      },
+      {
+        question: "Do you migrate both websites and web apps?",
+        answer: "Yes. We handle marketing websites, content-heavy business sites, and React-based web applications. The migration plan changes based on whether you need static pages, SSR pages, authenticated app routes, dashboards, or API integrations.",
+      },
+      {
+        question: "How long does a Vite to Next.js migration take?",
+        answer: "Timeline depends on page count, app complexity, CMS needs, and SEO requirements. Smaller brochure sites can move quickly, while larger SPAs and web apps need phased migration, QA, and launch planning.",
+      },
+    ];
+  }
   else {
     faqItems = [
       { question: `What is included in ${foundService?.title || "this"} service?`, answer: "Our service includes comprehensive strategy development, implementation, ongoing optimization, and detailed reporting tailored to your business needs." },
@@ -283,13 +337,14 @@ const ServiceDetail = async ({ slug }: { slug?: string }) => {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead
-        title={`${service.title} Services | Revenuxe`}
+        title={service.seoTitle || `${service.title} Services`}
         description={service.description}
+        keywords={service.seoKeywords}
         canonicalUrl={canonicalUrl}
         ogImage={`${origin}/og-service.png`}
       />
       <Navigation />
-      <PageHero title={service.title} subtitle={service.subtitle} />
+      <PageHero title={service.title} highlight={service.highlight} subtitle={service.subtitle} />
 
       <main>
         {/* Overview */}

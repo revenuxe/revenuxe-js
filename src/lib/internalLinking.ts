@@ -35,6 +35,11 @@ export const coreServiceLinks: InternalLinkItem[] = [
     title: "Landing Pages",
     description: "Conversion-focused landing pages for paid campaigns and lead generation.",
   },
+  {
+    href: "/services/migration",
+    title: "Migration",
+    description: "Migrate React, Vite, and SPA websites to Next.js for SSR, SEO, and long-term growth.",
+  },
 ];
 
 export const supportingServiceLinks: InternalLinkItem[] = [
@@ -229,6 +234,35 @@ export const serviceRelationships: Record<string, ServiceRelationship> = {
         href: "/sub-services/landing-analytics",
         title: "Landing Page Analytics",
         description: "Track user behavior and conversion outcomes more accurately.",
+      },
+    ],
+  },
+  migration: {
+    relatedServices: [
+      serviceLinkLookup["ai-webapp"],
+      serviceLinkLookup["ai-website"],
+      serviceLinkLookup["seo"],
+    ],
+    supportingSubServices: [
+      {
+        href: "/services/ai-webapp",
+        title: "Build Web App Using AI",
+        description: "Plan post-migration product enhancements and feature expansion on a modern stack.",
+      },
+      {
+        href: "/services/ai-website",
+        title: "Build Website Using AI",
+        description: "Refresh content, design systems, and publishing workflows after the migration is complete.",
+      },
+      {
+        href: "/sub-services/technical-seo",
+        title: "Technical SEO",
+        description: "Strengthen crawlability, indexing, schema, and performance after the Next.js rebuild.",
+      },
+      {
+        href: "/sub-services/conversion-optimization",
+        title: "Conversion Optimization",
+        description: "Improve funnels, forms, and landing page UX once the new architecture is live.",
       },
     ],
   },
