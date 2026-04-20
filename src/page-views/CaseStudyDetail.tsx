@@ -22,11 +22,16 @@ interface CaseStudy {
 
 const CaseStudyDetail = async ({ caseStudy }: { caseStudy: CaseStudy }) => {
   const canonicalUrl = await absoluteCanonicalUrl(`/case-studies/${caseStudy.id}`);
+  const rawDescription =
+    caseStudy.challenge ||
+    caseStudy.solution ||
+    caseStudy.results ||
+    `${caseStudy.title} case study from Revenuxe featuring strategy, execution, and measurable growth outcomes.`;
   return (
     <div className="min-h-screen bg-background">
       <SEOHead
         title={`${caseStudy.title} - Case Study | Revenuxe`}
-        description={`${(caseStudy.challenge || "").substring(0, 150)}...`}
+        description={rawDescription}
         keywords={`case study, ${caseStudy.industry || "digital marketing"}, ${caseStudy.client_name}, digital marketing success`}
         canonicalUrl={canonicalUrl}
       />

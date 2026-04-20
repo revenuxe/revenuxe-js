@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import { getDefaultHomepageSchemas } from "@/lib/seo/homepageSchemas";
+import logo from "@/assets/revenuxe-logo.webp";
 import {
   defaultSiteDescription,
   defaultSiteKeywords,
@@ -23,6 +24,30 @@ interface SEOHeadProps {
   children?: ReactNode;
 }
 
+const MIN_META_DESCRIPTION_LENGTH = 70;
+const MAX_META_DESCRIPTION_LENGTH = 160;
+
+const trimDescription = (value: string) => {
+  if (value.length <= MAX_META_DESCRIPTION_LENGTH) return value;
+
+  const cutoff = value.lastIndexOf(" ", MAX_META_DESCRIPTION_LENGTH - 3);
+  const safeCutoff = cutoff > 80 ? cutoff : MAX_META_DESCRIPTION_LENGTH - 3;
+  return `${value.slice(0, safeCutoff).trim()}...`;
+};
+
+const extendDescription = (value: string) => {
+  if (!value) {
+    return "Discover Revenuxe's AI-powered SEO, paid media, websites, and growth solutions.";
+  }
+
+  if (value.length >= MIN_META_DESCRIPTION_LENGTH) return value;
+
+  const suffix =
+    " Discover Revenuxe's AI-powered SEO, paid media, websites, and growth solutions.";
+
+  return trimDescription(`${value.replace(/[.!?\s]*$/, ".")} ${suffix}`.replace(/\s+/g, " ").trim());
+};
+
 /**
  * SSR-safe SEO head for Next.js App Router.
  * - No `window` usage.
@@ -42,6 +67,8 @@ export const SEOHead = ({
   const fullTitle = title.includes("Revenuxe") ? title : `${title} | Revenuxe`;
 
   const currentUrl = canonicalUrl ?? SITE_URL_FALLBACK;
+  const normalizedDescription = extendDescription(trimDescription(description.replace(/\s+/g, " ").trim()));
+  const resolvedOgImage = ogImage ?? `${SITE_URL_FALLBACK}${logo.src}`;
   const robotsContent = noindex
     ? "noindex, nofollow"
     : "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1";
@@ -52,7 +79,7 @@ export const SEOHead = ({
     <>
       <title>{fullTitle}</title>
 
-      <meta name="description" content={description} />
+      <meta name="description" content={normalizedDescription} />
       <meta name="keywords" content={keywords} />
       <meta name="author" content="Revenuxe" />
 
@@ -63,18 +90,20 @@ export const SEOHead = ({
 
       {/* Open Graph */}
       <meta property="og:title" content={fullTitle} />
-      <meta property="og:description" content={description} />
+      <meta property="og:description" content={normalizedDescription} />
       <meta property="og:type" content={ogType} />
       <meta property="og:url" content={currentUrl} />
-      {ogImage && <meta property="og:image" content={ogImage} />}
+      <meta property="og:image" content={resolvedOgImage} />
+      <meta property="og:image:alt" content={`${fullTitle} preview image`} />
       <meta property="og:site_name" content="Revenuxe" />
       <meta property="og:locale" content="en_IN" />
 
       {/* Twitter */}
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={fullTitle} />
-      <meta name="twitter:description" content={description} />
-      {ogImage && <meta name="twitter:image" content={ogImage} />}
+      <meta name="twitter:description" content={normalizedDescription} />
+      <meta name="twitter:image" content={resolvedOgImage} />
+      <meta name="twitter:image:alt" content={`${fullTitle} preview image`} />
       <meta name="twitter:site" content="@revenuxe" />
 
       {/* Geo & Language */}
