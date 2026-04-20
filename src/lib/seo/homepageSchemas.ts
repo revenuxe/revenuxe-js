@@ -9,8 +9,8 @@ export const organizationSchema = {
   alternateName: "Revenuxe Digital Marketing Agency",
   description:
     "India's #1 AI-powered digital marketing agency delivering guaranteed ROI through SEO, performance marketing, web development & social media marketing.",
-  url: "https://revenuxe.com",
-  logo: "https://revenuxe.com/favicon.ico",
+  url: "https://www.revenuxe.com",
+  logo: "https://www.revenuxe.com/favicon.ico",
   sameAs: ["https://www.linkedin.com/company/revenuxe/"],
   contactPoint: {
     "@type": "ContactPoint",
@@ -36,11 +36,11 @@ export const localBusinessSchema = {
   name: "Revenuxe — AI Digital Marketing Agency",
   description:
     "Full-service AI-powered digital marketing agency specializing in SEO, Google Ads, Meta Ads, web development, social media marketing & content marketing with guaranteed ROI.",
-  url: "https://revenuxe.com",
+  url: "https://www.revenuxe.com",
   telephone: "+91-9886285028",
   email: "revenuxe@gmail.com",
   priceRange: "$$",
-  image: "https://revenuxe.com/favicon.ico",
+  image: "https://www.revenuxe.com/favicon.ico",
   address: {
     "@type": "PostalAddress",
     addressCountry: "IN",
@@ -87,7 +87,7 @@ export const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
   name: "Revenuxe",
-  url: "https://revenuxe.com",
+  url: "https://www.revenuxe.com",
   description: "India's #1 AI-powered digital marketing agency",
   publisher: {
     "@type": "Organization",
@@ -95,7 +95,7 @@ export const websiteSchema = {
   },
   potentialAction: {
     "@type": "SearchAction",
-    target: "https://revenuxe.com/search?q={search_term_string}",
+    target: "https://www.revenuxe.com/search?q={search_term_string}",
     "query-input": "required name=search_term_string",
   },
 };
@@ -108,7 +108,7 @@ export const breadcrumbSchema = {
       "@type": "ListItem",
       position: 1,
       name: "Home",
-      item: "https://revenuxe.com",
+      item: "https://www.revenuxe.com",
     },
   ],
 };

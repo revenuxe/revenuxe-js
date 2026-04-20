@@ -1,5 +1,5 @@
 # Revenuxe — robots.txt
-# https://revenuxe.com
+# https://www.revenuxe.com
 
 # Allow all search engines
 User-agent: *
@@ -9,7 +9,7 @@ Disallow: /admin-login
 Disallow: /admin/*
 
 # Sitemap
-Sitemap: https://revenuxe.com/sitemap.xml
+Sitemap: https://www.revenuxe.com/sitemap.xml
 
 # Crawl-delay for aggressive bots
 User-agent: AhrefsBot
