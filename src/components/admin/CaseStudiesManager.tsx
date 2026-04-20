@@ -20,6 +20,7 @@ import {
 interface CaseStudy {
   id: string;
   title: string;
+  slug: string;
   client_name: string;
   industry: string;
   challenge: string;
@@ -27,6 +28,9 @@ interface CaseStudy {
   results: string;
   image_url: string | null;
   website_url: string | null;
+  meta_title: string | null;
+  meta_description: string | null;
+  meta_keywords: string | null;
   featured: boolean;
 }
 
@@ -38,6 +42,7 @@ export const CaseStudiesManager = () => {
   const [editingId, setEditingId] = useState<string | null>(null);
   const [formData, setFormData] = useState({
     title: "",
+    slug: "",
     client_name: "",
     industry: "",
     challenge: "",
@@ -45,6 +50,9 @@ export const CaseStudiesManager = () => {
     results: "",
     image_url: "",
     website_url: "",
+    meta_title: "",
+    meta_description: "",
+    meta_keywords: "",
     featured: false,
   });
   const [uploading, setUploading] = useState(false);
@@ -71,12 +79,17 @@ export const CaseStudiesManager = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    const slug = (formData.slug || formData.meta_title || formData.title)
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/^-|-$/g, "");
+    const payload = { ...formData, slug };
 
     try {
       if (editingId) {
         const { error } = await supabase
           .from("case_studies" as any)
-          .update(formData as any)
+          .update(payload as any)
           .eq("id", editingId);
 
         if (error) throw error;
@@ -86,7 +99,7 @@ export const CaseStudiesManager = () => {
           description: "Case study updated successfully",
         });
       } else {
-        const { error } = await supabase.from("case_studies" as any).insert([formData] as any);
+        const { error } = await supabase.from("case_studies" as any).insert([payload] as any);
 
         if (error) throw error;
 
@@ -112,6 +125,7 @@ export const CaseStudiesManager = () => {
     setEditingId(caseStudy.id);
     setFormData({
       title: caseStudy.title,
+      slug: caseStudy.slug || "",
       client_name: caseStudy.client_name,
       industry: caseStudy.industry,
       challenge: caseStudy.challenge,
@@ -119,6 +133,9 @@ export const CaseStudiesManager = () => {
       results: caseStudy.results,
       image_url: caseStudy.image_url || "",
       website_url: caseStudy.website_url || "",
+      meta_title: caseStudy.meta_title || "",
+      meta_description: caseStudy.meta_description || "",
+      meta_keywords: caseStudy.meta_keywords || "",
       featured: caseStudy.featured,
     });
     setDialogOpen(true);
@@ -188,6 +205,7 @@ export const CaseStudiesManager = () => {
     setEditingId(null);
     setFormData({
       title: "",
+      slug: "",
       client_name: "",
       industry: "",
       challenge: "",
@@ -195,6 +213,9 @@ export const CaseStudiesManager = () => {
       results: "",
       image_url: "",
       website_url: "",
+      meta_title: "",
+      meta_description: "",
+      meta_keywords: "",
       featured: false,
     });
   };
@@ -222,11 +243,41 @@ export const CaseStudiesManager = () => {
                 <Input
                   id="title"
                   value={formData.title}
+                  onChange={(e) => {
+                    const title = e.target.value;
+                    setFormData((prev) => {
+                      const nextSlug = (prev.meta_title || title)
+                        .toLowerCase()
+                        .replace(/[^a-z0-9]+/g, "-")
+                        .replace(/^-|-$/g, "");
+                      return { ...prev, title, slug: nextSlug };
+                    });
+                  }}
+                  required
+                />
+              </div>
+
+              <div>
+                <Label htmlFor="slug">Case Study URL Slug</Label>
+                <Input
+                  id="slug"
+                  placeholder="from-spreadsheet-chaos-to-smooth-projects"
+                  value={formData.slug}
                   onChange={(e) =>
-                    setFormData((prev) => ({ ...prev, title: e.target.value }))
+                    setFormData((prev) => ({
+                      ...prev,
+                      slug: e.target.value
+                        .toLowerCase()
+                        .replace(/[^a-z0-9-]/g, "")
+                        .replace(/-{2,}/g, "-")
+                        .replace(/^-|-$/g, ""),
+                    }))
                   }
                   required
                 />
+                <p className="text-xs text-muted-foreground mt-1">
+                  Final URL: /case-studies/{formData.slug || "your-meta-title"}
+                </p>
               </div>
 
               <div className="grid grid-cols-2 gap-4">
@@ -347,6 +398,54 @@ export const CaseStudiesManager = () => {
                 />
               </div>
 
+              <div className="space-y-4 rounded-md border p-4">
+                <h4 className="font-semibold">SEO Fields</h4>
+                <div>
+                  <Label htmlFor="meta_title">Meta Title</Label>
+                  <Input
+                    id="meta_title"
+                    placeholder="Case study SEO title"
+                    value={formData.meta_title}
+                    onChange={(e) => {
+                      const meta_title = e.target.value;
+                      setFormData((prev) => ({
+                        ...prev,
+                        meta_title,
+                        slug: meta_title
+                          .toLowerCase()
+                          .replace(/[^a-z0-9]+/g, "-")
+                          .replace(/^-|-$/g, ""),
+                      }));
+                    }}
+                  />
+                </div>
+
+                <div>
+                  <Label htmlFor="meta_description">Meta Description</Label>
+                  <Textarea
+                    id="meta_description"
+                    rows={3}
+                    placeholder="SEO description for this case study"
+                    value={formData.meta_description}
+                    onChange={(e) =>
+                      setFormData((prev) => ({ ...prev, meta_description: e.target.value }))
+                    }
+                  />
+                </div>
+
+                <div>
+                  <Label htmlFor="meta_keywords">Meta Keywords (comma separated)</Label>
+                  <Input
+                    id="meta_keywords"
+                    placeholder="case study, interior design, invoicing"
+                    value={formData.meta_keywords}
+                    onChange={(e) =>
+                      setFormData((prev) => ({ ...prev, meta_keywords: e.target.value }))
+                    }
+                  />
+                </div>
+              </div>
+
               <div className="flex items-center space-x-2">
                 <Switch
                   id="featured"
@@ -410,6 +509,7 @@ export const CaseStudiesManager = () => {
                         </>
                       )}
                     </p>
+                    <p className="text-xs text-muted-foreground mb-2">URL: /case-studies/{study.slug || study.id}</p>
                     <div className="space-y-2 text-sm">
                       <p>
                         <strong>Challenge:</strong> {study.challenge}

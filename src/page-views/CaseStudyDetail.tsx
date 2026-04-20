@@ -9,6 +9,7 @@ import { absoluteCanonicalUrl } from "@/lib/seo/canonical";
 
 interface CaseStudy {
   id: string;
+  slug: string | null;
   title: string;
   client_name: string;
   industry: string | null;
@@ -17,12 +18,16 @@ interface CaseStudy {
   results: string | null;
   image_url: string | null;
   website_url: string | null;
+  meta_title: string | null;
+  meta_description: string | null;
+  meta_keywords: string | null;
   featured: boolean;
 }
 
 const CaseStudyDetail = async ({ caseStudy }: { caseStudy: CaseStudy }) => {
-  const canonicalUrl = await absoluteCanonicalUrl(`/case-studies/${caseStudy.id}`);
+  const canonicalUrl = await absoluteCanonicalUrl(`/case-studies/${caseStudy.slug || caseStudy.id}`);
   const rawDescription =
+    caseStudy.meta_description ||
     caseStudy.challenge ||
     caseStudy.solution ||
     caseStudy.results ||
@@ -30,9 +35,12 @@ const CaseStudyDetail = async ({ caseStudy }: { caseStudy: CaseStudy }) => {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead
-        title={`${caseStudy.title} - Case Study | Revenuxe`}
+        title={caseStudy.meta_title || `${caseStudy.title} - Case Study | Revenuxe`}
         description={rawDescription}
-        keywords={`case study, ${caseStudy.industry || "digital marketing"}, ${caseStudy.client_name}, digital marketing success`}
+        keywords={
+          caseStudy.meta_keywords ||
+          `case study, ${caseStudy.industry || "digital marketing"}, ${caseStudy.client_name}, digital marketing success`
+        }
         canonicalUrl={canonicalUrl}
       />
       <Navigation />

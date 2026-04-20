@@ -65,7 +65,11 @@ export type Database = {
           id: string
           image_url: string | null
           industry: string | null
+          meta_description: string | null
+          meta_keywords: string | null
+          meta_title: string | null
           results: string | null
+          slug: string | null
           solution: string | null
           title: string
           updated_at: string
@@ -79,7 +83,11 @@ export type Database = {
           id?: string
           image_url?: string | null
           industry?: string | null
+          meta_description?: string | null
+          meta_keywords?: string | null
+          meta_title?: string | null
           results?: string | null
+          slug?: string | null
           solution?: string | null
           title: string
           updated_at?: string
@@ -93,7 +101,11 @@ export type Database = {
           id?: string
           image_url?: string | null
           industry?: string | null
+          meta_description?: string | null
+          meta_keywords?: string | null
+          meta_title?: string | null
           results?: string | null
+          slug?: string | null
           solution?: string | null
           title?: string
           updated_at?: string

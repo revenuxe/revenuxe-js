@@ -11,6 +11,7 @@ import { absoluteCanonicalUrl } from "@/lib/seo/canonical";
 
 interface CaseStudy {
   id: string;
+  slug: string | null;
   title: string;
   client_name: string;
   industry: string;
@@ -52,7 +53,7 @@ const CaseStudies = async ({ caseStudies }: { caseStudies: CaseStudy[] }) => {
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
                 {caseStudies.map((study) => (
                   <Card key={study.id} className="overflow-hidden hover:shadow-2xl transition-shadow duration-300 border-border group cursor-pointer">
-                    <Link href={`/case-studies/${study.id}`}>
+                    <Link href={`/case-studies/${study.slug || study.id}`}>
                       {study.image_url && (
                         <div className="aspect-video overflow-hidden bg-muted">
                           <img

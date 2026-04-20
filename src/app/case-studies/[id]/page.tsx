@@ -10,15 +10,26 @@ export default async function CaseStudyDetailPage({
   params: Promise<{ id: string }> | { id: string };
 }) {
   const resolved = await params;
+  const slugOrId = decodeURIComponent(resolved.id);
 
-  const { data, error } = await supabaseServer
+  const { data: bySlug, error: slugError } = await supabaseServer
     .from("case_studies")
     .select("*")
-    .eq("id", resolved.id)
+    .eq("slug", slugOrId)
     .single();
 
-  if (error || !data) notFound();
+  if (bySlug && !slugError) {
+    return <CaseStudyDetail caseStudy={bySlug as any} />;
+  }
 
-  return <CaseStudyDetail caseStudy={data as any} />;
+  const { data: byId, error: idError } = await supabaseServer
+    .from("case_studies")
+    .select("*")
+    .eq("id", slugOrId)
+    .single();
+
+  if (idError || !byId) notFound();
+
+  return <CaseStudyDetail caseStudy={byId as any} />;
 }
 
