@@ -57,6 +57,23 @@ export const CaseStudiesManager = () => {
   });
   const [uploading, setUploading] = useState(false);
 
+  const getSaveErrorMessage = (error: any) => {
+    const rawMessage = String(
+      error?.message || error?.details || error?.hint || "Failed to save case study.",
+    );
+    const normalized = rawMessage.toLowerCase();
+
+    if (
+      normalized.includes("schema cache") ||
+      normalized.includes("could not find the 'slug' column") ||
+      normalized.includes("column") && normalized.includes("does not exist")
+    ) {
+      return "Database migration is missing. Please run the latest Supabase migration to add slug/meta fields (slug, meta_title, meta_description, meta_keywords), then try again.";
+    }
+
+    return rawMessage;
+  };
+
   useEffect(() => {
     fetchCaseStudies();
   }, []);
@@ -112,10 +129,10 @@ export const CaseStudiesManager = () => {
       setDialogOpen(false);
       resetForm();
       fetchCaseStudies();
-    } catch (error) {
+    } catch (error: any) {
       toast({
         title: "Error",
-        description: "Failed to save case study",
+        description: getSaveErrorMessage(error),
         variant: "destructive",
       });
     }

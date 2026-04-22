@@ -1,0 +1,37 @@
+# Revenuxe
+
+> AI-powered digital marketing and growth partner for startups and businesses.
+
+Revenuxe helps brands grow with SEO, performance marketing, CRO, websites, and AI-enabled marketing operations.
+
+## Company
+- Name: Revenuxe
+- Website: https://www.revenuxe.com
+- Primary market: India with global delivery support
+- Contact: https://www.revenuxe.com/contact
+
+## Core Services
+- SEO services: https://www.revenuxe.com/services/seo
+- Performance marketing: https://www.revenuxe.com/services/performance-marketing
+- Social media marketing: https://www.revenuxe.com/services/social-media
+- Web development: https://www.revenuxe.com/services/web-development
+- AI website services: https://www.revenuxe.com/services/ai-website
+- AI web app development: https://www.revenuxe.com/services/ai-webapp
+
+## Trust & Proof
+- Case studies: https://www.revenuxe.com/case-studies
+- Articles and insights: https://www.revenuxe.com/articles
+- Projects: https://www.revenuxe.com/projects
+
+## Useful URLs
+- Home: https://www.revenuxe.com/
+- About: https://www.revenuxe.com/about
+- Contact: https://www.revenuxe.com/contact
+- ROI calculator: https://www.revenuxe.com/roi-calculator
+- Privacy: https://www.revenuxe.com/privacy
+- Terms: https://www.revenuxe.com/terms
+
+## Crawling Guidance
+- Public marketing pages may be indexed and summarized.
+- Admin/auth routes are excluded in robots policy.
+- Canonical source of truth for URLs is the XML sitemap.

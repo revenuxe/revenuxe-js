@@ -14,10 +14,14 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <link rel="shortcut icon" href="/favicon.ico?v=2" />
         <meta name="author" content="Revenuxe" />
         <meta name="theme-color" content="#1e3a5f" />
+        <meta name="referrer" content="strict-origin-when-cross-origin" />
+        <meta name="format-detection" content="telephone=no, date=no, email=no, address=no" />
 
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@revenuxe" />
+        <link rel="alternate" type="text/plain" href="/llms.txt" title="LLMs Profile" />
+        <link rel="alternate" type="text/plain" href="/ai.txt" title="AI Retrieval Profile" />
 
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />

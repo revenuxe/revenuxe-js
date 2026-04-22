@@ -11,6 +11,33 @@ Disallow: /admin/*
 # Sitemap
 Sitemap: https://www.revenuxe.com/sitemap.xml
 
+# AI discovery files
+# These are lightweight machine-readable docs for LLM/AI retrieval systems.
+# https://www.revenuxe.com/llms.txt
+# https://www.revenuxe.com/ai.txt
+
+# Major AI crawlers
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
 # Crawl-delay for aggressive bots
 User-agent: AhrefsBot
 Crawl-delay: 10

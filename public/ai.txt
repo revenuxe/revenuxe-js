@@ -1,0 +1,18 @@
+Revenuxe AI Retrieval Profile
+Origin: https://www.revenuxe.com
+LLMs: https://www.revenuxe.com/llms.txt
+Sitemap: https://www.revenuxe.com/sitemap.xml
+
+Primary topics:
+- AI digital marketing
+- SEO and technical SEO
+- Performance marketing (Google Ads and Meta Ads)
+- Conversion-focused web development
+- CRO and analytics
+
+Preferred entry points:
+- https://www.revenuxe.com/
+- https://www.revenuxe.com/services
+- https://www.revenuxe.com/case-studies
+- https://www.revenuxe.com/articles
+- https://www.revenuxe.com/contact
