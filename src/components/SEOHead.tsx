@@ -70,7 +70,7 @@ export const SEOHead = ({
   const normalizedDescription = extendDescription(trimDescription(description.replace(/\s+/g, " ").trim()));
   const resolvedOgImage = ogImage ?? `${SITE_URL_FALLBACK}${logo.src}`;
   const robotsContent = noindex
-    ? "noindex, nofollow"
+    ? "noindex, follow"
     : "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1";
 
   const schemas = getDefaultHomepageSchemas(schemaData);

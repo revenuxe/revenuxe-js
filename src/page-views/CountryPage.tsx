@@ -12,6 +12,7 @@ import FAQ from "@/components/FAQ";
 import { getCountryFAQs } from "@/data/faqData";
 import RecentProjects from "@/components/RecentProjects";
 import { absoluteCanonicalUrl, getCanonicalOrigin } from "@/lib/seo/canonical";
+import Link from "next/link";
 
 const countryData: Record<string, {
   name: string;
@@ -244,7 +245,7 @@ const CountryPage = async ({
           </div>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 max-w-6xl mx-auto">
             {countryInfo.cities.map((city) => (
-              <a
+              <Link
                 key={city.slug}
                 href={`/country/${countrySlug}/${city.slug}`}
                 className="p-6 bg-card border border-border rounded-lg hover:border-primary transition-all hover:shadow-lg text-center group"
@@ -252,7 +253,7 @@ const CountryPage = async ({
                 <p className="font-semibold group-hover:text-primary transition-colors">
                   {city.name}
                 </p>
-              </a>
+              </Link>
             ))}
           </div>
         </div>

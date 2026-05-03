@@ -48,39 +48,46 @@ export default function RecentProjects({
               <CarouselContent className="px-1">
                 {list.map((p) => {
                   const description = p.short_description ?? p.info;
+                  const content = (
+                    <Card className="h-full w-full p-4 rounded-2xl border-border bg-background/60 hover:shadow-xl transition-shadow">
+                      <div className="h-full flex items-center gap-4 text-left">
+                        <div className="shrink-0">
+                          <img
+                            src={p.logo_url || "/placeholder.svg"}
+                            alt={`${p.title} logo`}
+                            className="h-14 w-14 rounded-2xl object-contain bg-background border border-border/70 p-2"
+                            loading="lazy"
+                          />
+                        </div>
+                        <div className="min-w-0">
+                          <div className="text-sm font-semibold truncate">{p.title}</div>
+                          {description ? (
+                            <div className="text-xs text-muted-foreground mt-1 line-clamp-2">
+                              {description}
+                            </div>
+                          ) : null}
+                        </div>
+                      </div>
+                    </Card>
+                  );
                   return (
                     <CarouselItem
                       key={p.id}
                       className="px-2 basis-[85%] sm:basis-[33.333%]"
                     >
-                      <a
-                        href={p.website_url || "#"}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label={`Visit ${p.title}`}
-                        className="block h-full w-full cursor-pointer"
-                      >
-                        <Card className="h-full w-full p-4 rounded-2xl border-border bg-background/60 hover:shadow-xl transition-shadow">
-                          <div className="h-full flex items-center gap-4 text-left">
-                            <div className="shrink-0">
-                              <img
-                                src={p.logo_url || "/placeholder.svg"}
-                                alt={`${p.title} logo`}
-                                className="h-14 w-14 rounded-2xl object-contain bg-background border border-border/70 p-2"
-                                loading="lazy"
-                              />
-                            </div>
-                            <div className="min-w-0">
-                              <div className="text-sm font-semibold truncate">{p.title}</div>
-                              {description ? (
-                                <div className="text-xs text-muted-foreground mt-1 line-clamp-2">
-                                  {description}
-                                </div>
-                              ) : null}
-                            </div>
-                          </div>
-                        </Card>
-                      </a>
+                      {p.website_url ? (
+                        <a
+                          href={p.website_url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label={`Visit ${p.title}`}
+                          className="block h-full w-full cursor-pointer"
+                        >
+                          {content}
+                        </a>
+                      ) : (
+                        <div className="block h-full w-full">{content}</div>
+                      )}
                     </CarouselItem>
                   );
                 })}

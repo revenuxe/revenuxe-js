@@ -11,7 +11,7 @@ export const organizationSchema = {
     "India's #1 AI-powered digital marketing agency delivering guaranteed ROI through SEO, performance marketing, web development & social media marketing.",
   url: "https://www.revenuxe.com",
   logo: "https://www.revenuxe.com/favicon.ico",
-  sameAs: ["https://www.linkedin.com/company/revenuxe/"],
+  sameAs: ["https://www.linkedin.com/company/revenuxe"],
   contactPoint: {
     "@type": "ContactPoint",
     telephone: "+91-9886285028",

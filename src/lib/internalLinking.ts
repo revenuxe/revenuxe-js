@@ -36,6 +36,36 @@ export const coreServiceLinks: InternalLinkItem[] = [
     description: "Conversion-focused landing pages for paid campaigns and lead generation.",
   },
   {
+    href: "/services/web-development",
+    title: "Web Development",
+    description: "Modern, conversion-ready websites and web apps built for speed and scale.",
+  },
+  {
+    href: "/services/ecommerce",
+    title: "E-Commerce Solutions",
+    description: "Online store setup, payment integrations, and conversion optimization.",
+  },
+  {
+    href: "/services/content-marketing",
+    title: "Content Marketing",
+    description: "Authority-building content strategy, articles, and SEO-led publishing.",
+  },
+  {
+    href: "/services/email-marketing",
+    title: "Email Marketing",
+    description: "Lifecycle campaigns, automation, and retention-focused email systems.",
+  },
+  {
+    href: "/services/analytics",
+    title: "Analytics",
+    description: "Tracking, dashboards, and data intelligence for better growth decisions.",
+  },
+  {
+    href: "/services/branding",
+    title: "Branding",
+    description: "Brand strategy, identity systems, and visual design for stronger recall.",
+  },
+  {
     href: "/services/migration",
     title: "Migration",
     description: "Migrate React, Vite, and SPA websites to Next.js for SSR, SEO, and long-term growth.",
@@ -43,14 +73,36 @@ export const coreServiceLinks: InternalLinkItem[] = [
 ];
 
 export const supportingServiceLinks: InternalLinkItem[] = [
+  { href: "/sub-services/lovable-development", title: "Lovable Development" },
+  { href: "/sub-services/bolt-development", title: "Bolt.new Development" },
+  { href: "/sub-services/replit-development", title: "Replit Development" },
+  { href: "/sub-services/cursor-development", title: "Cursor Development" },
+  { href: "/sub-services/v0-development", title: "V0 Development" },
+  { href: "/sub-services/firebase-studio", title: "Firebase Studio" },
+  { href: "/sub-services/wordpress-ai", title: "WordPress AI" },
+  { href: "/sub-services/framer-development", title: "Framer Development" },
+  { href: "/sub-services/webflow-development", title: "Webflow Development" },
+  { href: "/sub-services/wix-ai", title: "Wix AI" },
+  { href: "/sub-services/hostinger-ai", title: "Hostinger AI" },
+  { href: "/sub-services/durable-ai", title: "Durable AI" },
   { href: "/sub-services/google-ads", title: "Google Ads Management" },
   { href: "/sub-services/meta-ads", title: "Meta Ads" },
+  { href: "/sub-services/ai-advertising", title: "AI Advertising" },
+  { href: "/sub-services/video-advertising", title: "Video Advertising" },
+  { href: "/sub-services/retargeting", title: "Retargeting" },
   { href: "/sub-services/technical-seo", title: "Technical SEO" },
   { href: "/sub-services/keyword-strategy", title: "Keyword Strategy" },
+  { href: "/sub-services/on-page-seo", title: "On-Page SEO" },
+  { href: "/sub-services/link-building", title: "Link Building" },
   { href: "/sub-services/conversion-optimization", title: "Conversion Optimization" },
   { href: "/sub-services/content-planning", title: "Content Planning" },
   { href: "/sub-services/platform-optimization", title: "Platform Optimization" },
+  { href: "/sub-services/community-management", title: "Community Management" },
+  { href: "/sub-services/paid-social", title: "Paid Social" },
+  { href: "/sub-services/conversion-design", title: "Conversion Design" },
+  { href: "/sub-services/ab-testing", title: "A/B Testing" },
   { href: "/sub-services/lead-forms", title: "Lead Capture Forms" },
+  { href: "/sub-services/landing-analytics", title: "Landing Analytics" },
 ];
 
 type ServiceRelationship = {

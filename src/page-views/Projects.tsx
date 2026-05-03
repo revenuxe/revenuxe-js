@@ -43,14 +43,8 @@ export default async function Projects({ projects }: { projects: Project[] }) {
           </div>
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-            {projects.map((p) => (
-              <a
-                key={p.id}
-                href={p.website_url || "#"}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group"
-              >
+            {projects.map((p) => {
+              const content = (
                 <Card className="p-6 border-border bg-card/40 hover:shadow-xl transition-shadow h-full">
                   <div className="flex items-center justify-center">
                     <img
@@ -69,8 +63,24 @@ export default async function Projects({ projects }: { projects: Project[] }) {
                     </p>
                   ) : null}
                 </Card>
-              </a>
-            ))}
+              );
+
+              return p.website_url ? (
+                <a
+                  key={p.id}
+                  href={p.website_url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group"
+                >
+                  {content}
+                </a>
+              ) : (
+                <div key={p.id} className="group">
+                  {content}
+                </div>
+              );
+            })}
           </div>
         )}
       </main>

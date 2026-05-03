@@ -13,7 +13,6 @@ const TermsAndConditions = async () => {
         description="Read Revenuxe's terms and conditions for digital marketing services. Understand our service agreements, payment terms, client responsibilities, and business policies."
         keywords="Revenuxe terms and conditions, service agreement, digital marketing terms"
         canonicalUrl={canonicalUrl}
-        noindex={true}
       />
       <Navigation />
       <PageHero title="Terms &" highlight="Conditions" subtitle="Last Updated: January 2024" />
