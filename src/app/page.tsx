@@ -3,6 +3,7 @@ import Index from "@/page-views/Index";
 import { HomeStructuredData } from "@/components/HomeStructuredData";
 import { supabaseServer } from "@/integrations/supabase/server";
 import { getCanonicalOrigin } from "@/lib/seo/canonical";
+import { normalizeProjectLinks } from "@/lib/projectsServer";
 import {
   defaultSiteDescription,
   defaultSiteKeywords,
@@ -77,6 +78,7 @@ export default async function HomePage() {
     recentProjects = hasPublishedField
       ? raw.filter((p: any) => isPublished(p.published))
       : raw;
+    recentProjects = normalizeProjectLinks(recentProjects);
   } catch (error) {
     console.error("Error fetching recent projects:", error);
     recentProjects = [];

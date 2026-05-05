@@ -13,6 +13,8 @@ const PrivacyPolicy = async () => {
         description="Read Revenuxe's privacy policy. We are committed to protecting your personal information and ensuring GDPR-compliant data handling across all our digital marketing services."
         keywords="Revenuxe privacy policy, data protection, GDPR compliance, marketing agency privacy"
         canonicalUrl={canonicalUrl}
+        noindex={true}
+        standardTags={false}
       />
       <Navigation />
       <PageHero title="Privacy" highlight="Policy" subtitle="Last Updated: January 2024" />

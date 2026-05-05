@@ -17,6 +17,7 @@ interface SEOHeadProps {
   ogType?: string;
   schemaData?: any;
   noindex?: boolean;
+  standardTags?: boolean;
   /**
    * Optional extra head nodes (rare; used when a route needs custom tags).
    * Kept to avoid editing many call-sites later.
@@ -62,6 +63,7 @@ export const SEOHead = ({
   ogType = "website",
   schemaData,
   noindex = false,
+  standardTags = true,
   children,
 }: SEOHeadProps) => {
   const fullTitle = title.includes("Revenuxe") ? title : `${title} | Revenuxe`;
@@ -77,44 +79,48 @@ export const SEOHead = ({
 
   return (
     <>
-      <title>{fullTitle}</title>
+      {standardTags ? (
+        <>
+          <title>{fullTitle}</title>
 
-      <meta name="description" content={normalizedDescription} />
-      <meta name="keywords" content={keywords} />
-      <meta name="author" content="Revenuxe" />
+          <meta name="description" content={normalizedDescription} />
+          <meta name="keywords" content={keywords} />
+          <meta name="author" content="Revenuxe" />
 
-      <meta name="robots" content={robotsContent} />
-      <meta name="googlebot" content={robotsContent} />
+          <meta name="robots" content={robotsContent} />
+          <meta name="googlebot" content={robotsContent} />
 
-      <link rel="canonical" href={currentUrl} />
+          <link rel="canonical" href={currentUrl} />
 
-      {/* Open Graph */}
-      <meta property="og:title" content={fullTitle} />
-      <meta property="og:description" content={normalizedDescription} />
-      <meta property="og:type" content={ogType} />
-      <meta property="og:url" content={currentUrl} />
-      <meta property="og:image" content={resolvedOgImage} />
-      <meta property="og:image:alt" content={`${fullTitle} preview image`} />
-      <meta property="og:site_name" content="Revenuxe" />
-      <meta property="og:locale" content="en_IN" />
+          {/* Open Graph */}
+          <meta property="og:title" content={fullTitle} />
+          <meta property="og:description" content={normalizedDescription} />
+          <meta property="og:type" content={ogType} />
+          <meta property="og:url" content={currentUrl} />
+          <meta property="og:image" content={resolvedOgImage} />
+          <meta property="og:image:alt" content={`${fullTitle} preview image`} />
+          <meta property="og:site_name" content="Revenuxe" />
+          <meta property="og:locale" content="en_IN" />
 
-      {/* Twitter */}
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content={fullTitle} />
-      <meta name="twitter:description" content={normalizedDescription} />
-      <meta name="twitter:image" content={resolvedOgImage} />
-      <meta name="twitter:image:alt" content={`${fullTitle} preview image`} />
-      <meta name="twitter:site" content="@revenuxe" />
+          {/* Twitter */}
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta name="twitter:title" content={fullTitle} />
+          <meta name="twitter:description" content={normalizedDescription} />
+          <meta name="twitter:image" content={resolvedOgImage} />
+          <meta name="twitter:image:alt" content={`${fullTitle} preview image`} />
+          <meta name="twitter:site" content="@revenuxe" />
 
-      {/* Geo & Language */}
-      <meta name="language" content="English" />
-      <meta name="geo.region" content="IN" />
-      <meta name="geo.placename" content="India" />
-      <meta httpEquiv="content-language" content="en-IN" />
+          {/* Geo & Language */}
+          <meta name="language" content="English" />
+          <meta name="geo.region" content="IN" />
+          <meta name="geo.placename" content="India" />
+          <meta httpEquiv="content-language" content="en-IN" />
 
-      {/* Mobile */}
-      <meta name="theme-color" content="#1e3a5f" />
-      <meta name="mobile-web-app-capable" content="yes" />
+          {/* Mobile */}
+          <meta name="theme-color" content="#1e3a5f" />
+          <meta name="mobile-web-app-capable" content="yes" />
+        </>
+      ) : null}
 
       {/* Structured Data */}
       {schemas.map((schema: any, index: number) => (

@@ -12,6 +12,7 @@ import FAQ from "@/components/FAQ";
 import { getCityFAQs } from "@/data/faqData";
 import RecentProjects from "@/components/RecentProjects";
 import { absoluteCanonicalUrl, getCanonicalOrigin } from "@/lib/seo/canonical";
+import { getCityCountrySeo } from "@/lib/seo/locationPages";
 
 const cityData: Record<string, {
   name: string;
@@ -212,20 +213,15 @@ const CityCountryPage = async ({
 }) => {
   const citySlug = (city || "").toLowerCase();
   const countrySlug = (country || "").toLowerCase();
-  const cityInfo = cityData[citySlug];
-
-  if (!cityInfo) {
-    return (
-      <div className="min-h-screen bg-background text-foreground">
-        <Navigation />
-        <div className="container mx-auto px-4 py-20 text-center">
-          <h1 className="text-4xl font-bold mb-4">City Not Found</h1>
-          <p className="text-muted-foreground">The city you're looking for doesn't exist.</p>
-        </div>
-        <Footer />
-      </div>
-    );
-  }
+  const fallbackSeo = getCityCountrySeo(countrySlug, citySlug);
+  const cityInfo = cityData[citySlug] ?? {
+    name: fallbackSeo.cityName,
+    country: fallbackSeo.countryName,
+    tagline: fallbackSeo.tagline,
+    description: fallbackSeo.description,
+    keywords: fallbackSeo.keywords,
+    metaDescription: fallbackSeo.description,
+  };
 
   const origin = await getCanonicalOrigin();
   const canonicalUrl = await absoluteCanonicalUrl(
@@ -240,6 +236,7 @@ const CityCountryPage = async ({
         description={cityInfo.metaDescription}
         keywords={cityInfo.keywords}
         canonicalUrl={canonicalUrl}
+        standardTags={false}
         schemaData={{
           "@context": "https://schema.org",
           "@type": "BreadcrumbList",

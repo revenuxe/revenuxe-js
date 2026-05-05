@@ -11,6 +11,41 @@ export type ProjectSummary = {
   short_description?: string | null;
 };
 
+const redirectedProjectHosts: Record<string, string> = {
+  "dexohomes.com": "www.dexohomes.com",
+  "everyspaces.com": "www.everyspaces.com",
+  "gkearthworks.com": "www.gkearthworks.com",
+  "laptap.in": "www.laptap.in",
+};
+
+export function normalizeProjectWebsiteUrl(value?: string | null) {
+  if (!value) return value ?? null;
+
+  try {
+    const url = new URL(value);
+    const finalHost = redirectedProjectHosts[url.hostname.toLowerCase()];
+
+    if (finalHost) {
+      url.hostname = finalHost;
+      url.protocol = "https:";
+      return url.toString();
+    }
+  } catch {
+    return value;
+  }
+
+  return value;
+}
+
+export function normalizeProjectLinks<T extends { website_url?: string | null }>(
+  projects: T[],
+) {
+  return projects.map((project) => ({
+    ...project,
+    website_url: normalizeProjectWebsiteUrl(project.website_url),
+  }));
+}
+
 function isTruthyPublished(v: any) {
   if (v === true) return true;
   if (v === 1) return true;
@@ -36,7 +71,10 @@ export async function fetchPublishedProjects(limit: number) {
     Object.prototype.hasOwnProperty.call(p, "published")
   );
 
-  if (!hasPublishedField) return raw;
-  return raw.filter((p) => isTruthyPublished(p.published));
+  const published = hasPublishedField
+    ? raw.filter((p) => isTruthyPublished(p.published))
+    : raw;
+
+  return normalizeProjectLinks(published);
 }
 
