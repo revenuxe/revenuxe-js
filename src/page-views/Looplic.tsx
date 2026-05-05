@@ -10,7 +10,7 @@ import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
 import FAQ from "@/components/FAQ";
 import { homepageFAQs } from "@/data/faqData";
-import RecentProjects from "@/components/RecentProjects";
+
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Zap, Brain, TrendingUp } from "lucide-react";
 import { useState } from "react";
@@ -95,6 +95,34 @@ const AiMediaHero = () => {
   );
 };
 
+const LooplicCTA = () => {
+  return (
+    <section className="py-14 md:py-24 bg-secondary">
+      <div className="container mx-auto px-4">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-display leading-tight mb-8">
+            Ready to transform your content?
+          </h2>
+          <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
+            Looplic is the AI media studio that empowers D2C, SaaS, creator-led and enterprise brands with high-performing content.
+          </p>
+          <Button 
+            size="lg" 
+            className="rounded-full px-8 py-6 text-base font-semibold text-primary-foreground"
+            style={{ background: "var(--brand-gradient)" }}
+            asChild
+          >
+            <a href="https://looplic.com" target="_blank" rel="noopener noreferrer">
+              Visit Looplic
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </a>
+          </Button>
+        </div>
+      </div>
+    </section>
+  );
+};
+
 const AiMediaFeatures = () => {
   const features = [
     {
@@ -141,9 +169,9 @@ const Looplic = ({ recentProjects }: { recentProjects: RecentProject[] }) => {
     <div className="min-h-screen bg-background text-foreground">
       <Navigation />
       <AiMediaHero />
+      <LooplicCTA />
       <AiMediaFeatures />
       <Stats />
-      <RecentProjects projects={recentProjects} />
       <Services />
       <WhyChooseUs />
       <Process />
