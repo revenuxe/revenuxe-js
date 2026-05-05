@@ -1,9 +1,6 @@
 import type { Metadata } from "next";
 import Looplic from "@/page-views/Looplic";
-import { HomeStructuredData } from "@/components/HomeStructuredData";
-import { supabaseServer } from "@/integrations/supabase/server";
 import { getCanonicalOrigin } from "@/lib/seo/canonical";
-import { normalizeProjectLinks } from "@/lib/projectsServer";
 
 export async function generateMetadata(): Promise<Metadata> {
   const origin = await getCanonicalOrigin();
@@ -65,37 +62,5 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function LooplicPage() {
-  let recentProjects: any[] = [];
-  try {
-    const { data: raw } = await supabaseServer
-      .from("projects")
-      .select("id, title, info, short_description, logo_url, website_url, published")
-      .order("created_at", { ascending: false })
-      .limit(6);
-
-    const hasPublishedField = raw?.some((p: any) =>
-      Object.prototype.hasOwnProperty.call(p, "published")
-    );
-
-    const isPublished = (v: any) => {
-      if (v === true) return true;
-      if (v === 1) return true;
-      if (v === "1") return true;
-      if (typeof v === "string") {
-        const s = v.toLowerCase();
-        return s === "true" || s === "t" || s === "yes" || s === "y";
-      }
-      return false;
-    };
-
-    recentProjects = hasPublishedField
-      ? raw.filter((p: any) => isPublished(p.published))
-      : raw;
-    recentProjects = normalizeProjectLinks(recentProjects);
-  } catch (error) {
-    console.error("Error fetching recent projects:", error);
-    recentProjects = [];
-  }
-
-  return <Looplic recentProjects={recentProjects} />;
+  return <Looplic recentProjects={[]} />;
 }
