@@ -16,7 +16,7 @@ const Navigation = () => {
     { label: "ROI Calculator", href: "/roi-calculator" },
     { label: "Case Studies", href: "/case-studies" },
     { label: "Projects", href: "/projects" },
-    { label: "Articles", href: "/articles" },
+    { label: "Looplic", href: "/looplic" },
   ];
 
   const isActive = (href: string) => {
