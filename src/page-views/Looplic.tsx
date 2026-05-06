@@ -104,7 +104,7 @@ const LooplicCTA = () => {
             Ready to transform your content?
           </h2>
           <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Looplic is the AI media studio that empowers D2C, SaaS, creator-led and enterprise brands with high-performing content.
+            media.X by Revenuxe is the AI media studio that empowers D2C, SaaS, creator-led and enterprise brands with high-performing content.
           </p>
           <Button 
             size="lg" 
@@ -112,8 +112,8 @@ const LooplicCTA = () => {
             style={{ background: "var(--brand-gradient)" }}
             asChild
           >
-            <a href="https://looplic.com" target="_blank" rel="noopener noreferrer">
-              Visit Looplic
+            <a href="https://media.revenuxe.com" target="_blank" rel="noopener noreferrer">
+              media.x
               <ArrowRight className="ml-2 h-5 w-5" />
             </a>
           </Button>
