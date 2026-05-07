@@ -95,7 +95,7 @@ const AiMediaHero = () => {
   );
 };
 
-const LooplicCTA = () => {
+const MediaXCTA = () => {
   return (
     <section className="py-14 md:py-24 bg-secondary">
       <div className="container mx-auto px-4">
@@ -164,12 +164,12 @@ const AiMediaFeatures = () => {
   );
 };
 
-const Looplic = ({ recentProjects }: { recentProjects: RecentProject[] }) => {
+const MediaX = ({ recentProjects }: { recentProjects: RecentProject[] }) => {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Navigation />
       <AiMediaHero />
-      <LooplicCTA />
+      <MediaXCTA />
       <AiMediaFeatures />
       <Stats />
       <Services />
@@ -183,4 +183,4 @@ const Looplic = ({ recentProjects }: { recentProjects: RecentProject[] }) => {
   );
 };
 
-export default Looplic;
+export default MediaX;

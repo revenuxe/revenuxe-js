@@ -1,4 +1,4 @@
- "use client";
+"use client";
 
 import { useState } from "react";
 import { Menu, X, ArrowRight, Phone, Mail, ChevronRight, ArrowUpRight } from "lucide-react";
@@ -16,7 +16,7 @@ const Navigation = () => {
     { label: "ROI Calculator", href: "/roi-calculator" },
     { label: "Case Studies", href: "/case-studies" },
     { label: "Projects", href: "/projects" },
-    { label: "media.x", href: "/looplic" },
+    { label: "media.x", href: "/media-x" },
   ];
 
   const isActive = (href: string) => {
@@ -40,11 +40,10 @@ const Navigation = () => {
                   <Link
                     key={item.label}
                     href={item.href}
-                    className={`px-5 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
-                      isActive(item.href)
+                    className={`px-5 py-2 rounded-full text-sm font-medium transition-all duration-200 ${isActive(item.href)
                         ? "bg-primary text-primary-foreground"
                         : "text-foreground hover:bg-muted"
-                    }`}
+                      }`}
                   >
                     {item.label}
                   </Link>
@@ -99,13 +98,11 @@ const Navigation = () => {
                     key={item.label}
                     href={item.href}
                     onClick={() => setIsOpen(false)}
-                    className={`group flex items-center justify-between p-4 rounded-xl transition-all duration-200 ${
-                      isActive(item.href) ? "bg-primary/10" : "hover:bg-primary/5"
-                    }`}
+                    className={`group flex items-center justify-between p-4 rounded-xl transition-all duration-200 ${isActive(item.href) ? "bg-primary/10" : "hover:bg-primary/5"
+                      }`}
                   >
-                    <span className={`text-base font-semibold ${
-                      isActive(item.href) ? "text-primary" : "text-foreground group-hover:text-primary"
-                    } transition-colors`}>
+                    <span className={`text-base font-semibold ${isActive(item.href) ? "text-primary" : "text-foreground group-hover:text-primary"
+                      } transition-colors`}>
                       {item.label}
                     </span>
                     <ChevronRight className="h-4 w-4 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all" />

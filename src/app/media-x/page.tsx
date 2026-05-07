@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Looplic from "@/page-views/Looplic";
+import MediaX from "@/page-views/MediaX";
 import { getCanonicalOrigin } from "@/lib/seo/canonical";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -31,12 +31,12 @@ export async function generateMetadata(): Promise<Metadata> {
     description,
     keywords,
     alternates: {
-      canonical: "/looplic",
+      canonical: "/media-x",
     },
     openGraph: {
       title: "AI Media Solutions - High-Performing Content Creation",
       description,
-      url: `${origin}/looplic`,
+      url: `${origin}/media-x`,
       siteName: "Revenuxe",
       locale: "en_IN",
       type: "website",
@@ -61,6 +61,6 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-export default async function LooplicPage() {
-  return <Looplic recentProjects={[]} />;
+export default async function MediaXPage() {
+  return <MediaX recentProjects={[]} />;
 }
