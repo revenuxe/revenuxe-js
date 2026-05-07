@@ -1,4 +1,5 @@
 import { getSanityClient } from "@/sanity/client";
+import { withRetry } from "@/lib/fetchWithRetry";
 
 export type SanityPostListItem = {
   id: string;
@@ -44,36 +45,51 @@ const publishedPostBySlugQuery = /* groq */ `
 `;
 
 export async function fetchPublishedPosts(limit = 50) {
-  const sanityClient = getSanityClient();
-  const res = await sanityClient.fetch(publishedPostsQuery, { limit });
+  try {
+    const sanityClient = getSanityClient();
+    const res = await withRetry(() =>
+      sanityClient.fetch(publishedPostsQuery, { limit }),
+    );
 
-  return (res || []).map((p: any): SanityPostListItem => ({
-    id: p._id,
-    title: p.title,
-    slug: p.slug,
-    excerpt: p.excerpt ?? null,
-    image_url: p.image_url ?? null,
-    author: p.author || "Revenuxe Team",
-    category: p.category ?? null,
-    created_at: p._createdAt,
-  }));
+    return (res || []).map((p: any): SanityPostListItem => ({
+      id: p._id,
+      title: p.title,
+      slug: p.slug,
+      excerpt: p.excerpt ?? null,
+      image_url: p.image_url ?? null,
+      author: p.author || "Revenuxe Team",
+      category: p.category ?? null,
+      created_at: p._createdAt,
+    }));
+  } catch (err) {
+    console.error("[fetchPublishedPosts] failed after retries:", err);
+    return [];
+  }
 }
 
 export async function fetchPublishedPostBySlug(slug: string) {
-  const sanityClient = getSanityClient();
-  const p = await sanityClient.fetch(publishedPostBySlugQuery, { slug });
-  if (!p) return null;
+  try {
+    const sanityClient = getSanityClient();
+    const p = await withRetry(() =>
+      sanityClient.fetch(publishedPostBySlugQuery, { slug }),
+    );
+    if (!p) return null;
 
-  return {
-    id: p._id,
-    title: p.title,
-    slug: p.slug,
-    excerpt: p.excerpt ?? null,
-    image_url: p.image_url ?? null,
-    author: p.author || "Revenuxe Team",
-    category: p.category ?? null,
-    created_at: p._createdAt,
-    content: p.content ?? null,
-  } satisfies SanityPostDetail;
+    return {
+      id: p._id,
+      title: p.title,
+      slug: p.slug,
+      excerpt: p.excerpt ?? null,
+      image_url: p.image_url ?? null,
+      author: p.author || "Revenuxe Team",
+      category: p.category ?? null,
+      created_at: p._createdAt,
+      content: p.content ?? null,
+    } satisfies SanityPostDetail;
+  } catch (err) {
+    console.error("[fetchPublishedPostBySlug] failed after retries:", err);
+    return null;
+  }
 }
+
 

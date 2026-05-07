@@ -1,20 +1,23 @@
 import { supabaseServer } from "@/integrations/supabase/server";
 import Projects from "@/page-views/Projects";
 import { normalizeProjectLinks } from "@/lib/projectsServer";
+import { withRetry } from "@/lib/fetchWithRetry";
 
 export const dynamic = "force-dynamic";
 
 export default async function ProjectsPage() {
   let projects: any[] = [];
   try {
-    const { data, error } = await supabaseServer
-      .from("projects" as any)
-      .select("*")
-      .order("created_at", { ascending: false });
+    const { data, error } = await withRetry(() =>
+      supabaseServer
+        .from("projects" as any)
+        .select("*")
+        .order("created_at", { ascending: false }),
+    );
 
     if (!error) projects = (data as any) || [];
   } catch (error) {
-    console.error("Error fetching projects:", error);
+    console.error("[ProjectsPage] fetch failed after retries:", error);
     projects = [];
   }
 
@@ -38,4 +41,5 @@ export default async function ProjectsPage() {
 
   return <Projects projects={normalizeProjectLinks(projects)} />;
 }
+
 

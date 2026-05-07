@@ -16,8 +16,11 @@ export function getSanityClient() {
     projectId,
     dataset,
     apiVersion,
-    useCdn: true,
+    // Disable CDN for SSR: the CDN can return 403 or stale responses on cold
+    // starts / free-tier sleep. Direct API is more reliable for server renders.
+    useCdn: false,
     token: process.env.SANITY_TOKEN,
   });
 }
+
 

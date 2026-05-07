@@ -104,7 +104,7 @@ const LooplicCTA = () => {
             Ready to transform your content?
           </h2>
           <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-            media.X by Revenuxe is the AI media studio that empowers D2C, SaaS, creator-led and enterprise brands with high-performing content.
+            media.x by Revenuxe is the AI media studio that empowers D2C, SaaS, creator-led and enterprise brands with high-performing content.
           </p>
           <Button 
             size="lg" 

@@ -1,4 +1,5 @@
 import { supabaseServer } from "@/integrations/supabase/server";
+import { withRetry } from "@/lib/fetchWithRetry";
 
 export type ProjectSummary = {
   id: string;
@@ -60,21 +61,29 @@ function isTruthyPublished(v: any) {
 // Fetches published projects for marketing sections.
 // We avoid relying on `.eq("published", true)` because `published` might be stored as boolean or string.
 export async function fetchPublishedProjects(limit: number) {
-  const { data } = await supabaseServer
-    .from("projects" as any)
-    .select("id,title,info,logo_url,website_url,published,created_at")
-    .order("created_at", { ascending: false })
-    .limit(limit);
+  try {
+    const { data } = await withRetry(() =>
+      supabaseServer
+        .from("projects" as any)
+        .select("id,title,info,logo_url,website_url,published,created_at")
+        .order("created_at", { ascending: false })
+        .limit(limit),
+    );
 
-  const raw = ((data as any) || []) as ProjectSummary[];
-  const hasPublishedField = raw.some((p) =>
-    Object.prototype.hasOwnProperty.call(p, "published")
-  );
+    const raw = ((data as any) || []) as ProjectSummary[];
+    const hasPublishedField = raw.some((p) =>
+      Object.prototype.hasOwnProperty.call(p, "published")
+    );
 
-  const published = hasPublishedField
-    ? raw.filter((p) => isTruthyPublished(p.published))
-    : raw;
+    const published = hasPublishedField
+      ? raw.filter((p) => isTruthyPublished(p.published))
+      : raw;
 
-  return normalizeProjectLinks(published);
+    return normalizeProjectLinks(published);
+  } catch (err) {
+    console.error("[fetchPublishedProjects] failed after retries:", err);
+    return [];
+  }
 }
+
 

@@ -4,6 +4,7 @@ import { HomeStructuredData } from "@/components/HomeStructuredData";
 import { supabaseServer } from "@/integrations/supabase/server";
 import { getCanonicalOrigin } from "@/lib/seo/canonical";
 import { normalizeProjectLinks } from "@/lib/projectsServer";
+import { withRetry } from "@/lib/fetchWithRetry";
 import {
   defaultSiteDescription,
   defaultSiteKeywords,
@@ -53,11 +54,13 @@ export async function generateMetadata(): Promise<Metadata> {
 export default async function HomePage() {
   let recentProjects: any[] = [];
   try {
-    const { data } = await supabaseServer
-      .from("projects" as any)
-      .select("*")
-      .order("created_at", { ascending: false })
-      .limit(9);
+    const { data } = await withRetry(() =>
+      supabaseServer
+        .from("projects" as any)
+        .select("*")
+        .order("created_at", { ascending: false })
+        .limit(9),
+    );
 
     const raw = (data as any) || [];
     const hasPublishedField = raw.some((p: any) =>
@@ -80,7 +83,7 @@ export default async function HomePage() {
       : raw;
     recentProjects = normalizeProjectLinks(recentProjects);
   } catch (error) {
-    console.error("Error fetching recent projects:", error);
+    console.error("[HomePage] Error fetching recent projects:", error);
     recentProjects = [];
   }
 
