@@ -54,8 +54,8 @@ export async function generateMetadata(): Promise<Metadata> {
 export default async function HomePage() {
   let recentProjects: any[] = [];
   try {
-    const { data } = await withRetry(() =>
-      supabaseServer
+    const { data } = await withRetry(async () =>
+      await supabaseServer
         .from("projects" as any)
         .select("*")
         .order("created_at", { ascending: false })

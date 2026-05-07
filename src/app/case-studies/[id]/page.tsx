@@ -14,8 +14,8 @@ export default async function CaseStudyDetailPage({
   const slugOrId = decodeURIComponent(resolved.id);
 
   try {
-    const { data: bySlug, error: slugError } = await withRetry(() =>
-      supabaseServer
+    const { data: bySlug, error: slugError } = await withRetry(async () =>
+      await supabaseServer
         .from("case_studies")
         .select("*")
         .eq("slug", slugOrId)
@@ -26,8 +26,8 @@ export default async function CaseStudyDetailPage({
       return <CaseStudyDetail caseStudy={bySlug as any} />;
     }
 
-    const { data: byId, error: idError } = await withRetry(() =>
-      supabaseServer
+    const { data: byId, error: idError } = await withRetry(async () =>
+      await supabaseServer
         .from("case_studies")
         .select("*")
         .eq("id", slugOrId)
@@ -42,5 +42,6 @@ export default async function CaseStudyDetailPage({
     notFound();
   }
 }
+
 
 

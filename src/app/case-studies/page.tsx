@@ -7,8 +7,8 @@ export const dynamic = "force-dynamic";
 export default async function CaseStudiesPage() {
   let caseStudies: any[] = [];
   try {
-    const { data, error } = await withRetry(() =>
-      supabaseServer
+    const { data, error } = await withRetry(async () =>
+      await supabaseServer
         .from("case_studies")
         .select("*")
         .eq("featured", true)

@@ -62,8 +62,8 @@ function isTruthyPublished(v: any) {
 // We avoid relying on `.eq("published", true)` because `published` might be stored as boolean or string.
 export async function fetchPublishedProjects(limit: number) {
   try {
-    const { data } = await withRetry(() =>
-      supabaseServer
+    const { data } = await withRetry(async () =>
+      await supabaseServer
         .from("projects" as any)
         .select("id,title,info,logo_url,website_url,published,created_at")
         .order("created_at", { ascending: false })

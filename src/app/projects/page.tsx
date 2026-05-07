@@ -8,8 +8,8 @@ export const dynamic = "force-dynamic";
 export default async function ProjectsPage() {
   let projects: any[] = [];
   try {
-    const { data, error } = await withRetry(() =>
-      supabaseServer
+    const { data, error } = await withRetry(async () =>
+      await supabaseServer
         .from("projects" as any)
         .select("*")
         .order("created_at", { ascending: false }),
