@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, CheckCircle2 } from "lucide-react";
 import { GetStartedDialog } from "./GetStartedDialog";
 
 const Hero = () => {
@@ -27,15 +27,18 @@ const Hero = () => {
         
         <div className="relative z-10 container mx-auto px-4 py-10 md:py-24">
           <div className="max-w-5xl">
+            <p className="mb-5 text-sm md:text-base font-semibold text-accent">
+              AI Digital Marketing Agency in India
+            </p>
             <h1 className="font-display leading-[1.05] tracking-[-0.03em]">
               <span className="block text-foreground font-bold text-[2.25rem] sm:text-5xl md:text-6xl lg:text-[5.5rem]">
-                AI
+                AI Digital Marketing
               </span>
               <span className="block text-foreground font-bold text-[2.25rem] sm:text-5xl md:text-6xl lg:text-[5.5rem]">
-                Digital Marketing
+                Agency for SEO,
               </span>
               <span className="block text-foreground font-bold text-[2.25rem] sm:text-5xl md:text-6xl lg:text-[5.5rem]">
-                Solutions
+                Ads & Websites
               </span>
             </h1>
           </div>
@@ -55,8 +58,16 @@ const Hero = () => {
           <div className="max-w-5xl flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
             <div className="max-w-lg">
               <p className="text-muted-foreground text-base md:text-lg leading-relaxed">
-                We unlock business growth potential with AI-powered strategies, delivering exceptional results and ensuring client satisfaction in every project.
+                Revenuxe helps Indian businesses grow with technical SEO, Google Ads, Meta Ads, conversion-focused websites, and AI automation built around qualified leads and measurable revenue.
               </p>
+              <div className="mt-5 grid grid-cols-1 sm:grid-cols-3 gap-3 text-sm text-foreground">
+                {["30+ completed projects", "SEO + paid media execution", "Tracking-first growth systems"].map((item) => (
+                  <div key={item} className="flex items-center gap-2">
+                    <CheckCircle2 className="h-4 w-4 text-accent flex-shrink-0" />
+                    <span>{item}</span>
+                  </div>
+                ))}
+              </div>
             </div>
             <div className="flex gap-4 items-center">
               <Button 
@@ -65,7 +76,7 @@ const Hero = () => {
                 style={{ background: "var(--brand-gradient)" }}
                 onClick={() => setDialogOpen(true)}
               >
-                Get Started Now
+                Get Free Strategy Call
               </Button>
               <Link
                 href="/contact"

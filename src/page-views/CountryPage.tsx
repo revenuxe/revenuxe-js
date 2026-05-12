@@ -209,6 +209,7 @@ const CountryPage = async ({
         description={countryInfo.metaDescription}
         keywords={countryInfo.keywords}
         canonicalUrl={canonicalUrl}
+        noindex
         schemaData={{
           "@context": "https://schema.org",
           "@type": "BreadcrumbList",

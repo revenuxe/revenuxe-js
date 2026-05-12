@@ -165,6 +165,7 @@ const CityPage = async ({
         description={cityInfo.metaDescription}
         keywords={cityInfo.keywords}
         canonicalUrl={canonicalUrl}
+        noindex
       />
       <Navigation />
       

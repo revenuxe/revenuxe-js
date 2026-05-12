@@ -1,22 +1,19 @@
-# Revenuxe — robots.txt
+# Revenuxe robots.txt
 # https://www.revenuxe.com
 
-# Allow all search engines
 User-agent: *
 Allow: /
 Disallow: /admin
-Disallow: /admin-login
+Disallow: /admin/
 Disallow: /admin/*
+Disallow: /admin-login
 
-# Sitemap
 Sitemap: https://www.revenuxe.com/sitemap.xml
 
 # AI discovery files
-# These are lightweight machine-readable docs for LLM/AI retrieval systems.
 # https://www.revenuxe.com/llms.txt
 # https://www.revenuxe.com/ai.txt
 
-# Major AI crawlers
 User-agent: GPTBot
 Allow: /
 
@@ -38,7 +35,6 @@ Allow: /
 User-agent: Applebot-Extended
 Allow: /
 
-# Crawl-delay for aggressive bots
 User-agent: AhrefsBot
 Crawl-delay: 10
 

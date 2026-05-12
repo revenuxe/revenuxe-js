@@ -260,6 +260,91 @@ const additionalServices: Record<string, any> = {
   },
 };
 
+const getLandingDetails = (slug?: string, title?: string) => {
+  const serviceName = title || "this service";
+  const defaults = {
+    audience: [
+      "Businesses that need measurable lead generation, not just activity reports.",
+      "Founders and marketing teams that want clearer tracking, stronger pages, and better conversion paths.",
+      "Brands that need a practical growth partner across strategy, execution, and optimization.",
+    ],
+    packageNote:
+      "Start with a focused audit and action roadmap, then move into implementation based on priority and budget.",
+    proofLinks: [
+      { label: "View completed projects", href: "/projects" },
+      { label: "Review case studies", href: "/case-studies" },
+      { label: "Estimate ROI", href: "/roi-calculator" },
+    ],
+  };
+
+  const details: Record<string, typeof defaults> = {
+    seo: {
+      audience: [
+        "Businesses that have pages indexed but are not ranking for commercial keywords.",
+        "Teams that need technical fixes, content structure, internal links, and authority building.",
+        "Companies depending too heavily on paid ads and wanting sustainable organic acquisition.",
+      ],
+      packageNote:
+        "SEO starts with a technical and content audit, keyword mapping, on-page fixes, and a 90-day execution roadmap.",
+      proofLinks: defaults.proofLinks,
+    },
+    "performance-marketing": {
+      audience: [
+        "Businesses spending on Google Ads or Meta Ads without clean conversion tracking.",
+        "Teams that need lower CPA, better landing pages, and clearer campaign reporting.",
+        "Brands ready to scale winning campaigns after offer, audience, and creative testing.",
+      ],
+      packageNote:
+        "Paid growth starts with tracking cleanup, campaign audit, landing-page review, and a testing plan for the first 30 days.",
+      proofLinks: defaults.proofLinks,
+    },
+    "web-development": {
+      audience: [
+        "Businesses with slow, outdated, or hard-to-edit websites.",
+        "Teams that need SEO-friendly pages, fast performance, and better lead capture.",
+        "Founders who want a scalable site foundation instead of a short-term template fix.",
+      ],
+      packageNote:
+        "Website projects can begin with the Basic Package for INR 24,999, then scale into custom pages, integrations, and SEO.",
+      proofLinks: [
+        { label: "See website projects", href: "/projects" },
+        { label: "View basic package", href: "/basic-package" },
+        { label: "Contact for scope", href: "/contact" },
+      ],
+    },
+    "ai-website": {
+      audience: [
+        "Small businesses that need a professional website live quickly.",
+        "Teams that want AI-assisted copy, layouts, SEO basics, and conversion-focused forms.",
+        "Founders testing a new offer before investing in a larger custom website.",
+      ],
+      packageNote:
+        "AI website builds can start with the Basic Package for INR 24,999 and expand with SEO, paid ads, and automation.",
+      proofLinks: [
+        { label: "View basic package", href: "/basic-package" },
+        { label: "See website projects", href: "/projects" },
+        { label: "Book a call", href: "/contact" },
+      ],
+    },
+    "landing-pages": {
+      audience: [
+        "Advertisers sending paid traffic to pages that are not converting well.",
+        "Businesses launching a campaign, offer, webinar, product, or local lead funnel.",
+        "Teams that need cleaner messaging, faster pages, better forms, and test-ready layouts.",
+      ],
+      packageNote:
+        "Landing page work starts with offer clarity, wireframe, conversion copy, build, tracking, and post-launch optimization.",
+      proofLinks: defaults.proofLinks,
+    },
+  };
+
+  return {
+    ...defaults,
+    ...(details[slug || ""] || {}),
+    heading: `Who ${serviceName} is built for`,
+  };
+};
+
 const ServiceDetail = async ({ slug }: { slug?: string }) => {
   const foundService = serviceData[slug || ""] || additionalServices[slug || ""];
 
@@ -333,6 +418,7 @@ const ServiceDetail = async ({ slug }: { slug?: string }) => {
   const origin = await getCanonicalOrigin();
   const canonicalUrl = await absoluteCanonicalUrl(`/services/${slug || ""}`);
   const internalLinks = serviceRelationships[slug || ""];
+  const landingDetails = getLandingDetails(slug, service.title);
 
   return (
     <div className="min-h-screen bg-background">
@@ -354,6 +440,48 @@ const ServiceDetail = async ({ slug }: { slug?: string }) => {
               <p className="text-muted-foreground text-sm md:text-base leading-relaxed">
                 {service.description}
               </p>
+            </div>
+          </div>
+        </section>
+
+        <section className="py-14 md:py-20 bg-muted/30">
+          <div className="container mx-auto px-4">
+            <div className="max-w-6xl mx-auto grid lg:grid-cols-[1.15fr_0.85fr] gap-6">
+              <div className="bg-card border border-border rounded-2xl p-6 md:p-8">
+                <p className="text-accent font-semibold text-sm tracking-wider uppercase">Best Fit</p>
+                <h2 className="text-2xl sm:text-3xl font-display font-bold mt-3">
+                  {landingDetails.heading}
+                </h2>
+                <div className="grid gap-4 mt-6">
+                  {landingDetails.audience.map((item) => (
+                    <div key={item} className="flex gap-3">
+                      <Check className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" />
+                      <p className="text-sm md:text-base text-muted-foreground leading-relaxed">{item}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <div className="bg-card border border-border rounded-2xl p-6 md:p-8">
+                <p className="text-accent font-semibold text-sm tracking-wider uppercase">Starting Point</p>
+                <h2 className="text-2xl sm:text-3xl font-display font-bold mt-3">
+                  Audit, roadmap, then execution
+                </h2>
+                <p className="text-sm md:text-base text-muted-foreground leading-relaxed mt-4">
+                  {landingDetails.packageNote}
+                </p>
+                <div className="grid gap-3 mt-6">
+                  {landingDetails.proofLinks.map((link) => (
+                    <Link
+                      key={link.href}
+                      href={link.href}
+                      className="flex items-center justify-between rounded-xl border border-border px-4 py-3 text-sm font-semibold hover:border-accent hover:text-accent transition-colors"
+                    >
+                      {link.label}
+                      <ArrowUpRight className="w-4 h-4" />
+                    </Link>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         </section>

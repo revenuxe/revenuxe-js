@@ -1,599 +1,219 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-  
-  <!-- ═══════════════════════════════════════════════ -->
-  <!-- Homepage -->
-  <!-- ═══════════════════════════════════════════════ -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.revenuxe.com/</loc>
-    <lastmod>2026-03-05</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>1.0</priority>
-  </url>
-
-  <!-- ═══════════════════════════════════════════════ -->
-  <!-- Core Pages -->
-  <!-- ═══════════════════════════════════════════════ -->
-  <url>
-    <loc>https://www.revenuxe.com/about</loc>
-    <lastmod>2026-03-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.revenuxe.com/contact</loc>
-    <lastmod>2026-03-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.revenuxe.com/articles</loc>
-    <lastmod>2026-03-05</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.revenuxe.com/case-studies</loc>
-    <lastmod>2026-03-05</lastmod>
+    <lastmod>2026-05-12</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.revenuxe.com/roi-calculator</loc>
-    <lastmod>2026-03-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.revenuxe.com/services</loc>
-    <lastmod>2026-03-05</lastmod>
+    <lastmod>2026-05-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.revenuxe.com/projects</loc>
-    <lastmod>2026-03-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.revenuxe.com/basic-package</loc>
-    <lastmod>2026-03-05</lastmod>
+    <loc>https://www.revenuxe.com/services/seo</loc>
+    <lastmod>2026-05-12</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- ═══════════════════════════════════════════════ -->
-  <!-- Service Detail Pages (kept for SEO backlinks) -->
-  <!-- ═══════════════════════════════════════════════ -->
-  <url>
-    <loc>https://www.revenuxe.com/services/ai-webapp</loc>
-    <lastmod>2026-03-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.revenuxe.com/services/ai-website</loc>
-    <lastmod>2026-03-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://www.revenuxe.com/services/performance-marketing</loc>
-    <lastmod>2026-03-05</lastmod>
+    <lastmod>2026-05-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.revenuxe.com/services/web-development</loc>
+    <lastmod>2026-05-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.revenuxe.com/services/ai-website</loc>
+    <lastmod>2026-05-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.revenuxe.com/services/ai-webapp</loc>
+    <lastmod>2026-05-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.revenuxe.com/services/social-media</loc>
-    <lastmod>2026-03-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.revenuxe.com/services/seo</loc>
-    <lastmod>2026-03-05</lastmod>
+    <lastmod>2026-05-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.revenuxe.com/services/landing-pages</loc>
-    <lastmod>2026-03-05</lastmod>
+    <lastmod>2026-05-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.revenuxe.com/services/web-development</loc>
-    <lastmod>2026-03-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.revenuxe.com/services/ecommerce</loc>
-    <lastmod>2026-03-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://www.revenuxe.com/services/content-marketing</loc>
-    <lastmod>2026-03-05</lastmod>
+    <lastmod>2026-05-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.revenuxe.com/services/email-marketing</loc>
-    <lastmod>2026-03-05</lastmod>
+    <lastmod>2026-05-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.revenuxe.com/services/ecommerce</loc>
+    <lastmod>2026-05-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.revenuxe.com/services/analytics</loc>
-    <lastmod>2026-03-05</lastmod>
+    <lastmod>2026-05-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.revenuxe.com/services/branding</loc>
-    <lastmod>2026-03-05</lastmod>
+    <lastmod>2026-05-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.revenuxe.com/services/migration</loc>
-    <lastmod>2026-03-05</lastmod>
+    <lastmod>2026-05-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-
-  <!-- ═══════════════════════════════════════════════ -->
-  <!-- Sub-Service Pages — AI Web App Builders -->
-  <!-- ═══════════════════════════════════════════════ -->
-  <url>
-    <loc>https://www.revenuxe.com/sub-services/lovable-development</loc>
-    <lastmod>2026-03-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.revenuxe.com/sub-services/bolt-development</loc>
-    <lastmod>2026-03-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.revenuxe.com/sub-services/replit-development</loc>
-    <lastmod>2026-03-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.revenuxe.com/sub-services/cursor-development</loc>
-    <lastmod>2026-03-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.revenuxe.com/sub-services/v0-development</loc>
-    <lastmod>2026-03-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.revenuxe.com/sub-services/firebase-studio</loc>
-    <lastmod>2026-03-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <!-- ═══════════════════════════════════════════════ -->
-  <!-- Sub-Service Pages — AI Website Builders -->
-  <!-- ═══════════════════════════════════════════════ -->
-  <url>
-    <loc>https://www.revenuxe.com/sub-services/wordpress-ai</loc>
-    <lastmod>2026-03-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.revenuxe.com/sub-services/framer-development</loc>
-    <lastmod>2026-03-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.revenuxe.com/sub-services/webflow-development</loc>
-    <lastmod>2026-03-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.revenuxe.com/sub-services/wix-ai</loc>
-    <lastmod>2026-03-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.revenuxe.com/sub-services/hostinger-ai</loc>
-    <lastmod>2026-03-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.revenuxe.com/sub-services/durable-ai</loc>
-    <lastmod>2026-03-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <!-- ═══════════════════════════════════════════════ -->
-  <!-- Sub-Service Pages — Performance Marketing -->
-  <!-- ═══════════════════════════════════════════════ -->
   <url>
     <loc>https://www.revenuxe.com/sub-services/google-ads</loc>
-    <lastmod>2026-03-05</lastmod>
+    <lastmod>2026-05-12</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.revenuxe.com/sub-services/meta-ads</loc>
-    <lastmod>2026-03-05</lastmod>
+    <lastmod>2026-05-12</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.8</priority>
   </url>
-  <url>
-    <loc>https://www.revenuxe.com/sub-services/ai-advertising</loc>
-    <lastmod>2026-03-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.revenuxe.com/sub-services/video-advertising</loc>
-    <lastmod>2026-03-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.revenuxe.com/sub-services/retargeting</loc>
-    <lastmod>2026-03-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.revenuxe.com/sub-services/conversion-optimization</loc>
-    <lastmod>2026-03-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <!-- ═══════════════════════════════════════════════ -->
-  <!-- Sub-Service Pages — Social Media Marketing -->
-  <!-- ═══════════════════════════════════════════════ -->
-  <url>
-    <loc>https://www.revenuxe.com/sub-services/content-planning</loc>
-    <lastmod>2026-03-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.revenuxe.com/sub-services/platform-optimization</loc>
-    <lastmod>2026-03-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.revenuxe.com/sub-services/community-management</loc>
-    <lastmod>2026-03-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.revenuxe.com/sub-services/paid-social</loc>
-    <lastmod>2026-03-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <!-- ═══════════════════════════════════════════════ -->
-  <!-- Sub-Service Pages — SEO -->
-  <!-- ═══════════════════════════════════════════════ -->
   <url>
     <loc>https://www.revenuxe.com/sub-services/technical-seo</loc>
-    <lastmod>2026-03-05</lastmod>
+    <lastmod>2026-05-12</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.revenuxe.com/sub-services/keyword-strategy</loc>
-    <lastmod>2026-03-05</lastmod>
+    <lastmod>2026-05-12</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.revenuxe.com/sub-services/on-page-seo</loc>
-    <lastmod>2026-03-05</lastmod>
+    <lastmod>2026-05-12</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.revenuxe.com/sub-services/link-building</loc>
-    <lastmod>2026-03-05</lastmod>
+    <lastmod>2026-05-12</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.8</priority>
   </url>
-
-  <!-- Sub-Service Pages — Landing Pages -->
+  <url>
+    <loc>https://www.revenuxe.com/sub-services/conversion-optimization</loc>
+    <lastmod>2026-05-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.revenuxe.com/sub-services/ai-advertising</loc>
+    <lastmod>2026-05-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.revenuxe.com/sub-services/retargeting</loc>
+    <lastmod>2026-05-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
   <url>
     <loc>https://www.revenuxe.com/sub-services/conversion-design</loc>
-    <lastmod>2026-03-05</lastmod>
+    <lastmod>2026-05-12</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.revenuxe.com/sub-services/ab-testing</loc>
-    <lastmod>2026-03-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.revenuxe.com/sub-services/lead-forms</loc>
-    <lastmod>2026-03-05</lastmod>
+    <lastmod>2026-05-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.revenuxe.com/basic-package</loc>
+    <lastmod>2026-05-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.revenuxe.com/projects</loc>
+    <lastmod>2026-05-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.revenuxe.com/case-studies</loc>
+    <lastmod>2026-05-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.revenuxe.com/articles</loc>
+    <lastmod>2026-05-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.revenuxe.com/roi-calculator</loc>
+    <lastmod>2026-05-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.revenuxe.com/about</loc>
+    <lastmod>2026-05-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.revenuxe.com/sub-services/landing-analytics</loc>
-    <lastmod>2026-03-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <!-- ═══════════════════════════════════════════════ -->
-  <!-- Indian Cities -->
-  <!-- ═══════════════════════════════════════════════ -->
-  <url>
-    <loc>https://www.revenuxe.com/bangalore</loc>
-    <lastmod>2026-03-05</lastmod>
+    <loc>https://www.revenuxe.com/contact</loc>
+    <lastmod>2026-05-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.revenuxe.com/hyderabad</loc>
-    <lastmod>2026-03-05</lastmod>
+    <loc>https://www.revenuxe.com/media-x</loc>
+    <lastmod>2026-05-12</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.revenuxe.com/chennai</loc>
-    <lastmod>2026-03-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.revenuxe.com/mumbai</loc>
-    <lastmod>2026-03-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.revenuxe.com/pune</loc>
-    <lastmod>2026-03-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.revenuxe.com/delhi</loc>
-    <lastmod>2026-03-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.revenuxe.com/ahmedabad</loc>
-    <lastmod>2026-03-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.revenuxe.com/kolkata</loc>
-    <lastmod>2026-03-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.revenuxe.com/jaipur</loc>
-    <lastmod>2026-03-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.revenuxe.com/lucknow</loc>
-    <lastmod>2026-03-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.revenuxe.com/kochi</loc>
-    <lastmod>2026-03-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.revenuxe.com/chandigarh</loc>
-    <lastmod>2026-03-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.revenuxe.com/indore</loc>
-    <lastmod>2026-03-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.revenuxe.com/nagpur</loc>
-    <lastmod>2026-03-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.revenuxe.com/visakhapatnam</loc>
-    <lastmod>2026-03-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.revenuxe.com/coimbatore</loc>
-    <lastmod>2026-03-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- ═══════════════════════════════════════════════ -->
-  <!-- Country Pages -->
-  <!-- ═══════════════════════════════════════════════ -->
-  <url>
-    <loc>https://www.revenuxe.com/country/singapore</loc>
-    <lastmod>2026-03-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.revenuxe.com/country/usa</loc>
-    <lastmod>2026-03-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.revenuxe.com/country/uae</loc>
-    <lastmod>2026-03-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.revenuxe.com/country/indonesia</loc>
-    <lastmod>2026-03-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.revenuxe.com/country/australia</loc>
-    <lastmod>2026-03-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.revenuxe.com/country/uk</loc>
-    <lastmod>2026-03-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.revenuxe.com/country/canada</loc>
-    <lastmod>2026-03-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.revenuxe.com/country/germany</loc>
-    <lastmod>2026-03-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.revenuxe.com/country/france</loc>
-    <lastmod>2026-03-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.revenuxe.com/country/japan</loc>
-    <lastmod>2026-03-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.revenuxe.com/country/south-korea</loc>
-    <lastmod>2026-03-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <!-- ═══════════════════════════════════════════════ -->
-  <!-- International City Pages -->
-  <!-- ═══════════════════════════════════════════════ -->
-  <!-- Singapore -->
-  <url><loc>https://www.revenuxe.com/country/singapore/central-singapore</loc><lastmod>2026-03-05</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.revenuxe.com/country/singapore/jurong</loc><lastmod>2026-03-05</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.revenuxe.com/country/singapore/woodlands</loc><lastmod>2026-03-05</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <!-- USA -->
-  <url><loc>https://www.revenuxe.com/country/usa/new-york</loc><lastmod>2026-03-05</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.revenuxe.com/country/usa/los-angeles</loc><lastmod>2026-03-05</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.revenuxe.com/country/usa/chicago</loc><lastmod>2026-03-05</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.revenuxe.com/country/usa/miami</loc><lastmod>2026-03-05</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.revenuxe.com/country/usa/san-francisco</loc><lastmod>2026-03-05</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.revenuxe.com/country/usa/seattle</loc><lastmod>2026-03-05</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <!-- UAE -->
-  <url><loc>https://www.revenuxe.com/country/uae/dubai</loc><lastmod>2026-03-05</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.revenuxe.com/country/uae/abu-dhabi</loc><lastmod>2026-03-05</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.revenuxe.com/country/uae/sharjah</loc><lastmod>2026-03-05</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <!-- Indonesia -->
-  <url><loc>https://www.revenuxe.com/country/indonesia/jakarta</loc><lastmod>2026-03-05</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.revenuxe.com/country/indonesia/surabaya</loc><lastmod>2026-03-05</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.revenuxe.com/country/indonesia/bali</loc><lastmod>2026-03-05</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.revenuxe.com/country/indonesia/bandung</loc><lastmod>2026-03-05</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <!-- Australia -->
-  <url><loc>https://www.revenuxe.com/country/australia/sydney</loc><lastmod>2026-03-05</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.revenuxe.com/country/australia/melbourne</loc><lastmod>2026-03-05</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.revenuxe.com/country/australia/brisbane</loc><lastmod>2026-03-05</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.revenuxe.com/country/australia/perth</loc><lastmod>2026-03-05</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <!-- UK -->
-  <url><loc>https://www.revenuxe.com/country/uk/london</loc><lastmod>2026-03-05</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.revenuxe.com/country/uk/manchester</loc><lastmod>2026-03-05</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.revenuxe.com/country/uk/birmingham</loc><lastmod>2026-03-05</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.revenuxe.com/country/uk/edinburgh</loc><lastmod>2026-03-05</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <!-- Canada -->
-  <url><loc>https://www.revenuxe.com/country/canada/toronto</loc><lastmod>2026-03-05</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.revenuxe.com/country/canada/vancouver</loc><lastmod>2026-03-05</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.revenuxe.com/country/canada/montreal</loc><lastmod>2026-03-05</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.revenuxe.com/country/canada/calgary</loc><lastmod>2026-03-05</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <!-- Germany -->
-  <url><loc>https://www.revenuxe.com/country/germany/berlin</loc><lastmod>2026-03-05</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.revenuxe.com/country/germany/munich</loc><lastmod>2026-03-05</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.revenuxe.com/country/germany/frankfurt</loc><lastmod>2026-03-05</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.revenuxe.com/country/germany/hamburg</loc><lastmod>2026-03-05</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <!-- France -->
-  <url><loc>https://www.revenuxe.com/country/france/paris</loc><lastmod>2026-03-05</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.revenuxe.com/country/france/lyon</loc><lastmod>2026-03-05</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.revenuxe.com/country/france/marseille</loc><lastmod>2026-03-05</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.revenuxe.com/country/france/toulouse</loc><lastmod>2026-03-05</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <!-- Japan -->
-  <url><loc>https://www.revenuxe.com/country/japan/tokyo</loc><lastmod>2026-03-05</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.revenuxe.com/country/japan/osaka</loc><lastmod>2026-03-05</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.revenuxe.com/country/japan/kyoto</loc><lastmod>2026-03-05</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.revenuxe.com/country/japan/yokohama</loc><lastmod>2026-03-05</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <!-- South Korea -->
-  <url><loc>https://www.revenuxe.com/country/south-korea/seoul</loc><lastmod>2026-03-05</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.revenuxe.com/country/south-korea/busan</loc><lastmod>2026-03-05</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.revenuxe.com/country/south-korea/incheon</loc><lastmod>2026-03-05</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.revenuxe.com/country/south-korea/daegu</loc><lastmod>2026-03-05</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-
-  <!-- ═══════════════════════════════════════════════ -->
-  <!-- Legal Pages -->
-  <!-- ═══════════════════════════════════════════════ -->
-  <url>
-    <loc>https://www.revenuxe.com/terms</loc>
-    <lastmod>2026-03-05</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://www.revenuxe.com/privacy</loc>
-    <lastmod>2026-03-05</lastmod>
+    <lastmod>2026-05-12</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
-
+  <url>
+    <loc>https://www.revenuxe.com/terms</loc>
+    <lastmod>2026-05-12</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
 </urlset>
-

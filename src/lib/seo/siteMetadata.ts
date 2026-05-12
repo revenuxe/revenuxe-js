@@ -7,10 +7,10 @@ export const SITE_URL = SITE_URL_FALLBACK;
 
 // Homepage / global defaults, tuned for AI + SEO intent
 export const defaultSiteTitle =
-  "AI Digital Marketing Solutions in India | Revenuxe";
+  "AI Digital Marketing Agency in India | SEO, Ads & Websites | Revenuxe";
 
 export const defaultSiteDescription =
-  "Revenuxe delivers AI digital marketing solutions in India, combining SEO, performance marketing, conversion-focused websites, and AI automation to drive qualified traffic, leads, and revenue growth.";
+  "Revenuxe is an AI digital marketing agency in India helping businesses grow with technical SEO, Google Ads, Meta Ads, conversion-focused websites, and measurable lead generation.";
 
 export const defaultSiteKeywords =
   "AI digital marketing agency India, AI marketing agency, answer engine optimization, AEO services, generative engine optimization, GEO services, AI search optimization, technical SEO services, on-page SEO optimization, off-page SEO, link building, SEO company India, Google Ads management, Meta Ads agency, performance marketing, social media marketing agency, CRO agency, web development company, Revenuxe, digital marketing near me, affordable SEO services";

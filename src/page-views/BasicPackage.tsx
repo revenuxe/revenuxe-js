@@ -244,15 +244,6 @@ const supportingRouteLinks = [
   },
 ];
 
-const cityRouteLinks = [
-  { href: "/bangalore", label: "Bangalore" },
-  { href: "/hyderabad", label: "Hyderabad" },
-  { href: "/mumbai", label: "Mumbai" },
-  { href: "/chennai", label: "Chennai" },
-  { href: "/delhi", label: "Delhi" },
-  { href: "/pune", label: "Pune" },
-];
-
 const BasicPackage = ({
   canonicalUrl,
   origin,
@@ -810,38 +801,6 @@ const BasicPackage = ({
                     {item.desc}
                   </p>
                 </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-16 md:py-24">
-        <div className="container mx-auto px-4">
-          <div className="max-w-5xl mx-auto">
-            <div className="mb-10">
-              <span className="text-accent font-semibold text-sm tracking-wider uppercase">
-                City Landing Pages
-              </span>
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-2">
-                Popular local routes for high-intent visitors
-              </h2>
-              <p className="text-muted-foreground text-base md:text-lg mt-4 max-w-3xl">
-                For local search visibility, we connect this package page with our city
-                landing pages so users looking for website design and Google Ads help in
-                major Indian markets can move into a geographically relevant route.
-              </p>
-            </div>
-
-            <div className="flex flex-wrap gap-3">
-              {cityRouteLinks.map((city) => (
-                <Link
-                  key={city.href}
-                  href={city.href}
-                  className="rounded-full border border-border bg-card px-5 py-2.5 text-sm font-medium text-foreground transition-colors hover:border-accent hover:text-accent"
-                >
-                  {city.label} Marketing Page
-                </Link>
               ))}
             </div>
           </div>

@@ -8,7 +8,7 @@ export const organizationSchema = {
   name: "Revenuxe",
   alternateName: "Revenuxe Digital Marketing Agency",
   description:
-    "India's #1 AI-powered digital marketing agency delivering guaranteed ROI through SEO, performance marketing, web development & social media marketing.",
+    "AI-powered digital marketing agency in India delivering SEO, performance marketing, web development, and social media marketing services.",
   url: "https://www.revenuxe.com",
   logo: "https://www.revenuxe.com/favicon.ico",
   sameAs: ["https://www.linkedin.com/company/revenuxe"],
@@ -33,9 +33,9 @@ export const organizationSchema = {
 export const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
-  name: "Revenuxe — AI Digital Marketing Agency",
+  name: "Revenuxe AI Digital Marketing Agency",
   description:
-    "Full-service AI-powered digital marketing agency specializing in SEO, Google Ads, Meta Ads, web development, social media marketing & content marketing with guaranteed ROI.",
+    "Full-service AI-powered digital marketing agency specializing in SEO, Google Ads, Meta Ads, web development, social media marketing, and content marketing.",
   url: "https://www.revenuxe.com",
   telephone: "+91-9886285028",
   email: "revenuxe@gmail.com",
@@ -69,11 +69,35 @@ export const localBusinessSchema = {
     "E-Commerce Marketing",
     "Brand Identity Design",
   ],
-  aggregateRating: {
-    "@type": "AggregateRating",
-    ratingValue: "4.9",
-    reviewCount: "30",
-    bestRating: "5",
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "Digital Marketing Services",
+    itemListElement: [
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "SEO Services",
+          url: "https://www.revenuxe.com/services/seo",
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Google Ads Management",
+          url: "https://www.revenuxe.com/sub-services/google-ads",
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Web Development",
+          url: "https://www.revenuxe.com/services/web-development",
+        },
+      },
+    ],
   },
   openingHoursSpecification: {
     "@type": "OpeningHoursSpecification",
@@ -88,15 +112,10 @@ export const websiteSchema = {
   "@type": "WebSite",
   name: "Revenuxe",
   url: "https://www.revenuxe.com",
-  description: "India's #1 AI-powered digital marketing agency",
+  description: "AI digital marketing agency in India for SEO, paid ads, websites, and growth systems.",
   publisher: {
     "@type": "Organization",
     name: "Revenuxe",
-  },
-  potentialAction: {
-    "@type": "SearchAction",
-    target: "https://www.revenuxe.com/search?q={search_term_string}",
-    "query-input": "required name=search_term_string",
   },
 };
 
@@ -137,11 +156,6 @@ export function getDefaultHomepageSchemas(
     {
       ...websiteSchema,
       url: base,
-      potentialAction: {
-        "@type": "SearchAction",
-        target: `${base}/search?q={search_term_string}`,
-        "query-input": "required name=search_term_string",
-      },
     },
     {
       ...breadcrumbSchema,

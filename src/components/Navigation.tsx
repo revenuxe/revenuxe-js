@@ -12,11 +12,12 @@ const Navigation = () => {
 
   const navItems = [
     { label: "Home", href: "/" },
-    { label: "About", href: "/about" },
-    { label: "ROI Calculator", href: "/roi-calculator" },
+    { label: "Services", href: "/services" },
+    { label: "SEO", href: "/services/seo" },
+    { label: "Google Ads", href: "/sub-services/google-ads" },
+    { label: "Web Development", href: "/services/web-development" },
     { label: "Case Studies", href: "/case-studies" },
-    { label: "Projects", href: "/projects" },
-    { label: "media.x", href: "/media-x" },
+    { label: "Contact", href: "/contact" },
   ];
 
   const isActive = (href: string) => {
@@ -40,7 +41,7 @@ const Navigation = () => {
                   <Link
                     key={item.label}
                     href={item.href}
-                    className={`px-5 py-2 rounded-full text-sm font-medium transition-all duration-200 ${isActive(item.href)
+                    className={`px-3 lg:px-4 py-2 rounded-full text-xs lg:text-sm font-medium transition-all duration-200 ${isActive(item.href)
                         ? "bg-primary text-primary-foreground"
                         : "text-foreground hover:bg-muted"
                       }`}

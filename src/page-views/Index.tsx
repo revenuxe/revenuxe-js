@@ -25,8 +25,8 @@ const Index = ({ recentProjects }: { recentProjects: RecentProject[] }) => {
     <div className="min-h-screen bg-background text-foreground">
       <Navigation />
       <Hero />
-      <Stats />
       <RecentProjects projects={recentProjects} />
+      <Stats />
       <Services />
       <WhyChooseUs />
       <Process />
