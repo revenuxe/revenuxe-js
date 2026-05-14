@@ -57,6 +57,7 @@ export const softwareServicePages: SoftwareServicePage[] = [
       "database-architecture",
       "cloud-devops-engineering",
       "ai-integration",
+      "nextjs-development",
     ],
   },
   {
@@ -101,6 +102,7 @@ export const softwareServicePages: SoftwareServicePage[] = [
       "database-architecture",
       "cloud-devops-engineering",
       "qa-testing",
+      "portal-development",
     ],
   },
   {
@@ -145,6 +147,7 @@ export const softwareServicePages: SoftwareServicePage[] = [
       "api-backend-development",
       "database-architecture",
       "software-maintenance-scaling",
+      "ai-integration",
     ],
   },
   {
@@ -189,6 +192,8 @@ export const softwareServicePages: SoftwareServicePage[] = [
       "product-ui-ux-design",
       "database-architecture",
       "qa-testing",
+      "website-development",
+      "business-website-redesign",
     ],
   },
   {
@@ -233,6 +238,8 @@ export const softwareServicePages: SoftwareServicePage[] = [
       "ai-integration",
       "qa-testing",
       "software-maintenance-scaling",
+      "portal-development",
+      "ecommerce-development",
     ],
   },
   {
@@ -277,6 +284,9 @@ export const softwareServicePages: SoftwareServicePage[] = [
       "cloud-devops-engineering",
       "qa-testing",
       "software-maintenance-scaling",
+      "website-development",
+      "cms-website-development",
+      "landing-page-development",
     ],
   },
   {
@@ -388,7 +398,7 @@ export const softwareServicePages: SoftwareServicePage[] = [
       { step: "Support", description: "Work with engineering to keep implementation aligned with the design." },
     ],
     outcomes: ["Clearer product flows", "Better usability", "Faster frontend development", "More polished software experience"],
-    related: ["web-app-development", "saas-development", "enterprise-websites", "startup-mvp-development", "platform-modernization", "qa-testing"],
+    related: ["web-app-development", "saas-development", "enterprise-websites", "startup-mvp-development", "platform-modernization", "qa-testing", "website-development", "landing-page-development"],
   },
   {
     slug: "cloud-devops-engineering",
@@ -425,7 +435,7 @@ export const softwareServicePages: SoftwareServicePage[] = [
       { step: "Document", description: "Prepare handoff notes for future updates and operations." },
     ],
     outcomes: ["Safer releases", "Reliable deployments", "Cloud-ready infrastructure", "Better operational visibility"],
-    related: ["platform-modernization", "api-backend-development", "saas-development", "software-maintenance-scaling", "qa-testing", "web-app-development"],
+    related: ["platform-modernization", "api-backend-development", "saas-development", "software-maintenance-scaling", "qa-testing", "web-app-development", "nextjs-development"],
   },
   {
     slug: "database-architecture",
@@ -536,7 +546,7 @@ export const softwareServicePages: SoftwareServicePage[] = [
       { step: "Release Check", description: "Confirm the product is ready for deployment or public use." },
     ],
     outcomes: ["Lower launch risk", "Fewer user-facing bugs", "Cleaner releases", "More reliable product behavior"],
-    related: ["web-app-development", "saas-development", "platform-modernization", "cloud-devops-engineering", "api-backend-development", "software-maintenance-scaling"],
+    related: ["web-app-development", "saas-development", "platform-modernization", "cloud-devops-engineering", "api-backend-development", "software-maintenance-scaling", "website-development", "ecommerce-development"],
   },
   {
     slug: "software-maintenance-scaling",
@@ -573,7 +583,266 @@ export const softwareServicePages: SoftwareServicePage[] = [
       { step: "Scale", description: "Plan and implement changes needed for more users, features, and integrations." },
     ],
     outcomes: ["More stable software", "Faster product iteration", "Reduced technical debt", "Better long-term scalability"],
-    related: ["platform-modernization", "cloud-devops-engineering", "qa-testing", "api-backend-development", "database-architecture", "web-app-development"],
+    related: ["platform-modernization", "cloud-devops-engineering", "qa-testing", "api-backend-development", "database-architecture", "web-app-development", "business-website-redesign"],
+  },
+  {
+    slug: "website-development",
+    title: "Website Development",
+    subtitle: "Modern business websites built for performance, credibility, and conversion.",
+    description:
+      "Revenuxe builds responsive, fast, and premium business websites with clear messaging, strong page structure, forms, analytics, and scalable frontend engineering.",
+    seoTitle: "Website Development Company | Modern Business Websites | Revenuxe",
+    seoKeywords:
+      "website development company, business website development, modern website development, responsive website development, web development company",
+    intro:
+      "A website is often the first product experience your customer has with your business. It should explain what you do clearly, load quickly, look credible, and guide visitors toward the right action.",
+    revenuxeHelp:
+      "Revenuxe helps businesses plan, design, and develop modern websites that feel premium and practical. We build the page structure, responsive sections, forms, analytics, performance foundations, and content flow needed for a serious online presence.",
+    deliverables: [
+      "Website strategy and page architecture",
+      "Responsive UI design and frontend development",
+      "Service, about, contact, and conversion pages",
+      "Form setup, analytics, and tracking",
+      "Performance and accessibility improvements",
+      "Launch QA, deployment, and post-launch support",
+    ],
+    builtFor: [
+      "Businesses replacing an outdated website",
+      "Startups launching a credible online presence",
+      "Service companies that need better inquiry flow",
+      "Technology brands that want a premium website foundation",
+    ],
+    process: [
+      { step: "Plan", description: "Define pages, audience, positioning, content, and conversion goals." },
+      { step: "Design", description: "Create a clean responsive interface that matches the brand and user journey." },
+      { step: "Develop", description: "Build the website with reusable sections, fast performance, and clean code." },
+      { step: "Connect", description: "Set up forms, analytics, metadata, and essential integrations." },
+      { step: "Launch", description: "Test across devices, deploy, and support post-launch improvements." },
+    ],
+    outcomes: ["Stronger brand credibility", "Faster website performance", "Better inquiry flow", "Scalable page foundation"],
+    related: ["enterprise-websites", "cms-website-development", "landing-page-development", "business-website-redesign", "nextjs-development", "product-ui-ux-design"],
+  },
+  {
+    slug: "nextjs-development",
+    title: "Next.js Development",
+    subtitle: "High-performance websites and web applications built with Next.js.",
+    description:
+      "Revenuxe builds Next.js websites, SaaS products, dashboards, and web applications with modern rendering, routing, APIs, and deployment workflows.",
+    seoTitle: "Next.js Development Company | Revenuxe",
+    seoKeywords:
+      "Next.js development company, Next.js website development, Next.js web app development, React Next.js development, Next.js developers",
+    intro:
+      "Next.js is a strong foundation for products that need speed, flexible routing, modern React architecture, server rendering, and clean deployment workflows.",
+    revenuxeHelp:
+      "Revenuxe uses Next.js to build premium websites, scalable SaaS platforms, product dashboards, and web applications that are fast, maintainable, and ready for modern hosting environments.",
+    deliverables: [
+      "Next.js app architecture and routing",
+      "Server-rendered and static page implementation",
+      "API routes, server actions, and integrations",
+      "Reusable React component systems",
+      "Performance, metadata, and deployment setup",
+      "Migration from React, Vite, or no-code platforms",
+    ],
+    builtFor: [
+      "Businesses that need high-performance websites",
+      "Startups building SaaS or app dashboards",
+      "Teams migrating from older React apps",
+      "Companies that want a scalable frontend foundation",
+    ],
+    process: [
+      { step: "Architecture", description: "Plan routes, rendering strategy, data fetching, and deployment needs." },
+      { step: "Build", description: "Create reusable components, pages, APIs, and product workflows." },
+      { step: "Optimize", description: "Improve load speed, metadata, image handling, and Core Web Vitals." },
+      { step: "Integrate", description: "Connect backend systems, CMS, analytics, forms, and payments." },
+      { step: "Deploy", description: "Launch with production checks, hosting setup, and monitoring basics." },
+    ],
+    outcomes: ["Fast user experience", "Modern React architecture", "SEO-ready rendering", "Scalable frontend codebase"],
+    related: ["website-development", "web-app-development", "enterprise-websites", "platform-modernization", "cloud-devops-engineering", "api-backend-development"],
+  },
+  {
+    slug: "ecommerce-development",
+    title: "Ecommerce Development",
+    subtitle: "Online stores and commerce workflows built for speed, trust, and conversion.",
+    description:
+      "Revenuxe builds ecommerce websites, product catalogs, checkout flows, payment integrations, admin tools, and custom commerce workflows.",
+    seoTitle: "Ecommerce Development Company | Custom Online Stores | Revenuxe",
+    seoKeywords:
+      "ecommerce development company, online store development, custom ecommerce development, ecommerce website development, payment integration",
+    intro:
+      "A modern ecommerce experience needs more than product pages. It needs fast browsing, clear product structure, secure checkout, reliable payments, and an admin workflow your team can manage.",
+    revenuxeHelp:
+      "Revenuxe helps brands and businesses create ecommerce systems that combine polished frontend experiences with reliable product data, payment flows, inventory logic, and conversion-focused checkout paths.",
+    deliverables: [
+      "Product catalog and category architecture",
+      "Responsive storefront design and development",
+      "Cart, checkout, and payment integration",
+      "Admin workflows and order management",
+      "Analytics, events, and conversion tracking",
+      "Performance optimization and launch QA",
+    ],
+    builtFor: [
+      "Brands launching a new online store",
+      "Businesses needing custom checkout or catalog logic",
+      "Teams replacing slow ecommerce templates",
+      "Companies connecting ecommerce with internal operations",
+    ],
+    process: [
+      { step: "Commerce Planning", description: "Define products, categories, checkout needs, payments, and operations." },
+      { step: "Storefront Design", description: "Create product-focused pages that help users browse and buy confidently." },
+      { step: "Development", description: "Build catalog, cart, checkout, integrations, and admin workflows." },
+      { step: "Testing", description: "Validate payments, orders, inventory logic, emails, and responsive behavior." },
+      { step: "Launch", description: "Deploy the store and monitor key purchase flows." },
+    ],
+    outcomes: ["Better buying experience", "Reliable checkout flows", "Custom commerce logic", "Conversion-ready online store"],
+    related: ["website-development", "api-backend-development", "database-architecture", "custom-software", "qa-testing", "software-maintenance-scaling"],
+  },
+  {
+    slug: "cms-website-development",
+    title: "CMS Website Development",
+    subtitle: "Content-managed websites that teams can update without developer dependency.",
+    description:
+      "Revenuxe builds CMS-powered websites with reusable page sections, structured content, publishing workflows, and modern frontend performance.",
+    seoTitle: "CMS Website Development Services | Revenuxe",
+    seoKeywords:
+      "CMS website development, content managed website, custom CMS development, website development company, headless CMS development",
+    intro:
+      "Teams need websites they can update confidently. A good CMS structure makes content publishing easier while keeping the frontend fast, clean, and consistent.",
+    revenuxeHelp:
+      "Revenuxe helps plan content models, page templates, reusable sections, and publishing workflows so your team can scale pages, articles, service content, and website updates without breaking the design.",
+    deliverables: [
+      "CMS content model and page structure",
+      "Reusable sections and page templates",
+      "Headless CMS or managed CMS integration",
+      "Editor-friendly publishing workflows",
+      "SEO metadata and structured content setup",
+      "Frontend development and deployment",
+    ],
+    builtFor: [
+      "Companies publishing articles, services, or case studies",
+      "Teams that need non-developers to update website content",
+      "Brands with growing page and content needs",
+      "Businesses replacing rigid static or no-code websites",
+    ],
+    process: [
+      { step: "Content Audit", description: "Review page types, publishing needs, roles, and content growth plans." },
+      { step: "Model", description: "Define CMS fields, collections, templates, and reusable sections." },
+      { step: "Build", description: "Develop the frontend and connect content safely to the website." },
+      { step: "Train", description: "Prepare editors to update content without damaging layouts." },
+      { step: "Launch", description: "Validate pages, metadata, forms, and publishing workflows." },
+    ],
+    outcomes: ["Easier content publishing", "Consistent page design", "Scalable website structure", "Less developer dependency"],
+    related: ["website-development", "enterprise-websites", "landing-page-development", "business-website-redesign", "nextjs-development", "software-maintenance-scaling"],
+  },
+  {
+    slug: "landing-page-development",
+    title: "Landing Page Development",
+    subtitle: "Focused landing pages for launches, offers, products, and lead generation.",
+    description:
+      "Revenuxe builds fast, focused landing pages with clear messaging, persuasive sections, forms, analytics, and responsive layouts.",
+    seoTitle: "Landing Page Development Services | Revenuxe",
+    seoKeywords:
+      "landing page development, landing page design, lead generation landing pages, product launch pages, website development company",
+    intro:
+      "A landing page should remove confusion. It needs one clear offer, sharp messaging, trust signals, fast loading, and a simple path to action.",
+    revenuxeHelp:
+      "Revenuxe helps create landing pages for product launches, SaaS waitlists, service offers, campaigns, and lead capture, with performance-focused development and clean conversion flows.",
+    deliverables: [
+      "Offer and page structure planning",
+      "Conversion-focused section design",
+      "Responsive landing page development",
+      "Forms, analytics, and event tracking",
+      "Fast-loading page implementation",
+      "Launch QA and iteration support",
+    ],
+    builtFor: [
+      "Startups launching a product or waitlist",
+      "Businesses testing a new service offer",
+      "Companies running paid or organic campaigns",
+      "Teams needing focused lead capture pages",
+    ],
+    process: [
+      { step: "Clarify", description: "Define the offer, audience, call to action, and trust signals." },
+      { step: "Structure", description: "Plan the page flow from headline to conversion." },
+      { step: "Build", description: "Develop a fast responsive landing page with clean sections." },
+      { step: "Track", description: "Connect forms, analytics, and conversion events." },
+      { step: "Improve", description: "Review performance and refine copy, layout, or flow." },
+    ],
+    outcomes: ["Clearer offer presentation", "Faster campaign launches", "Better lead capture", "Focused conversion path"],
+    related: ["website-development", "enterprise-websites", "product-ui-ux-design", "nextjs-development", "cms-website-development", "qa-testing"],
+  },
+  {
+    slug: "business-website-redesign",
+    title: "Business Website Redesign",
+    subtitle: "Modernize outdated websites into clearer, faster, more credible digital experiences.",
+    description:
+      "Revenuxe redesigns business websites with stronger positioning, cleaner UX, better performance, improved page structure, and modern frontend implementation.",
+    seoTitle: "Business Website Redesign Services | Revenuxe",
+    seoKeywords:
+      "business website redesign, website redesign services, modern website redesign, website modernization, web development company",
+    intro:
+      "An outdated website can quietly weaken trust. A redesign gives your business clearer messaging, better usability, faster pages, and a stronger foundation for future content and features.",
+    revenuxeHelp:
+      "Revenuxe helps audit the current website, identify weak pages and user journeys, redesign the content structure, rebuild the frontend, and launch a more polished website without losing important existing value.",
+    deliverables: [
+      "Existing website audit and redesign roadmap",
+      "Improved information architecture",
+      "Modern responsive UI redesign",
+      "Content and conversion flow improvements",
+      "Performance, metadata, and form cleanup",
+      "Launch QA, redirects, and analytics validation",
+    ],
+    builtFor: [
+      "Businesses with outdated or slow websites",
+      "Companies changing their positioning or services",
+      "Teams that need better mobile experience",
+      "Brands that want a more premium online presence",
+    ],
+    process: [
+      { step: "Audit", description: "Review current pages, design, performance, content, and conversion gaps." },
+      { step: "Reposition", description: "Clarify messaging, hierarchy, and page goals." },
+      { step: "Redesign", description: "Create modern layouts and responsive sections." },
+      { step: "Rebuild", description: "Develop the improved website with clean frontend code." },
+      { step: "Relaunch", description: "Validate forms, analytics, redirects, and production behavior." },
+    ],
+    outcomes: ["More premium website feel", "Improved clarity", "Better mobile experience", "Stronger conversion flow"],
+    related: ["website-development", "enterprise-websites", "platform-modernization", "cms-website-development", "landing-page-development", "software-maintenance-scaling"],
+  },
+  {
+    slug: "portal-development",
+    title: "Portal Development",
+    subtitle: "Secure customer, vendor, employee, and admin portals for business workflows.",
+    description:
+      "Revenuxe builds custom portals with authentication, dashboards, role-based access, document flows, reporting, and workflow automation.",
+    seoTitle: "Portal Development Company | Custom Web Portals | Revenuxe",
+    seoKeywords:
+      "portal development company, custom portal development, customer portal development, admin portal development, vendor portal development",
+    intro:
+      "Portals bring users, data, and workflows into one controlled system. They help customers, teams, vendors, and admins access what they need without messy manual coordination.",
+    revenuxeHelp:
+      "Revenuxe helps define portal roles, dashboards, data access, forms, workflows, notifications, integrations, and admin controls, then builds the portal as a secure web application.",
+    deliverables: [
+      "Customer, vendor, employee, or admin portal planning",
+      "Authentication and role-based access",
+      "Dashboard and workflow screens",
+      "Document, form, and data management",
+      "Notifications and third-party integrations",
+      "Testing, deployment, and support",
+    ],
+    builtFor: [
+      "Businesses needing customer self-service",
+      "Teams managing vendors, partners, or internal requests",
+      "Companies replacing email-heavy workflows",
+      "Organizations needing secure role-based dashboards",
+    ],
+    process: [
+      { step: "Workflow Mapping", description: "Define portal users, roles, data, tasks, and permissions." },
+      { step: "UX Design", description: "Design dashboards and flows for each user type." },
+      { step: "Development", description: "Build backend logic, frontend screens, integrations, and admin tools." },
+      { step: "QA", description: "Test permissions, edge cases, forms, and cross-role behavior." },
+      { step: "Launch", description: "Deploy the portal and support onboarding for users." },
+    ],
+    outcomes: ["Reduced manual coordination", "Secure user workflows", "Better data visibility", "Scalable portal foundation"],
+    related: ["custom-software", "web-app-development", "api-backend-development", "database-architecture", "qa-testing", "software-maintenance-scaling"],
   },
 ];
 
