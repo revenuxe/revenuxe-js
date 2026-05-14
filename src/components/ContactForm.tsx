@@ -147,7 +147,7 @@ export const ContactForm = ({ variant = "default", defaultService, onSuccess }: 
             value={formData.service}
             onChange={handleChange}
             required
-            placeholder="e.g., Digital Marketing, Web Development, SEO"
+            placeholder="e.g., SaaS Development, AI System, Web App"
           />
         </div>
       </div>

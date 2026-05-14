@@ -1,72 +1,64 @@
 import Link from "next/link";
 import {
   AppWindow,
-  MonitorSmartphone,
-  Target,
-  Share2,
-  Search,
-  Globe,
-  RefreshCcw,
   ArrowUpRight,
+  Boxes,
+  Globe,
+  MonitorSmartphone,
+  RefreshCcw,
+  Workflow,
 } from "lucide-react";
 
 const Services = ({ cityName }: { cityName?: string }) => {
   const services = [
     {
       icon: <AppWindow className="w-7 h-7 md:w-8 md:h-8" />,
-      title: "Build Web App Using AI",
-      description: "Create powerful web applications rapidly using AI-powered platforms and no-code tools.",
+      title: "SaaS Development",
+      description: "Multi-tenant SaaS platforms with subscriptions, dashboards, roles, and production-ready architecture.",
       variant: "default" as const,
       slug: "ai-webapp",
     },
     {
       icon: <MonitorSmartphone className="w-7 h-7 md:w-8 md:h-8" />,
-      title: "Build Website Using AI",
-      description: "Launch stunning websites in hours, not weeks, using AI website builders.",
+      title: "Web App Development",
+      description: "Fast, secure web applications built with Next.js, React, TypeScript, and modern data systems.",
       variant: "secondary" as const,
-      slug: "ai-website",
+      slug: "web-development",
     },
     {
-      icon: <Target className="w-7 h-7 md:w-8 md:h-8" />,
-      title: "Performance Marketing",
-      description: "Data-driven campaigns that maximize ROI through Google Ads, Meta Ads & more.",
+      icon: <Workflow className="w-7 h-7 md:w-8 md:h-8" />,
+      title: "AI Systems",
+      description: "AI assistants, workflow automation, data intelligence, and product features powered by language models.",
       variant: "brand" as const,
-      slug: "performance-marketing",
-    },
-    {
-      icon: <Share2 className="w-7 h-7 md:w-8 md:h-8" />,
-      title: "Social Media Marketing",
-      description: "Grow your brand presence and engagement with creative social media campaigns.",
-      variant: "secondary" as const,
-      slug: "social-media",
-    },
-    {
-      icon: <Search className="w-7 h-7 md:w-8 md:h-8" />,
-      title: "SEO Optimization",
-      description: "Boost your organic reach with smart, scalable SEO strategies that drive traffic.",
-      variant: "default" as const,
-      slug: "seo",
-    },
-    {
-      icon: <Globe className="w-7 h-7 md:w-8 md:h-8" />,
-      title: "Landing Pages",
-      description: "High-converting landing pages optimized for campaigns with A/B testing.",
-      variant: "default" as const,
-      slug: "landing-pages",
+      slug: "ai-webapp",
     },
     {
       icon: <RefreshCcw className="w-7 h-7 md:w-8 md:h-8" />,
-      title: "Migration",
-      description: "Migrate React Vite SPA websites and web apps to Next.js for SSR, SEO, and scalable growth.",
+      title: "Platform Modernization",
+      description: "Migrate legacy sites, SPAs, and internal tools into scalable, maintainable product platforms.",
       variant: "secondary" as const,
       slug: "migration",
+    },
+    {
+      icon: <Boxes className="w-7 h-7 md:w-8 md:h-8" />,
+      title: "Custom Software",
+      description: "Purpose-built portals, CRMs, booking systems, automations, integrations, and business tools.",
+      variant: "default" as const,
+      slug: "ai-webapp",
+    },
+    {
+      icon: <Globe className="w-7 h-7 md:w-8 md:h-8" />,
+      title: "Enterprise Websites",
+      description: "High-performance brand and product websites with CMS workflows, accessibility, and analytics.",
+      variant: "default" as const,
+      slug: "ai-website",
     },
   ];
 
   const getCardClasses = (variant: "default" | "secondary" | "brand") => {
     switch (variant) {
       case "secondary":
-        return "bg-secondary border-secondary";
+        return "bg-secondary border-border";
       case "brand":
         return "border-transparent text-primary-foreground";
       default:
@@ -74,54 +66,47 @@ const Services = ({ cityName }: { cityName?: string }) => {
     }
   };
 
-  const getTextClasses = (variant: "default" | "secondary" | "brand") => {
-    switch (variant) {
-      case "brand":
-        return "text-primary-foreground/80";
-      default:
-        return "text-muted-foreground";
-    }
-  };
+  const getTextClasses = (variant: "default" | "secondary" | "brand") =>
+    variant === "brand" ? "text-primary-foreground/80" : "text-muted-foreground";
 
   const getIconClasses = (variant: "default" | "secondary" | "brand") => {
     switch (variant) {
       case "brand":
         return "bg-white/20";
       case "secondary":
-        return "bg-primary/10";
+        return "bg-primary/10 text-primary";
       default:
-        return "bg-muted";
+        return "bg-muted text-accent";
     }
   };
 
   return (
-    <section id="services" className="py-16 md:py-24 bg-background">
+    <section id="services" className="py-16 md:py-24 bg-secondary/40">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
-          {/* Header */}
           <div className="flex items-start justify-between mb-10 md:mb-16">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display leading-tight max-w-2xl">
-              <span className="font-bold italic">Expert</span>{" "}
-              <span className="font-normal">Digital Marketing Solutions{cityName ? ` in ${cityName}` : ""} for Maximum Returns</span>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display leading-tight max-w-3xl">
+              <span className="font-bold">Software engineering services</span>{" "}
+              <span className="font-normal">for ambitious product teams{cityName ? ` in ${cityName}` : ""}.</span>
             </h2>
             <Link
               href="/contact"
-              className="hidden md:flex items-center justify-center w-12 h-12 rounded-full border-2 border-foreground text-foreground hover:bg-accent hover:text-accent-foreground hover:border-accent transition-all flex-shrink-0"
+              className="hidden md:flex items-center justify-center w-12 h-12 rounded-full border border-border text-foreground hover:bg-accent hover:text-accent-foreground hover:border-accent transition-all flex-shrink-0"
+              aria-label="Start a project"
             >
               <ArrowUpRight className="w-5 h-5" />
             </Link>
           </div>
 
-          {/* Services Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
-            {services.map((service, index) => (
+            {services.map((service) => (
               <Link
                 href={`/services/${service.slug}`}
-                key={index}
-                className={`group relative rounded-2xl border p-5 md:p-7 transition-all duration-300 hover:shadow-xl hover:scale-[1.02] block ${getCardClasses(service.variant)}`}
+                key={service.title}
+                className={`group relative rounded-xl border p-5 md:p-7 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl block ${getCardClasses(service.variant)}`}
                 style={service.variant === "brand" ? { background: "var(--brand-gradient)" } : undefined}
               >
-                <div className={`inline-flex items-center justify-center w-11 h-11 md:w-14 md:h-14 rounded-full mb-4 md:mb-6 ${getIconClasses(service.variant)}`}>
+                <div className={`inline-flex items-center justify-center w-11 h-11 md:w-14 md:h-14 rounded-xl mb-4 md:mb-6 ${getIconClasses(service.variant)}`}>
                   {service.icon}
                 </div>
                 <h3 className="text-lg md:text-xl font-display font-bold mb-2 md:mb-3">
@@ -135,7 +120,7 @@ const Services = ({ cityName }: { cityName?: string }) => {
                     ? "border-white/30 text-primary-foreground group-hover:bg-white/10"
                     : "border-foreground/20 text-foreground group-hover:bg-primary group-hover:text-primary-foreground group-hover:border-primary"
                 }`}>
-                  Learn More
+                  Explore Service
                 </span>
               </Link>
             ))}

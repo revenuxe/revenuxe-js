@@ -1,4 +1,4 @@
-/** Default JSON-LD blocks used on the marketing site (homepage + SEOHead defaults). */
+/** Default JSON-LD blocks used on the software company site (homepage + SEOHead defaults). */
 
 import { SITE_URL_FALLBACK } from "@/lib/seo/siteMetadata";
 
@@ -6,9 +6,9 @@ export const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
   name: "Revenuxe",
-  alternateName: "Revenuxe Digital Marketing Agency",
+  alternateName: "Revenuxe Software Company",
   description:
-    "AI-powered digital marketing agency in India delivering SEO, performance marketing, web development, and social media marketing services.",
+    "Premium software development company building scalable SaaS products, AI systems, web applications, and high-performance digital platforms.",
   url: "https://www.revenuxe.com",
   logo: "https://www.revenuxe.com/favicon.ico",
   sameAs: ["https://www.linkedin.com/company/revenuxe"],
@@ -33,9 +33,9 @@ export const organizationSchema = {
 export const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
-  name: "Revenuxe AI Digital Marketing Agency",
+  name: "Revenuxe Software Development Company",
   description:
-    "Full-service AI-powered digital marketing agency specializing in SEO, Google Ads, Meta Ads, web development, social media marketing, and content marketing.",
+    "Software engineering company specializing in SaaS development, AI software systems, web application development, platform modernization, and custom software.",
   url: "https://www.revenuxe.com",
   telephone: "+91-9886285028",
   email: "revenuxe@gmail.com",
@@ -58,42 +58,40 @@ export const localBusinessSchema = {
     { "@type": "Country", name: "Australia" },
   ],
   serviceType: [
-    "SEO Services",
-    "Google Ads Management",
-    "Meta Ads Management",
-    "Web Development",
-    "Social Media Marketing",
-    "Content Marketing",
-    "Performance Marketing",
-    "AI Marketing Solutions",
-    "E-Commerce Marketing",
-    "Brand Identity Design",
+    "SaaS Development",
+    "Web Application Development",
+    "AI Software Development",
+    "Custom Software Development",
+    "Platform Modernization",
+    "Next.js Development",
+    "Startup MVP Development",
+    "Enterprise Website Development",
   ],
   hasOfferCatalog: {
     "@type": "OfferCatalog",
-    name: "Digital Marketing Services",
+    name: "Software Development Services",
     itemListElement: [
       {
         "@type": "Offer",
         itemOffered: {
           "@type": "Service",
-          name: "SEO Services",
-          url: "https://www.revenuxe.com/services/seo",
+          name: "SaaS Development",
+          url: "https://www.revenuxe.com/services/ai-webapp",
         },
       },
       {
         "@type": "Offer",
         itemOffered: {
           "@type": "Service",
-          name: "Google Ads Management",
-          url: "https://www.revenuxe.com/sub-services/google-ads",
+          name: "AI Software Systems",
+          url: "https://www.revenuxe.com/services/ai-webapp",
         },
       },
       {
         "@type": "Offer",
         itemOffered: {
           "@type": "Service",
-          name: "Web Development",
+          name: "Web Application Development",
           url: "https://www.revenuxe.com/services/web-development",
         },
       },
@@ -112,7 +110,7 @@ export const websiteSchema = {
   "@type": "WebSite",
   name: "Revenuxe",
   url: "https://www.revenuxe.com",
-  description: "AI digital marketing agency in India for SEO, paid ads, websites, and growth systems.",
+  description: "Software development company for SaaS products, AI systems, web applications, and scalable platforms.",
   publisher: {
     "@type": "Organization",
     name: "Revenuxe",

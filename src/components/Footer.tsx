@@ -2,9 +2,24 @@ import Link from "next/link";
 import { Linkedin } from "lucide-react";
 import { ContactForm } from "./ContactForm";
 import logo from "@/assets/revenuxe-logo.webp";
-import { coreServiceLinks, supportingServiceLinks } from "@/lib/internalLinking";
 
 const Footer = () => {
+  const softwareServices = [
+    { href: "/services/ai-webapp", title: "SaaS Development" },
+    { href: "/services/web-development", title: "Web App Development" },
+    { href: "/services/ai-webapp", title: "AI Software Systems" },
+    { href: "/services/migration", title: "Platform Modernization" },
+    { href: "/services/ai-website", title: "Enterprise Websites" },
+  ];
+
+  const developmentLinks = [
+    { href: "/sub-services/cursor-development", title: "AI-Assisted Engineering" },
+    { href: "/sub-services/v0-development", title: "Product Interface Design" },
+    { href: "/sub-services/firebase-studio", title: "Backend Prototyping" },
+    { href: "/sub-services/lovable-development", title: "Startup MVP Development" },
+    { href: "/sub-services/bolt-development", title: "Rapid Web App Builds" },
+  ];
+
   return (
     <footer id="contact" className="bg-secondary/60 border-t border-border py-12">
       <div className="container mx-auto px-4">
@@ -24,7 +39,7 @@ const Footer = () => {
                 <img src={logo.src} alt="Revenuxe Logo" className="h-10 w-auto" />
               </div>
               <p className="text-muted-foreground text-sm">
-                AI-powered digital marketing agency specializing in growth strategies for businesses.
+                Premium software company building SaaS products, AI systems, web applications, and scalable digital platforms.
               </p>
               <div className="flex space-x-4 mt-4">
                 <a
@@ -46,11 +61,9 @@ const Footer = () => {
                 {[
                   { label: "About Us", href: "/about" },
                   { label: "Services", href: "/services" },
-                  { label: "Basic Package", href: "/basic-package" },
                   { label: "Case Studies", href: "/case-studies" },
                   { label: "Articles", href: "/articles" },
                   { label: "Contact", href: "/contact" },
-                  { label: "ROI Calculator", href: "/roi-calculator" },
                   { label: "Projects", href: "/projects" },
                   { label: "Terms & Conditions", href: "/terms" },
                   { label: "Privacy Policy", href: "/privacy" },
@@ -67,7 +80,7 @@ const Footer = () => {
             <div>
               <h4 className="text-sm font-semibold mb-4 text-foreground uppercase tracking-wider">Core Services</h4>
               <ul className="space-y-2">
-                {coreServiceLinks.map((link) => (
+                {softwareServices.map((link) => (
                   <li key={link.href}>
                     <Link href={link.href} className="text-muted-foreground hover:text-primary transition-colors text-sm">
                       {link.title}
@@ -80,7 +93,7 @@ const Footer = () => {
             <div>
               <h4 className="text-sm font-semibold mb-4 text-foreground uppercase tracking-wider">Support Solutions</h4>
               <ul className="space-y-2">
-                {supportingServiceLinks.map((link) => (
+                {developmentLinks.map((link) => (
                   <li key={link.href}>
                     <Link href={link.href} className="text-muted-foreground hover:text-primary transition-colors text-sm">
                       {link.title}

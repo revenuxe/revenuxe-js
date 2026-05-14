@@ -13,9 +13,9 @@ const Navigation = () => {
   const navItems = [
     { label: "Home", href: "/" },
     { label: "Services", href: "/services" },
-    { label: "SEO", href: "/services/seo" },
-    { label: "Google Ads", href: "/sub-services/google-ads" },
-    { label: "Web Development", href: "/services/web-development" },
+    { label: "Software", href: "/services/web-development" },
+    { label: "AI Systems", href: "/services/ai-webapp" },
+    { label: "Projects", href: "/projects" },
     { label: "Case Studies", href: "/case-studies" },
     { label: "Contact", href: "/contact" },
   ];
@@ -118,7 +118,7 @@ const Navigation = () => {
                   className="flex items-center justify-center gap-2 w-full py-4 rounded-full text-primary-foreground font-semibold text-base transition-all duration-200 hover:opacity-90 active:scale-95"
                   style={{ background: "var(--brand-gradient)" }}
                 >
-                  Get Free Strategy Call
+                  Start Your Project
                   <ArrowRight className="h-4 w-4" />
                 </Link>
               </div>

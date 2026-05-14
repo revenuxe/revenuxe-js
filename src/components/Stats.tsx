@@ -1,42 +1,60 @@
-const Stats = () => {
-  const stats = [
-    { value: "30+", label: "Successful Projects", highlight: false },
-    { value: "30+", label: "Happy Clients", highlight: false },
-    { value: "3+", label: "Years of Innovation", highlight: true },
-    { value: "5", label: "Active Partnerships", highlight: true },
-  ];
+import Link from "next/link";
+import {
+  ArrowUpRight,
+  Bot,
+  Cloud,
+  Code2,
+  CreditCard,
+  Database,
+  FileCode2,
+  Layers3,
+  Server,
+} from "lucide-react";
+import { technologyPages } from "@/data/technologyPages";
 
+const iconMap = {
+  nextjs: <Layers3 className="h-5 w-5" />,
+  react: <Code2 className="h-5 w-5" />,
+  typescript: <FileCode2 className="h-5 w-5" />,
+  supabase: <Server className="h-5 w-5" />,
+  postgresql: <Database className="h-5 w-5" />,
+  aws: <Cloud className="h-5 w-5" />,
+  ai: <Bot className="h-5 w-5" />,
+  stripe: <CreditCard className="h-5 w-5" />,
+};
+
+const Stats = () => {
   return (
-    <section className="py-14 md:py-24 bg-background">
+    <section id="technologies" className="py-12 md:py-16 bg-background border-y border-border">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 mb-12 items-center">
-            <div className="animate-fade-in">
-              <p className="text-base md:text-lg text-foreground leading-relaxed">
-                Together, we make businesses thrive with expert digital marketing strategies
-              </p>
-              <p className="text-muted-foreground mt-3 text-sm leading-relaxed">
-                We unlock growth potential with AI-powered strategies, delivering exceptional results and ensuring client satisfaction in every project.
-              </p>
-            </div>
-            <div className="animate-fade-in" style={{ animationDelay: "0.2s" }}>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-display leading-tight">
-                <span className="font-bold">We Make Businesses</span>{" "}
-                <span className="font-normal">Thrive With Expert Digital Marketing Strategies.</span>
-              </h2>
-            </div>
+          <div className="mb-8">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-bold">
+              Technologies
+            </h2>
           </div>
-          
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
-            {stats.map((stat, index) => (
-              <div key={index} className="animate-fade-in" style={{ animationDelay: `${index * 0.1}s` }}>
-                <p className={`text-3xl sm:text-4xl md:text-5xl font-display font-bold ${stat.highlight ? "text-accent" : "text-foreground"}`}>
-                  {stat.value}
+
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
+            {technologyPages.map((tech) => (
+              <Link
+                key={tech.slug}
+                href={`/technologies/${tech.slug}`}
+                className="group rounded-xl border border-border bg-card p-5 text-left shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-accent/70 hover:shadow-xl hover:shadow-black/20"
+              >
+                <div className="flex items-start justify-between gap-4">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-accent/10 text-accent transition-colors group-hover:bg-accent group-hover:text-accent-foreground">
+                    {iconMap[tech.slug as keyof typeof iconMap]}
+                  </div>
+                  <ArrowUpRight className="h-4 w-4 text-muted-foreground transition-colors group-hover:text-accent" />
+                </div>
+                <h3 className="mt-5 text-lg font-display font-bold">{tech.name}</h3>
+                <p className="mt-2 text-xs font-semibold uppercase tracking-wider text-accent">
+                  {tech.eyebrow}
                 </p>
-                <p className="text-xs md:text-sm text-muted-foreground mt-2">
-                  {stat.label}
+                <p className="mt-3 text-sm leading-relaxed text-muted-foreground line-clamp-3">
+                  {tech.summary}
                 </p>
-              </div>
+              </Link>
             ))}
           </div>
         </div>

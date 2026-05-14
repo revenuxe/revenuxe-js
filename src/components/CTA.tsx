@@ -13,11 +13,12 @@ const CTA = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-8 md:gap-10">
           <div className="max-w-xl">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-display leading-tight">
-              <span className="italic font-normal">Find</span>{" "}
-              <span className="font-bold">your perfect strategy today.</span>{" "}
-              <span className="font-normal">Contact us for expert marketing guidance!</span>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-display leading-tight font-bold">
+              Build Your Next Product With Revenuxe
             </h2>
+            <p className="mt-4 text-muted-foreground">
+              Bring us your SaaS idea, AI workflow, internal platform, or modernization challenge. We will help shape it into production-ready software.
+            </p>
           </div>
 
           {/* Right: contact info */}
@@ -40,7 +41,7 @@ const CTA = () => {
               style={{ background: "var(--brand-gradient)" }}
               onClick={() => setDialogOpen(true)}
             >
-              Get Started Now
+              Start Your Project
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
           </div>
