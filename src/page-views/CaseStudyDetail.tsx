@@ -39,7 +39,7 @@ const CaseStudyDetail = async ({ caseStudy }: { caseStudy: CaseStudy }) => {
         description={rawDescription}
         keywords={
           caseStudy.meta_keywords ||
-          `case study, ${caseStudy.industry || "digital marketing"}, ${caseStudy.client_name}, digital marketing success`
+          `case study, ${caseStudy.industry || "software development"}, ${caseStudy.client_name}, Revenuxe project`
         }
         canonicalUrl={canonicalUrl}
       />

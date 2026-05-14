@@ -7,7 +7,7 @@ const proofItems = [
   {
     name: "GK Earth Works",
     url: "https://www.gkearthworks.com/",
-    work: "Website build, keyword placement, and Google Ads setup for earth mover and demolition services.",
+    work: "Business website build with clearer service architecture, inquiry flow, and location-focused pages.",
   },
   {
     name: "Laptap",

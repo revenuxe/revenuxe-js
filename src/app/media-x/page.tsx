@@ -1,49 +1,39 @@
 import type { Metadata } from "next";
-import MediaX from "@/page-views/MediaX";
 import { getCanonicalOrigin } from "@/lib/seo/canonical";
+import { redirect } from "next/navigation";
 
 export async function generateMetadata(): Promise<Metadata> {
   const origin = await getCanonicalOrigin();
 
-  const description = "Transform your brand with AI Media Solutions - AI-powered content creation for D2C, SaaS, creator-led and enterprise brands. Create high-performing media that drives engagement and conversion.";
+  const description = "Build practical AI software systems with Revenuxe, from assistants and workflow automation to intelligent product features and data-driven platforms.";
   const keywords = [
-    "AI media solutions",
-    "AI content creation",
-    "high-performing content",
-    "AI-powered marketing",
-    "digital media solutions",
-    "AI media studio",
-    "content creation AI",
-    "D2C marketing",
-    "SaaS content",
-    "enterprise media",
-    "AI-driven content",
-    "brand content strategy",
-    "conversion-focused content",
-    "digital content solutions",
-    "media automation",
-    "AI marketing platform"
+    "AI software development",
+    "AI systems development",
+    "AI assistants",
+    "workflow automation",
+    "AI product features",
+    "AI software development company",
   ];
 
   return {
     metadataBase: new URL(origin),
-    title: "AI Media Solutions - High-Performing Content Creation | Revenuxe",
+    title: "AI Software Systems | Revenuxe",
     description,
     keywords,
     alternates: {
-      canonical: "/media-x",
+      canonical: "/services/ai-systems",
     },
     openGraph: {
-      title: "AI Media Solutions - High-Performing Content Creation",
+      title: "AI Software Systems | Revenuxe",
       description,
-      url: `${origin}/media-x`,
+      url: `${origin}/services/ai-systems`,
       siteName: "Revenuxe",
       locale: "en_IN",
       type: "website",
     },
     twitter: {
       card: "summary_large_image",
-      title: "AI Media Solutions - High-Performing Content Creation",
+      title: "AI Software Systems | Revenuxe",
       description,
       site: "@revenuxe",
     },
@@ -62,5 +52,5 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function MediaXPage() {
-  return <MediaX recentProjects={[]} />;
+  redirect("/services/ai-systems");
 }

@@ -20,8 +20,8 @@ export default async function Projects({ projects }: { projects: Project[] }) {
     <div className="min-h-screen bg-background">
       <SEOHead
         title="Projects — Completed Work by Revenuxe | Revenuxe"
-        description="Explore recent and completed AI digital marketing projects. See brand logos, project highlights, and the websites we helped grow."
-        keywords="projects, digital marketing projects, AI marketing agency India, SEO case proof, client logos, marketing outcomes, Revenuxe projects"
+        description="Explore recent Revenuxe projects across websites, web applications, software platforms, and digital product builds."
+        keywords="Revenuxe projects, software projects, website projects, web app portfolio, SaaS development portfolio"
         canonicalUrl={canonicalUrl}
       />
 
@@ -30,7 +30,7 @@ export default async function Projects({ projects }: { projects: Project[] }) {
       <PageHero
         title="Our"
         highlight="Projects"
-        subtitle="Completed work across SEO, performance marketing, web development and growth."
+        subtitle="Completed websites, web applications, and software platform work."
       />
 
       <main className="container mx-auto px-4 py-16">

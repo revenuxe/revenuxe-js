@@ -1,9 +1,5 @@
-import BasicPackage from "@/page-views/BasicPackage";
-import { absoluteCanonicalUrl, getCanonicalOrigin } from "@/lib/seo/canonical";
+import { redirect } from "next/navigation";
 
 export default async function BasicPackagePage() {
-  const canonicalUrl = await absoluteCanonicalUrl("/basic-package");
-  const origin = await getCanonicalOrigin();
-  return <BasicPackage canonicalUrl={canonicalUrl} origin={origin} />;
+  redirect("/services/website-development");
 }
-

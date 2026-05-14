@@ -9,7 +9,7 @@ export async function generateMetadata(): Promise<Metadata> {
     metadataBase: new URL(origin),
     title: "Terms & Conditions - Revenuxe Service Agreement",
     description:
-      "Read Revenuxe's terms and conditions for digital marketing services, payment terms, and client responsibilities.",
+      "Read Revenuxe's terms and conditions for software development services, payment terms, and client responsibilities.",
     alternates: {
       canonical: "/terms",
     },

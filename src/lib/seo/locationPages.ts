@@ -30,14 +30,14 @@ export function getCityCountrySeo(countrySlug: string, citySlug: string) {
   return {
     cityName,
     countryName,
-    title: `AI-Powered Digital Marketing Agency in ${cityName}, ${countryName} | Revenuxe`,
-    tagline: `AI-Powered Digital Marketing in ${cityName}`,
-    description: `Grow your ${cityName} business with Revenuxe's AI-powered SEO, paid media, web development, and conversion-focused digital marketing services for ${countryName}.`,
+    title: `Software Development Company in ${cityName}, ${countryName} | Revenuxe`,
+    tagline: `Software Development in ${cityName}`,
+    description: `Build scalable software for your ${cityName} business with Revenuxe's SaaS development, AI systems, web applications, platform engineering, and custom software services for ${countryName}.`,
     keywords: [
-      `digital marketing ${cityName}`,
-      `SEO ${cityName}`,
-      `AI marketing ${cityName}`,
-      `digital marketing agency ${countryName}`,
+      `software development ${cityName}`,
+      `web development ${cityName}`,
+      `AI software ${cityName}`,
+      `software development company ${countryName}`,
       "Revenuxe",
     ].join(", "),
   };

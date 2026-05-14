@@ -8,17 +8,17 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title: "Thank You | Revenuxe",
     description:
-      "Thanks for contacting Revenuxe. We’ll reach out soon with the next steps for your AI digital marketing goals.",
+      "Thanks for contacting Revenuxe. We'll reach out soon with the next steps for your software project.",
     alternates: { canonical },
     openGraph: { url: canonical },
   };
 }
 
 const quotes = [
-  "Your growth journey just started. We’ll be in touch soon.",
-  "Thanks for reaching out. We’re preparing your plan right now.",
-  "We received your inquiry. Expect a response within 24 hours (business days).",
-  "Great choice. Let’s turn your marketing into measurable revenue.",
+  "Your product journey just started. We'll be in touch soon.",
+  "Thanks for reaching out. We're preparing your next steps right now.",
+  "We received your inquiry. Expect a response within 24 hours on business days.",
+  "Great choice. Let's shape your software idea into a clear build plan.",
 ];
 
 function getRandomQuote() {
@@ -33,7 +33,7 @@ export default function ThankYouPage() {
       <div className="w-full max-w-3xl rounded-3xl border border-border bg-card/40 shadow-xl p-8 md:p-12">
         <div className="flex flex-col items-center text-center">
           <div className="h-16 w-16 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center">
-            <span className="text-primary text-3xl font-bold">✓</span>
+            <span className="text-primary text-2xl font-bold">OK</span>
           </div>
 
           <h1 className="mt-6 text-2xl md:text-3xl font-bold">
@@ -57,12 +57,10 @@ export default function ThankYouPage() {
           </div>
 
           <div className="mt-6 text-xs text-muted-foreground">
-            Tip: If you don&apos;t hear from us within 24 business hours, check your email
-            spam folder.
+            Tip: If you do not hear from us within 24 business hours, check your email spam folder.
           </div>
         </div>
       </div>
     </div>
   );
 }
-

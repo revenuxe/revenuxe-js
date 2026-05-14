@@ -24,10 +24,10 @@ const countryData: Record<string, {
 }> = {
   singapore: {
     name: "Singapore",
-    tagline: "Elevate Your Brand with AI-Powered Marketing in Singapore",
-    description: "Transform your business with cutting-edge digital marketing strategies tailored for Singapore's dynamic market. Our AI-powered solutions help you dominate search rankings and drive exponential growth in the Lion City.",
-    keywords: "digital marketing Singapore, AI marketing Singapore, SEO Singapore, growth marketing Singapore",
-    metaDescription: "Leading AI-powered digital marketing agency in Singapore. Transform your business with data-driven strategies, advanced SEO, and growth marketing solutions.",
+    tagline: "Elevate Your Brand with AI-Powered Software in Singapore",
+    description: "Transform your business with cutting-edge software product strategies tailored for Singapore's dynamic market. Our AI-powered solutions help you dominate search rankings and drive exponential growth in the Lion City.",
+    keywords: "software development Singapore, AI software Singapore, web development Singapore, growth software Singapore",
+    metaDescription: "Leading AI-powered software development agency in Singapore. Transform your business with data-driven strategies, advanced web development, and growth software solutions.",
     cities: [
       { name: "Central Singapore", slug: "central-singapore" },
       { name: "Jurong", slug: "jurong" },
@@ -36,10 +36,10 @@ const countryData: Record<string, {
   },
   usa: {
     name: "USA",
-    tagline: "Scale Your Business with AI-Driven Marketing in the USA",
-    description: "Partner with a leading digital marketing agency serving businesses across the United States. Our AI-powered strategies deliver measurable results and sustainable growth in America's competitive market.",
-    keywords: "digital marketing USA, AI marketing America, SEO USA, growth marketing United States",
-    metaDescription: "Top AI-powered digital marketing agency serving the USA. Drive growth with advanced SEO, content marketing, and data-driven strategies across America.",
+    tagline: "Scale Your Business with AI-Driven Software in the USA",
+    description: "Partner with a leading software development agency serving businesses across the United States. Our AI-powered strategies deliver measurable results and sustainable growth in America's competitive market.",
+    keywords: "software development USA, AI software America, web development USA, growth software United States",
+    metaDescription: "Top AI-powered software development agency serving the USA. Drive growth with advanced web development, content software, and data-driven strategies across America.",
     cities: [
       { name: "Chicago", slug: "chicago" },
       { name: "New York", slug: "new-york" },
@@ -51,10 +51,10 @@ const countryData: Record<string, {
   },
   uae: {
     name: "UAE",
-    tagline: "Accelerate Your Growth with AI Marketing in the UAE",
-    description: "Empower your business with innovative digital marketing solutions designed for the UAE market. Our AI-driven approach ensures your brand stands out in Dubai, Abu Dhabi, and beyond.",
-    keywords: "digital marketing UAE, AI marketing Dubai, SEO UAE, growth marketing Middle East",
-    metaDescription: "Premier AI-powered digital marketing agency in UAE. Transform your business with cutting-edge strategies tailored for Dubai, Abu Dhabi, and the Middle East.",
+    tagline: "Accelerate Your Growth with Software Engineering in the UAE",
+    description: "Empower your business with innovative software development solutions designed for the UAE market. Our AI-driven approach ensures your brand stands out in Dubai, Abu Dhabi, and beyond.",
+    keywords: "software development UAE, AI software Dubai, web development UAE, growth software Middle East",
+    metaDescription: "Premier AI-powered software development agency in UAE. Transform your business with cutting-edge strategies tailored for Dubai, Abu Dhabi, and the Middle East.",
     cities: [
       { name: "Dubai", slug: "dubai" },
       { name: "Abu Dhabi", slug: "abu-dhabi" },
@@ -63,10 +63,10 @@ const countryData: Record<string, {
   },
   indonesia: {
     name: "Indonesia",
-    tagline: "Drive Digital Success with AI Marketing in Indonesia",
-    description: "Unlock your business potential with tailored digital marketing strategies for Indonesia's vibrant market. Our AI-powered solutions help you connect with millions of Indonesian consumers.",
-    keywords: "digital marketing Indonesia, AI marketing Indonesia, SEO Indonesia, growth marketing Jakarta",
-    metaDescription: "Leading AI-powered digital marketing agency in Indonesia. Grow your business with localized strategies and advanced SEO solutions for the Indonesian market.",
+    tagline: "Drive Digital Success with Software Engineering in Indonesia",
+    description: "Unlock your business potential with tailored software product strategies for Indonesia's vibrant market. Our AI-powered solutions help you connect with millions of Indonesian consumers.",
+    keywords: "software development Indonesia, AI software Indonesia, web development Indonesia, growth software Jakarta",
+    metaDescription: "Leading AI-powered software development agency in Indonesia. Grow your business with localized strategies and advanced web development solutions for the Indonesian market.",
     cities: [
       { name: "Jakarta", slug: "jakarta" },
       { name: "Surabaya", slug: "surabaya" },
@@ -76,10 +76,10 @@ const countryData: Record<string, {
   },
   australia: {
     name: "Australia",
-    tagline: "Amplify Your Brand with AI Marketing in Australia",
-    description: "Partner with Australia's trusted digital marketing experts. Our AI-driven strategies help businesses across Sydney, Melbourne, and beyond achieve remarkable growth and market dominance.",
-    keywords: "digital marketing Australia, AI marketing Sydney, SEO Australia, growth marketing Melbourne",
-    metaDescription: "Top-rated AI-powered digital marketing agency in Australia. Scale your business with innovative strategies across Sydney, Melbourne, and all major Australian cities.",
+    tagline: "Amplify Your Brand with Software Engineering in Australia",
+    description: "Partner with Australia's trusted software development experts. Our AI-driven strategies help businesses across Sydney, Melbourne, and beyond achieve remarkable growth and market dominance.",
+    keywords: "software development Australia, AI software Sydney, web development Australia, growth software Melbourne",
+    metaDescription: "Top-rated AI-powered software development agency in Australia. Scale your business with innovative strategies across Sydney, Melbourne, and all major Australian cities.",
     cities: [
       { name: "Sydney", slug: "sydney" },
       { name: "Melbourne", slug: "melbourne" },
@@ -89,10 +89,10 @@ const countryData: Record<string, {
   },
   uk: {
     name: "United Kingdom",
-    tagline: "Transform Your Brand with AI Marketing in the UK",
-    description: "Partner with the UK's leading AI-powered digital marketing agency. From London to Manchester, we help British businesses achieve exceptional growth with innovative strategies.",
-    keywords: "digital marketing UK, AI marketing London, SEO United Kingdom, growth marketing Manchester",
-    metaDescription: "Premier AI-powered digital marketing agency in the UK. Drive growth with cutting-edge strategies across London, Manchester, and major British cities.",
+    tagline: "Transform Your Brand with Software Engineering in the UK",
+    description: "Partner with the UK's leading AI-powered software development agency. From London to Manchester, we help British businesses achieve exceptional growth with innovative strategies.",
+    keywords: "software development UK, AI software London, web development United Kingdom, growth software Manchester",
+    metaDescription: "Premier AI-powered software development agency in the UK. Drive growth with cutting-edge strategies across London, Manchester, and major British cities.",
     cities: [
       { name: "London", slug: "london" },
       { name: "Manchester", slug: "manchester" },
@@ -102,10 +102,10 @@ const countryData: Record<string, {
   },
   canada: {
     name: "Canada",
-    tagline: "Elevate Your Business with AI Marketing in Canada",
-    description: "Transform your Canadian business with cutting-edge AI-powered digital marketing. From Toronto to Vancouver, we deliver strategies that drive measurable growth across Canada.",
-    keywords: "digital marketing Canada, AI marketing Toronto, SEO Canada, growth marketing Vancouver",
-    metaDescription: "Leading AI-powered digital marketing agency in Canada. Scale your business with innovative strategies across Toronto, Vancouver, and all major Canadian cities.",
+    tagline: "Elevate Your Business with Software Engineering in Canada",
+    description: "Transform your Canadian business with cutting-edge AI-powered software development. From Toronto to Vancouver, we deliver strategies that drive measurable growth across Canada.",
+    keywords: "software development Canada, AI software Toronto, web development Canada, growth software Vancouver",
+    metaDescription: "Leading AI-powered software development agency in Canada. Scale your business with innovative strategies across Toronto, Vancouver, and all major Canadian cities.",
     cities: [
       { name: "Toronto", slug: "toronto" },
       { name: "Vancouver", slug: "vancouver" },
@@ -115,10 +115,10 @@ const countryData: Record<string, {
   },
   germany: {
     name: "Germany",
-    tagline: "Drive Innovation with AI Marketing in Germany",
-    description: "Partner with Germany's premier AI-powered digital marketing agency. From Berlin to Munich, we help German businesses achieve exceptional growth with data-driven strategies.",
-    keywords: "digital marketing Germany, AI marketing Berlin, SEO Germany, growth marketing Munich",
-    metaDescription: "Top AI-powered digital marketing agency in Germany. Transform your business with cutting-edge strategies across Berlin, Munich, and major German cities.",
+    tagline: "Drive Innovation with Software Engineering in Germany",
+    description: "Partner with Germany's premier AI-powered software development agency. From Berlin to Munich, we help German businesses achieve exceptional growth with data-driven strategies.",
+    keywords: "software development Germany, AI software Berlin, web development Germany, growth software Munich",
+    metaDescription: "Top AI-powered software development agency in Germany. Transform your business with cutting-edge strategies across Berlin, Munich, and major German cities.",
     cities: [
       { name: "Berlin", slug: "berlin" },
       { name: "Munich", slug: "munich" },
@@ -128,10 +128,10 @@ const countryData: Record<string, {
   },
   france: {
     name: "France",
-    tagline: "Amplify Your Presence with AI Marketing in France",
-    description: "Elevate your French business with innovative AI-powered digital marketing solutions. From Paris to Lyon, we deliver strategies that drive remarkable growth across France.",
-    keywords: "digital marketing France, AI marketing Paris, SEO France, growth marketing Lyon",
-    metaDescription: "Premier AI-powered digital marketing agency in France. Scale your business with innovative strategies across Paris, Lyon, and major French cities.",
+    tagline: "Amplify Your Presence with Software Engineering in France",
+    description: "Elevate your French business with innovative AI-powered software development solutions. From Paris to Lyon, we deliver strategies that drive remarkable growth across France.",
+    keywords: "software development France, AI software Paris, web development France, growth software Lyon",
+    metaDescription: "Premier AI-powered software development agency in France. Scale your business with innovative strategies across Paris, Lyon, and major French cities.",
     cities: [
       { name: "Paris", slug: "paris" },
       { name: "Lyon", slug: "lyon" },
@@ -141,10 +141,10 @@ const countryData: Record<string, {
   },
   japan: {
     name: "Japan",
-    tagline: "Scale Your Business with AI Marketing in Japan",
-    description: "Transform your Japanese business with cutting-edge AI-powered digital marketing. From Tokyo to Osaka, we help businesses achieve exceptional growth in Japan's competitive market.",
-    keywords: "digital marketing Japan, AI marketing Tokyo, SEO Japan, growth marketing Osaka",
-    metaDescription: "Leading AI-powered digital marketing agency in Japan. Drive growth with innovative strategies across Tokyo, Osaka, and major Japanese cities.",
+    tagline: "Scale Your Business with Software Engineering in Japan",
+    description: "Transform your Japanese business with cutting-edge AI-powered software development. From Tokyo to Osaka, we help businesses achieve exceptional growth in Japan's competitive market.",
+    keywords: "software development Japan, AI software Tokyo, web development Japan, growth software Osaka",
+    metaDescription: "Leading AI-powered software development agency in Japan. Drive growth with innovative strategies across Tokyo, Osaka, and major Japanese cities.",
     cities: [
       { name: "Tokyo", slug: "tokyo" },
       { name: "Osaka", slug: "osaka" },
@@ -154,10 +154,10 @@ const countryData: Record<string, {
   },
   "south-korea": {
     name: "South Korea",
-    tagline: "Accelerate Growth with AI Marketing in South Korea",
-    description: "Partner with South Korea's innovative AI-powered digital marketing agency. From Seoul to Busan, we deliver cutting-edge strategies that drive exceptional business growth.",
-    keywords: "digital marketing South Korea, AI marketing Seoul, SEO Korea, growth marketing Busan",
-    metaDescription: "Top AI-powered digital marketing agency in South Korea. Transform your business with innovative strategies across Seoul, Busan, and major Korean cities.",
+    tagline: "Accelerate Growth with Software Engineering in South Korea",
+    description: "Partner with South Korea's innovative AI-powered software development agency. From Seoul to Busan, we deliver cutting-edge strategies that drive exceptional business growth.",
+    keywords: "software development South Korea, AI software Seoul, web development Korea, growth software Busan",
+    metaDescription: "Top AI-powered software development agency in South Korea. Transform your business with innovative strategies across Seoul, Busan, and major Korean cities.",
     cities: [
       { name: "Seoul", slug: "seoul" },
       { name: "Busan", slug: "busan" },
@@ -205,7 +205,7 @@ const CountryPage = async ({
   return (
     <div className="min-h-screen bg-background text-foreground">
       <SEOHead
-        title={`AI-Powered Digital Marketing Agency in ${countryInfo.name} | Revenuxe`}
+        title={`Software Development Company in ${countryInfo.name} | Revenuxe`}
         description={countryInfo.metaDescription}
         keywords={countryInfo.keywords}
         canonicalUrl={canonicalUrl}
@@ -222,7 +222,7 @@ const CountryPage = async ({
       <Navigation />
       
       <PageHero
-        title={`AI Marketing Agency in`}
+        title={`Software Company in`}
         highlight={countryInfo.name}
         subtitle={countryInfo.tagline}
       />
@@ -241,7 +241,7 @@ const CountryPage = async ({
               Cities We Serve in {countryInfo.name}
             </h2>
             <p className="text-muted-foreground text-lg">
-              Delivering exceptional digital marketing solutions across major cities
+              Delivering exceptional software development solutions across major cities
             </p>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 max-w-6xl mx-auto">

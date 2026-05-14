@@ -76,9 +76,9 @@ const ArticleDetail = async ({ article }: { article: Article }) => {
         title={`${article.title} | Revenuxe Blog`}
         description={
           article.excerpt ||
-          `Read ${article.title} on the Revenuxe blog. Expert digital marketing insights, tips & strategies.`
+          `Read ${article.title} on the Revenuxe blog. Expert software development insights, product thinking, and engineering guidance.`
         }
-        keywords={`${article.category || "digital marketing"}, digital marketing blog, ${article.title
+        keywords={`${article.category || "software development"}, software development blog, ${article.title
           .split(" ")
           .slice(0, 3)
           .join(", ")}, Revenuxe`}

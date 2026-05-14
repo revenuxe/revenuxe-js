@@ -25,16 +25,16 @@ const Articles = async ({ articles }: { articles: Article[] }) => {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead
-        title="Marketing Blog — SEO Tips, Growth Hacks & Industry Insights | Revenuxe"
-        description="Read expert digital marketing articles from Revenuxe. Get actionable SEO tips, Google Ads strategies, social media hacks & AI marketing insights to grow your business faster."
-        keywords="digital marketing blog, SEO tips 2026, Google Ads strategy, social media marketing tips, AI marketing insights, Revenuxe blog, marketing growth hacks"
+        title="Software Insights — SaaS, AI & Web Development Insights | Revenuxe"
+        description="Read Revenuxe insights on SaaS development, AI systems, web applications, platform architecture, and modern website engineering."
+        keywords="software development blog, SaaS development insights, AI software development, web app development, Next.js development, Revenuxe blog"
         canonicalUrl={canonicalUrl}
       />
       <Navigation />
       <PageHero
         title="Latest Articles &"
         highlight="Insights"
-        subtitle="Stay updated with the latest trends, strategies, and insights in digital marketing"
+        subtitle="Stay updated with practical insights on software products, AI systems, web apps, and modern platforms"
       />
       <main>
         <section className="py-20 px-4">

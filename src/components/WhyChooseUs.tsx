@@ -24,7 +24,7 @@ const WhyChooseUs = ({ cityName }: { cityName?: string }) => {
           <circle cx="17" cy="31" r="4" fill="hsl(195, 70%, 60%)" />
         </svg>
       ),
-      title: "Simplify Marketing Decisions Effectively",
+      title: "Simplify Product Decisions Effectively",
     },
     {
       icon: (

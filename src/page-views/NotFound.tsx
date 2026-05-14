@@ -16,7 +16,7 @@ const NotFound = () => {
     <div className="flex min-h-screen items-center justify-center bg-background">
       <SEOHead
         title="Page Not Found — Revenuxe"
-        description="The page you're looking for doesn't exist. Return to Revenuxe's homepage to explore our AI-powered digital marketing services."
+        description="The page you're looking for doesn't exist. Return to Revenuxe's homepage to explore our software development services."
         noindex={true}
       />
       <div className="text-center">

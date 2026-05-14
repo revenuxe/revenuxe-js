@@ -10,18 +10,18 @@ const Contact = async () => {
   const canonicalUrl = await absoluteCanonicalUrl("/contact");
   return (
     <div className="min-h-screen bg-background">
-      <SEOHead 
-        title="Contact Revenuxe — Free Digital Marketing Consultation | Call Now"
-        description="Get a free digital marketing consultation from Revenuxe. Call +91 9886285028 or email revenuxe@gmail.com. Expert SEO, Google Ads, web development & social media marketing services."
-        keywords="contact Revenuxe, free marketing consultation, digital marketing agency contact, hire SEO expert India, marketing agency phone number"
+      <SEOHead
+        title="Contact Revenuxe - Start Your Software Project"
+        description="Contact Revenuxe to discuss SaaS development, AI systems, web applications, custom software, platform modernization, and high-performance websites."
+        keywords="contact Revenuxe, software development company contact, SaaS development consultation, web app development company, AI software development"
         canonicalUrl={canonicalUrl}
       />
       <Navigation />
-      
+
       <PageHero
         title="Get In Touch"
         highlight="With Us"
-        subtitle="Ready to transform your digital presence? Let's discuss your project and create something amazing together."
+        subtitle="Ready to build a SaaS product, AI system, web app, custom platform, or high-performance website? Let's discuss the project."
         hideCTA
       />
 
@@ -29,12 +29,11 @@ const Contact = async () => {
         <section className="py-20 px-4">
           <div className="container mx-auto max-w-6xl">
             <div className="grid md:grid-cols-2 gap-12">
-              {/* Contact Information */}
               <div className="space-y-8">
                 <div>
-                  <h2 className="text-3xl font-bold mb-6">Let's Connect</h2>
+                  <h2 className="text-3xl font-bold mb-6">Let's Build</h2>
                   <p className="text-muted-foreground mb-8">
-                    Have a project in mind? We'd love to hear from you. Send us a message and we'll respond as soon as possible.
+                    Have a product, platform, website, or AI system in mind? Send us a message and we will respond with the next steps.
                   </p>
                 </div>
 
@@ -67,22 +66,21 @@ const Contact = async () => {
                     <div>
                       <h3 className="font-semibold mb-1">Office</h3>
                       <p className="text-muted-foreground">India</p>
-                      <p className="text-muted-foreground text-sm">Remote-First Company</p>
+                      <p className="text-muted-foreground text-sm">Remote-first software company</p>
                     </div>
                   </div>
                 </div>
 
                 <div className="p-6 bg-gradient-to-br from-primary/10 to-secondary/10 rounded-lg border">
-                  <h3 className="font-semibold text-lg mb-2">Quick Response</h3>
+                  <h3 className="font-semibold text-lg mb-2">Project Response</h3>
                   <p className="text-muted-foreground">
-                    We typically respond within 24 hours on business days.
+                    We typically respond within 24 business hours with a clear next step for your software project.
                   </p>
                 </div>
               </div>
 
-              {/* Contact Form */}
               <div className="bg-card p-8 rounded-lg border shadow-lg">
-                <h2 className="text-2xl font-bold mb-6">Send Us A Message</h2>
+                <h2 className="text-2xl font-bold mb-6">Tell Us About Your Project</h2>
                 <ContactForm variant="default" />
               </div>
             </div>

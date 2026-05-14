@@ -38,13 +38,13 @@ const trimDescription = (value: string) => {
 
 const extendDescription = (value: string) => {
   if (!value) {
-    return "Discover Revenuxe's AI-powered SEO, paid media, websites, and growth solutions.";
+    return "Discover Revenuxe software development services for SaaS products, AI systems, web applications, custom platforms, and modern websites.";
   }
 
   if (value.length >= MIN_META_DESCRIPTION_LENGTH) return value;
 
   const suffix =
-    " Discover Revenuxe's AI-powered SEO, paid media, websites, and growth solutions.";
+    " Discover Revenuxe software development services for SaaS, AI systems, web apps, and modern websites.";
 
   return trimDescription(`${value.replace(/[.!?\s]*$/, ".")} ${suffix}`.replace(/\s+/g, " ").trim());
 };

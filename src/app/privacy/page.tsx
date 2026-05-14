@@ -9,7 +9,7 @@ export async function generateMetadata(): Promise<Metadata> {
     metadataBase: new URL(origin),
     title: "Privacy Policy - How Revenuxe Protects Your Data",
     description:
-      "Read Revenuxe's privacy policy and how we protect personal information for our digital marketing services.",
+      "Read Revenuxe's privacy policy and how we protect personal information across our software development services.",
     alternates: {
       canonical: "/privacy",
     },

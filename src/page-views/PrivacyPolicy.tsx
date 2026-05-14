@@ -10,8 +10,8 @@ const PrivacyPolicy = async () => {
     <div className="min-h-screen bg-background">
       <SEOHead 
         title="Privacy Policy — How Revenuxe Protects Your Data"
-        description="Read Revenuxe's privacy policy. We are committed to protecting your personal information and ensuring GDPR-compliant data handling across all our digital marketing services."
-        keywords="Revenuxe privacy policy, data protection, GDPR compliance, marketing agency privacy"
+        description="Read Revenuxe's privacy policy. We are committed to protecting your personal information across our software development services and website experiences."
+        keywords="Revenuxe privacy policy, data protection, software company privacy, GDPR compliance"
         canonicalUrl={canonicalUrl}
         noindex={true}
         standardTags={false}
@@ -56,7 +56,7 @@ const PrivacyPolicy = async () => {
             <ul className="list-disc pl-6 text-foreground/80 space-y-2">
               <li>Providing and improving our services</li>
               <li>Responding to inquiries and support requests</li>
-              <li>Sending marketing communications (with your consent)</li>
+              <li>Sending project, service, and company communications (with your consent)</li>
               <li>Analyzing website usage and optimizing user experience</li>
               <li>Complying with legal obligations</li>
               <li>Preventing fraud and ensuring security</li>

@@ -28,8 +28,8 @@ const CaseStudies = async ({ caseStudies }: { caseStudies: CaseStudy[] }) => {
     <div className="min-h-screen bg-background">
       <SEOHead
         title="Client Success Stories & Case Studies — Real Results | Revenuxe"
-        description="See how Revenuxe helped businesses achieve 200%+ ROI, 3X traffic growth & record-breaking conversions. Real case studies with proven digital marketing results."
-        keywords="digital marketing case studies, client success stories, marketing ROI results, SEO case study, Google Ads success, Revenuxe portfolio"
+        description="See Revenuxe case studies and project work across websites, web applications, SaaS platforms, AI systems, and custom software."
+        keywords="software case studies, web app case studies, SaaS development portfolio, website projects, Revenuxe portfolio"
         canonicalUrl={canonicalUrl}
       />
       <Navigation />
@@ -37,7 +37,7 @@ const CaseStudies = async ({ caseStudies }: { caseStudies: CaseStudy[] }) => {
         <PageHero
           title="Our"
           highlight="Case Studies"
-          subtitle="Real results from real clients. Discover how we've helped businesses transform their digital presence."
+          subtitle="Recent software, website, and platform work from Revenuxe."
         />
 
         {/* Case Studies Grid */}
