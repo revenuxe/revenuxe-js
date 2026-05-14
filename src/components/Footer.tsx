@@ -5,11 +5,11 @@ import logo from "@/assets/revenuxe-logo.webp";
 
 const Footer = () => {
   const softwareServices = [
-    { href: "/services/ai-webapp", title: "SaaS Development" },
-    { href: "/services/web-development", title: "Web App Development" },
-    { href: "/services/ai-webapp", title: "AI Software Systems" },
-    { href: "/services/migration", title: "Platform Modernization" },
-    { href: "/services/ai-website", title: "Enterprise Websites" },
+    { href: "/services/saas-development", title: "SaaS Development" },
+    { href: "/services/web-app-development", title: "Web App Development" },
+    { href: "/services/ai-systems", title: "AI Software Systems" },
+    { href: "/services/platform-modernization", title: "Platform Modernization" },
+    { href: "/services/enterprise-websites", title: "Enterprise Websites" },
   ];
 
   const developmentLinks = [

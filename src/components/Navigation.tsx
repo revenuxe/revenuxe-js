@@ -13,8 +13,8 @@ const Navigation = () => {
   const navItems = [
     { label: "Home", href: "/" },
     { label: "Services", href: "/services" },
-    { label: "Software", href: "/services/web-development" },
-    { label: "AI Systems", href: "/services/ai-webapp" },
+    { label: "Software", href: "/services/web-app-development" },
+    { label: "AI Systems", href: "/services/ai-systems" },
     { label: "Projects", href: "/projects" },
     { label: "Case Studies", href: "/case-studies" },
     { label: "Contact", href: "/contact" },
