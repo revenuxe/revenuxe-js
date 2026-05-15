@@ -1,20 +1,32 @@
 import Link from "next/link";
 import {
+  AppWindow,
   ArrowUpRight,
-  Boxes,
   BrainCircuit,
   Building2,
   CheckCircle2,
   Cloud,
   Code2,
   Database,
+  DatabaseZap,
+  FileCode2,
+  FileText,
   Gauge,
   Globe,
+  Handshake,
   Layers3,
   LayoutDashboard,
+  MonitorSmartphone,
+  MousePointerClick,
+  Paintbrush,
+  PlugZap,
+  RefreshCw,
   Rocket,
   ServerCog,
-  Sparkles,
+  ShoppingCart,
+  SquareTerminal,
+  Workflow,
+  Wrench,
 } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
@@ -78,26 +90,34 @@ const serviceCategories = [
 
 const iconMap: Record<string, JSX.Element> = {
   "saas-development": <Layers3 className="h-5 w-5" />,
-  "web-app-development": <Code2 className="h-5 w-5" />,
+  "web-app-development": <AppWindow className="h-5 w-5" />,
   "ai-systems": <BrainCircuit className="h-5 w-5" />,
-  "custom-software": <Boxes className="h-5 w-5" />,
+  "custom-software": <Wrench className="h-5 w-5" />,
   "startup-mvp-development": <Rocket className="h-5 w-5" />,
   "portal-development": <LayoutDashboard className="h-5 w-5" />,
   "website-development": <Globe className="h-5 w-5" />,
   "enterprise-websites": <Building2 className="h-5 w-5" />,
-  "nextjs-development": <Sparkles className="h-5 w-5" />,
-  "cms-website-development": <ServerCog className="h-5 w-5" />,
-  "landing-page-development": <Gauge className="h-5 w-5" />,
-  "business-website-redesign": <LayoutDashboard className="h-5 w-5" />,
-  "ecommerce-development": <Globe className="h-5 w-5" />,
+  "nextjs-development": <FileCode2 className="h-5 w-5" />,
+  "cms-website-development": <FileText className="h-5 w-5" />,
+  "landing-page-development": <MousePointerClick className="h-5 w-5" />,
+  "business-website-redesign": <MonitorSmartphone className="h-5 w-5" />,
+  "ecommerce-development": <ShoppingCart className="h-5 w-5" />,
   "api-backend-development": <ServerCog className="h-5 w-5" />,
   "database-architecture": <Database className="h-5 w-5" />,
   "cloud-devops-engineering": <Cloud className="h-5 w-5" />,
-  "platform-modernization": <Layers3 className="h-5 w-5" />,
+  "platform-modernization": <RefreshCw className="h-5 w-5" />,
   "qa-testing": <CheckCircle2 className="h-5 w-5" />,
   "software-maintenance-scaling": <Gauge className="h-5 w-5" />,
-  "ai-integration": <BrainCircuit className="h-5 w-5" />,
-  "product-ui-ux-design": <LayoutDashboard className="h-5 w-5" />,
+  "ai-integration": <PlugZap className="h-5 w-5" />,
+  "product-ui-ux-design": <Paintbrush className="h-5 w-5" />,
+};
+
+const supportIconMap: Record<string, JSX.Element> = {
+  "cursor-development": <SquareTerminal className="h-5 w-5" />,
+  "v0-development": <Paintbrush className="h-5 w-5" />,
+  "firebase-studio": <DatabaseZap className="h-5 w-5" />,
+  "lovable-development": <Handshake className="h-5 w-5" />,
+  "bolt-development": <Workflow className="h-5 w-5" />,
 };
 
 const Services = async () => {
@@ -244,7 +264,9 @@ const Services = async () => {
                     className="group rounded-2xl border border-border bg-card p-5 transition-all hover:-translate-y-1 hover:border-accent/60 hover:shadow-xl"
                   >
                     <div className="flex items-start justify-between gap-3">
-                      <Sparkles className="h-5 w-5 text-accent" />
+                      <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-accent/10 text-accent transition-colors group-hover:bg-accent group-hover:text-accent-foreground">
+                        {supportIconMap[solution.slug] || <Code2 className="h-5 w-5" />}
+                      </div>
                       <ArrowUpRight className="h-4 w-4 text-muted-foreground transition-colors group-hover:text-accent" />
                     </div>
                     <h3 className="mt-4 text-base font-display font-bold">{solution.title}</h3>
