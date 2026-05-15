@@ -3,20 +3,20 @@ import { getSoftwareServicePage } from "@/data/softwareServicePages";
 import { redirect } from "next/navigation";
 
 const legacyServiceRedirects: Record<string, string> = {
-  "ai-webapp": "/marketing/ai-webapp",
-  "ai-website": "/marketing/ai-website",
+  "ai-webapp": "/services/web-app-development",
+  "ai-website": "/services/website-development",
   analytics: "/marketing/analytics",
   "basic-package": "/basic-package",
   branding: "/marketing/branding",
   "content-marketing": "/marketing/content-marketing",
   ecommerce: "/marketing/ecommerce",
   "email-marketing": "/marketing/email-marketing",
-  "landing-pages": "/marketing/landing-pages",
+  "landing-pages": "/services/landing-page-development",
   migration: "/marketing/migration",
   "performance-marketing": "/marketing/performance-marketing",
   seo: "/marketing/seo",
   "social-media": "/marketing/social-media",
-  "web-development": "/marketing/web-development",
+  "web-development": "/services/web-app-development",
 };
 
 export default async function ServiceDetailPage({

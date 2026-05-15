@@ -13,8 +13,8 @@ export default async function MarketingServicesPage() {
     <div className="min-h-screen bg-background text-foreground">
       <SEOHead
         title="Marketing Services | SEO, Performance Marketing & Growth | Revenuxe"
-        description="Explore Revenuxe marketing services including SEO, performance marketing, social media, content, email, landing pages, analytics, branding, and AI website services."
-        keywords="marketing services, SEO services, performance marketing, social media marketing, content marketing, email marketing, landing pages"
+        description="Explore Revenuxe marketing services including SEO, performance marketing, social media, content, email, CRO, growth marketing, automation, attribution, analytics, and branding."
+        keywords="marketing services, SEO services, performance marketing, social media marketing, content marketing, email marketing, conversion rate optimization, growth marketing, marketing automation, attribution"
         canonicalUrl={canonicalUrl}
       />
       <Navigation />
@@ -32,7 +32,7 @@ export default async function MarketingServicesPage() {
                   Marketing pages for growth, traffic, leads, and conversion.
                 </h1>
                 <p className="text-base md:text-lg leading-relaxed text-muted-foreground">
-                  Browse the dedicated marketing service pages for SEO, paid campaigns, content, email, analytics, branding, AI website builds, and conversion-focused landing pages.
+                  Browse the dedicated marketing service pages for SEO, paid campaigns, content, email, CRO, growth experiments, automation, attribution, analytics, and branding.
                 </p>
               </div>
             </div>

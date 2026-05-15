@@ -9,6 +9,9 @@ const Footer = () => {
     { href: "/services/saas-development", title: "SaaS Development" },
     { href: "/services/web-app-development", title: "Web App Development" },
     { href: "/services/ai-systems", title: "AI Software Systems" },
+    { href: "/services/website-development", title: "AI Website Development" },
+    { href: "/services/landing-page-development", title: "Landing Page Development" },
+    { href: "/services/web-app-development", title: "AI Web App Development" },
     { href: "/services/platform-modernization", title: "Platform Modernization" },
     { href: "/services/enterprise-websites", title: "Enterprise Websites" },
   ];
@@ -82,7 +85,7 @@ const Footer = () => {
               <h4 className="text-sm font-semibold mb-4 text-foreground uppercase tracking-wider">Core Services</h4>
               <ul className="space-y-2">
                 {softwareServices.map((link) => (
-                  <li key={link.href}>
+                  <li key={`${link.href}-${link.title}`}>
                     <Link href={link.href} className="text-muted-foreground hover:text-primary transition-colors text-sm">
                       {link.title}
                     </Link>
