@@ -12,6 +12,7 @@ type RecentProject = {
   short_description?: string | null;
   logo_url?: string | null;
   website_url?: string | null;
+  project_type?: string | null;
 };
 
 export default function RecentProjects({
@@ -58,7 +59,7 @@ export default function RecentProjects({
             <CarouselContent className="px-1">
               {list.map((p) => {
                 const description = p.short_description ?? p.info;
-                const projectType = p.title.toLowerCase().includes("laptap") ? "Web App" : "Website";
+                const projectType = p.project_type || (description?.toLowerCase().includes("platform") ? "Web App" : "Website");
                 const content = (
                   <Card className="h-full w-full overflow-hidden rounded-xl border-border bg-card hover:shadow-xl transition-all">
                     <div className="h-28 border-b border-border bg-[radial-gradient(circle_at_30%_20%,hsl(var(--accent)/0.22),transparent_32%),linear-gradient(135deg,hsl(var(--secondary)),hsl(var(--card)))] p-4">

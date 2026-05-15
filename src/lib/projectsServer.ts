@@ -1,5 +1,6 @@
 import { supabaseServer } from "@/integrations/supabase/server";
 import { withRetry } from "@/lib/fetchWithRetry";
+import { prependFeaturedProjects } from "@/data/featuredProjects";
 
 export type ProjectSummary = {
   id: string;
@@ -47,6 +48,14 @@ export function normalizeProjectLinks<T extends { website_url?: string | null }>
   }));
 }
 
+export function normalizeAndFeatureProjects<T extends {
+  id?: string;
+  title?: string;
+  website_url?: string | null;
+}>(projects: T[]) {
+  return prependFeaturedProjects(normalizeProjectLinks(projects));
+}
+
 function isTruthyPublished(v: any) {
   if (v === true) return true;
   if (v === 1) return true;
@@ -79,10 +88,10 @@ export async function fetchPublishedProjects(limit: number) {
       ? raw.filter((p) => isTruthyPublished(p.published))
       : raw;
 
-    return normalizeProjectLinks(published);
+    return normalizeAndFeatureProjects(published);
   } catch (err) {
     console.error("[fetchPublishedProjects] failed after retries:", err);
-    return [];
+    return normalizeAndFeatureProjects([]);
   }
 }
 

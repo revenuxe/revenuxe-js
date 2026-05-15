@@ -1,6 +1,6 @@
 import { supabaseServer } from "@/integrations/supabase/server";
 import Projects from "@/page-views/Projects";
-import { normalizeProjectLinks } from "@/lib/projectsServer";
+import { normalizeAndFeatureProjects } from "@/lib/projectsServer";
 import { withRetry } from "@/lib/fetchWithRetry";
 
 export const dynamic = "force-dynamic";
@@ -39,7 +39,7 @@ export default async function ProjectsPage() {
     ? projects.filter((p: any) => isPublished(p.published))
     : projects;
 
-  return <Projects projects={normalizeProjectLinks(projects)} />;
+  return <Projects projects={normalizeAndFeatureProjects(projects)} />;
 }
 
 
