@@ -3,7 +3,7 @@ import Index from "@/page-views/Index";
 import { HomeStructuredData } from "@/components/HomeStructuredData";
 import { supabaseServer } from "@/integrations/supabase/server";
 import { getCanonicalOrigin } from "@/lib/seo/canonical";
-import { normalizeProjectLinks } from "@/lib/projectsServer";
+import { normalizeAndFeatureProjects } from "@/lib/projectsServer";
 import { withRetry } from "@/lib/fetchWithRetry";
 import {
   defaultSiteDescription,
@@ -81,10 +81,10 @@ export default async function HomePage() {
     recentProjects = hasPublishedField
       ? raw.filter((p: any) => isPublished(p.published))
       : raw;
-    recentProjects = normalizeProjectLinks(recentProjects);
+    recentProjects = normalizeAndFeatureProjects(recentProjects);
   } catch (error) {
     console.error("[HomePage] Error fetching recent projects:", error);
-    recentProjects = [];
+    recentProjects = normalizeAndFeatureProjects([]);
   }
 
   return (
