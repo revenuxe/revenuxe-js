@@ -16,7 +16,7 @@ export const doorifixProject: FeaturedProject = {
   info: "A Doorstep Appliance Repair Platform.",
   short_description: "A Doorstep Appliance Repair Platform.",
   logo_url: "/projects/doorifix-logo.webp",
-  website_url: null,
+  website_url: "https://www.doorifix.com",
   published: true,
   created_at: "2026-05-15T00:00:00.000Z",
   project_type: "Website",
