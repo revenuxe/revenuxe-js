@@ -11,12 +11,12 @@ Revenuxe helps brands grow with SEO, performance marketing, CRO, websites, and A
 - Contact: https://www.revenuxe.com/contact
 
 ## Core Services
-- SEO services: https://www.revenuxe.com/services/seo
-- Performance marketing: https://www.revenuxe.com/services/performance-marketing
-- Social media marketing: https://www.revenuxe.com/services/social-media
-- Web development: https://www.revenuxe.com/services/web-development
-- AI website services: https://www.revenuxe.com/services/ai-website
-- AI web app development: https://www.revenuxe.com/services/ai-webapp
+- SEO services: https://www.revenuxe.com/marketing/seo
+- Performance marketing: https://www.revenuxe.com/marketing/performance-marketing
+- Social media marketing: https://www.revenuxe.com/marketing/social-media
+- Web development: https://www.revenuxe.com/marketing/web-development
+- AI website services: https://www.revenuxe.com/marketing/ai-website
+- AI web app development: https://www.revenuxe.com/marketing/ai-webapp
 
 ## Trust & Proof
 - Case studies: https://www.revenuxe.com/case-studies

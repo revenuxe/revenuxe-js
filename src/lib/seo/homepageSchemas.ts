@@ -76,7 +76,7 @@ export const localBusinessSchema = {
         itemOffered: {
           "@type": "Service",
           name: "SaaS Development",
-          url: "https://www.revenuxe.com/services/ai-webapp",
+          url: "https://www.revenuxe.com/services/saas-development",
         },
       },
       {
@@ -84,7 +84,7 @@ export const localBusinessSchema = {
         itemOffered: {
           "@type": "Service",
           name: "AI Software Systems",
-          url: "https://www.revenuxe.com/services/ai-webapp",
+          url: "https://www.revenuxe.com/services/ai-systems",
         },
       },
       {
@@ -92,7 +92,7 @@ export const localBusinessSchema = {
         itemOffered: {
           "@type": "Service",
           name: "Web Application Development",
-          url: "https://www.revenuxe.com/services/web-development",
+          url: "https://www.revenuxe.com/services/web-app-development",
         },
       },
     ],

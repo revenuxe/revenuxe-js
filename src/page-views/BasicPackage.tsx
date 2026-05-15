@@ -192,25 +192,25 @@ const jumpLinks = [
 
 const relatedServiceLinks = [
   {
-    href: "/services/seo",
+    href: "/marketing/seo",
     title: "SEO Optimization",
     description:
       "Strengthen rankings after launch with technical SEO, keyword strategy, and on-page improvements.",
   },
   {
-    href: "/services/performance-marketing",
+    href: "/marketing/performance-marketing",
     title: "Performance Marketing",
     description:
       "Scale beyond the starter package with Google Ads, Meta Ads, retargeting, and conversion-focused growth.",
   },
   {
-    href: "/services/landing-pages",
+    href: "/marketing/landing-pages",
     title: "Landing Pages",
     description:
       "Build campaign-specific landing pages when you want better Quality Score and lower cost per lead.",
   },
   {
-    href: "/services/ai-website",
+    href: "/marketing/ai-website",
     title: "Build Website Using AI",
     description:
       "Compare this starter package with our faster AI-led website workflows for broader business needs.",
@@ -565,19 +565,19 @@ const BasicPackage = ({
               </h2>
               <p className="text-muted-foreground text-base md:text-lg mt-4 leading-relaxed">
                 This package works best when paired with{" "}
-                <Link href="/services/seo" className="text-accent hover:underline">
+                <Link href="/marketing/seo" className="text-accent hover:underline">
                   SEO Optimization
                 </Link>
                 ,{" "}
                 <Link
-                  href="/services/performance-marketing"
+                  href="/marketing/performance-marketing"
                   className="text-accent hover:underline"
                 >
                   Performance Marketing
                 </Link>
                 , and focused{" "}
                 <Link
-                  href="/services/landing-pages"
+                  href="/marketing/landing-pages"
                   className="text-accent hover:underline"
                 >
                   landing pages
@@ -587,7 +587,7 @@ const BasicPackage = ({
                   ROI calculator
                 </Link>
                 . Businesses needing a more scalable stack can also review our{" "}
-                <Link href="/services/ai-website" className="text-accent hover:underline">
+                <Link href="/marketing/ai-website" className="text-accent hover:underline">
                   AI website development services
                 </Link>
                 .

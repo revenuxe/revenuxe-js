@@ -3,20 +3,20 @@ import { getSoftwareServicePage } from "@/data/softwareServicePages";
 import { redirect } from "next/navigation";
 
 const legacyServiceRedirects: Record<string, string> = {
-  "ai-webapp": "/services/web-app-development",
-  "ai-website": "/services/website-development",
-  analytics: "/services/data-dashboard-development",
-  "basic-package": "/services/website-development",
-  branding: "/services/enterprise-websites",
-  "content-marketing": "/services/cms-website-development",
-  ecommerce: "/services/ecommerce-development",
-  "email-marketing": "/services/automation-engineering",
-  "landing-pages": "/services/landing-page-development",
-  migration: "/services/platform-modernization",
-  "performance-marketing": "/services/performance-engineering",
-  seo: "/services/website-development",
-  "social-media": "/services/enterprise-websites",
-  "web-development": "/services/web-app-development",
+  "ai-webapp": "/marketing/ai-webapp",
+  "ai-website": "/marketing/ai-website",
+  analytics: "/marketing/analytics",
+  "basic-package": "/basic-package",
+  branding: "/marketing/branding",
+  "content-marketing": "/marketing/content-marketing",
+  ecommerce: "/marketing/ecommerce",
+  "email-marketing": "/marketing/email-marketing",
+  "landing-pages": "/marketing/landing-pages",
+  migration: "/marketing/migration",
+  "performance-marketing": "/marketing/performance-marketing",
+  seo: "/marketing/seo",
+  "social-media": "/marketing/social-media",
+  "web-development": "/marketing/web-development",
 };
 
 export default async function ServiceDetailPage({

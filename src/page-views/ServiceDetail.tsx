@@ -136,11 +136,11 @@ const serviceData: Record<string, any> = {
     subtitle: "Migrate your no-code website or React Vite single-page app to Next.js for SSR, stronger SEO, faster performance, and long-term business growth.",
     description: "We migrate no-code websites, React Vite websites, and SPA web apps to Next.js so your business gets server-side rendering, cleaner site architecture, better Core Web Vitals, stronger technical SEO, and a more scalable foundation for lead generation, content growth, and conversion optimization.",
     features: [
-      { title: "SPA to SSR Migration Strategy", description: "Audit your current React Vite SPA, routing, rendering patterns, and content structure to map a safe migration path into modern Next.js.", link: "/services/ai-webapp" },
-      { title: "No-Code Website to Next.js Rebuild", description: "Move from fragile no-code builders into a custom Next.js codebase with reusable components, better flexibility, and long-term ownership.", link: "/services/ai-website" },
+      { title: "SPA to SSR Migration Strategy", description: "Audit your current React Vite SPA, routing, rendering patterns, and content structure to map a safe migration path into modern Next.js.", link: "/marketing/ai-webapp" },
+      { title: "No-Code Website to Next.js Rebuild", description: "Move from fragile no-code builders into a custom Next.js codebase with reusable components, better flexibility, and long-term ownership.", link: "/marketing/ai-website" },
       { title: "SEO-Safe URL & Metadata Migration", description: "Protect rankings with redirect maps, metadata transfer, schema planning, indexation controls, and crawl-ready information architecture.", link: "/sub-services/technical-seo" },
       { title: "Performance & Core Web Vitals Upgrade", description: "Improve load speed, image delivery, script handling, caching, and page rendering for a faster user experience and better search visibility.", link: "/sub-services/technical-seo" },
-      { title: "Component, CMS & Content Refactoring", description: "Restructure templates, reusable sections, and publishing workflows so marketing teams can scale landing pages and SEO content more efficiently.", link: "/services/landing-pages" },
+      { title: "Component, CMS & Content Refactoring", description: "Restructure templates, reusable sections, and publishing workflows so marketing teams can scale landing pages and SEO content more efficiently.", link: "/marketing/landing-pages" },
       { title: "Conversion Tracking & Launch QA", description: "Reconnect analytics, forms, events, pixels, and conversion flows so the new site goes live without losing data or lead capture performance.", link: "/sub-services/conversion-optimization" },
     ],
     benefits: [
@@ -260,6 +260,9 @@ const additionalServices: Record<string, any> = {
   },
 };
 
+export const getMarketingServicePage = (slug?: string) =>
+  serviceData[slug || ""] || additionalServices[slug || ""];
+
 const getLandingDetails = (slug?: string, title?: string) => {
   const serviceName = title || "this service";
   const defaults = {
@@ -345,8 +348,14 @@ const getLandingDetails = (slug?: string, title?: string) => {
   };
 };
 
-const ServiceDetail = async ({ slug }: { slug?: string }) => {
-  const foundService = serviceData[slug || ""] || additionalServices[slug || ""];
+const ServiceDetail = async ({
+  slug,
+  basePath = "/marketing",
+}: {
+  slug?: string;
+  basePath?: string;
+}) => {
+  const foundService = getMarketingServicePage(slug);
 
   let faqItems: any[] = [];
   if (slug === "seo") faqItems = seoServiceFAQs;
@@ -416,7 +425,7 @@ const ServiceDetail = async ({ slug }: { slug?: string }) => {
   ];
 
   const origin = await getCanonicalOrigin();
-  const canonicalUrl = await absoluteCanonicalUrl(`/services/${slug || ""}`);
+  const canonicalUrl = await absoluteCanonicalUrl(`${basePath}/${slug || ""}`);
   const internalLinks = serviceRelationships[slug || ""];
   const landingDetails = getLandingDetails(slug, service.title);
 

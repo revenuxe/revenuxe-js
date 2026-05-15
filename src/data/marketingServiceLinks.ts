@@ -1,0 +1,15 @@
+export const marketingServiceLinks = [
+  { href: "/marketing/seo", title: "SEO Optimization" },
+  { href: "/marketing/performance-marketing", title: "Performance Marketing" },
+  { href: "/marketing/social-media", title: "Social Media Marketing" },
+  { href: "/marketing/content-marketing", title: "Content Marketing" },
+  { href: "/marketing/email-marketing", title: "Email Marketing" },
+  { href: "/marketing/landing-pages", title: "Landing Pages" },
+  { href: "/marketing/ai-website", title: "Build Website Using AI" },
+  { href: "/marketing/ai-webapp", title: "Build Web App Using AI" },
+  { href: "/marketing/web-development", title: "Web Development" },
+  { href: "/marketing/ecommerce", title: "E-Commerce Solutions" },
+  { href: "/marketing/analytics", title: "Analytics" },
+  { href: "/marketing/branding", title: "Branding" },
+  { href: "/marketing/migration", title: "Migration" },
+];

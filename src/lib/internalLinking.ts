@@ -6,67 +6,67 @@ export type InternalLinkItem = {
 
 export const coreServiceLinks: InternalLinkItem[] = [
   {
-    href: "/services/seo",
+    href: "/marketing/seo",
     title: "SEO Optimization",
     description: "Technical SEO, on-page improvements, keyword strategy, and authority growth.",
   },
   {
-    href: "/services/performance-marketing",
+    href: "/marketing/performance-marketing",
     title: "Performance Marketing",
     description: "Google Ads, Meta Ads, retargeting, and conversion-led paid growth.",
   },
   {
-    href: "/services/social-media",
+    href: "/marketing/social-media",
     title: "Social Media Marketing",
     description: "Content, community, and paid social campaigns across key platforms.",
   },
   {
-    href: "/services/ai-webapp",
+    href: "/marketing/ai-webapp",
     title: "Build Web App Using AI",
     description: "AI-assisted app development for faster launches and lower build time.",
   },
   {
-    href: "/services/ai-website",
+    href: "/marketing/ai-website",
     title: "Build Website Using AI",
     description: "AI-led website builds for businesses that want speed and flexibility.",
   },
   {
-    href: "/services/landing-pages",
+    href: "/marketing/landing-pages",
     title: "Landing Pages",
     description: "Conversion-focused landing pages for paid campaigns and lead generation.",
   },
   {
-    href: "/services/web-development",
+    href: "/marketing/web-development",
     title: "Web Development",
     description: "Modern, conversion-ready websites and web apps built for speed and scale.",
   },
   {
-    href: "/services/ecommerce",
+    href: "/marketing/ecommerce",
     title: "E-Commerce Solutions",
     description: "Online store setup, payment integrations, and conversion optimization.",
   },
   {
-    href: "/services/content-marketing",
+    href: "/marketing/content-marketing",
     title: "Content Marketing",
     description: "Authority-building content strategy, articles, and SEO-led publishing.",
   },
   {
-    href: "/services/email-marketing",
+    href: "/marketing/email-marketing",
     title: "Email Marketing",
     description: "Lifecycle campaigns, automation, and retention-focused email systems.",
   },
   {
-    href: "/services/analytics",
+    href: "/marketing/analytics",
     title: "Analytics",
     description: "Tracking, dashboards, and data intelligence for better growth decisions.",
   },
   {
-    href: "/services/branding",
+    href: "/marketing/branding",
     title: "Branding",
     description: "Brand strategy, identity systems, and visual design for stronger recall.",
   },
   {
-    href: "/services/migration",
+    href: "/marketing/migration",
     title: "Migration",
     description: "Migrate React, Vite, and SPA websites to Next.js for SSR, SEO, and long-term growth.",
   },
@@ -297,12 +297,12 @@ export const serviceRelationships: Record<string, ServiceRelationship> = {
     ],
     supportingSubServices: [
       {
-        href: "/services/ai-webapp",
+        href: "/marketing/ai-webapp",
         title: "Build Web App Using AI",
         description: "Plan post-migration product enhancements and feature expansion on a modern stack.",
       },
       {
-        href: "/services/ai-website",
+        href: "/marketing/ai-website",
         title: "Build Website Using AI",
         description: "Refresh content, design systems, and publishing workflows after the migration is complete.",
       },
