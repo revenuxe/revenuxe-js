@@ -1,7 +1,7 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import PageHero from "@/components/PageHero";
-import { ArrowRight, Code2, Layers3, ShieldCheck, Users } from "lucide-react";
+import { ArrowRight, Code2, Layers3, Linkedin, ShieldCheck, Users } from "lucide-react";
 import { SEOHead } from "@/components/SEOHead";
 import { absoluteCanonicalUrl } from "@/lib/seo/canonical";
 
@@ -40,6 +40,46 @@ const AboutUs = async () => {
               We operate like a product studio and engineering partner: clarify the idea, design the system, build the
               platform, launch carefully, and keep improving based on real usage.
             </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 px-4 bg-background">
+        <div className="container mx-auto max-w-6xl">
+          <div className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
+            <div className="mx-auto w-full max-w-sm overflow-hidden rounded-2xl border border-border bg-card shadow-lg">
+              <img
+                src="/touheed-rahman.webp"
+                alt="Touheed Rahman, Founder of Revenuxe"
+                className="aspect-[4/5] w-full object-cover object-top"
+                loading="lazy"
+              />
+            </div>
+
+            <div>
+              <p className="text-accent font-semibold text-sm tracking-wider uppercase">
+                Founder
+              </p>
+              <h2 className="mt-3 text-3xl md:text-4xl font-bold text-foreground">
+                Touheed Rahman
+              </h2>
+              <p className="mt-4 text-lg leading-relaxed text-foreground/80">
+                Touheed Rahman leads Revenuxe with a product-first approach to software, growth, and AI-powered digital execution. He has successfully launched SaaS platforms, web applications, business websites, and marketing systems that help companies move from idea to live product with clarity and speed.
+              </p>
+              <p className="mt-4 text-lg leading-relaxed text-foreground/80">
+                His work blends modern engineering, AI adoption, digital marketing, and growth strategy so every build is designed not only to launch, but to attract users, convert leads, and scale with the business.
+              </p>
+              <a
+                href="https://www.linkedin.com/in/touheed-ur-rahman-70826126b/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-6 inline-flex items-center gap-2 rounded-full border border-border bg-card px-5 py-3 text-sm font-semibold text-foreground transition-colors hover:border-primary hover:text-primary"
+                aria-label="Visit Touheed Rahman on LinkedIn"
+              >
+                <Linkedin className="h-4 w-4" />
+                Connect on LinkedIn
+              </a>
+            </div>
           </div>
         </div>
       </section>
