@@ -47,7 +47,7 @@ const AboutUs = async () => {
       <section className="py-16 px-4 bg-background">
         <div className="container mx-auto max-w-6xl">
           <div className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
-            <div className="mx-auto w-full max-w-sm overflow-hidden rounded-2xl border border-border bg-card shadow-lg">
+            <div className="mx-auto w-full max-w-xs overflow-hidden rounded-2xl border border-border bg-card shadow-lg">
               <img
                 src="/touheed-rahman.webp"
                 alt="Touheed Rahman, Founder of Revenuxe"
